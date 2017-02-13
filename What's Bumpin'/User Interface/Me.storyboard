@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Second View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="R5w-mO-ujY">
             <objects>
-                <viewController id="hib-J7-B2s" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController id="hib-J7-B2s" customClass="HomeViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="qhP-kg-rGB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHI-PL-qjs" sceneMemberID="firstResponder"/>

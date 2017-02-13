@@ -6,15 +6,15 @@
 //  Copyright © 2017 Bump Inc. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "MapViewController.h"
 @import GooglePlaces;
 @import GoogleMaps;
 
-@interface FirstViewController ()
+@interface MapViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation MapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

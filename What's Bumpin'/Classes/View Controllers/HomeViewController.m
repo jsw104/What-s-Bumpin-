@@ -6,13 +6,13 @@
 //  Copyright © 2017 Bump Inc. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "HomeViewController.h"
 
-@interface SecondViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
