@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 @import GooglePlaces;
+@import GoogleMaps;
 
 @interface AppDelegate ()
 
@@ -18,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [GMSPlacesClient provideAPIKey:@"AIzaSyCOsbVM_m0DuKFYIONb6YSIDDHajJQeMm0"];
+    [GMSServices provideAPIKey:@"AIzaSyCGfDWhm0xSek1lcwhYSTc8RPh0G7g3s6k"];
     return YES;
 }
 
