@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D0A6CB911E513F57001F7964 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CB901E513F57001F7964 /* main.m */; };
-		D0A6CB941E513F57001F7964 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CB931E513F57001F7964 /* AppDelegate.m */; };
-		D0A6CB971E513F57001F7964 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CB961E513F57001F7964 /* FirstViewController.m */; };
-		D0A6CB9A1E513F57001F7964 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CB991E513F57001F7964 /* SecondViewController.m */; };
 		D0A6CB9D1E513F57001F7964 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CB9B1E513F57001F7964 /* Main.storyboard */; };
 		D0A6CB9F1E513F57001F7964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CB9E1E513F57001F7964 /* Assets.xcassets */; };
 		D0A6CBA21E513F57001F7964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CBA01E513F57001F7964 /* LaunchScreen.storyboard */; };
 		D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */; };
 		D0A6CBB81E513F58001F7964 /* What_s_Bumpin_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBB71E513F58001F7964 /* What_s_Bumpin_UITests.m */; };
+		D0CBFB471E51458300E74769 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBFB3D1E51458300E74769 /* AppDelegate.m */; };
+		D0CBFB481E51458300E74769 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBFB441E51458300E74769 /* FirstViewController.m */; };
+		D0CBFB491E51458300E74769 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBFB461E51458300E74769 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,12 +38,6 @@
 /* Begin PBXFileReference section */
 		D0A6CB8C1E513F57001F7964 /* What's Bumpin'.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Bumpin'.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CB901E513F57001F7964 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D0A6CB921E513F57001F7964 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D0A6CB931E513F57001F7964 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D0A6CB951E513F57001F7964 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		D0A6CB961E513F57001F7964 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		D0A6CB981E513F57001F7964 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		D0A6CB991E513F57001F7964 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		D0A6CB9C1E513F57001F7964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0A6CB9E1E513F57001F7964 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0A6CBA11E513F57001F7964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +48,12 @@
 		D0A6CBB31E513F58001F7964 /* What's Bumpin'UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "What's Bumpin'UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBB71E513F58001F7964 /* What_s_Bumpin_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What_s_Bumpin_UITests.m; sourceTree = "<group>"; };
 		D0A6CBB91E513F58001F7964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0CBFB3C1E51458300E74769 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D0CBFB3D1E51458300E74769 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D0CBFB431E51458300E74769 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		D0CBFB441E51458300E74769 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		D0CBFB451E51458300E74769 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		D0CBFB461E51458300E74769 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +104,7 @@
 		D0A6CB8E1E513F57001F7964 /* What's Bumpin' */ = {
 			isa = PBXGroup;
 			children = (
-				D0A6CB921E513F57001F7964 /* AppDelegate.h */,
-				D0A6CB931E513F57001F7964 /* AppDelegate.m */,
-				D0A6CB951E513F57001F7964 /* FirstViewController.h */,
-				D0A6CB961E513F57001F7964 /* FirstViewController.m */,
-				D0A6CB981E513F57001F7964 /* SecondViewController.h */,
-				D0A6CB991E513F57001F7964 /* SecondViewController.m */,
+				D0CBFB391E51458300E74769 /* Classes */,
 				D0A6CB9B1E513F57001F7964 /* Main.storyboard */,
 				D0A6CB9E1E513F57001F7964 /* Assets.xcassets */,
 				D0A6CBA01E513F57001F7964 /* LaunchScreen.storyboard */,
@@ -143,6 +138,75 @@
 				D0A6CBB91E513F58001F7964 /* Info.plist */,
 			);
 			path = "What's Bumpin'UITests";
+			sourceTree = "<group>";
+		};
+		D0CBFB391E51458300E74769 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D0CBFB3A1E51458300E74769 /* API */,
+				D0CBFB3B1E51458300E74769 /* App Delegate */,
+				D0CBFB3E1E51458300E74769 /* Buttons */,
+				D0CBFB3F1E51458300E74769 /* Cells */,
+				D0CBFB401E51458300E74769 /* Constants */,
+				D0CBFB411E51458300E74769 /* Data Models */,
+				D0CBFB421E51458300E74769 /* View Controllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D0CBFB3A1E51458300E74769 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D0CBFB3B1E51458300E74769 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D0CBFB3C1E51458300E74769 /* AppDelegate.h */,
+				D0CBFB3D1E51458300E74769 /* AppDelegate.m */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		D0CBFB3E1E51458300E74769 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D0CBFB3F1E51458300E74769 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D0CBFB401E51458300E74769 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		D0CBFB411E51458300E74769 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		D0CBFB421E51458300E74769 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0CBFB431E51458300E74769 /* FirstViewController.h */,
+				D0CBFB441E51458300E74769 /* FirstViewController.m */,
+				D0CBFB451E51458300E74769 /* SecondViewController.h */,
+				D0CBFB461E51458300E74769 /* SecondViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,10 +340,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A6CB9A1E513F57001F7964 /* SecondViewController.m in Sources */,
-				D0A6CB941E513F57001F7964 /* AppDelegate.m in Sources */,
-				D0A6CB971E513F57001F7964 /* FirstViewController.m in Sources */,
+				D0CBFB481E51458300E74769 /* FirstViewController.m in Sources */,
+				D0CBFB491E51458300E74769 /* SecondViewController.m in Sources */,
 				D0A6CB911E513F57001F7964 /* main.m in Sources */,
+				D0CBFB471E51458300E74769 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
