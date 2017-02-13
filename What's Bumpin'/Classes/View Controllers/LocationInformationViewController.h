@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Location.h"
 
 @interface LocationInformationViewController : UIViewController
+
+@property (strong, nonatomic) Location *location;
+@property (strong, nonatomic) IBOutlet UIImageView *locationImageView;
+@property (strong, nonatomic) IBOutlet UILabel *locationURLLabel;
+@property (strong, nonatomic) IBOutlet UILabel *locationBioLabel;
 
 @end

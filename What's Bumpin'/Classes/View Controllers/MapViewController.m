@@ -7,6 +7,7 @@
 //
 
 #import "MapViewController.h"
+#import "LocationInformationViewController.h"
 @import GooglePlaces;
 @import GoogleMaps;
 #import "Location.h"
@@ -14,6 +15,7 @@
 @interface MapViewController ()
 
 @property GMSMapView *mapView;
+@property NSArray *locations;
 
 @end
 
@@ -35,13 +37,15 @@
     marker.map = self.mapView;
     
     //adds dummy locations
-    [self addLocations];
+    [self addLocationsToMap];
 }
 
-- (void)addLocations
+
+//potentially not thread safe... be careful here
+- (void)addLocationsToMap
 {
-    NSArray <Location *> *locations = [self getLocations];
-    for(Location *location in locations)
+    [self getLocations];
+    for(Location *location in self.locations)
     {
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = location.coordinates;
@@ -52,17 +56,23 @@
     }
 }
 
-- (NSArray <Location *> *) getLocations
+- (void) getLocations
 {
     Location *l1 = [[Location alloc] initWithName:@"Corner Alley" bumps:222 coordinates:CLLocationCoordinate2DMake(-33.801, 151.200) bio:@"The hottest spot in town! Grab some friends and come swing by for a night of bowling and drinks!" image:[UIImage imageNamed:@"Corner Alley"]];
     Location *l2 = [[Location alloc] initWithName:@"The Jolly Scholar" bumps:87 coordinates:CLLocationCoordinate2DMake(-33.800, 151.201) bio:@"" image:[UIImage imageNamed:@"Corner Alley"]];
     Location *l3 = [[Location alloc] initWithName:@"Happy Dog" bumps:8 coordinates:CLLocationCoordinate2DMake(-33.801, 151.201) bio:@"" image:[UIImage imageNamed:@"Corner Alley"]];
-    return [NSArray arrayWithObjects:l1, l2, l3, nil];
+    self.locations = [NSArray arrayWithObjects:l1, l2, l3, nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//this is hardcoded right now
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ((LocationInformationViewController*)segue.destinationViewController).location = self.locations.firstObject;
 }
 
 @end

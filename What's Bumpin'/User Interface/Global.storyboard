@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,10 +20,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7pp-K9-jT7"/>
-                    <connections>
-                        <segue destination="ga2-sr-1Z0" kind="show" identifier="View Location" id="0ZK-95-QDF"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="7pp-K9-jT7">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3WF-Qv-ebP">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <segue destination="ga2-sr-1Z0" kind="show" id="WfH-Ri-rrQ"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UR4-EG-gTz" sceneMemberID="firstResponder"/>
             </objects>
@@ -40,14 +47,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5y-vP-LHM">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5y-vP-LHM">
                                 <rect key="frame" x="20" y="64" width="560" height="487"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvU-4x-3ee">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="900"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvU-4x-3ee" userLabel="contentView">
+                                        <rect key="frame" x="0.0" y="-197" width="560" height="900"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fxq-2p-qOi">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Fxq-2p-qOi" secondAttribute="height" multiplier="1:1" id="rgX-0U-x6g"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwF-dF-p0z">
+                                                <rect key="frame" x="8" y="608" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-9l-eC1">
+                                                <rect key="frame" x="8" y="637" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="900" id="FzP-rI-jbc"/>
+                                            <constraint firstItem="Rrq-9l-eC1" firstAttribute="top" secondItem="HwF-dF-p0z" secondAttribute="bottom" constant="8" id="IPJ-AC-GVC"/>
+                                            <constraint firstItem="HwF-dF-p0z" firstAttribute="top" secondItem="Fxq-2p-qOi" secondAttribute="bottom" constant="8" id="WI4-eS-dC3"/>
+                                            <constraint firstItem="Rrq-9l-eC1" firstAttribute="leading" secondItem="fvU-4x-3ee" secondAttribute="leading" constant="8" id="XXz-1x-0TI"/>
+                                            <constraint firstItem="Fxq-2p-qOi" firstAttribute="top" secondItem="fvU-4x-3ee" secondAttribute="top" id="ZUf-Mz-SIc"/>
+                                            <constraint firstItem="Fxq-2p-qOi" firstAttribute="width" secondItem="fvU-4x-3ee" secondAttribute="width" id="aeo-fZ-I5S"/>
+                                            <constraint firstItem="HwF-dF-p0z" firstAttribute="leading" secondItem="fvU-4x-3ee" secondAttribute="leading" constant="8" id="cqW-tm-gxu"/>
+                                            <constraint firstItem="Fxq-2p-qOi" firstAttribute="centerX" secondItem="fvU-4x-3ee" secondAttribute="centerX" id="e8I-fH-P1F"/>
+                                            <constraint firstAttribute="trailing" secondItem="Rrq-9l-eC1" secondAttribute="trailing" constant="8" id="fuu-bu-5Xl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -68,20 +103,29 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="l5y-vP-LHM" firstAttribute="leading" secondItem="fds-kS-qvu" secondAttribute="leadingMargin" id="EFe-qe-q74"/>
+                            <constraint firstItem="l5y-vP-LHM" firstAttribute="leading" secondItem="fds-kS-qvu" secondAttribute="leadingMargin" constant="-20" id="EFe-qe-q74"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="l5y-vP-LHM" secondAttribute="bottom" id="Qs2-XB-2hS"/>
                             <constraint firstItem="l5y-vP-LHM" firstAttribute="width" secondItem="fds-kS-qvu" secondAttribute="width" id="eUa-wi-BQ7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="l5y-vP-LHM" secondAttribute="trailing" id="hlL-WP-Gfb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l5y-vP-LHM" secondAttribute="trailing" constant="-20" id="hlL-WP-Gfb"/>
                             <constraint firstItem="l5y-vP-LHM" firstAttribute="top" secondItem="rhq-nn-Fmb" secondAttribute="bottom" id="ieR-ZC-oL8"/>
+                            <constraint firstItem="l5y-vP-LHM" firstAttribute="top" secondItem="fds-kS-qvu" secondAttribute="topMargin" id="mi1-jP-yXm"/>
                             <constraint firstItem="0zc-eo-6IK" firstAttribute="top" secondItem="l5y-vP-LHM" secondAttribute="bottom" id="ogl-Em-uJQ"/>
                             <constraint firstItem="l5y-vP-LHM" firstAttribute="height" secondItem="fds-kS-qvu" secondAttribute="height" id="wg6-RY-4mG"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="eUa-wi-BQ7"/>
+                                <exclude reference="ieR-ZC-oL8"/>
                                 <exclude reference="wg6-RY-4mG"/>
+                                <exclude reference="ogl-Em-uJQ"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="locationBioLabel" destination="Rrq-9l-eC1" id="MRT-hp-qeC"/>
+                        <outlet property="locationImageView" destination="Fxq-2p-qOi" id="gSN-qB-av8"/>
+                        <outlet property="locationURLLabel" destination="HwF-dF-p0z" id="u6H-pq-crM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhx-jA-7t0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

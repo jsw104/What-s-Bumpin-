@@ -16,7 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureViewContent];
     // Do any additional setup after loading the view.
+}
+
+- (void)configureViewContent
+{
+    self.title = self.location.name;
+    self.locationImageView.image = self.location.image;
+    self.locationBioLabel.text = self.location.bio;
+    self.locationURLLabel.text = @"www.corneralley.com";
 }
 
 - (void)didReceiveMemoryWarning {
