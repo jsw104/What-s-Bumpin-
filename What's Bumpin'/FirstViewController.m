@@ -7,7 +7,6 @@
 //
 
 #import "FirstViewController.h"
-#import "ImageConverter.h"
 
 @interface FirstViewController ()
 
@@ -17,14 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configureTabBarIcon];
     // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void) configureTabBarIcon
-{
-    UIImage *image = [UIImage imageNamed:@"Earth.png"];
-    self.tabBarItem.image = [ImageConverter imageWithImage:image scaledToSize:CGSizeMake(30, 30)];
 }
 
 - (void)didReceiveMemoryWarning {
