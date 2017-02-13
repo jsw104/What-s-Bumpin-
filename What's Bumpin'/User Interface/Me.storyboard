@@ -19,8 +19,9 @@
         <scene sceneID="96w-5T-tHb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TZG-Dv-w3V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="lGs-mT-qKQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="Home" id="iMm-BS-oQA"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aCm-NU-Z8J">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -35,4 +36,7 @@
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Home" width="86" height="76"/>
+    </resources>
 </document>

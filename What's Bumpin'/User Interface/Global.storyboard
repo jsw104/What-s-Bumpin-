@@ -49,8 +49,9 @@
         <scene sceneID="k7Z-Zu-qhs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lHV-bN-eGn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="qRa-Ae-OC2"/>
+                    <tabBarItem key="tabBarItem" title="" image="Earth" id="iw7-Un-0G8"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="o4m-AB-f5f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -65,4 +66,7 @@
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Earth" width="74" height="70"/>
+    </resources>
 </document>
