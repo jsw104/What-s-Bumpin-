@@ -1,0 +1,6 @@
+framework module Pods_What_s_Bumpin_ {
+  umbrella header "Pods-What's Bumpin'-umbrella.h"
+
+  export *
+  module * { export * }
+}

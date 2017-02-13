@@ -1,0 +1,783 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5108F7D893C6B12E4944422E19597E02 /* Pods-What's Bumpin'UITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 252BEC41ADC73D9CFF780EBAB1A487E4 /* Pods-What's Bumpin'UITests-dummy.m */; };
+		6D34C6595ACCBF24419303246E3649DD /* Pods-What's Bumpin'Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A93C1E93AF2328A472ED6D2EA9C06B0D /* Pods-What's Bumpin'Tests-dummy.m */; };
+		840DB03EC985AD3BD1413D403EF8A134 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		8A7EDB7753F6FDB613EE4E08147CB802 /* Pods-What's Bumpin'-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 649047FF69AE93F370ACD57AB5E46D3E /* Pods-What's Bumpin'-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6108DB72F0DC1C4DA6A1922CEA5018C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		B7228427D61EBFAEB4D8CAE36A1A3B1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		DA0F1CF5D36CF6C41DD022BC6015D6F1 /* Pods-What's Bumpin'UITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F17DBAA8BF3B5AD1201720E37E35D21B /* Pods-What's Bumpin'UITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC24BCFB2276116EC269D619D6EB82BB /* Pods-What's Bumpin'-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB05980C7EB353A17031A7A5026F4C /* Pods-What's Bumpin'-dummy.m */; };
+		F7F856951EBB0400499C63F401427DA9 /* Pods-What's Bumpin'Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DE42C6F99D86D8ABEFEC98ECA495055 /* Pods-What's Bumpin'Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0267BB8E882D47E773EFB3B56ED3D17F /* Pods-What's Bumpin'UITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-What's Bumpin'UITests.modulemap"; sourceTree = "<group>"; };
+		07790BD46C0A51AE9AF086D8F62242CC /* GooglePlacePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlacePicker.framework; path = Frameworks/GooglePlacePicker.framework; sourceTree = "<group>"; };
+		077C66FFAD4CE2915EB6C7DF4458B303 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EFA0A50F0D89EE92CEA177190A81214 /* Pods-What's Bumpin'Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-What's Bumpin'Tests.modulemap"; sourceTree = "<group>"; };
+		1117A6D1FE68A6F983D560933AF5E265 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		16AE924BE0D0E3EB11ED717448F91052 /* Pods-What's Bumpin'Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-What's Bumpin'Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1F7B3255BC6A2D4E7E7735DF2F91FF25 /* Pods-What's Bumpin'-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-What's Bumpin'-acknowledgements.plist"; sourceTree = "<group>"; };
+		252BEC41ADC73D9CFF780EBAB1A487E4 /* Pods-What's Bumpin'UITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-What's Bumpin'UITests-dummy.m"; sourceTree = "<group>"; };
+		36B5E4D118B8CDD6962B36A7A9BC9F2E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DE42C6F99D86D8ABEFEC98ECA495055 /* Pods-What's Bumpin'Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-What's Bumpin'Tests-umbrella.h"; sourceTree = "<group>"; };
+		40FB05980C7EB353A17031A7A5026F4C /* Pods-What's Bumpin'-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-What's Bumpin'-dummy.m"; sourceTree = "<group>"; };
+		507E1D82E604116AD28D538119F3D371 /* Pods-What's Bumpin'.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-What's Bumpin'.debug.xcconfig"; sourceTree = "<group>"; };
+		572BF5E8942D47BAAFF4649BEFECA3C9 /* Pods-What's Bumpin'Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-What's Bumpin'Tests-frameworks.sh"; sourceTree = "<group>"; };
+		649047FF69AE93F370ACD57AB5E46D3E /* Pods-What's Bumpin'-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-What's Bumpin'-umbrella.h"; sourceTree = "<group>"; };
+		6EB8BDBBB80D1B9CED8C5FD7D5117F25 /* Pods-What's Bumpin'.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-What's Bumpin'.modulemap"; sourceTree = "<group>"; };
+		6F434E8AC805E8D8C5C01FCBC37131A0 /* Pods-What's Bumpin'Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-What's Bumpin'Tests.release.xcconfig"; sourceTree = "<group>"; };
+		8751FD899351F5F71C80053CF05DB6BE /* Pods-What's Bumpin'UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-What's Bumpin'UITests.release.xcconfig"; sourceTree = "<group>"; };
+		89756433F235540E2B65CF6A198036CF /* Pods-What's Bumpin'.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-What's Bumpin'.release.xcconfig"; sourceTree = "<group>"; };
+		8BCCCA295DEE22197B0C283775AB5A26 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		8BFABCE162719C33F5B73426DFA5FE8D /* Pods-What's Bumpin'-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-What's Bumpin'-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8D1E039A3E897D77639A5014474EF281 /* Pods-What's Bumpin'-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-What's Bumpin'-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		955D3A22EB34AB333524A949DC729F6B /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		9719AA9F94D86C1E302DC09D41AB3824 /* Pods-What's Bumpin'-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-What's Bumpin'-resources.sh"; sourceTree = "<group>"; };
+		A4C0A383256F0D1E2026625474E06ABE /* Pods_What_s_Bumpin_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_What_s_Bumpin_.framework; path = "Pods-What's Bumpin'.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A93C1E93AF2328A472ED6D2EA9C06B0D /* Pods-What's Bumpin'Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-What's Bumpin'Tests-dummy.m"; sourceTree = "<group>"; };
+		AA941530B513206380FDD8D5141C1CD7 /* Pods-What's Bumpin'Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-What's Bumpin'Tests-resources.sh"; sourceTree = "<group>"; };
+		AADCAECFE53A0AFFAEBCE3FBBB0F1455 /* Pods-What's Bumpin'UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-What's Bumpin'UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AB4FC4383185204945598B836C3743D4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3BB334D9E237E784657824BEBF7B8A8 /* Pods_What_s_Bumpin_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_What_s_Bumpin_Tests.framework; path = "Pods-What's Bumpin'Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C65D51575C1317E185D06D1DD231FC93 /* Pods-What's Bumpin'UITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-What's Bumpin'UITests-frameworks.sh"; sourceTree = "<group>"; };
+		C712C91E510572571D6BE7911A70CB55 /* Pods-What's Bumpin'UITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-What's Bumpin'UITests-resources.sh"; sourceTree = "<group>"; };
+		CA9245AB5B86A5BCD1E0D3BF7079D64B /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D184AE4AA71530D4E363ADE80C3CFA48 /* Pods-What's Bumpin'Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-What's Bumpin'Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1DBCD0071D70866EBEFA8E983E0A2FE /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		DA9DE76BE130C0FE819F52B14807D4D6 /* Pods-What's Bumpin'UITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-What's Bumpin'UITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		DC8A44C464003B42118E9DB323A9A11C /* Pods_What_s_Bumpin_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_What_s_Bumpin_UITests.framework; path = "Pods-What's Bumpin'UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA84C7127F31AFDE9B808F5C099E8326 /* Pods-What's Bumpin'Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-What's Bumpin'Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F0FF66EE5BCB0E57F2E7FCEE105B4997 /* Pods-What's Bumpin'UITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-What's Bumpin'UITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F17DBAA8BF3B5AD1201720E37E35D21B /* Pods-What's Bumpin'UITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-What's Bumpin'UITests-umbrella.h"; sourceTree = "<group>"; };
+		F769EDE7CC5A77CDBE3B2309AF3BD5FA /* GooglePlacePicker.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlacePicker.bundle; path = Frameworks/GooglePlacePicker.framework/Versions/A/Resources/GooglePlacePicker.bundle; sourceTree = "<group>"; };
+		F8567FFA809DD02B36CFB593922A14EA /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B14CD0096A5B22F14A3C9885F54103C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840DB03EC985AD3BD1413D403EF8A134 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CC0427976513C2004BCB7CADF5BFCA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7228427D61EBFAEB4D8CAE36A1A3B1D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC763CA4CBDC51FCF7232249865667B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6108DB72F0DC1C4DA6A1922CEA5018C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		057612C31241123A1B53E2F8FEE23AB0 /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				8BA44F82F96D164DA342FB09A0BEE150 /* Frameworks */,
+				9595338FF99D6E406412D70BB160C308 /* Resources */,
+			);
+			name = GooglePlaces;
+			path = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		24E6408847EA4697EC99A3C22F9B2F8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA9245AB5B86A5BCD1E0D3BF7079D64B /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		45A6375AD18305E8BA7B79AD1BE61E9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BCCCA295DEE22197B0C283775AB5A26 /* GoogleMaps.framework */,
+				1117A6D1FE68A6F983D560933AF5E265 /* GoogleMapsCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7A999BD5B4C2C01904FC59776164FBE1 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				45A6375AD18305E8BA7B79AD1BE61E9D /* Frameworks */,
+				24E6408847EA4697EC99A3C22F9B2F8E /* Resources */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				C62832EC902B481843EFC870F9D95CC2 /* Pods */,
+				8DEF134C427498D9673C1A3A2E8CC25D /* Products */,
+				B5CA1E1E31491DBAE9ECE6698C640A4B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		882896EF678C5A3D8D57CE6D33973602 /* Pods-What's Bumpin'UITests */ = {
+			isa = PBXGroup;
+			children = (
+				077C66FFAD4CE2915EB6C7DF4458B303 /* Info.plist */,
+				0267BB8E882D47E773EFB3B56ED3D17F /* Pods-What's Bumpin'UITests.modulemap */,
+				F0FF66EE5BCB0E57F2E7FCEE105B4997 /* Pods-What's Bumpin'UITests-acknowledgements.markdown */,
+				DA9DE76BE130C0FE819F52B14807D4D6 /* Pods-What's Bumpin'UITests-acknowledgements.plist */,
+				252BEC41ADC73D9CFF780EBAB1A487E4 /* Pods-What's Bumpin'UITests-dummy.m */,
+				C65D51575C1317E185D06D1DD231FC93 /* Pods-What's Bumpin'UITests-frameworks.sh */,
+				C712C91E510572571D6BE7911A70CB55 /* Pods-What's Bumpin'UITests-resources.sh */,
+				F17DBAA8BF3B5AD1201720E37E35D21B /* Pods-What's Bumpin'UITests-umbrella.h */,
+				AADCAECFE53A0AFFAEBCE3FBBB0F1455 /* Pods-What's Bumpin'UITests.debug.xcconfig */,
+				8751FD899351F5F71C80053CF05DB6BE /* Pods-What's Bumpin'UITests.release.xcconfig */,
+			);
+			name = "Pods-What's Bumpin'UITests";
+			path = "Target Support Files/Pods-What's Bumpin'UITests";
+			sourceTree = "<group>";
+		};
+		8BA44F82F96D164DA342FB09A0BEE150 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				955D3A22EB34AB333524A949DC729F6B /* GooglePlaces.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8DEF134C427498D9673C1A3A2E8CC25D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0A383256F0D1E2026625474E06ABE /* Pods_What_s_Bumpin_.framework */,
+				C3BB334D9E237E784657824BEBF7B8A8 /* Pods_What_s_Bumpin_Tests.framework */,
+				DC8A44C464003B42118E9DB323A9A11C /* Pods_What_s_Bumpin_UITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8FFA7EAE118844748AD9685060A6B673 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FD4ED290151C28ABCF7A3EA0217355EB /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		9335B78F64E389AD6BD28E5033911D2C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F769EDE7CC5A77CDBE3B2309AF3BD5FA /* GooglePlacePicker.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9595338FF99D6E406412D70BB160C308 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F8567FFA809DD02B36CFB593922A14EA /* GooglePlaces.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C0A1FBBD02B7528347BC7FB84DE24F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07790BD46C0A51AE9AF086D8F62242CC /* GooglePlacePicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A379F4ACD423F1AAA5F4946A9901ED9E /* Pods-What's Bumpin' */ = {
+			isa = PBXGroup;
+			children = (
+				36B5E4D118B8CDD6962B36A7A9BC9F2E /* Info.plist */,
+				6EB8BDBBB80D1B9CED8C5FD7D5117F25 /* Pods-What's Bumpin'.modulemap */,
+				8BFABCE162719C33F5B73426DFA5FE8D /* Pods-What's Bumpin'-acknowledgements.markdown */,
+				1F7B3255BC6A2D4E7E7735DF2F91FF25 /* Pods-What's Bumpin'-acknowledgements.plist */,
+				40FB05980C7EB353A17031A7A5026F4C /* Pods-What's Bumpin'-dummy.m */,
+				8D1E039A3E897D77639A5014474EF281 /* Pods-What's Bumpin'-frameworks.sh */,
+				9719AA9F94D86C1E302DC09D41AB3824 /* Pods-What's Bumpin'-resources.sh */,
+				649047FF69AE93F370ACD57AB5E46D3E /* Pods-What's Bumpin'-umbrella.h */,
+				507E1D82E604116AD28D538119F3D371 /* Pods-What's Bumpin'.debug.xcconfig */,
+				89756433F235540E2B65CF6A198036CF /* Pods-What's Bumpin'.release.xcconfig */,
+			);
+			name = "Pods-What's Bumpin'";
+			path = "Target Support Files/Pods-What's Bumpin'";
+			sourceTree = "<group>";
+		};
+		B5CA1E1E31491DBAE9ECE6698C640A4B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A379F4ACD423F1AAA5F4946A9901ED9E /* Pods-What's Bumpin' */,
+				CE30C0EFB26622CF0A070E899F9A97FD /* Pods-What's Bumpin'Tests */,
+				882896EF678C5A3D8D57CE6D33973602 /* Pods-What's Bumpin'UITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C62832EC902B481843EFC870F9D95CC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5C0912CEC7444CFF51EFFE502270519 /* GoogleMaps */,
+				CCA175DF4D87459CA14C4E01BCFDEF95 /* GooglePlacePicker */,
+				057612C31241123A1B53E2F8FEE23AB0 /* GooglePlaces */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CCA175DF4D87459CA14C4E01BCFDEF95 /* GooglePlacePicker */ = {
+			isa = PBXGroup;
+			children = (
+				9C0A1FBBD02B7528347BC7FB84DE24F5 /* Frameworks */,
+				9335B78F64E389AD6BD28E5033911D2C /* Resources */,
+			);
+			name = GooglePlacePicker;
+			path = GooglePlacePicker;
+			sourceTree = "<group>";
+		};
+		CE30C0EFB26622CF0A070E899F9A97FD /* Pods-What's Bumpin'Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AB4FC4383185204945598B836C3743D4 /* Info.plist */,
+				0EFA0A50F0D89EE92CEA177190A81214 /* Pods-What's Bumpin'Tests.modulemap */,
+				16AE924BE0D0E3EB11ED717448F91052 /* Pods-What's Bumpin'Tests-acknowledgements.markdown */,
+				EA84C7127F31AFDE9B808F5C099E8326 /* Pods-What's Bumpin'Tests-acknowledgements.plist */,
+				A93C1E93AF2328A472ED6D2EA9C06B0D /* Pods-What's Bumpin'Tests-dummy.m */,
+				572BF5E8942D47BAAFF4649BEFECA3C9 /* Pods-What's Bumpin'Tests-frameworks.sh */,
+				AA941530B513206380FDD8D5141C1CD7 /* Pods-What's Bumpin'Tests-resources.sh */,
+				3DE42C6F99D86D8ABEFEC98ECA495055 /* Pods-What's Bumpin'Tests-umbrella.h */,
+				D184AE4AA71530D4E363ADE80C3CFA48 /* Pods-What's Bumpin'Tests.debug.xcconfig */,
+				6F434E8AC805E8D8C5C01FCBC37131A0 /* Pods-What's Bumpin'Tests.release.xcconfig */,
+			);
+			name = "Pods-What's Bumpin'Tests";
+			path = "Target Support Files/Pods-What's Bumpin'Tests";
+			sourceTree = "<group>";
+		};
+		E5C0912CEC7444CFF51EFFE502270519 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				8FFA7EAE118844748AD9685060A6B673 /* Base */,
+				7A999BD5B4C2C01904FC59776164FBE1 /* Maps */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		FD4ED290151C28ABCF7A3EA0217355EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1DBCD0071D70866EBEFA8E983E0A2FE /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		34BC8EDDD7B3BB90AC400AB3379382C4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA0F1CF5D36CF6C41DD022BC6015D6F1 /* Pods-What's Bumpin'UITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41CA034A94C3626EB5786950669FAF6C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A7EDB7753F6FDB613EE4E08147CB802 /* Pods-What's Bumpin'-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAC74EDF624072228DE490AF75A5528F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7F856951EBB0400499C63F401427DA9 /* Pods-What's Bumpin'Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9DD6DE129540A33ED0A74DDF9C84AA9A /* Pods-What's Bumpin'UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69271EE4E271B05892CCA82C695EA1F4 /* Build configuration list for PBXNativeTarget "Pods-What's Bumpin'UITests" */;
+			buildPhases = (
+				106E0C4207B03BE240F264A3D9B83D84 /* Sources */,
+				EC763CA4CBDC51FCF7232249865667B9 /* Frameworks */,
+				34BC8EDDD7B3BB90AC400AB3379382C4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-What's Bumpin'UITests";
+			productName = "Pods-What's Bumpin'UITests";
+			productReference = DC8A44C464003B42118E9DB323A9A11C /* Pods_What_s_Bumpin_UITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CDD08FA60EF5DE91E696EDD43C918E38 /* Pods-What's Bumpin'Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6405DBE4966994C929B23A5E2AE623D /* Build configuration list for PBXNativeTarget "Pods-What's Bumpin'Tests" */;
+			buildPhases = (
+				804294CD21E908E3C6E4712867DC2B0A /* Sources */,
+				6B14CD0096A5B22F14A3C9885F54103C /* Frameworks */,
+				AAC74EDF624072228DE490AF75A5528F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-What's Bumpin'Tests";
+			productName = "Pods-What's Bumpin'Tests";
+			productReference = C3BB334D9E237E784657824BEBF7B8A8 /* Pods_What_s_Bumpin_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DA89C7669C0284C36B9F865B12C0C1C9 /* Pods-What's Bumpin' */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F912809E7E42581C86C72A76DE466640 /* Build configuration list for PBXNativeTarget "Pods-What's Bumpin'" */;
+			buildPhases = (
+				FBFA35C4B5CF84C94F8BBF0778A73442 /* Sources */,
+				7CC0427976513C2004BCB7CADF5BFCA3 /* Frameworks */,
+				41CA034A94C3626EB5786950669FAF6C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-What's Bumpin'";
+			productName = "Pods-What's Bumpin'";
+			productReference = A4C0A383256F0D1E2026625474E06ABE /* Pods_What_s_Bumpin_.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 8DEF134C427498D9673C1A3A2E8CC25D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA89C7669C0284C36B9F865B12C0C1C9 /* Pods-What's Bumpin' */,
+				CDD08FA60EF5DE91E696EDD43C918E38 /* Pods-What's Bumpin'Tests */,
+				9DD6DE129540A33ED0A74DDF9C84AA9A /* Pods-What's Bumpin'UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		106E0C4207B03BE240F264A3D9B83D84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5108F7D893C6B12E4944422E19597E02 /* Pods-What's Bumpin'UITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		804294CD21E908E3C6E4712867DC2B0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D34C6595ACCBF24419303246E3649DD /* Pods-What's Bumpin'Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBFA35C4B5CF84C94F8BBF0778A73442 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC24BCFB2276116EC269D619D6EB82BB /* Pods-What's Bumpin'-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0580B4FE53B6008D8F1D0A930331005D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 507E1D82E604116AD28D538119F3D371 /* Pods-What's Bumpin'.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-What's Bumpin'/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_What_s_Bumpin_;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0F3DE717C40940C1B87FEE0FA029C2BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8751FD899351F5F71C80053CF05DB6BE /* Pods-What's Bumpin'UITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-What's Bumpin'UITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_What_s_Bumpin_UITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		362362E428D227C5EB2673893BCEB46E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D184AE4AA71530D4E363ADE80C3CFA48 /* Pods-What's Bumpin'Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-What's Bumpin'Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-What's Bumpin'Tests/Pods-What's Bumpin'Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_What_s_Bumpin_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3CFF5ABC0F79B33C1639E1B3D97B2624 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F434E8AC805E8D8C5C01FCBC37131A0 /* Pods-What's Bumpin'Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-What's Bumpin'Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-What's Bumpin'Tests/Pods-What's Bumpin'Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_What_s_Bumpin_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3DAECF973424B543FFFFA29D3F57C395 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89756433F235540E2B65CF6A198036CF /* Pods-What's Bumpin'.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-What's Bumpin'/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_What_s_Bumpin_;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B8BD8096D2582980ACE77A414F7473E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AADCAECFE53A0AFFAEBCE3FBBB0F1455 /* Pods-What's Bumpin'UITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-What's Bumpin'UITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_What_s_Bumpin_UITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
+				B7324857C38B065FEB1EEE3105C2367A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69271EE4E271B05892CCA82C695EA1F4 /* Build configuration list for PBXNativeTarget "Pods-What's Bumpin'UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8BD8096D2582980ACE77A414F7473E0 /* Debug */,
+				0F3DE717C40940C1B87FEE0FA029C2BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6405DBE4966994C929B23A5E2AE623D /* Build configuration list for PBXNativeTarget "Pods-What's Bumpin'Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				362362E428D227C5EB2673893BCEB46E /* Debug */,
+				3CFF5ABC0F79B33C1639E1B3D97B2624 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F912809E7E42581C86C72A76DE466640 /* Build configuration list for PBXNativeTarget "Pods-What's Bumpin'" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0580B4FE53B6008D8F1D0A930331005D /* Debug */,
+				3DAECF973424B543FFFFA29D3F57C395 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
