@@ -11,8 +11,12 @@
 
 @interface Location : NSObject
 
+//methods
+-(id)initWithName:(NSString *)name bumps: (NSInteger)bumps coordinates: (CLLocationCoordinate2D) coordinates;
+
+//variables
 @property (strong, nonatomic) NSString *name;
-@property (nonatomic) NSInteger *bumps;
-@property (nonatomic) CLLocationCoordinate2D *coordinates;
+@property (nonatomic) NSInteger bumps;
+@property (nonatomic) CLLocationCoordinate2D coordinates;
 
 @end

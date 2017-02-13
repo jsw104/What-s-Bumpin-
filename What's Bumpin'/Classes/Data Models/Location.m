@@ -10,6 +10,15 @@
 
 @implementation Location
 
-
+-(id)initWithName:(NSString *)name bumps: (NSInteger)bumps coordinates: (CLLocationCoordinate2D) coordinates
+{
+    self = [super init];
+    if (self) {
+        self.name = name;
+        self.bumps = bumps;
+        self.coordinates = coordinates;
+    }
+    return self;
+}
 
 @end
