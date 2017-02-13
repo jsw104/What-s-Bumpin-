@@ -12,10 +12,12 @@
 @interface Location : NSObject
 
 //methods
--(id)initWithName:(NSString *)name bumps: (NSInteger)bumps coordinates: (CLLocationCoordinate2D) coordinates;
+-(id)initWithName:(NSString *)name bumps: (NSInteger)bumps coordinates: (CLLocationCoordinate2D) coordinates bio: (NSString *)description image: (UIImage *)image;
 
 //variables
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *bio;
+@property (strong, nonatomic) UIImage *image;
 @property (nonatomic) NSInteger bumps;
 @property (nonatomic) CLLocationCoordinate2D coordinates;
 

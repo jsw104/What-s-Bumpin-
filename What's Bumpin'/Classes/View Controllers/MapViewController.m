@@ -54,9 +54,9 @@
 
 - (NSArray <Location *> *) getLocations
 {
-    Location *l1 = [[Location alloc] initWithName:@"Corner Alley" bumps:222 coordinates:CLLocationCoordinate2DMake(-33.801, 151.200)];
-    Location *l2 = [[Location alloc] initWithName:@"The Jolly Scholar" bumps:87 coordinates:CLLocationCoordinate2DMake(-33.800, 151.201)];
-    Location *l3 = [[Location alloc] initWithName:@"Happy Dog" bumps:8 coordinates:CLLocationCoordinate2DMake(-33.801, 151.201)];
+    Location *l1 = [[Location alloc] initWithName:@"Corner Alley" bumps:222 coordinates:CLLocationCoordinate2DMake(-33.801, 151.200) bio:@"The hottest spot in town! Grab some friends and come swing by for a night of bowling and drinks!" image:[UIImage imageNamed:@"Corner Alley"]];
+    Location *l2 = [[Location alloc] initWithName:@"The Jolly Scholar" bumps:87 coordinates:CLLocationCoordinate2DMake(-33.800, 151.201) bio:@"" image:[UIImage imageNamed:@"Corner Alley"]];
+    Location *l3 = [[Location alloc] initWithName:@"Happy Dog" bumps:8 coordinates:CLLocationCoordinate2DMake(-33.801, 151.201) bio:@"" image:[UIImage imageNamed:@"Corner Alley"]];
     return [NSArray arrayWithObjects:l1, l2, l3, nil];
 }
 

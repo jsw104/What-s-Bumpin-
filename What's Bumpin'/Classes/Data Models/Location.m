@@ -10,13 +10,15 @@
 
 @implementation Location
 
--(id)initWithName:(NSString *)name bumps: (NSInteger)bumps coordinates: (CLLocationCoordinate2D) coordinates
+-(id)initWithName:(NSString *)name bumps: (NSInteger)bumps coordinates: (CLLocationCoordinate2D) coordinates bio: (NSString *)bio image: (UIImage *)image
 {
     self = [super init];
     if (self) {
         self.name = name;
         self.bumps = bumps;
         self.coordinates = coordinates;
+        self.bio = bio;
+        self.image = image;
     }
     return self;
 }

@@ -23,6 +23,7 @@
 		D0D0C2C11E5152E50027F2C6 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D0C2C01E5152E50027F2C6 /* Me.storyboard */; };
 		D0D0C2C41E51637D0027F2C6 /* WBTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D0C2C31E51637D0027F2C6 /* WBTabViewController.m */; };
 		D0D0C2C71E516E4F0027F2C6 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D0C2C61E516E4F0027F2C6 /* Location.m */; };
+		D0D0C2CA1E5179610027F2C6 /* LocationInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D0C2C91E5179610027F2C6 /* LocationInformationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		D0D0C2C31E51637D0027F2C6 /* WBTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTabViewController.m; sourceTree = "<group>"; };
 		D0D0C2C51E516E4F0027F2C6 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		D0D0C2C61E516E4F0027F2C6 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		D0D0C2C81E5179610027F2C6 /* LocationInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationInformationViewController.h; sourceTree = "<group>"; };
+		D0D0C2C91E5179610027F2C6 /* LocationInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationInformationViewController.m; sourceTree = "<group>"; };
 		DED8673A2BE4EB8CA732237B /* Pods-What's Bumpin'.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'.release.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -259,6 +262,8 @@
 				D0CBFB461E51458300E74769 /* HomeViewController.m */,
 				D0D0C2C21E51637D0027F2C6 /* WBTabViewController.h */,
 				D0D0C2C31E51637D0027F2C6 /* WBTabViewController.m */,
+				D0D0C2C81E5179610027F2C6 /* LocationInformationViewController.h */,
+				D0D0C2C91E5179610027F2C6 /* LocationInformationViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -559,6 +564,7 @@
 				D0D0C2C41E51637D0027F2C6 /* WBTabViewController.m in Sources */,
 				D0D0C2C71E516E4F0027F2C6 /* Location.m in Sources */,
 				D0CBFB471E51458300E74769 /* AppDelegate.m in Sources */,
+				D0D0C2CA1E5179610027F2C6 /* LocationInformationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
