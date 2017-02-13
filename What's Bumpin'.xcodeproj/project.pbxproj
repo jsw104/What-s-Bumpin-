@@ -11,7 +11,6 @@
 		33CFEEC52835C167E4A6CE68 /* Pods_What_s_Bumpin_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B70C85B7157927B578B7A8 /* Pods_What_s_Bumpin_UITests.framework */; };
 		33D8D8F2F765DE5FA5799025 /* Pods_What_s_Bumpin_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */; };
 		D0A6CB911E513F57001F7964 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CB901E513F57001F7964 /* main.m */; };
-		D0A6CB9D1E513F57001F7964 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CB9B1E513F57001F7964 /* Main.storyboard */; };
 		D0A6CB9F1E513F57001F7964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CB9E1E513F57001F7964 /* Assets.xcassets */; };
 		D0A6CBA21E513F57001F7964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CBA01E513F57001F7964 /* LaunchScreen.storyboard */; };
 		D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */; };
@@ -19,6 +18,10 @@
 		D0CBFB471E51458300E74769 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBFB3D1E51458300E74769 /* AppDelegate.m */; };
 		D0CBFB481E51458300E74769 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBFB441E51458300E74769 /* FirstViewController.m */; };
 		D0CBFB491E51458300E74769 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBFB461E51458300E74769 /* SecondViewController.m */; };
+		D0D0C2BD1E5152B40027F2C6 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D0C2BC1E5152B40027F2C6 /* Tabs.storyboard */; };
+		D0D0C2BF1E5152DA0027F2C6 /* Global.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D0C2BE1E5152DA0027F2C6 /* Global.storyboard */; };
+		D0D0C2C11E5152E50027F2C6 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D0C2C01E5152E50027F2C6 /* Me.storyboard */; };
+		D0D0C2C41E51637D0027F2C6 /* WBTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D0C2C31E51637D0027F2C6 /* WBTabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +52,6 @@
 		CF52779BDEAEFF54193BA1A1 /* Pods-What's Bumpin'UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D0A6CB8C1E513F57001F7964 /* What's Bumpin'.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Bumpin'.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CB901E513F57001F7964 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D0A6CB9C1E513F57001F7964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0A6CB9E1E513F57001F7964 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0A6CBA11E513F57001F7964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0A6CBA31E513F57001F7964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +67,11 @@
 		D0CBFB441E51458300E74769 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		D0CBFB451E51458300E74769 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		D0CBFB461E51458300E74769 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		D0D0C2BC1E5152B40027F2C6 /* Tabs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
+		D0D0C2BE1E5152DA0027F2C6 /* Global.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Global.storyboard; sourceTree = "<group>"; };
+		D0D0C2C01E5152E50027F2C6 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		D0D0C2C21E51637D0027F2C6 /* WBTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTabViewController.h; sourceTree = "<group>"; };
+		D0D0C2C31E51637D0027F2C6 /* WBTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTabViewController.m; sourceTree = "<group>"; };
 		DED8673A2BE4EB8CA732237B /* Pods-What's Bumpin'.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'.release.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,8 +151,8 @@
 		D0A6CB8E1E513F57001F7964 /* What's Bumpin' */ = {
 			isa = PBXGroup;
 			children = (
+				D0D0C2BB1E5152B40027F2C6 /* User Interface */,
 				D0CBFB391E51458300E74769 /* Classes */,
-				D0A6CB9B1E513F57001F7964 /* Main.storyboard */,
 				D0A6CB9E1E513F57001F7964 /* Assets.xcassets */,
 				D0A6CBA01E513F57001F7964 /* LaunchScreen.storyboard */,
 				D0A6CBA31E513F57001F7964 /* Info.plist */,
@@ -245,8 +252,20 @@
 				D0CBFB441E51458300E74769 /* FirstViewController.m */,
 				D0CBFB451E51458300E74769 /* SecondViewController.h */,
 				D0CBFB461E51458300E74769 /* SecondViewController.m */,
+				D0D0C2C21E51637D0027F2C6 /* WBTabViewController.h */,
+				D0D0C2C31E51637D0027F2C6 /* WBTabViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D0D0C2BB1E5152B40027F2C6 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				D0D0C2BC1E5152B40027F2C6 /* Tabs.storyboard */,
+				D0D0C2BE1E5152DA0027F2C6 /* Global.storyboard */,
+				D0D0C2C01E5152E50027F2C6 /* Me.storyboard */,
+			);
+			path = "User Interface";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,8 +382,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A6CBA21E513F57001F7964 /* LaunchScreen.storyboard in Resources */,
+				D0D0C2BF1E5152DA0027F2C6 /* Global.storyboard in Resources */,
+				D0D0C2C11E5152E50027F2C6 /* Me.storyboard in Resources */,
 				D0A6CB9F1E513F57001F7964 /* Assets.xcassets in Resources */,
-				D0A6CB9D1E513F57001F7964 /* Main.storyboard in Resources */,
+				D0D0C2BD1E5152B40027F2C6 /* Tabs.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +551,7 @@
 				D0CBFB481E51458300E74769 /* FirstViewController.m in Sources */,
 				D0CBFB491E51458300E74769 /* SecondViewController.m in Sources */,
 				D0A6CB911E513F57001F7964 /* main.m in Sources */,
+				D0D0C2C41E51637D0027F2C6 /* WBTabViewController.m in Sources */,
 				D0CBFB471E51458300E74769 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,14 +588,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D0A6CB9B1E513F57001F7964 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D0A6CB9C1E513F57001F7964 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D0A6CBA01E513F57001F7964 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

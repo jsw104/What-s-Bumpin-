@@ -20,6 +20,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [GMSPlacesClient provideAPIKey:@"AIzaSyCOsbVM_m0DuKFYIONb6YSIDDHajJQeMm0"];
     [GMSServices provideAPIKey:@"AIzaSyCGfDWhm0xSek1lcwhYSTc8RPh0G7g3s6k"];
+    //self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Tabs" bundle:nil];
+    //UINavigationController *tabController = storyboard.instantiateInitialViewController;
+    //self.window.rootViewController = tabController;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
