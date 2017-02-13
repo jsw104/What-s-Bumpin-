@@ -9,6 +9,7 @@
 #import "MapViewController.h"
 @import GooglePlaces;
 @import GoogleMaps;
+#import "Location.h"
 
 @interface MapViewController ()
 
@@ -32,6 +33,12 @@
     marker.snippet = @"Australia";
     marker.map = mapView;
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void) getLocations
+{
+    Location *l1 = [[Location alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning {
