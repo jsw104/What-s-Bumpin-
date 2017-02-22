@@ -13,7 +13,7 @@
 //class methods
 +(void)LoginWithUsername:(NSString *)username password:(NSString *)password completionBlock:(void (^)(User *, NSError *error))completion;
 +(void)RegisterWithUsername:(NSString *)username password:(NSString *)password completionBlock:(void (^)(Boolean success, NSError *error))completion;
-+(nullable id)getCurrentUser;
++(nullable User *)getCurrentUser;
 
 //instance methods
 -(void)setBio;

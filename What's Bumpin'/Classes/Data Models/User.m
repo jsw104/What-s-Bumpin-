@@ -12,7 +12,7 @@
 
 static User *currentUser;
 
-+(id)getCurrentUser
++(User *)getCurrentUser
 {
     return currentUser;
 }

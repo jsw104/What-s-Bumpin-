@@ -13,6 +13,7 @@
 		D03672D41E5D39F700A60F79 /* Bump.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672D31E5D39F700A60F79 /* Bump.m */; };
 		D03672D71E5D3B3900A60F79 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672D61E5D3B3900A60F79 /* User.m */; };
 		D03672DA1E5D485F00A60F79 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672D91E5D485F00A60F79 /* Message.m */; };
+		D03672DD1E5D6B5A00A60F79 /* MessageBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672DC1E5D6B5A00A60F79 /* MessageBoard.m */; };
 		D0A6CB911E513F57001F7964 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CB901E513F57001F7964 /* main.m */; };
 		D0A6CB9F1E513F57001F7964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CB9E1E513F57001F7964 /* Assets.xcassets */; };
 		D0A6CBA21E513F57001F7964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CBA01E513F57001F7964 /* LaunchScreen.storyboard */; };
@@ -61,6 +62,8 @@
 		D03672D61E5D3B3900A60F79 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		D03672D81E5D485F00A60F79 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		D03672D91E5D485F00A60F79 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		D03672DB1E5D6B5A00A60F79 /* MessageBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageBoard.h; sourceTree = "<group>"; };
+		D03672DC1E5D6B5A00A60F79 /* MessageBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBoard.m; sourceTree = "<group>"; };
 		D0A6CB8C1E513F57001F7964 /* What's Bumpin'.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Bumpin'.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CB901E513F57001F7964 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0A6CB9E1E513F57001F7964 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -264,6 +267,8 @@
 				D03672D61E5D3B3900A60F79 /* User.m */,
 				D03672D81E5D485F00A60F79 /* Message.h */,
 				D03672D91E5D485F00A60F79 /* Message.m */,
+				D03672DB1E5D6B5A00A60F79 /* MessageBoard.h */,
+				D03672DC1E5D6B5A00A60F79 /* MessageBoard.m */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -578,6 +583,7 @@
 				D03672D71E5D3B3900A60F79 /* User.m in Sources */,
 				D0A6CB911E513F57001F7964 /* main.m in Sources */,
 				D0D0C2C41E51637D0027F2C6 /* WBTabViewController.m in Sources */,
+				D03672DD1E5D6B5A00A60F79 /* MessageBoard.m in Sources */,
 				D0D0C2C71E516E4F0027F2C6 /* Location.m in Sources */,
 				D03672D41E5D39F700A60F79 /* Bump.m in Sources */,
 				D03672DA1E5D485F00A60F79 /* Message.m in Sources */,

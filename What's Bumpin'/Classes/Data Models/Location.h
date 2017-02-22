@@ -10,13 +10,19 @@
 @import GooglePlaces;
 #import "User.h"
 #import "Bump.h"
+#import "MessageBoard.h"
 
 @interface Location : GMSPlace
 
-//methods
-- (void)bump:(User *)user;
+//static methods
++ (void)getLocationsWithRadius: (double)radius minimumBumps: (int)minBumps completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion;
+
+//instance methods
+- (void)bump;
+- (int)getBumpCountBetween:(NSDate *)earlierDate and:(NSDate *)laterDate;
 
 //variables
-@property (strong, nonatomic) NSHashTable<Bump *>*bumps;
+@property (strong, nonatomic, readonly) NSHashTable<Bump *>*bumps;
+@property (strong, nonatomic, readonly) MessageBoard *messageBoard;
 
 @end
