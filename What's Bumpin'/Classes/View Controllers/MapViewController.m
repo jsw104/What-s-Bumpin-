@@ -58,7 +58,7 @@
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSLog(@"hi");
+    //display error message to the user
 }
 
 //potentially not thread safe... be careful here

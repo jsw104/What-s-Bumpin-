@@ -14,5 +14,6 @@
 @property (strong, nonatomic, nullable) NSString *username;
 @property (strong, nonatomic, nonnull) NSString *text;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (strong, nonatomic, nonnull) NSDate *date;
 
 @end
