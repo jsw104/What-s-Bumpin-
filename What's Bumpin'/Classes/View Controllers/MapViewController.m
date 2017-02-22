@@ -9,7 +9,6 @@
 #import "MapViewController.h"
 #import "LocationInformationViewController.h"
 @import GooglePlaces;
-@import GoogleMaps;
 #import "Location.h"
 
 @interface MapViewController () <CLLocationManagerDelegate>
@@ -21,8 +20,6 @@
 
 @implementation MapViewController
 
-CLLocationManager *locationManager;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.80
@@ -33,19 +30,13 @@ CLLocationManager *locationManager;
     self.view = self.mapView;
     
     //setup location manager
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate=self;
-    locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-    locationManager.distanceFilter=kCLDistanceFilterNone;
-    [locationManager requestWhenInUseAuthorization];
-    [locationManager startMonitoringSignificantLocationChanges];
-    [locationManager startUpdatingLocation];
-    
-    // Creates a marker in the center of the map.
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(-33.800, 151.200);
-    marker.title = @"Me";
-    marker.map = self.mapView;
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate=self;
+    self.locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter=kCLDistanceFilterNone;
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager startMonitoringSignificantLocationChanges];
+    [self.locationManager startUpdatingLocation];
     
     //adds dummy locations
     [self addLocationsToMap];
@@ -60,9 +51,14 @@ CLLocationManager *locationManager;
     if (abs(howRecent) < 15.0) {
         // Update your marker on your map using location.coordinate by using the GMSCameraUpdate object
         
-        GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:6];
+        GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:20];
         [self.mapView animateWithCameraUpdate:locationUpdate];
     }
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"hi");
 }
 
 //potentially not thread safe... be careful here

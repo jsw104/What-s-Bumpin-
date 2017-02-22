@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@import GoogleMaps;
 
 @interface MapViewController : UIViewController
 
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
