@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @import GooglePlaces;
 #import "User.h"
+#import "Bump.h"
 
 @interface Location : GMSPlace
 
@@ -16,6 +17,6 @@
 - (void)bump:(User *)user;
 
 //variables
-@property (strong, nonatomic) NSHashTable *bumps;
+@property (strong, nonatomic) NSHashTable<Bump *>*bumps;
 
 @end

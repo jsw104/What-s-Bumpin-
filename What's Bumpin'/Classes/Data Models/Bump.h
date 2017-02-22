@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 @import GooglePlaces;
 
+NS_ASSUME_NONNULL_BEGIN
 @interface Bump : NSObject
+
+-(id)initWithUsername: (NSString *)username locationWithCoordinate:(CLLocationCoordinate2D) coordinate;
 
 //variables
 @property (strong, nonatomic) NSString *username;
-@property (nonatomic) CLLocationCoordinate2D *coordinate;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic) NSDate *date;
 
 @end
+NS_ASSUME_NONNULL_END

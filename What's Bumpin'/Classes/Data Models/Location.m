@@ -10,9 +10,14 @@
 
 @implementation Location
 
-- (void)bump
+- (void)bump:(User *)user
 {
-    
+    Bump *newBump = [[Bump alloc] initWithUsername:user.username locationWithCoordinate:self.coordinate];
+    if ([self.bumps containsObject:newBump]) {
+        
+    }
 }
+
+
 
 @end
