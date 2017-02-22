@@ -21,8 +21,4 @@
 - (void)bump;
 - (int)getBumpCountBetween:(NSDate *)earlierDate and:(NSDate *)laterDate;
 
-//variables
-@property (strong, nonatomic, readonly) NSHashTable<Bump *>*bumps;
-@property (strong, nonatomic, readonly) MessageBoard *messageBoard;
-
 @end

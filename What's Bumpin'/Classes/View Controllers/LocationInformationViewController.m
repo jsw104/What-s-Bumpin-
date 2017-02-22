@@ -23,9 +23,9 @@
 - (void)configureViewContent
 {
     self.title = self.location.name;
-    self.locationImageView.image = self.location.image;
-    self.locationBioLabel.text = self.location.bio;
-    self.locationURLLabel.text = @"www.corneralley.com";
+//    self.locationImageView.image = self.location.image;
+//    self.locationBioLabel.text = self.location.bio;
+    self.locationURLLabel.text = self.location.website;
 }
 
 - (void)didReceiveMemoryWarning {

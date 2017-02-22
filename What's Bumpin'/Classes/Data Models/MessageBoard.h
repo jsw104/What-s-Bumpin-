@@ -12,5 +12,6 @@
 @interface MessageBoard : NSObject
 
 @property (strong, nonatomic) NSMutableArray<Message *> *messages;
+-(void)loadAllMessages;
 
 @end

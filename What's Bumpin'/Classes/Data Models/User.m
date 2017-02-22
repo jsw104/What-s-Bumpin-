@@ -30,4 +30,14 @@ static User *currentUser;
     return completion(false, NULL);
 }
 
+-(void)setBio:(NSString *)bio
+{
+    self.bio = bio;
+}
+
+-(void)saveInBackground
+{
+    
+}
+
 @end

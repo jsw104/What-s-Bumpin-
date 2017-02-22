@@ -11,9 +11,8 @@
 
 @interface Message : NSObject
 
-
 @property (strong, nonatomic, nullable) NSString *username;
 @property (strong, nonatomic, nonnull) NSString *text;
-@property (strong, nonatomic, nonnull) CLLocationCoordinate2D *coordinate;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 
 @end

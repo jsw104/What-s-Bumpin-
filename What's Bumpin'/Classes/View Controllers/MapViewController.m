@@ -12,7 +12,7 @@
 @import GoogleMaps;
 #import "Location.h"
 
-@interface MapViewController ()
+@interface MapViewController () <CLLocationManagerDelegate>
 
 @property GMSMapView *mapView;
 @property NSArray *locations;
@@ -20,6 +20,8 @@
 @end
 
 @implementation MapViewController
+
+CLLocationManager *locationManager;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,6 +31,15 @@
     self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     self.mapView.myLocationEnabled = YES;
     self.view = self.mapView;
+    
+    //setup location manager
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate=self;
+    locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+    locationManager.distanceFilter=kCLDistanceFilterNone;
+    [locationManager requestWhenInUseAuthorization];
+    [locationManager startMonitoringSignificantLocationChanges];
+    [locationManager startUpdatingLocation];
     
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
@@ -40,6 +51,19 @@
     [self addLocationsToMap];
 }
 
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations {
+    // If it's a relatively recent event, turn off updates to save power.
+    CLLocation* location = [locations lastObject];
+    NSDate* eventDate = location.timestamp;
+    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+    if (abs(howRecent) < 15.0) {
+        // Update your marker on your map using location.coordinate by using the GMSCameraUpdate object
+        
+        GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:6];
+        [self.mapView animateWithCameraUpdate:locationUpdate];
+    }
+}
 
 //potentially not thread safe... be careful here
 - (void)addLocationsToMap
@@ -48,20 +72,17 @@
     for(Location *location in self.locations)
     {
         GMSMarker *marker = [[GMSMarker alloc] init];
-        marker.position = location.coordinates;
+        marker.position = location.coordinate;
         marker.title = location.name;
-        marker.snippet = [NSString stringWithFormat:@"%d bumps", location.bumps];
-        marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:location.bumps/255.0 blue:0 alpha:1]];
+        marker.snippet = [NSString stringWithFormat:@"%d bumps", [location getBumpCountBetween:[NSDate distantPast] and:[NSDate distantFuture]]];
+        marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:100/255.0 blue:0 alpha:1]];
         marker.map = self.mapView;
     }
 }
 
 - (void) getLocations
 {
-    Location *l1 = [[Location alloc] initWithName:@"Corner Alley" bumps:222 coordinates:CLLocationCoordinate2DMake(-33.801, 151.200) bio:@"The hottest spot in town! Grab some friends and come swing by for a night of bowling and drinks!" image:[UIImage imageNamed:@"Corner Alley"]];
-    Location *l2 = [[Location alloc] initWithName:@"The Jolly Scholar" bumps:87 coordinates:CLLocationCoordinate2DMake(-33.800, 151.201) bio:@"" image:[UIImage imageNamed:@"Corner Alley"]];
-    Location *l3 = [[Location alloc] initWithName:@"Happy Dog" bumps:8 coordinates:CLLocationCoordinate2DMake(-33.801, 151.201) bio:@"" image:[UIImage imageNamed:@"Corner Alley"]];
-    self.locations = [NSArray arrayWithObjects:l1, l2, l3, nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
