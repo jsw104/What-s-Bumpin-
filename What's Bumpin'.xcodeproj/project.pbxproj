@@ -10,6 +10,9 @@
 		2B2A68EE97CBE0B30E74BF07 /* Pods_What_s_Bumpin_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F25E83F9814DAE766B91F6C /* Pods_What_s_Bumpin_.framework */; };
 		33CFEEC52835C167E4A6CE68 /* Pods_What_s_Bumpin_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B70C85B7157927B578B7A8 /* Pods_What_s_Bumpin_UITests.framework */; };
 		33D8D8F2F765DE5FA5799025 /* Pods_What_s_Bumpin_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */; };
+		D03672D41E5D39F700A60F79 /* Bump.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672D31E5D39F700A60F79 /* Bump.m */; };
+		D03672D71E5D3B3900A60F79 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672D61E5D3B3900A60F79 /* User.m */; };
+		D03672DA1E5D485F00A60F79 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672D91E5D485F00A60F79 /* Message.m */; };
 		D0A6CB911E513F57001F7964 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CB901E513F57001F7964 /* main.m */; };
 		D0A6CB9F1E513F57001F7964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CB9E1E513F57001F7964 /* Assets.xcassets */; };
 		D0A6CBA21E513F57001F7964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CBA01E513F57001F7964 /* LaunchScreen.storyboard */; };
@@ -52,6 +55,12 @@
 		810ADA41F3B5BCF4A2DF8D92 /* Pods-What's Bumpin'Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'Tests/Pods-What's Bumpin'Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_s_Bumpin_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF52779BDEAEFF54193BA1A1 /* Pods-What's Bumpin'UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D03672D21E5D39F700A60F79 /* Bump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bump.h; sourceTree = "<group>"; };
+		D03672D31E5D39F700A60F79 /* Bump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bump.m; sourceTree = "<group>"; };
+		D03672D51E5D3B3900A60F79 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		D03672D61E5D3B3900A60F79 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D03672D81E5D485F00A60F79 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		D03672D91E5D485F00A60F79 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		D0A6CB8C1E513F57001F7964 /* What's Bumpin'.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Bumpin'.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CB901E513F57001F7964 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0A6CB9E1E513F57001F7964 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -249,6 +258,12 @@
 			children = (
 				D0D0C2C51E516E4F0027F2C6 /* Location.h */,
 				D0D0C2C61E516E4F0027F2C6 /* Location.m */,
+				D03672D21E5D39F700A60F79 /* Bump.h */,
+				D03672D31E5D39F700A60F79 /* Bump.m */,
+				D03672D51E5D3B3900A60F79 /* User.h */,
+				D03672D61E5D3B3900A60F79 /* User.m */,
+				D03672D81E5D485F00A60F79 /* Message.h */,
+				D03672D91E5D485F00A60F79 /* Message.m */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -560,9 +575,12 @@
 			files = (
 				D0CBFB481E51458300E74769 /* MapViewController.m in Sources */,
 				D0CBFB491E51458300E74769 /* HomeViewController.m in Sources */,
+				D03672D71E5D3B3900A60F79 /* User.m in Sources */,
 				D0A6CB911E513F57001F7964 /* main.m in Sources */,
 				D0D0C2C41E51637D0027F2C6 /* WBTabViewController.m in Sources */,
 				D0D0C2C71E516E4F0027F2C6 /* Location.m in Sources */,
+				D03672D41E5D39F700A60F79 /* Bump.m in Sources */,
+				D03672DA1E5D485F00A60F79 /* Message.m in Sources */,
 				D0CBFB471E51458300E74769 /* AppDelegate.m in Sources */,
 				D0D0C2CA1E5179610027F2C6 /* LocationInformationViewController.m in Sources */,
 			);

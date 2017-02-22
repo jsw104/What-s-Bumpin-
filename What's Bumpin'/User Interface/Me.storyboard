@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Home" width="86" height="76"/>
+        <image name="Home" width="30" height="30"/>
     </resources>
 </document>

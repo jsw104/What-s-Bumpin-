@@ -8,17 +8,14 @@
 
 #import <Foundation/Foundation.h>
 @import GooglePlaces;
+#import "User.h"
 
-@interface Location : NSObject
+@interface Location : GMSPlace
 
 //methods
--(id)initWithName:(NSString *)name bumps: (NSInteger)bumps coordinates: (CLLocationCoordinate2D) coordinates bio: (NSString *)description image: (UIImage *)image;
+- (void)bump:(User *)user;
 
 //variables
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *bio;
-@property (strong, nonatomic) UIImage *image;
-@property (nonatomic) NSInteger bumps;
-@property (nonatomic) CLLocationCoordinate2D coordinates;
+@property (strong, nonatomic) NSHashTable *bumps;
 
 @end
