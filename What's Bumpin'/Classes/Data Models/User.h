@@ -11,15 +11,15 @@
 @interface User : NSObject
 
 //class methods
-+(void)LoginWithUsername:(NSString *)username password:(NSString *)password completionBlock:(void (^)(User *, NSError *error))completion;
-+(void)RegisterWithUsername:(NSString *)username password:(NSString *)password completionBlock:(void (^)(Boolean success, NSError *error))completion;
++(void)LoginWithUsername:(NSString *)email password:(NSString *)password completionBlock:(void (^)(User *, NSError *error))completion;
 +(nullable User *)getCurrentUser;
 
 //instance methods
 -(void)setBio;
 
 //variables
-@property (strong, nonatomic, nonnull) NSString *username;
+@property (nonatomic) int userID;
+@property (strong, nonatomic, nullable) NSString *email;
 @property (strong, nonatomic, nullable) NSString *bio;
 
 @end

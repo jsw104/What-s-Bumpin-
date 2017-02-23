@@ -55,7 +55,7 @@ MessageBoard *messageBoard;
 
 - (void)bumpPrivate:(User *)user
 {
-    Bump *newBump = [[Bump alloc] initWithUsername:user.username locationWithCoordinate:self.coordinate];
+    Bump *newBump = [[Bump alloc] initWithUsername:user.email locationWithCoordinate:self.coordinate];
     
     //TODO might want to use different data structure here:
     

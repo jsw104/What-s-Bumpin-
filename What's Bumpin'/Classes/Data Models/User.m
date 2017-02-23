@@ -24,12 +24,6 @@ static User *currentUser;
     return completion(NULL, NULL);
 }
 
-+(void)RegisterWithUsername:(NSString *)username password:(NSString *)password completionBlock:(void (^)(Boolean success, NSError *error))completion
-{
-    
-    return completion(false, NULL);
-}
-
 -(void)setBio:(NSString *)bio
 {
     self.bio = bio;
