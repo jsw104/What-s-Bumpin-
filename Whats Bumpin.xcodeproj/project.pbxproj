@@ -64,7 +64,7 @@
 		D03672D91E5D485F00A60F79 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		D03672DB1E5D6B5A00A60F79 /* MessageBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageBoard.h; sourceTree = "<group>"; };
 		D03672DC1E5D6B5A00A60F79 /* MessageBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBoard.m; sourceTree = "<group>"; };
-		D0A6CB8C1E513F57001F7964 /* What's Bumpin'.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Bumpin'.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A6CB8C1E513F57001F7964 /* Whats Bumpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Whats Bumpin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CB901E513F57001F7964 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0A6CB9E1E513F57001F7964 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0A6CBA11E513F57001F7964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 		D0A6CB8D1E513F57001F7964 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0A6CB8C1E513F57001F7964 /* What's Bumpin'.app */,
+				D0A6CB8C1E513F57001F7964 /* Whats Bumpin.app */,
 				D0A6CBA81E513F58001F7964 /* What's Bumpin'Tests.xctest */,
 				D0A6CBB31E513F58001F7964 /* What's Bumpin'UITests.xctest */,
 			);
@@ -301,9 +301,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D0A6CB8B1E513F57001F7964 /* What's Bumpin' */ = {
+		D0A6CB8B1E513F57001F7964 /* Whats Bumpin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0A6CBBC1E513F58001F7964 /* Build configuration list for PBXNativeTarget "What's Bumpin'" */;
+			buildConfigurationList = D0A6CBBC1E513F58001F7964 /* Build configuration list for PBXNativeTarget "Whats Bumpin" */;
 			buildPhases = (
 				1C4036EF19CFA7259004372B /* [CP] Check Pods Manifest.lock */,
 				D0A6CB881E513F57001F7964 /* Sources */,
@@ -316,9 +316,9 @@
 			);
 			dependencies = (
 			);
-			name = "What's Bumpin'";
+			name = "Whats Bumpin";
 			productName = "What's Bumpin'";
-			productReference = D0A6CB8C1E513F57001F7964 /* What's Bumpin'.app */;
+			productReference = D0A6CB8C1E513F57001F7964 /* Whats Bumpin.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D0A6CBA71E513F58001F7964 /* What's Bumpin'Tests */ = {
@@ -386,7 +386,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D0A6CB871E513F57001F7964 /* Build configuration list for PBXProject "What's Bumpin'" */;
+			buildConfigurationList = D0A6CB871E513F57001F7964 /* Build configuration list for PBXProject "Whats Bumpin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -399,7 +399,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D0A6CB8B1E513F57001F7964 /* What's Bumpin' */,
+				D0A6CB8B1E513F57001F7964 /* Whats Bumpin */,
 				D0A6CBA71E513F58001F7964 /* What's Bumpin'Tests */,
 				D0A6CBB21E513F58001F7964 /* What's Bumpin'UITests */,
 			);
@@ -613,12 +613,12 @@
 /* Begin PBXTargetDependency section */
 		D0A6CBAA1E513F58001F7964 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D0A6CB8B1E513F57001F7964 /* What's Bumpin' */;
+			target = D0A6CB8B1E513F57001F7964 /* Whats Bumpin */;
 			targetProxy = D0A6CBA91E513F58001F7964 /* PBXContainerItemProxy */;
 		};
 		D0A6CBB51E513F58001F7964 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D0A6CB8B1E513F57001F7964 /* What's Bumpin' */;
+			target = D0A6CB8B1E513F57001F7964 /* Whats Bumpin */;
 			targetProxy = D0A6CBB41E513F58001F7964 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -796,7 +796,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D0A6CB871E513F57001F7964 /* Build configuration list for PBXProject "What's Bumpin'" */ = {
+		D0A6CB871E513F57001F7964 /* Build configuration list for PBXProject "Whats Bumpin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0A6CBBA1E513F58001F7964 /* Debug */,
@@ -805,7 +805,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D0A6CBBC1E513F58001F7964 /* Build configuration list for PBXNativeTarget "What's Bumpin'" */ = {
+		D0A6CBBC1E513F58001F7964 /* Build configuration list for PBXNativeTarget "Whats Bumpin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0A6CBBD1E513F58001F7964 /* Debug */,

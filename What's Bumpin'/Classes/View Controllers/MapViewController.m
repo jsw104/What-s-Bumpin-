@@ -13,7 +13,6 @@
 
 @interface MapViewController () <CLLocationManagerDelegate>
 
-@property GMSMapView *mapView;
 @property NSArray *locations;
 
 @end
@@ -22,12 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.80
-                                                            longitude:151.20
-                                                                 zoom:20];
-    self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    self.mapView.myLocationEnabled = YES;
-    self.view = self.mapView;
+    
+    self.bumpButton.backgroundColor = [UIColor greenColor];
+    
+    self.mapView.myLocationEnabled=YES;
     
     //setup location manager
     self.locationManager = [[CLLocationManager alloc] init];
@@ -48,12 +45,13 @@
     CLLocation* location = [locations lastObject];
     NSDate* eventDate = location.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (abs(howRecent) < 15.0) {
+    if (abs(howRecent) < 1000.0) {
         // Update your marker on your map using location.coordinate by using the GMSCameraUpdate object
         
         GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:20];
         [self.mapView animateWithCameraUpdate:locationUpdate];
     }
+    [manager stopUpdatingLocation];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -64,21 +62,18 @@
 //potentially not thread safe... be careful here
 - (void)addLocationsToMap
 {
-    [self getLocations];
-    for(Location *location in self.locations)
-    {
-        GMSMarker *marker = [[GMSMarker alloc] init];
-        marker.position = location.coordinate;
-        marker.title = location.name;
-        marker.snippet = [NSString stringWithFormat:@"%d bumps", [location getBumpCountBetween:[NSDate distantPast] and:[NSDate distantFuture]]];
-        marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:100/255.0 blue:0 alpha:1]];
-        marker.map = self.mapView;
-    }
-}
-
-- (void) getLocations
-{
-    
+    [Location getLocationsWithRadius:10 minimumBumps:0 completionBlock:^(NSArray<Location *> *locations, NSError *error) {
+        self.locations = locations;
+        for(Location *location in self.locations)
+        {
+            GMSMarker *marker = [[GMSMarker alloc] init];
+            marker.position = location.coordinate;
+            marker.title = location.name;
+            marker.snippet = [NSString stringWithFormat:@"%d bumps", [location getBumpCountBetween:[NSDate distantPast] and:[NSDate distantFuture]]];
+            marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:100/255.0 blue:0 alpha:1]];
+            marker.map = self.mapView;
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

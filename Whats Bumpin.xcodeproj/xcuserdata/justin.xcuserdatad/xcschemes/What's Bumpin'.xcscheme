@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D0A6CB8B1E513F57001F7964"
-               BuildableName = "What&apos;s Bumpin&apos;.app"
-               BlueprintName = "What&apos;s Bumpin&apos;"
-               ReferencedContainer = "container:What&apos;s Bumpin&apos;.xcodeproj">
+               BuildableName = "Whats Bumpin.app"
+               BlueprintName = "Whats Bumpin"
+               ReferencedContainer = "container:Whats Bumpin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "D0A6CBA71E513F58001F7964"
                BuildableName = "What&apos;s Bumpin&apos;Tests.xctest"
                BlueprintName = "What&apos;s Bumpin&apos;Tests"
-               ReferencedContainer = "container:What&apos;s Bumpin&apos;.xcodeproj">
+               ReferencedContainer = "container:Whats Bumpin.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "D0A6CBB21E513F58001F7964"
                BuildableName = "What&apos;s Bumpin&apos;UITests.xctest"
                BlueprintName = "What&apos;s Bumpin&apos;UITests"
-               ReferencedContainer = "container:What&apos;s Bumpin&apos;.xcodeproj">
+               ReferencedContainer = "container:Whats Bumpin.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D0A6CB8B1E513F57001F7964"
-            BuildableName = "What&apos;s Bumpin&apos;.app"
-            BlueprintName = "What&apos;s Bumpin&apos;"
-            ReferencedContainer = "container:What&apos;s Bumpin&apos;.xcodeproj">
+            BuildableName = "Whats Bumpin.app"
+            BlueprintName = "Whats Bumpin"
+            ReferencedContainer = "container:Whats Bumpin.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D0A6CB8B1E513F57001F7964"
-            BuildableName = "What&apos;s Bumpin&apos;.app"
-            BlueprintName = "What&apos;s Bumpin&apos;"
-            ReferencedContainer = "container:What&apos;s Bumpin&apos;.xcodeproj">
+            BuildableName = "Whats Bumpin.app"
+            BlueprintName = "Whats Bumpin"
+            ReferencedContainer = "container:Whats Bumpin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D0A6CB8B1E513F57001F7964"
-            BuildableName = "What&apos;s Bumpin&apos;.app"
-            BlueprintName = "What&apos;s Bumpin&apos;"
-            ReferencedContainer = "container:What&apos;s Bumpin&apos;.xcodeproj">
+            BuildableName = "Whats Bumpin.app"
+            BlueprintName = "Whats Bumpin"
+            ReferencedContainer = "container:Whats Bumpin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

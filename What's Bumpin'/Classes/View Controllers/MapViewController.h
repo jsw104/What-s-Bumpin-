@@ -12,6 +12,8 @@
 @interface MapViewController : UIViewController
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (strong, nonatomic) IBOutlet GMSMapView *mapView;
+@property (strong, nonatomic) IBOutlet UIButton *bumpButton;
 
 @end
 
