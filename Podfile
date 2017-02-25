@@ -8,6 +8,7 @@ target 'What\'s Bumpin\'' do
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
+  pod 'pop'
 
   target 'What\'s Bumpin\'Tests' do
     inherit! :search_paths

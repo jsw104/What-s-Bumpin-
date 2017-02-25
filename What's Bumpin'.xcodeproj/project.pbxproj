@@ -14,6 +14,11 @@
 		D03672D71E5D3B3900A60F79 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672D61E5D3B3900A60F79 /* User.m */; };
 		D03672DA1E5D485F00A60F79 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672D91E5D485F00A60F79 /* Message.m */; };
 		D03672DD1E5D6B5A00A60F79 /* MessageBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672DC1E5D6B5A00A60F79 /* MessageBoard.m */; };
+		D08D31C91E6236B6002BB547 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08D31C41E6236B6002BB547 /* DesignableButton.swift */; };
+		D08D31CA1E6236B6002BB547 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08D31C51E6236B6002BB547 /* Spring.swift */; };
+		D08D31CB1E6236B6002BB547 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08D31C61E6236B6002BB547 /* SpringAnimation.swift */; };
+		D08D31CC1E6236B6002BB547 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08D31C71E6236B6002BB547 /* SpringButton.swift */; };
+		D08D31CD1E6236B6002BB547 /* WYMaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08D31C81E6236B6002BB547 /* WYMaterialButton.swift */; };
 		D0A6CB911E513F57001F7964 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CB901E513F57001F7964 /* main.m */; };
 		D0A6CB9F1E513F57001F7964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CB9E1E513F57001F7964 /* Assets.xcassets */; };
 		D0A6CBA21E513F57001F7964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CBA01E513F57001F7964 /* LaunchScreen.storyboard */; };
@@ -64,6 +69,11 @@
 		D03672D91E5D485F00A60F79 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		D03672DB1E5D6B5A00A60F79 /* MessageBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageBoard.h; sourceTree = "<group>"; };
 		D03672DC1E5D6B5A00A60F79 /* MessageBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBoard.m; sourceTree = "<group>"; };
+		D08D31C41E6236B6002BB547 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		D08D31C51E6236B6002BB547 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		D08D31C61E6236B6002BB547 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		D08D31C71E6236B6002BB547 /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
+		D08D31C81E6236B6002BB547 /* WYMaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYMaterialButton.swift; sourceTree = "<group>"; };
 		D0A6CB8C1E513F57001F7964 /* What's Bumpin'.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Bumpin'.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CB901E513F57001F7964 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D0A6CB9E1E513F57001F7964 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,6 +154,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D08D31C31E6236B6002BB547 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D08D31C41E6236B6002BB547 /* DesignableButton.swift */,
+				D08D31C51E6236B6002BB547 /* Spring.swift */,
+				D08D31C61E6236B6002BB547 /* SpringAnimation.swift */,
+				D08D31C71E6236B6002BB547 /* SpringButton.swift */,
+				D08D31C81E6236B6002BB547 /* WYMaterialButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		D0A6CB831E513F57001F7964 = {
 			isa = PBXGroup;
 			children = (
@@ -208,9 +230,9 @@
 		D0CBFB391E51458300E74769 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D08D31C31E6236B6002BB547 /* Buttons */,
 				D0CBFB3A1E51458300E74769 /* API */,
 				D0CBFB3B1E51458300E74769 /* App Delegate */,
-				D0CBFB3E1E51458300E74769 /* Buttons */,
 				D0CBFB3F1E51458300E74769 /* Cells */,
 				D0CBFB401E51458300E74769 /* Constants */,
 				D0CBFB411E51458300E74769 /* Data Models */,
@@ -233,13 +255,6 @@
 				D0CBFB3D1E51458300E74769 /* AppDelegate.m */,
 			);
 			path = "App Delegate";
-			sourceTree = "<group>";
-		};
-		D0CBFB3E1E51458300E74769 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Buttons;
 			sourceTree = "<group>";
 		};
 		D0CBFB3F1E51458300E74769 /* Cells */ = {
@@ -583,12 +598,17 @@
 				D03672D71E5D3B3900A60F79 /* User.m in Sources */,
 				D0A6CB911E513F57001F7964 /* main.m in Sources */,
 				D0D0C2C41E51637D0027F2C6 /* WBTabViewController.m in Sources */,
+				D08D31CA1E6236B6002BB547 /* Spring.swift in Sources */,
 				D03672DD1E5D6B5A00A60F79 /* MessageBoard.m in Sources */,
 				D0D0C2C71E516E4F0027F2C6 /* Location.m in Sources */,
+				D08D31CC1E6236B6002BB547 /* SpringButton.swift in Sources */,
 				D03672D41E5D39F700A60F79 /* Bump.m in Sources */,
 				D03672DA1E5D485F00A60F79 /* Message.m in Sources */,
 				D0CBFB471E51458300E74769 /* AppDelegate.m in Sources */,
+				D08D31CD1E6236B6002BB547 /* WYMaterialButton.swift in Sources */,
+				D08D31CB1E6236B6002BB547 /* SpringAnimation.swift in Sources */,
 				D0D0C2CA1E5179610027F2C6 /* LocationInformationViewController.m in Sources */,
+				D08D31C91E6236B6002BB547 /* DesignableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
