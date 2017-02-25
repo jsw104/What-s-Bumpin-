@@ -18,7 +18,54 @@
                     <view key="view" contentMode="scaleToFill" id="k0w-yr-eAL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMs-PI-7eu" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARo-fX-SQF" customClass="WYMaterialButton" customModule="What_s_Bumpin_" customModuleProvider="target">
+                                <rect key="frame" x="260" y="503" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KK9-eT-Mjg"/>
+                                    <constraint firstAttribute="width" constant="80" id="Z8B-8I-8Rl"/>
+                                </constraints>
+                                <state key="normal" title="Bump">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="materialColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="materialPressedColor">
+                                        <color key="value" red="0.26059591450000003" green="0.65490837989999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OMs-PI-7eu" firstAttribute="centerY" secondItem="k0w-yr-eAL" secondAttribute="centerY" id="0Ba-Tk-V4h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OMs-PI-7eu" secondAttribute="trailing" id="EDp-mn-VFb"/>
+                            <constraint firstItem="Ge9-XG-MM7" firstAttribute="top" secondItem="ARo-fX-SQF" secondAttribute="bottom" constant="8" id="Jf1-TE-Hic"/>
+                            <constraint firstItem="Ge9-XG-MM7" firstAttribute="top" secondItem="OMs-PI-7eu" secondAttribute="bottom" id="MBJ-ab-neb"/>
+                            <constraint firstItem="ARo-fX-SQF" firstAttribute="centerX" secondItem="k0w-yr-eAL" secondAttribute="centerX" id="N6D-Cr-D3M"/>
+                            <constraint firstItem="OMs-PI-7eu" firstAttribute="top" secondItem="4FE-b4-LsY" secondAttribute="bottom" id="T61-L4-stS"/>
+                            <constraint firstItem="OMs-PI-7eu" firstAttribute="height" secondItem="k0w-yr-eAL" secondAttribute="height" id="WDl-3M-6Gi"/>
+                            <constraint firstItem="OMs-PI-7eu" firstAttribute="centerX" secondItem="k0w-yr-eAL" secondAttribute="centerX" id="WbZ-nO-X0N"/>
+                            <constraint firstItem="OMs-PI-7eu" firstAttribute="width" secondItem="k0w-yr-eAL" secondAttribute="width" id="nyr-zn-l03"/>
+                            <constraint firstItem="OMs-PI-7eu" firstAttribute="leading" secondItem="k0w-yr-eAL" secondAttribute="leadingMargin" id="p6m-gN-vRH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="EDp-mn-VFb"/>
+                                <exclude reference="T61-L4-stS"/>
+                                <exclude reference="p6m-gN-vRH"/>
+                                <exclude reference="MBJ-ab-neb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="7pp-K9-jT7">
                         <nil key="title"/>
@@ -30,6 +77,9 @@
                             </connections>
                         </button>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="OMs-PI-7eu" id="5vZ-Jj-mJi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UR4-EG-gTz" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,13 +112,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwF-dF-p0z">
                                                 <rect key="frame" x="8" y="608" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rrq-9l-eC1">
                                                 <rect key="frame" x="8" y="637" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>

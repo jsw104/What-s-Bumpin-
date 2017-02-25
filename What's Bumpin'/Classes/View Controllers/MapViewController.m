@@ -13,7 +13,6 @@
 
 @interface MapViewController () <CLLocationManagerDelegate>
 
-@property GMSMapView *mapView;
 @property NSArray *locations;
 
 @end
@@ -22,12 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.80
-                                                            longitude:151.20
-                                                                 zoom:20];
-    self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+
     self.mapView.myLocationEnabled = YES;
-    self.view = self.mapView;
     
     //setup location manager
     self.locationManager = [[CLLocationManager alloc] init];
@@ -35,6 +30,7 @@
     self.locationManager.desiredAccuracy=kCLLocationAccuracyBest;
     self.locationManager.distanceFilter=kCLDistanceFilterNone;
     [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startMonitoringSignificantLocationChanges];
     [self.locationManager startUpdatingLocation];
     
@@ -54,6 +50,7 @@
         GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:20];
         [self.mapView animateWithCameraUpdate:locationUpdate];
     }
+    [manager stopUpdatingLocation];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
