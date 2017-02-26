@@ -10,29 +10,30 @@
 		2B2A68EE97CBE0B30E74BF07 /* Pods_What_s_Bumpin_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F25E83F9814DAE766B91F6C /* Pods_What_s_Bumpin_.framework */; };
 		33CFEEC52835C167E4A6CE68 /* Pods_What_s_Bumpin_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B70C85B7157927B578B7A8 /* Pods_What_s_Bumpin_UITests.framework */; };
 		33D8D8F2F765DE5FA5799025 /* Pods_What_s_Bumpin_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */; };
-		D03672D41E5D39F700A60F79 /* Bump.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672D31E5D39F700A60F79 /* Bump.m */; };
-		D03672D71E5D3B3900A60F79 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672D61E5D3B3900A60F79 /* User.m */; };
-		D03672DA1E5D485F00A60F79 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672D91E5D485F00A60F79 /* Message.m */; };
-		D03672DD1E5D6B5A00A60F79 /* MessageBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = D03672DC1E5D6B5A00A60F79 /* MessageBoard.m */; };
-		D08D31C91E6236B6002BB547 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08D31C41E6236B6002BB547 /* DesignableButton.swift */; };
-		D08D31CA1E6236B6002BB547 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08D31C51E6236B6002BB547 /* Spring.swift */; };
-		D08D31CB1E6236B6002BB547 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08D31C61E6236B6002BB547 /* SpringAnimation.swift */; };
-		D08D31CC1E6236B6002BB547 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08D31C71E6236B6002BB547 /* SpringButton.swift */; };
-		D08D31CD1E6236B6002BB547 /* WYMaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08D31C81E6236B6002BB547 /* WYMaterialButton.swift */; };
-		D0A6CB911E513F57001F7964 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CB901E513F57001F7964 /* main.m */; };
-		D0A6CB9F1E513F57001F7964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CB9E1E513F57001F7964 /* Assets.xcassets */; };
-		D0A6CBA21E513F57001F7964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A6CBA01E513F57001F7964 /* LaunchScreen.storyboard */; };
 		D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */; };
 		D0A6CBB81E513F58001F7964 /* What_s_Bumpin_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBB71E513F58001F7964 /* What_s_Bumpin_UITests.m */; };
-		D0CBFB471E51458300E74769 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBFB3D1E51458300E74769 /* AppDelegate.m */; };
-		D0CBFB481E51458300E74769 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBFB441E51458300E74769 /* MapViewController.m */; };
-		D0CBFB491E51458300E74769 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBFB461E51458300E74769 /* HomeViewController.m */; };
-		D0D0C2BD1E5152B40027F2C6 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D0C2BC1E5152B40027F2C6 /* Tabs.storyboard */; };
-		D0D0C2BF1E5152DA0027F2C6 /* Global.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D0C2BE1E5152DA0027F2C6 /* Global.storyboard */; };
-		D0D0C2C11E5152E50027F2C6 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D0C2C01E5152E50027F2C6 /* Me.storyboard */; };
-		D0D0C2C41E51637D0027F2C6 /* WBTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D0C2C31E51637D0027F2C6 /* WBTabViewController.m */; };
-		D0D0C2C71E516E4F0027F2C6 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D0C2C61E516E4F0027F2C6 /* Location.m */; };
-		D0D0C2CA1E5179610027F2C6 /* LocationInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D0C2C91E5179610027F2C6 /* LocationInformationViewController.m */; };
+		D0E4C44B1E6268B2000960B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4211E6268B2000960B3 /* Assets.xcassets */; };
+		D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4221E6268B2000960B3 /* LaunchScreen.storyboard */; };
+		D0E4C44D1E6268B2000960B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4281E6268B2000960B3 /* AppDelegate.m */; };
+		D0E4C44E1E6268B2000960B3 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C42A1E6268B2000960B3 /* DesignableButton.swift */; };
+		D0E4C44F1E6268B2000960B3 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C42B1E6268B2000960B3 /* Spring.swift */; };
+		D0E4C4501E6268B2000960B3 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C42C1E6268B2000960B3 /* SpringAnimation.swift */; };
+		D0E4C4511E6268B2000960B3 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C42D1E6268B2000960B3 /* SpringButton.swift */; };
+		D0E4C4521E6268B2000960B3 /* WYMaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C42E1E6268B2000960B3 /* WYMaterialButton.swift */; };
+		D0E4C4531E6268B2000960B3 /* Bump.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4331E6268B2000960B3 /* Bump.m */; };
+		D0E4C4541E6268B2000960B3 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4351E6268B2000960B3 /* Location.m */; };
+		D0E4C4551E6268B2000960B3 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4371E6268B2000960B3 /* Message.m */; };
+		D0E4C4561E6268B2000960B3 /* MessageBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4391E6268B2000960B3 /* MessageBoard.m */; };
+		D0E4C4571E6268B2000960B3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C43B1E6268B2000960B3 /* User.m */; };
+		D0E4C4581E6268B2000960B3 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C43E1E6268B2000960B3 /* HomeViewController.m */; };
+		D0E4C4591E6268B2000960B3 /* LocationInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4401E6268B2000960B3 /* LocationInformationViewController.m */; };
+		D0E4C45A1E6268B2000960B3 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4421E6268B2000960B3 /* MapViewController.m */; };
+		D0E4C45B1E6268B2000960B3 /* WBTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4441E6268B2000960B3 /* WBTabViewController.m */; };
+		D0E4C45C1E6268B2000960B3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4451E6268B2000960B3 /* Info.plist */; };
+		D0E4C45D1E6268B2000960B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4461E6268B2000960B3 /* main.m */; };
+		D0E4C45E1E6268B2000960B3 /* Global.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4481E6268B2000960B3 /* Global.storyboard */; };
+		D0E4C45F1E6268B2000960B3 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4491E6268B2000960B3 /* Me.storyboard */; };
+		D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,45 +62,45 @@
 		810ADA41F3B5BCF4A2DF8D92 /* Pods-What's Bumpin'Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'Tests/Pods-What's Bumpin'Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_s_Bumpin_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF52779BDEAEFF54193BA1A1 /* Pods-What's Bumpin'UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D03672D21E5D39F700A60F79 /* Bump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bump.h; sourceTree = "<group>"; };
-		D03672D31E5D39F700A60F79 /* Bump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bump.m; sourceTree = "<group>"; };
-		D03672D51E5D3B3900A60F79 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		D03672D61E5D3B3900A60F79 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		D03672D81E5D485F00A60F79 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
-		D03672D91E5D485F00A60F79 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
-		D03672DB1E5D6B5A00A60F79 /* MessageBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageBoard.h; sourceTree = "<group>"; };
-		D03672DC1E5D6B5A00A60F79 /* MessageBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBoard.m; sourceTree = "<group>"; };
-		D08D31C41E6236B6002BB547 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
-		D08D31C51E6236B6002BB547 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
-		D08D31C61E6236B6002BB547 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
-		D08D31C71E6236B6002BB547 /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
-		D08D31C81E6236B6002BB547 /* WYMaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYMaterialButton.swift; sourceTree = "<group>"; };
-		D0A6CB8C1E513F57001F7964 /* What's Bumpin'.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What's Bumpin'.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0A6CB901E513F57001F7964 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D0A6CB9E1E513F57001F7964 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D0A6CBA11E513F57001F7964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D0A6CBA31E513F57001F7964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0A6CBA81E513F58001F7964 /* What's Bumpin'Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "What's Bumpin'Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A6CB8C1E513F57001F7964 /* WhatsBumpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsBumpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A6CBA81E513F58001F7964 /* WhatsBumpin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsBumpin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What_s_Bumpin_Tests.m; sourceTree = "<group>"; };
 		D0A6CBAE1E513F58001F7964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0A6CBB31E513F58001F7964 /* What's Bumpin'UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "What's Bumpin'UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A6CBB31E513F58001F7964 /* WhatsBumpin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsBumpin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBB71E513F58001F7964 /* What_s_Bumpin_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What_s_Bumpin_UITests.m; sourceTree = "<group>"; };
 		D0A6CBB91E513F58001F7964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0CBFB3C1E51458300E74769 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D0CBFB3D1E51458300E74769 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D0CBFB431E51458300E74769 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		D0CBFB441E51458300E74769 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		D0CBFB451E51458300E74769 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		D0CBFB461E51458300E74769 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		D0D0C2BC1E5152B40027F2C6 /* Tabs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
-		D0D0C2BE1E5152DA0027F2C6 /* Global.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Global.storyboard; sourceTree = "<group>"; };
-		D0D0C2C01E5152E50027F2C6 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
-		D0D0C2C21E51637D0027F2C6 /* WBTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTabViewController.h; sourceTree = "<group>"; };
-		D0D0C2C31E51637D0027F2C6 /* WBTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTabViewController.m; sourceTree = "<group>"; };
-		D0D0C2C51E516E4F0027F2C6 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		D0D0C2C61E516E4F0027F2C6 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		D0D0C2C81E5179610027F2C6 /* LocationInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationInformationViewController.h; sourceTree = "<group>"; };
-		D0D0C2C91E5179610027F2C6 /* LocationInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationInformationViewController.m; sourceTree = "<group>"; };
+		D0E4C4211E6268B2000960B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0E4C4231E6268B2000960B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0E4C4271E6268B2000960B3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D0E4C4281E6268B2000960B3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D0E4C42A1E6268B2000960B3 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		D0E4C42B1E6268B2000960B3 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		D0E4C42C1E6268B2000960B3 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		D0E4C42D1E6268B2000960B3 /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
+		D0E4C42E1E6268B2000960B3 /* WYMaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYMaterialButton.swift; sourceTree = "<group>"; };
+		D0E4C4321E6268B2000960B3 /* Bump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bump.h; sourceTree = "<group>"; };
+		D0E4C4331E6268B2000960B3 /* Bump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bump.m; sourceTree = "<group>"; };
+		D0E4C4341E6268B2000960B3 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		D0E4C4351E6268B2000960B3 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		D0E4C4361E6268B2000960B3 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		D0E4C4371E6268B2000960B3 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		D0E4C4381E6268B2000960B3 /* MessageBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageBoard.h; sourceTree = "<group>"; };
+		D0E4C4391E6268B2000960B3 /* MessageBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBoard.m; sourceTree = "<group>"; };
+		D0E4C43A1E6268B2000960B3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		D0E4C43B1E6268B2000960B3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D0E4C43D1E6268B2000960B3 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		D0E4C43E1E6268B2000960B3 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D0E4C43F1E6268B2000960B3 /* LocationInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationInformationViewController.h; sourceTree = "<group>"; };
+		D0E4C4401E6268B2000960B3 /* LocationInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationInformationViewController.m; sourceTree = "<group>"; };
+		D0E4C4411E6268B2000960B3 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		D0E4C4421E6268B2000960B3 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		D0E4C4431E6268B2000960B3 /* WBTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTabViewController.h; sourceTree = "<group>"; };
+		D0E4C4441E6268B2000960B3 /* WBTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTabViewController.m; sourceTree = "<group>"; };
+		D0E4C4451E6268B2000960B3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0E4C4461E6268B2000960B3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D0E4C4481E6268B2000960B3 /* Global.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Global.storyboard; sourceTree = "<group>"; };
+		D0E4C4491E6268B2000960B3 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
 		DED8673A2BE4EB8CA732237B /* Pods-What's Bumpin'.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'.release.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,22 +155,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D08D31C31E6236B6002BB547 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				D08D31C41E6236B6002BB547 /* DesignableButton.swift */,
-				D08D31C51E6236B6002BB547 /* Spring.swift */,
-				D08D31C61E6236B6002BB547 /* SpringAnimation.swift */,
-				D08D31C71E6236B6002BB547 /* SpringButton.swift */,
-				D08D31C81E6236B6002BB547 /* WYMaterialButton.swift */,
-			);
-			path = Buttons;
-			sourceTree = "<group>";
-		};
 		D0A6CB831E513F57001F7964 = {
 			isa = PBXGroup;
 			children = (
-				D0A6CB8E1E513F57001F7964 /* What's Bumpin' */,
+				D0E4C4201E6268B2000960B3 /* WhatsBumpin */,
 				D0A6CBAB1E513F58001F7964 /* What's Bumpin'Tests */,
 				D0A6CBB61E513F58001F7964 /* What's Bumpin'UITests */,
 				D0A6CB8D1E513F57001F7964 /* Products */,
@@ -181,32 +170,11 @@
 		D0A6CB8D1E513F57001F7964 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0A6CB8C1E513F57001F7964 /* What's Bumpin'.app */,
-				D0A6CBA81E513F58001F7964 /* What's Bumpin'Tests.xctest */,
-				D0A6CBB31E513F58001F7964 /* What's Bumpin'UITests.xctest */,
+				D0A6CB8C1E513F57001F7964 /* WhatsBumpin.app */,
+				D0A6CBA81E513F58001F7964 /* WhatsBumpin.xctest */,
+				D0A6CBB31E513F58001F7964 /* WhatsBumpin.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D0A6CB8E1E513F57001F7964 /* What's Bumpin' */ = {
-			isa = PBXGroup;
-			children = (
-				D0D0C2BB1E5152B40027F2C6 /* User Interface */,
-				D0CBFB391E51458300E74769 /* Classes */,
-				D0A6CB9E1E513F57001F7964 /* Assets.xcassets */,
-				D0A6CBA01E513F57001F7964 /* LaunchScreen.storyboard */,
-				D0A6CBA31E513F57001F7964 /* Info.plist */,
-				D0A6CB8F1E513F57001F7964 /* Supporting Files */,
-			);
-			path = "What's Bumpin'";
-			sourceTree = "<group>";
-		};
-		D0A6CB8F1E513F57001F7964 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D0A6CB901E513F57001F7964 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		D0A6CBAB1E513F58001F7964 /* What's Bumpin'Tests */ = {
@@ -227,88 +195,113 @@
 			path = "What's Bumpin'UITests";
 			sourceTree = "<group>";
 		};
-		D0CBFB391E51458300E74769 /* Classes */ = {
+		D0E4C4201E6268B2000960B3 /* WhatsBumpin */ = {
 			isa = PBXGroup;
 			children = (
-				D08D31C31E6236B6002BB547 /* Buttons */,
-				D0CBFB3A1E51458300E74769 /* API */,
-				D0CBFB3B1E51458300E74769 /* App Delegate */,
-				D0CBFB3F1E51458300E74769 /* Cells */,
-				D0CBFB401E51458300E74769 /* Constants */,
-				D0CBFB411E51458300E74769 /* Data Models */,
-				D0CBFB421E51458300E74769 /* View Controllers */,
+				D0E4C4211E6268B2000960B3 /* Assets.xcassets */,
+				D0E4C4221E6268B2000960B3 /* LaunchScreen.storyboard */,
+				D0E4C4241E6268B2000960B3 /* Classes */,
+				D0E4C4451E6268B2000960B3 /* Info.plist */,
+				D0E4C4461E6268B2000960B3 /* main.m */,
+				D0E4C4471E6268B2000960B3 /* User Interface */,
+			);
+			path = WhatsBumpin;
+			sourceTree = "<group>";
+		};
+		D0E4C4241E6268B2000960B3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D0E4C4251E6268B2000960B3 /* API */,
+				D0E4C4261E6268B2000960B3 /* App Delegate */,
+				D0E4C4291E6268B2000960B3 /* Buttons */,
+				D0E4C42F1E6268B2000960B3 /* Cells */,
+				D0E4C4301E6268B2000960B3 /* Constants */,
+				D0E4C4311E6268B2000960B3 /* Data Models */,
+				D0E4C43C1E6268B2000960B3 /* View Controllers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		D0CBFB3A1E51458300E74769 /* API */ = {
+		D0E4C4251E6268B2000960B3 /* API */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = API;
 			sourceTree = "<group>";
 		};
-		D0CBFB3B1E51458300E74769 /* App Delegate */ = {
+		D0E4C4261E6268B2000960B3 /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				D0CBFB3C1E51458300E74769 /* AppDelegate.h */,
-				D0CBFB3D1E51458300E74769 /* AppDelegate.m */,
+				D0E4C4271E6268B2000960B3 /* AppDelegate.h */,
+				D0E4C4281E6268B2000960B3 /* AppDelegate.m */,
 			);
 			path = "App Delegate";
 			sourceTree = "<group>";
 		};
-		D0CBFB3F1E51458300E74769 /* Cells */ = {
+		D0E4C4291E6268B2000960B3 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D0E4C42A1E6268B2000960B3 /* DesignableButton.swift */,
+				D0E4C42B1E6268B2000960B3 /* Spring.swift */,
+				D0E4C42C1E6268B2000960B3 /* SpringAnimation.swift */,
+				D0E4C42D1E6268B2000960B3 /* SpringButton.swift */,
+				D0E4C42E1E6268B2000960B3 /* WYMaterialButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D0E4C42F1E6268B2000960B3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		D0CBFB401E51458300E74769 /* Constants */ = {
+		D0E4C4301E6268B2000960B3 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		D0CBFB411E51458300E74769 /* Data Models */ = {
+		D0E4C4311E6268B2000960B3 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				D0D0C2C51E516E4F0027F2C6 /* Location.h */,
-				D0D0C2C61E516E4F0027F2C6 /* Location.m */,
-				D03672D21E5D39F700A60F79 /* Bump.h */,
-				D03672D31E5D39F700A60F79 /* Bump.m */,
-				D03672D51E5D3B3900A60F79 /* User.h */,
-				D03672D61E5D3B3900A60F79 /* User.m */,
-				D03672D81E5D485F00A60F79 /* Message.h */,
-				D03672D91E5D485F00A60F79 /* Message.m */,
-				D03672DB1E5D6B5A00A60F79 /* MessageBoard.h */,
-				D03672DC1E5D6B5A00A60F79 /* MessageBoard.m */,
+				D0E4C4321E6268B2000960B3 /* Bump.h */,
+				D0E4C4331E6268B2000960B3 /* Bump.m */,
+				D0E4C4341E6268B2000960B3 /* Location.h */,
+				D0E4C4351E6268B2000960B3 /* Location.m */,
+				D0E4C4361E6268B2000960B3 /* Message.h */,
+				D0E4C4371E6268B2000960B3 /* Message.m */,
+				D0E4C4381E6268B2000960B3 /* MessageBoard.h */,
+				D0E4C4391E6268B2000960B3 /* MessageBoard.m */,
+				D0E4C43A1E6268B2000960B3 /* User.h */,
+				D0E4C43B1E6268B2000960B3 /* User.m */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
 		};
-		D0CBFB421E51458300E74769 /* View Controllers */ = {
+		D0E4C43C1E6268B2000960B3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D0CBFB431E51458300E74769 /* MapViewController.h */,
-				D0CBFB441E51458300E74769 /* MapViewController.m */,
-				D0CBFB451E51458300E74769 /* HomeViewController.h */,
-				D0CBFB461E51458300E74769 /* HomeViewController.m */,
-				D0D0C2C21E51637D0027F2C6 /* WBTabViewController.h */,
-				D0D0C2C31E51637D0027F2C6 /* WBTabViewController.m */,
-				D0D0C2C81E5179610027F2C6 /* LocationInformationViewController.h */,
-				D0D0C2C91E5179610027F2C6 /* LocationInformationViewController.m */,
+				D0E4C43D1E6268B2000960B3 /* HomeViewController.h */,
+				D0E4C43E1E6268B2000960B3 /* HomeViewController.m */,
+				D0E4C43F1E6268B2000960B3 /* LocationInformationViewController.h */,
+				D0E4C4401E6268B2000960B3 /* LocationInformationViewController.m */,
+				D0E4C4411E6268B2000960B3 /* MapViewController.h */,
+				D0E4C4421E6268B2000960B3 /* MapViewController.m */,
+				D0E4C4431E6268B2000960B3 /* WBTabViewController.h */,
+				D0E4C4441E6268B2000960B3 /* WBTabViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		D0D0C2BB1E5152B40027F2C6 /* User Interface */ = {
+		D0E4C4471E6268B2000960B3 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				D0D0C2BC1E5152B40027F2C6 /* Tabs.storyboard */,
-				D0D0C2BE1E5152DA0027F2C6 /* Global.storyboard */,
-				D0D0C2C01E5152E50027F2C6 /* Me.storyboard */,
+				D0E4C4481E6268B2000960B3 /* Global.storyboard */,
+				D0E4C4491E6268B2000960B3 /* Me.storyboard */,
+				D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -316,9 +309,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D0A6CB8B1E513F57001F7964 /* What's Bumpin' */ = {
+		D0A6CB8B1E513F57001F7964 /* WhatsBumpin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0A6CBBC1E513F58001F7964 /* Build configuration list for PBXNativeTarget "What's Bumpin'" */;
+			buildConfigurationList = D0A6CBBC1E513F58001F7964 /* Build configuration list for PBXNativeTarget "WhatsBumpin" */;
 			buildPhases = (
 				1C4036EF19CFA7259004372B /* [CP] Check Pods Manifest.lock */,
 				D0A6CB881E513F57001F7964 /* Sources */,
@@ -331,14 +324,14 @@
 			);
 			dependencies = (
 			);
-			name = "What's Bumpin'";
+			name = WhatsBumpin;
 			productName = "What's Bumpin'";
-			productReference = D0A6CB8C1E513F57001F7964 /* What's Bumpin'.app */;
+			productReference = D0A6CB8C1E513F57001F7964 /* WhatsBumpin.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D0A6CBA71E513F58001F7964 /* What's Bumpin'Tests */ = {
+		D0A6CBA71E513F58001F7964 /* WhatsBumpinTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0A6CBBF1E513F58001F7964 /* Build configuration list for PBXNativeTarget "What's Bumpin'Tests" */;
+			buildConfigurationList = D0A6CBBF1E513F58001F7964 /* Build configuration list for PBXNativeTarget "WhatsBumpinTests" */;
 			buildPhases = (
 				D406B8F2D7D89E4C82F8FD9E /* [CP] Check Pods Manifest.lock */,
 				D0A6CBA41E513F58001F7964 /* Sources */,
@@ -352,14 +345,14 @@
 			dependencies = (
 				D0A6CBAA1E513F58001F7964 /* PBXTargetDependency */,
 			);
-			name = "What's Bumpin'Tests";
+			name = WhatsBumpinTests;
 			productName = "What's Bumpin'Tests";
-			productReference = D0A6CBA81E513F58001F7964 /* What's Bumpin'Tests.xctest */;
+			productReference = D0A6CBA81E513F58001F7964 /* WhatsBumpin.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D0A6CBB21E513F58001F7964 /* What's Bumpin'UITests */ = {
+		D0A6CBB21E513F58001F7964 /* WhatsBumpinUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D0A6CBC21E513F58001F7964 /* Build configuration list for PBXNativeTarget "What's Bumpin'UITests" */;
+			buildConfigurationList = D0A6CBC21E513F58001F7964 /* Build configuration list for PBXNativeTarget "WhatsBumpinUITests" */;
 			buildPhases = (
 				0C12FE78079BA26D066E7602 /* [CP] Check Pods Manifest.lock */,
 				D0A6CBAF1E513F58001F7964 /* Sources */,
@@ -373,9 +366,9 @@
 			dependencies = (
 				D0A6CBB51E513F58001F7964 /* PBXTargetDependency */,
 			);
-			name = "What's Bumpin'UITests";
+			name = WhatsBumpinUITests;
 			productName = "What's Bumpin'UITests";
-			productReference = D0A6CBB31E513F58001F7964 /* What's Bumpin'UITests.xctest */;
+			productReference = D0A6CBB31E513F58001F7964 /* WhatsBumpin.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -401,7 +394,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D0A6CB871E513F57001F7964 /* Build configuration list for PBXProject "What's Bumpin'" */;
+			buildConfigurationList = D0A6CB871E513F57001F7964 /* Build configuration list for PBXProject "WhatsBumpin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -414,9 +407,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D0A6CB8B1E513F57001F7964 /* What's Bumpin' */,
-				D0A6CBA71E513F58001F7964 /* What's Bumpin'Tests */,
-				D0A6CBB21E513F58001F7964 /* What's Bumpin'UITests */,
+				D0A6CB8B1E513F57001F7964 /* WhatsBumpin */,
+				D0A6CBA71E513F58001F7964 /* WhatsBumpinTests */,
+				D0A6CBB21E513F58001F7964 /* WhatsBumpinUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -426,11 +419,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A6CBA21E513F57001F7964 /* LaunchScreen.storyboard in Resources */,
-				D0D0C2BF1E5152DA0027F2C6 /* Global.storyboard in Resources */,
-				D0D0C2C11E5152E50027F2C6 /* Me.storyboard in Resources */,
-				D0A6CB9F1E513F57001F7964 /* Assets.xcassets in Resources */,
-				D0D0C2BD1E5152B40027F2C6 /* Tabs.storyboard in Resources */,
+				D0E4C44B1E6268B2000960B3 /* Assets.xcassets in Resources */,
+				D0E4C45E1E6268B2000960B3 /* Global.storyboard in Resources */,
+				D0E4C45F1E6268B2000960B3 /* Me.storyboard in Resources */,
+				D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */,
+				D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */,
+				D0E4C45C1E6268B2000960B3 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,22 +587,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0CBFB481E51458300E74769 /* MapViewController.m in Sources */,
-				D0CBFB491E51458300E74769 /* HomeViewController.m in Sources */,
-				D03672D71E5D3B3900A60F79 /* User.m in Sources */,
-				D0A6CB911E513F57001F7964 /* main.m in Sources */,
-				D0D0C2C41E51637D0027F2C6 /* WBTabViewController.m in Sources */,
-				D08D31CA1E6236B6002BB547 /* Spring.swift in Sources */,
-				D03672DD1E5D6B5A00A60F79 /* MessageBoard.m in Sources */,
-				D0D0C2C71E516E4F0027F2C6 /* Location.m in Sources */,
-				D08D31CC1E6236B6002BB547 /* SpringButton.swift in Sources */,
-				D03672D41E5D39F700A60F79 /* Bump.m in Sources */,
-				D03672DA1E5D485F00A60F79 /* Message.m in Sources */,
-				D0CBFB471E51458300E74769 /* AppDelegate.m in Sources */,
-				D08D31CD1E6236B6002BB547 /* WYMaterialButton.swift in Sources */,
-				D08D31CB1E6236B6002BB547 /* SpringAnimation.swift in Sources */,
-				D0D0C2CA1E5179610027F2C6 /* LocationInformationViewController.m in Sources */,
-				D08D31C91E6236B6002BB547 /* DesignableButton.swift in Sources */,
+				D0E4C4521E6268B2000960B3 /* WYMaterialButton.swift in Sources */,
+				D0E4C44D1E6268B2000960B3 /* AppDelegate.m in Sources */,
+				D0E4C44E1E6268B2000960B3 /* DesignableButton.swift in Sources */,
+				D0E4C4531E6268B2000960B3 /* Bump.m in Sources */,
+				D0E4C4591E6268B2000960B3 /* LocationInformationViewController.m in Sources */,
+				D0E4C44F1E6268B2000960B3 /* Spring.swift in Sources */,
+				D0E4C45D1E6268B2000960B3 /* main.m in Sources */,
+				D0E4C4511E6268B2000960B3 /* SpringButton.swift in Sources */,
+				D0E4C4571E6268B2000960B3 /* User.m in Sources */,
+				D0E4C4541E6268B2000960B3 /* Location.m in Sources */,
+				D0E4C4551E6268B2000960B3 /* Message.m in Sources */,
+				D0E4C4561E6268B2000960B3 /* MessageBoard.m in Sources */,
+				D0E4C4501E6268B2000960B3 /* SpringAnimation.swift in Sources */,
+				D0E4C4581E6268B2000960B3 /* HomeViewController.m in Sources */,
+				D0E4C45B1E6268B2000960B3 /* WBTabViewController.m in Sources */,
+				D0E4C45A1E6268B2000960B3 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,21 +627,21 @@
 /* Begin PBXTargetDependency section */
 		D0A6CBAA1E513F58001F7964 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D0A6CB8B1E513F57001F7964 /* What's Bumpin' */;
+			target = D0A6CB8B1E513F57001F7964 /* WhatsBumpin */;
 			targetProxy = D0A6CBA91E513F58001F7964 /* PBXContainerItemProxy */;
 		};
 		D0A6CBB51E513F58001F7964 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D0A6CB8B1E513F57001F7964 /* What's Bumpin' */;
+			target = D0A6CB8B1E513F57001F7964 /* WhatsBumpin */;
 			targetProxy = D0A6CBB41E513F58001F7964 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D0A6CBA01E513F57001F7964 /* LaunchScreen.storyboard */ = {
+		D0E4C4221E6268B2000960B3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D0A6CBA11E513F57001F7964 /* Base */,
+				D0E4C4231E6268B2000960B3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -692,6 +686,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -730,6 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -743,10 +739,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "What's Bumpin'/Info.plist";
+				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WhatsBumpin;
 			};
 			name = Debug;
 		};
@@ -756,10 +752,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "What's Bumpin'/Info.plist";
+				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WhatsBumpin;
 			};
 			name = Release;
 		};
@@ -771,8 +767,8 @@
 				INFOPLIST_FILE = "What's Bumpin'Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/What's Bumpin'.app/What's Bumpin'";
+				PRODUCT_NAME = WhatsBumpin;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatsBumpin.app/WhatsBumpin";
 			};
 			name = Debug;
 		};
@@ -784,8 +780,8 @@
 				INFOPLIST_FILE = "What's Bumpin'Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-Tests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/What's Bumpin'.app/What's Bumpin'";
+				PRODUCT_NAME = WhatsBumpin;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatsBumpin.app/WhatsBumpin";
 			};
 			name = Release;
 		};
@@ -796,7 +792,7 @@
 				INFOPLIST_FILE = "What's Bumpin'UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WhatsBumpin;
 				TEST_TARGET_NAME = "What's Bumpin'";
 			};
 			name = Debug;
@@ -808,7 +804,7 @@
 				INFOPLIST_FILE = "What's Bumpin'UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WhatsBumpin;
 				TEST_TARGET_NAME = "What's Bumpin'";
 			};
 			name = Release;
@@ -816,7 +812,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D0A6CB871E513F57001F7964 /* Build configuration list for PBXProject "What's Bumpin'" */ = {
+		D0A6CB871E513F57001F7964 /* Build configuration list for PBXProject "WhatsBumpin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0A6CBBA1E513F58001F7964 /* Debug */,
@@ -825,7 +821,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D0A6CBBC1E513F58001F7964 /* Build configuration list for PBXNativeTarget "What's Bumpin'" */ = {
+		D0A6CBBC1E513F58001F7964 /* Build configuration list for PBXNativeTarget "WhatsBumpin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0A6CBBD1E513F58001F7964 /* Debug */,
@@ -834,7 +830,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D0A6CBBF1E513F58001F7964 /* Build configuration list for PBXNativeTarget "What's Bumpin'Tests" */ = {
+		D0A6CBBF1E513F58001F7964 /* Build configuration list for PBXNativeTarget "WhatsBumpinTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0A6CBC01E513F58001F7964 /* Debug */,
@@ -843,7 +839,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D0A6CBC21E513F58001F7964 /* Build configuration list for PBXNativeTarget "What's Bumpin'UITests" */ = {
+		D0A6CBC21E513F58001F7964 /* Build configuration list for PBXNativeTarget "WhatsBumpinUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D0A6CBC31E513F58001F7964 /* Debug */,

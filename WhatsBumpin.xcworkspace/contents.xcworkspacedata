@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:What&apos;s Bumpin&apos;.xcodeproj">
+      location = "group:/Users/justin/Documents/workspace/What&apos;s Bumpin&apos;/WhatsBumpin.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
