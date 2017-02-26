@@ -17,16 +17,29 @@ static User *currentUser;
     return currentUser;
 }
 
-+(void)LoginWithUsername: (NSString *) username password: (NSString *) password completionBlock: (void (^)(User *user, NSError *error))completion
++(void)LoginWithUsername: (NSString *) email password: (NSString *) password completionBlock: (void (^)(User *user, NSError *error))completion
 {
     //make call to DB to login. if successful, return user and null error, otherwise return null user and error code
     //set current user
+    currentUser = [[User alloc] init];
+    currentUser.email = email;
+    
     return completion(NULL, NULL);
+}
+
++(void)LoginPublic
+{
+    currentUser = [[User alloc] init];
 }
 
 -(void)setBio:(NSString *)bio
 {
     self.bio = bio;
+}
+
+-(void)setLocation:(CLLocationCoordinate2D)coordinates
+{
+    self.coordinates = coordinates;
 }
 
 -(void)saveInBackground

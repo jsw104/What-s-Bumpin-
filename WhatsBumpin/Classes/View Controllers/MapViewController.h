@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @import GoogleMaps;
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
 @interface MapViewController : UIViewController
 
