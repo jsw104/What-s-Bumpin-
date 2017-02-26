@@ -12,7 +12,7 @@
 #import "Bump.h"
 #import "MessageBoard.h"
 
-@interface Location : GMSPlace
+@interface Location : NSObject
 
 //static methods
 + (void)getLocationsWithRadius: (double)radius minimumBumps: (int)minBumps completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion;
@@ -20,5 +20,9 @@
 //instance methods
 - (void)bump;
 - (int)getBumpCountBetween:(NSDate *)earlierDate and:(NSDate *)laterDate;
+
+@property (strong, nonatomic) NSString *name;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (strong, nonatomic) NSURL *website;
 
 @end
