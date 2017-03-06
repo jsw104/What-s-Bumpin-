@@ -11,11 +11,12 @@
 #import "User.h"
 #import "Bump.h"
 #import "MessageBoard.h"
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
 @interface Location : NSObject
 
 //static methods
-+ (void)getLocationsWithRadius: (double)radius minimumBumps: (int)minBumps completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion;
++ (void)getLocationsWithRadius: (int)radius minimumBumps: (int)minBumps type: (NSString *)type completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion;
 
 //instance methods
 - (void)bump;
@@ -24,5 +25,8 @@
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic) NSURL *website;
+@property (strong, nonatomic) NSArray <UIImage *> *images;
+@property (strong, nonatomic) UIImage *icon;
+
 
 @end
