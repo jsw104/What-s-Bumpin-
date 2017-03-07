@@ -23,9 +23,19 @@
 - (void)configureViewContent
 {
     self.title = self.location.name;
-//    self.locationImageView.image = self.location.image;
+    
+    NSURL *googleRequestURL=self.location.photoURLs.firstObject;
+    
+    // Retrieve the results of the URL.
+    dispatch_async(kBgQueue, ^{
+        NSData* data = [NSData dataWithContentsOfURL: googleRequestURL];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.locationImageView.image = [UIImage imageWithData:data];
+        });
+    });
+    
 //    self.locationBioLabel.text = self.location.bio;
-    self.locationURLLabel.text = self.location.website;
+    self.locationURLLabel.text = self.location.website.absoluteString;
 }
 
 - (void)didReceiveMemoryWarning {

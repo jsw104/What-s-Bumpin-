@@ -25,7 +25,7 @@
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic) NSURL *website;
-@property (strong, nonatomic) NSArray <UIImage *> *images;
+@property (strong, nonatomic) NSArray <NSURL *> *photoURLs;
 @property (strong, nonatomic) UIImage *icon;
 
 

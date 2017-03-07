@@ -11,9 +11,10 @@
 @import GooglePlaces;
 #import "Location.h"
 
-@interface MapViewController () <CLLocationManagerDelegate>
+@interface MapViewController () <CLLocationManagerDelegate, GMSMapViewDelegate>
 
 @property NSMutableArray <Location *>*locations;
+@property Location *locationSelected;
 
 @end
 
@@ -24,6 +25,7 @@
     
     [User LoginPublic];
 
+    self.mapView.delegate = self;
     self.mapView.myLocationEnabled = YES;
     
     //setup location manager
@@ -53,7 +55,7 @@
             });
             
         }];
-        GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:20];
+        GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:18];
         [self.mapView animateWithCameraUpdate:locationUpdate];
     }
     [manager stopUpdatingLocation];
@@ -71,10 +73,16 @@
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = location.coordinate;
         marker.title = location.name;
+        [marker setUserData:location];
         marker.snippet = [NSString stringWithFormat:@"%d bumps", [location getBumpCountBetween:[NSDate distantPast] and:[NSDate distantFuture]]];
         marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:100/255.0 blue:0 alpha:1]];
         marker.map = self.mapView;
     }
+}
+
+- (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
+    self.locationSelected = marker.userData;
+    [self performSegueWithIdentifier:@"Location Information" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,7 +94,7 @@
 //this is hardcoded right now
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ((LocationInformationViewController*)segue.destinationViewController).location = self.locations.firstObject;
+    ((LocationInformationViewController*)segue.destinationViewController).location = self.locationSelected;
 }
 
 @end

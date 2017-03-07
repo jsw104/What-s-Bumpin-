@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARo-fX-SQF" customClass="WYMaterialButton" customModule="What_s_Bumpin_" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARo-fX-SQF" customClass="WYMaterialButton" customModule="WhatsBumpin" customModuleProvider="target">
                                 <rect key="frame" x="260" y="503" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="KK9-eT-Mjg"/>
@@ -73,7 +73,7 @@
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <connections>
-                                <segue destination="ga2-sr-1Z0" kind="show" id="WfH-Ri-rrQ"/>
+                                <segue destination="ga2-sr-1Z0" kind="show" identifier="Location Information" id="WfH-Ri-rrQ"/>
                             </connections>
                         </button>
                     </navigationItem>

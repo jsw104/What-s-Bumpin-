@@ -78,10 +78,15 @@ MessageBoard *messageBoard;
         NSDictionary *geo = [place objectForKey:@"geometry"];
         // Get the lat and long for the location.
         NSDictionary *loc = [geo objectForKey:@"location"];
-        // 4 - Get your name and address info for adding to a pin.
-        NSString *name=[place objectForKey:@"name"];
+
         NSString *vicinity=[place objectForKey:@"vicinity"];
-        NSArray *array = [place objectForKey:@"photos"];
+        NSArray *photoInfoArray = [place objectForKey:@"photos"];
+        NSMutableArray *photoURLs = [[NSMutableArray alloc] init];
+        for(NSDictionary *photoInfo in photoInfoArray)
+        {
+            NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?maxwidth=%i&photoreference=%@&key=%@", 10000, [photoInfo objectForKey:@"photo_reference"], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"];
+            [photoURLs addObject:[NSURL URLWithString:url]];
+        }
         
         // Create a special variable to hold this coordinate info.
         CLLocationCoordinate2D placeCoord;
@@ -90,8 +95,10 @@ MessageBoard *messageBoard;
         placeCoord.longitude=[[loc objectForKey:@"lng"] doubleValue];
         // 5 - Create a new annotation.
         Location *location = [[Location alloc] init];
-        location.name = name;
+        location.name = [place objectForKey:@"name"];
         location.coordinate = placeCoord;
+        location.icon = [place objectForKey:@"icon"];
+        location.photoURLs = [NSArray arrayWithArray:photoURLs];
         [locations addObject:location];
     }
     return locations;
