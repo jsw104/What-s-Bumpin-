@@ -101,7 +101,7 @@
                                 <rect key="frame" x="20" y="64" width="560" height="487"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvU-4x-3ee" userLabel="contentView">
-                                        <rect key="frame" x="0.0" y="-197" width="560" height="900"/>
+                                        <rect key="frame" x="-5" y="-361" width="560" height="900"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fxq-2p-qOi">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -132,11 +132,19 @@
                                                     </mask>
                                                 </variation>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUs-QG-7Wx">
+                                                <rect key="frame" x="333" y="726" width="44" height="30"/>
+                                                <state key="normal" title="Segue"/>
+                                                <connections>
+                                                    <segue destination="yin-Do-Nc2" kind="show" identifier="LocationGraph" id="QAd-yo-3jT"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="900" id="FzP-rI-jbc"/>
                                             <constraint firstItem="Rrq-9l-eC1" firstAttribute="top" secondItem="HwF-dF-p0z" secondAttribute="bottom" constant="8" id="IPJ-AC-GVC"/>
+                                            <constraint firstItem="ZUs-QG-7Wx" firstAttribute="centerX" secondItem="fvU-4x-3ee" secondAttribute="centerX" id="T79-Jc-iA2"/>
                                             <constraint firstItem="HwF-dF-p0z" firstAttribute="top" secondItem="Fxq-2p-qOi" secondAttribute="bottom" constant="8" id="WI4-eS-dC3"/>
                                             <constraint firstItem="Rrq-9l-eC1" firstAttribute="leading" secondItem="fvU-4x-3ee" secondAttribute="leading" constant="8" id="XXz-1x-0TI"/>
                                             <constraint firstItem="Fxq-2p-qOi" firstAttribute="top" secondItem="fvU-4x-3ee" secondAttribute="top" id="ZUf-Mz-SIc"/>
@@ -144,6 +152,7 @@
                                             <constraint firstItem="HwF-dF-p0z" firstAttribute="leading" secondItem="fvU-4x-3ee" secondAttribute="leading" constant="8" id="cqW-tm-gxu"/>
                                             <constraint firstItem="Fxq-2p-qOi" firstAttribute="centerX" secondItem="fvU-4x-3ee" secondAttribute="centerX" id="e8I-fH-P1F"/>
                                             <constraint firstAttribute="trailing" secondItem="Rrq-9l-eC1" secondAttribute="trailing" constant="8" id="fuu-bu-5Xl"/>
+                                            <constraint firstItem="ZUs-QG-7Wx" firstAttribute="top" secondItem="Rrq-9l-eC1" secondAttribute="bottom" constant="64" id="nMi-lT-3G5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -191,6 +200,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhx-jA-7t0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2274" y="-322"/>
+        </scene>
+        <!--Location Graph View Controller-->
+        <scene sceneID="you-Fl-42U">
+            <objects>
+                <viewController id="yin-Do-Nc2" customClass="LocationGraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cBh-8d-IGI"/>
+                        <viewControllerLayoutGuide type="bottom" id="mdg-m8-CYl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="smS-EY-z6z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1yo-9L-NUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2942" y="-321"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="k7Z-Zu-qhs">

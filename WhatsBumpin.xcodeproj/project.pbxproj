@@ -12,6 +12,7 @@
 		33D8D8F2F765DE5FA5799025 /* Pods_What_s_Bumpin_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */; };
 		D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */; };
 		D0A6CBB81E513F58001F7964 /* What_s_Bumpin_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBB71E513F58001F7964 /* What_s_Bumpin_UITests.m */; };
+		D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */; };
 		D0E4C44B1E6268B2000960B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4211E6268B2000960B3 /* Assets.xcassets */; };
 		D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4221E6268B2000960B3 /* LaunchScreen.storyboard */; };
 		D0E4C44D1E6268B2000960B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4281E6268B2000960B3 /* AppDelegate.m */; };
@@ -69,6 +70,8 @@
 		D0A6CBB31E513F58001F7964 /* WhatsBumpin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsBumpin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBB71E513F58001F7964 /* What_s_Bumpin_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What_s_Bumpin_UITests.m; sourceTree = "<group>"; };
 		D0A6CBB91E513F58001F7964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0AF02711E80BD3800C54D89 /* LocationGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationGraphViewController.h; sourceTree = "<group>"; };
+		D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationGraphViewController.m; sourceTree = "<group>"; };
 		D0E4C4211E6268B2000960B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0E4C4231E6268B2000960B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0E4C4271E6268B2000960B3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -290,6 +293,8 @@
 				D0E4C4401E6268B2000960B3 /* LocationInformationViewController.m */,
 				D0E4C4411E6268B2000960B3 /* MapViewController.h */,
 				D0E4C4421E6268B2000960B3 /* MapViewController.m */,
+				D0AF02711E80BD3800C54D89 /* LocationGraphViewController.h */,
+				D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */,
 				D0E4C4431E6268B2000960B3 /* WBTabViewController.h */,
 				D0E4C4441E6268B2000960B3 /* WBTabViewController.m */,
 			);
@@ -599,6 +604,7 @@
 				D0E4C4541E6268B2000960B3 /* Location.m in Sources */,
 				D0E4C4551E6268B2000960B3 /* Message.m in Sources */,
 				D0E4C4561E6268B2000960B3 /* MessageBoard.m in Sources */,
+				D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */,
 				D0E4C4501E6268B2000960B3 /* SpringAnimation.swift in Sources */,
 				D0E4C4581E6268B2000960B3 /* HomeViewController.m in Sources */,
 				D0E4C45B1E6268B2000960B3 /* WBTabViewController.m in Sources */,
