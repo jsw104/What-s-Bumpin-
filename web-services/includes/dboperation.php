@@ -10,19 +10,21 @@ class DbOperation{
         $this->conn = $db->connect();
     }
  
-    public function get_messages($places_id) {
-        $stmt = $this->conn->prepare("SELECT * FROM messages WHERE places_id = ?");
-        if (!stmt) {return false;}
-        
-        $stmt->bind_param(1, $places_id, PDO::PARAM_INT);
-        if(!$stmt->execute()) {return false;}
-        
-        $result = $stmt->get_result();
-        while ($data = $result->fetch_assoc()) {
-            $messages[] = $data;
+    public function get_messages($location_id) {
+        $query = "SELECT * FROM message WHERE location_id = '" . $location_id . "'";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $stmt->bind_result($id, $location_id, $user_id, $message_field, $time_stamp);
+
+        while($stmt->fetch()) {
+            $messages[$id]['location_id'] = $location_id;
+            $messages[$id]['user_id'] = $user_id;
+            $messages[$id]['message_field'] = $message_field;
+            $messages[$id]['time_stamp'] = $time_stamp;
         }
         $stmt->close();
         return $messages;
     }
+
 }
 
