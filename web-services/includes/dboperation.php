@@ -12,14 +12,17 @@ class DbOperation{
  
     public function get_messages($places_id) {
         $stmt = $this->conn->prepare("SELECT * FROM messages WHERE places_id = ?");
+        if (!stmt) {return false;}
+        
         $stmt->bind_param(1, $places_id, PDO::PARAM_INT);
-        $result = $stmt->execute();
-        $stmt->close();
-        if ($result) {
-            return true;
-        } else {
-            return false;
+        if(!$stmt->execute()) {return false;}
+        
+        $result = $stmt->get_result();
+        while ($data = $result->fetch_assoc()) {
+            $messages[] = $data;
         }
+        $stmt->close();
+        return $messages;
     }
 }
 

@@ -8,10 +8,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     require_once '../includes/DbOperation.php';
  
     $db = new DbOperation();
-
-    if($db->get_messages($places_id)) {
+    $messages = $db->get_messages($places_id);
+    if(!$messages) {
         $response['error']=false;
-        $response['message']='Messages from ' . $places_id . ' were successfully retrieved';
+        $response['message']=var_dump($messages);
     } else { 
         $response['error']=true;
         $response['message']='Messages from ' . $places_id . ' were not retrieved';
