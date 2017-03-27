@@ -17,6 +17,7 @@
 @property Location *locationSelected;
 @property (strong, nonatomic) UISearchController *searchController;
 @property int updatedSearchText;
+@property (strong, nonatomic) UIView *filterView;
 
 @end
 
@@ -43,6 +44,15 @@ static double delayInSeconds = 0.5;
     [self.locationManager startUpdatingLocation];
     
     [self configureSearchBar];
+    [self configureFilterView];
+}
+
+- (void)configureFilterView
+{
+    self.filterView = [[UIView alloc] initWithFrame:CGRectMake(self.searchBarContainerView.frame.origin.x, self.searchBarContainerView.frame.origin.y + self.searchBarContainerView.frame.size.height, self.mapView.frame.size.width, 100)];
+    [self.filterView setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    [self.filterView setHidden:true];
+    [self.view addSubview:self.filterView];
 }
 
 - (void)configureSearchBar
@@ -141,6 +151,10 @@ static double delayInSeconds = 0.5;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ((LocationInformationViewController*)segue.destinationViewController).location = self.locationSelected;
+}
+
+- (IBAction)filter:(id)sender {
+    [self.filterView setHidden:!self.filterView.hidden];
 }
 
 @end

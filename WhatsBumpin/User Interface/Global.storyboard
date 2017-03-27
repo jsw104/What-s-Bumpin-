@@ -39,6 +39,9 @@
                                                 <color key="value" red="1" green="0.45214095677570876" blue="0.86969355310379148" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="filter:" destination="8c4-6z-CTW" eventType="touchUpInside" id="ijc-b0-9fi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,8 +111,8 @@
                                 <exclude reference="p6m-gN-vRH"/>
                                 <exclude reference="Gqx-9U-kuW"/>
                                 <exclude reference="LiA-rd-Xj4"/>
-                                <exclude reference="MBJ-ab-neb"/>
                                 <exclude reference="TDp-tF-kTC"/>
+                                <exclude reference="MBJ-ab-neb"/>
                             </mask>
                         </variation>
                     </view>

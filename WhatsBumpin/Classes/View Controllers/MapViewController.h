@@ -15,6 +15,7 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet GMSMapView *mapView;
 @property (strong, nonatomic) IBOutlet FBShimmeringView *searchBarContainerView;
+- (IBAction)filter:(id)sender;
 
 @end
 
