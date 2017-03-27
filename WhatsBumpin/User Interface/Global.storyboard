@@ -23,6 +23,40 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WtL-R6-d2k">
+                                <rect key="frame" x="550" y="64" width="50" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3p-TE-yfO" customClass="WYMaterialButton" customModule="WhatsBumpin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
+                                        <state key="normal" title="Filter">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="materialColor">
+                                                <color key="value" red="0.85495580808080807" green="0.36137010637795186" blue="0.75398718473821824" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="materialPressedColor">
+                                                <color key="value" red="1" green="0.45214095677570876" blue="0.86969355310379148" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="j3p-TE-yfO" secondAttribute="bottom" id="3jz-2w-ahB"/>
+                                    <constraint firstItem="j3p-TE-yfO" firstAttribute="leading" secondItem="WtL-R6-d2k" secondAttribute="leading" id="PZb-H8-v7o"/>
+                                    <constraint firstAttribute="width" constant="50" id="hSe-Rp-5jl"/>
+                                    <constraint firstAttribute="trailing" secondItem="j3p-TE-yfO" secondAttribute="trailing" id="lmP-PB-vcm"/>
+                                    <constraint firstItem="j3p-TE-yfO" firstAttribute="top" secondItem="WtL-R6-d2k" secondAttribute="top" id="r7e-hE-0vQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ys8-4b-2Jz" customClass="FBShimmeringView">
+                                <rect key="frame" x="0.0" y="64" width="550" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="CbS-Oi-lOI"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARo-fX-SQF" customClass="WYMaterialButton" customModule="WhatsBumpin" customModuleProvider="target">
                                 <rect key="frame" x="260" y="503" width="80" height="40"/>
                                 <constraints>
@@ -49,21 +83,33 @@
                         <constraints>
                             <constraint firstItem="OMs-PI-7eu" firstAttribute="centerY" secondItem="k0w-yr-eAL" secondAttribute="centerY" id="0Ba-Tk-V4h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OMs-PI-7eu" secondAttribute="trailing" id="EDp-mn-VFb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ys8-4b-2Jz" secondAttribute="trailing" constant="-20" id="Gqx-9U-kuW"/>
                             <constraint firstItem="Ge9-XG-MM7" firstAttribute="top" secondItem="ARo-fX-SQF" secondAttribute="bottom" constant="8" id="Jf1-TE-Hic"/>
+                            <constraint firstItem="Ys8-4b-2Jz" firstAttribute="centerX" secondItem="k0w-yr-eAL" secondAttribute="centerX" id="LiA-rd-Xj4"/>
                             <constraint firstItem="Ge9-XG-MM7" firstAttribute="top" secondItem="OMs-PI-7eu" secondAttribute="bottom" id="MBJ-ab-neb"/>
                             <constraint firstItem="ARo-fX-SQF" firstAttribute="centerX" secondItem="k0w-yr-eAL" secondAttribute="centerX" id="N6D-Cr-D3M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WtL-R6-d2k" secondAttribute="trailing" constant="-20" id="RcE-2K-2iU"/>
+                            <constraint firstItem="WtL-R6-d2k" firstAttribute="top" secondItem="Ys8-4b-2Jz" secondAttribute="top" id="Syk-4k-GPX"/>
                             <constraint firstItem="OMs-PI-7eu" firstAttribute="top" secondItem="4FE-b4-LsY" secondAttribute="bottom" id="T61-L4-stS"/>
+                            <constraint firstItem="WtL-R6-d2k" firstAttribute="top" secondItem="Ys8-4b-2Jz" secondAttribute="bottom" id="TDp-tF-kTC"/>
                             <constraint firstItem="OMs-PI-7eu" firstAttribute="height" secondItem="k0w-yr-eAL" secondAttribute="height" id="WDl-3M-6Gi"/>
                             <constraint firstItem="OMs-PI-7eu" firstAttribute="centerX" secondItem="k0w-yr-eAL" secondAttribute="centerX" id="WbZ-nO-X0N"/>
+                            <constraint firstItem="WtL-R6-d2k" firstAttribute="leading" secondItem="Ys8-4b-2Jz" secondAttribute="trailing" id="cwO-vH-QKT"/>
+                            <constraint firstItem="Ys8-4b-2Jz" firstAttribute="leading" secondItem="k0w-yr-eAL" secondAttribute="leadingMargin" constant="-20" id="nAD-4p-A15"/>
                             <constraint firstItem="OMs-PI-7eu" firstAttribute="width" secondItem="k0w-yr-eAL" secondAttribute="width" id="nyr-zn-l03"/>
                             <constraint firstItem="OMs-PI-7eu" firstAttribute="leading" secondItem="k0w-yr-eAL" secondAttribute="leadingMargin" id="p6m-gN-vRH"/>
+                            <constraint firstItem="Ys8-4b-2Jz" firstAttribute="top" secondItem="4FE-b4-LsY" secondAttribute="bottom" id="ri9-WM-3l6"/>
+                            <constraint firstItem="WtL-R6-d2k" firstAttribute="height" secondItem="Ys8-4b-2Jz" secondAttribute="height" id="ybm-A8-Hjv"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="EDp-mn-VFb"/>
                                 <exclude reference="T61-L4-stS"/>
                                 <exclude reference="p6m-gN-vRH"/>
+                                <exclude reference="Gqx-9U-kuW"/>
+                                <exclude reference="LiA-rd-Xj4"/>
                                 <exclude reference="MBJ-ab-neb"/>
+                                <exclude reference="TDp-tF-kTC"/>
                             </mask>
                         </variation>
                     </view>
@@ -79,6 +125,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="OMs-PI-7eu" id="5vZ-Jj-mJi"/>
+                        <outlet property="searchBarContainerView" destination="Ys8-4b-2Jz" id="92g-tK-hVa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UR4-EG-gTz" sceneMemberID="firstResponder"/>

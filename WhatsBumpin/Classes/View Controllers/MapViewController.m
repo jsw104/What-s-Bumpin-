@@ -11,12 +11,16 @@
 @import GooglePlaces;
 #import "Location.h"
 
-@interface MapViewController () <CLLocationManagerDelegate, GMSMapViewDelegate>
+@interface MapViewController () <CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UIGestureRecognizerDelegate>
 
 @property NSMutableArray <Location *>*locations;
 @property Location *locationSelected;
+@property (strong, nonatomic) UISearchController *searchController;
+@property int updatedSearchText;
 
 @end
+
+static double delayInSeconds = 0.5;
 
 @implementation MapViewController
 
@@ -37,7 +41,49 @@
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startMonitoringSignificantLocationChanges];
     [self.locationManager startUpdatingLocation];
+    
+    [self configureSearchBar];
 }
+
+- (void)configureSearchBar
+{
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.searchController.searchBar.delegate = self;
+    self.searchController.delegate = self;
+    self.searchController.searchResultsUpdater = self;
+    
+    [self.searchBarContainerView addSubview: self.searchController.searchBar];
+    self.definesPresentationContext = YES;
+    self.searchController.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.searchController.searchBar sizeToFit];
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    // load results from google api
+}
+
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+    if (!self.searchBarContainerView.contentView)
+    {
+        self.searchBarContainerView.contentView = self.searchController.searchBar;
+    }
+
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
+                   {
+                       self.updatedSearchText--;
+                       if (self.updatedSearchText == 0){
+                           // load results from google api
+                       }
+                   });
+    
+    
+}
+
 
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations {
