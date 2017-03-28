@@ -59,6 +59,9 @@ static double delayInSeconds = 0.5;
     
     [self.radiusLabel setText:[NSString stringWithFormat:@"%i", (int)lroundf(self.radiusSlider.value)]];
     [self.minimumBumpsLabel setText:[NSString stringWithFormat:@"%i", (int)lroundf(self.minimumBumpsSlider.value)]];
+    [self.foodButton setSelected:true];
+    [self.dayTimeButton setSelected:true];
+    [self.nightLifeButton setSelected:true];
 }
 
 - (IBAction)distanceSliderValueChanged:(id)sender
@@ -203,6 +206,23 @@ static double delayInSeconds = 0.5;
 
 - (IBAction)filter:(id)sender {
     self.filterView.hidden ? [self showFilterView:sender] : [self applyFilters:sender];
+}
+
+- (IBAction)togglePlaceType:(id)sender {
+    ((UIButton *)sender).selected ? [self unselectPlaceType:sender] : [self selectPlaceType:sender];
+    [((UIButton *)sender) setSelected:!((UIButton *)sender).selected];
+}
+
+- (void)unselectPlaceType:(id)sender
+{
+    ((UIButton *)sender).alpha = 0.25;
+    [((UIButton *)sender).layer setBorderWidth:0];
+}
+
+- (void)selectPlaceType:(id)sender
+{
+    ((UIButton *)sender).alpha = 1.0;
+    [((UIButton *)sender).layer setBorderWidth:1.0];
 }
 
 @end

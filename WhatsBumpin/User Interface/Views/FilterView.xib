@@ -3,14 +3,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController">
             <connections>
+                <outlet property="dayTimeButton" destination="rKJ-hI-6jV" id="DGM-ig-Ygr"/>
                 <outlet property="filterView" destination="iN0-l3-epB" id="Qib-SL-Oyq"/>
+                <outlet property="foodButton" destination="zdT-ft-4yR" id="1N6-tt-17u"/>
                 <outlet property="minimumBumpsLabel" destination="i7Y-Xf-auI" id="nUw-eG-JLD"/>
                 <outlet property="minimumBumpsSlider" destination="E6N-QF-NTb" id="tFV-8C-ZW5"/>
+                <outlet property="nightLifeButton" destination="2fS-Co-p9A" id="2F4-6t-0sJ"/>
                 <outlet property="radiusLabel" destination="xXl-Y3-7GH" id="yoQ-tf-zyh"/>
                 <outlet property="radiusSlider" destination="ZLh-wz-Zdr" id="9k4-vf-eP1"/>
             </connections>
@@ -56,23 +60,93 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bumps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dy4-Aw-F6w">
-                    <rect key="frame" x="532" y="87" width="53" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDe-lD-0Sw">
                     <rect key="frame" x="545" y="8" width="40" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bumps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dy4-Aw-F6w">
+                    <rect key="frame" x="532" y="87" width="53" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" alpha="0.25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fS-Co-p9A" customClass="WYMaterialButton" customModule="WhatsBumpin" customModuleProvider="target">
+                    <rect key="frame" x="281.5" y="165" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="2fS-Co-p9A" secondAttribute="height" id="1c1-pZ-XR2"/>
+                        <constraint firstAttribute="height" constant="30" id="pgf-Pj-q9U"/>
+                    </constraints>
+                    <state key="normal" image="Night Time"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.26059591450000003" green="0.65490837989999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="togglePlaceType:" destination="-1" eventType="touchUpInside" id="C6h-zG-wUv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdT-ft-4yR" customClass="WYMaterialButton" customModule="WhatsBumpin" customModuleProvider="target">
+                    <rect key="frame" x="351.5" y="165" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zdT-ft-4yR" secondAttribute="height" id="wPc-oZ-ZJ2"/>
+                    </constraints>
+                    <state key="normal" image="Food"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.26059591450000003" green="0.65490837989999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="togglePlaceType:" destination="-1" eventType="touchUpInside" id="97i-Iu-qcU"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qVV-EW-YPb">
+                    <rect key="frame" x="-74" y="5" width="3" height="72"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKJ-hI-6jV" customClass="WYMaterialButton" customModule="WhatsBumpin" customModuleProvider="target">
+                    <rect key="frame" x="211.5" y="165" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="rKJ-hI-6jV" secondAttribute="height" id="H18-7u-JJd"/>
+                    </constraints>
+                    <state key="normal" image="Day Time"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.26059591450000003" green="0.65490837989999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="togglePlaceType:" destination="-1" eventType="touchUpInside" id="jav-1c-5aJ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="E6N-QF-NTb" secondAttribute="trailing" constant="20" id="441-Pw-hDX"/>
+                <constraint firstItem="zdT-ft-4yR" firstAttribute="centerY" secondItem="2fS-Co-p9A" secondAttribute="centerY" id="4YA-6o-Yxc"/>
                 <constraint firstAttribute="trailing" secondItem="MDe-lD-0Sw" secondAttribute="trailing" constant="8" id="4ol-Jq-TrG"/>
+                <constraint firstItem="zdT-ft-4yR" firstAttribute="leading" secondItem="2fS-Co-p9A" secondAttribute="trailing" constant="40" id="8JV-Ri-Kj6"/>
                 <constraint firstItem="ZLh-wz-Zdr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8Va-BV-AYg"/>
                 <constraint firstItem="E6N-QF-NTb" firstAttribute="top" secondItem="BqF-9I-Pen" secondAttribute="bottom" constant="8" id="AU5-YL-ZWx"/>
                 <constraint firstItem="ZLh-wz-Zdr" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="8:10" id="Ac6-XY-fcM"/>
@@ -83,16 +157,23 @@
                 <constraint firstItem="BqF-9I-Pen" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="M8G-4n-QDS"/>
                 <constraint firstItem="E6N-QF-NTb" firstAttribute="top" secondItem="ZLh-wz-Zdr" secondAttribute="bottom" constant="20" id="N6b-hP-dAC"/>
                 <constraint firstItem="XjL-jm-7yv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="P2u-fR-rnQ"/>
+                <constraint firstItem="2fS-Co-p9A" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PjD-hA-IOb"/>
                 <constraint firstItem="BqF-9I-Pen" firstAttribute="bottom" secondItem="i7Y-Xf-auI" secondAttribute="bottom" id="QXb-M6-pIM"/>
                 <constraint firstItem="E6N-QF-NTb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tkx-EK-pgV"/>
+                <constraint firstItem="2fS-Co-p9A" firstAttribute="leading" secondItem="rKJ-hI-6jV" secondAttribute="trailing" constant="40" id="Y6C-IL-Lc1"/>
                 <constraint firstItem="dy4-Aw-F6w" firstAttribute="leading" secondItem="i7Y-Xf-auI" secondAttribute="trailing" constant="2" id="YAb-UR-B1P"/>
+                <constraint firstItem="2fS-Co-p9A" firstAttribute="top" secondItem="E6N-QF-NTb" secondAttribute="bottom" constant="19" id="avD-8B-YpZ"/>
                 <constraint firstAttribute="trailing" secondItem="xXl-Y3-7GH" secondAttribute="trailing" constant="20" id="avo-AC-AVg"/>
                 <constraint firstItem="i7Y-Xf-auI" firstAttribute="bottom" secondItem="dy4-Aw-F6w" secondAttribute="bottom" id="dre-j4-spX"/>
+                <constraint firstItem="rKJ-hI-6jV" firstAttribute="centerY" secondItem="2fS-Co-p9A" secondAttribute="centerY" id="ema-QS-tdE"/>
                 <constraint firstItem="MDe-lD-0Sw" firstAttribute="leading" secondItem="xXl-Y3-7GH" secondAttribute="trailing" constant="2" id="fUC-6v-Bex"/>
                 <constraint firstItem="XjL-jm-7yv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="ksQ-bg-mje"/>
+                <constraint firstAttribute="bottom" secondItem="2fS-Co-p9A" secondAttribute="bottom" constant="16" id="nk9-co-SRR"/>
                 <constraint firstItem="MDe-lD-0Sw" firstAttribute="bottom" secondItem="xXl-Y3-7GH" secondAttribute="bottom" id="r11-41-QiZ"/>
+                <constraint firstItem="zdT-ft-4yR" firstAttribute="height" secondItem="2fS-Co-p9A" secondAttribute="height" id="sOE-gJ-ZH5"/>
                 <constraint firstItem="BqF-9I-Pen" firstAttribute="top" secondItem="ZLh-wz-Zdr" secondAttribute="bottom" constant="20" id="soG-A9-2AG"/>
                 <constraint firstItem="ZLh-wz-Zdr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uAp-nz-LcE"/>
+                <constraint firstItem="rKJ-hI-6jV" firstAttribute="height" secondItem="2fS-Co-p9A" secondAttribute="height" id="uLG-WD-Gqc"/>
                 <constraint firstAttribute="trailing" secondItem="ZLh-wz-Zdr" secondAttribute="trailing" constant="20" id="uTf-Ch-iJm"/>
                 <constraint firstItem="E6N-QF-NTb" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="8:10" id="x1a-3c-gxW"/>
             </constraints>
@@ -103,11 +184,16 @@
                     <exclude reference="uTf-Ch-iJm"/>
                     <exclude reference="441-Pw-hDX"/>
                     <exclude reference="N6b-hP-dAC"/>
-                    <exclude reference="avo-AC-AVg"/>
                     <exclude reference="H9k-d2-2pw"/>
+                    <exclude reference="avo-AC-AVg"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="485.5" y="-2133.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="Day Time" width="29" height="30"/>
+        <image name="Food" width="29" height="30"/>
+        <image name="Night Time" width="30" height="30"/>
+    </resources>
 </document>
