@@ -137,19 +137,37 @@ static double delayInSeconds = 0.5;
     NSDate* eventDate = location.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
     if (abs(howRecent) < 15.0) {
-        // Update your marker on your map using location.coordinate by using the GMSCameraUpdate object
         [[User getCurrentUser] setLocation:location.coordinate];
-        [Location getLocationsWithRadius:1000 minimumBumps:0 type:@"bar" completionBlock:^(NSArray<Location *> *locations, NSError *error) {
-            self.locations = [NSMutableArray arrayWithArray:locations];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self addLocationsToMap];
-            });
-            
-        }];
+        [self getLocationsForUser];
         GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:18];
         [self.mapView animateWithCameraUpdate:locationUpdate];
     }
     [manager stopUpdatingLocation];
+}
+
+- (void)getLocationsForUser
+{
+    WBType locationTypes = 0;
+    if (self.dayTimeButton.selected) {
+        locationTypes = locationTypes | WBDayTime;
+    }
+    if (self.nightLifeButton.selected) {
+        locationTypes = locationTypes | WBNightLife;
+    }
+    if (self.foodButton.selected) {
+        locationTypes = locationTypes | WBFood;
+    }
+    if (self.locations) {
+        //remove all markers here as well
+        [self.locations removeAllObjects];
+    }
+    [Location getLocationsWithRadius:self.radiusLabel.text.intValue minimumBumps:self.minimumBumpsLabel.text.intValue type:locationTypes completionBlock:^(NSArray<Location *> *locations, NSError *error) {
+        self.locations = [NSMutableArray arrayWithArray:locations];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self addLocationsToMap];
+        });
+        
+    }];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error

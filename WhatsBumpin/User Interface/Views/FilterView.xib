@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="593" height="211"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZLh-wz-Zdr">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZLh-wz-Zdr">
                     <rect key="frame" x="57.5" y="37" width="478" height="31"/>
                     <connections>
                         <action selector="distanceSliderValueChanged:" destination="-1" eventType="valueChanged" id="Ocd-oA-aBe"/>

@@ -33,15 +33,22 @@ MessageBoard *messageBoard;
     messageBoard = [[MessageBoard alloc] init];
 }
 
-+ (void)getLocationsWithRadius: (int)radius minimumBumps: (int)minBumps type: (NSString *)type completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
++ (void)getLocationsWithRadius: (int)radiusInMiles minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
 {
-    // Build the url string to send to Google. NOTE: The kGOOGLE_API_KEY is a constant that should contain your own API key that you obtain from Google. See this link for more info:
-    // https://developers.google.com/maps/documentation/places/#Authentication
-    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], type, @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"];
+    if ((types & WBFood) == WBFood) {
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBFood], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+    }
+    if ((types & WBDayTime) == WBDayTime) {
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBDayTime], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+    }
     
-    //Formulate the string as a URL object.
-    NSURL *googleRequestURL=[NSURL URLWithString:url];
-    
+    if ((types & WBNightLife) == WBNightLife) {
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBNightLife], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+    }
+}
+
++ (void) createAndExecuteURL: (NSURL *)googleRequestURL completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
+{
     // Retrieve the results of the URL.
     dispatch_async(kBgQueue, ^{
         NSData* data = [NSData dataWithContentsOfURL: googleRequestURL];
@@ -49,8 +56,26 @@ MessageBoard *messageBoard;
     });
 }
 
++ (int)milesToMeters:(int)miles
+{
+    return miles * 1609;
+}
 
-
++ (NSString *)WBTypeToString:(WBType)type
+{
+    if (type == WBDayTime) {
+        return @"shopping_mall";
+    }
+    else if (type == WBNightLife)
+    {
+        return @"night_club";
+    }
+    else if (type == WBFood)
+    {
+        return @"restaurant";
+    }
+    return NULL;
+}
 
 +(NSArray <Location *> *)fetchedData:(NSData *)responseData {
     //parse out the json data
