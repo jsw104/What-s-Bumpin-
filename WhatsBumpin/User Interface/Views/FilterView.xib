@@ -9,7 +9,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController">
             <connections>
                 <outlet property="filterView" destination="iN0-l3-epB" id="Qib-SL-Oyq"/>
+                <outlet property="minimumBumpsLabel" destination="i7Y-Xf-auI" id="nUw-eG-JLD"/>
                 <outlet property="minimumBumpsSlider" destination="E6N-QF-NTb" id="tFV-8C-ZW5"/>
+                <outlet property="radiusLabel" destination="xXl-Y3-7GH" id="yoQ-tf-zyh"/>
                 <outlet property="radiusSlider" destination="ZLh-wz-Zdr" id="9k4-vf-eP1"/>
             </connections>
         </placeholder>
@@ -18,11 +20,17 @@
             <rect key="frame" x="0.0" y="0.0" width="593" height="211"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZLh-wz-Zdr">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZLh-wz-Zdr">
                     <rect key="frame" x="57.5" y="37" width="478" height="31"/>
+                    <connections>
+                        <action selector="distanceSliderValueChanged:" destination="-1" eventType="valueChanged" id="Ocd-oA-aBe"/>
+                    </connections>
                 </slider>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="E6N-QF-NTb">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="0.0" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="E6N-QF-NTb">
                     <rect key="frame" x="57.5" y="116" width="478" height="31"/>
+                    <connections>
+                        <action selector="bumpsSliderValueChanged:" destination="-1" eventType="valueChanged" id="cuI-31-7fp"/>
+                    </connections>
                 </slider>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjL-jm-7yv">
                     <rect key="frame" x="8" y="8" width="146" height="21"/>

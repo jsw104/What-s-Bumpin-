@@ -56,18 +56,35 @@ static double delayInSeconds = 0.5;
     
     [self.filterView setHidden:true];
     [self.view addSubview:self.filterView];
+    
+    [self.radiusLabel setText:[NSString stringWithFormat:@"%i miles", (int)lroundf(self.radiusSlider.value)]];
+    [self.minimumBumpsLabel setText:[NSString stringWithFormat:@"%i bumps", (int)lroundf(self.minimumBumpsSlider.value)]];
 }
 
-- (IBAction)sliderValueChanged:(id)sender
+- (IBAction)distanceSliderValueChanged:(id)sender
 {
-    [self roundSlider];
+    [self roundDistanceSlider:sender];
 }
 
-- (void)roundSlider
+- (IBAction)bumpsSliderValueChanged:(id)sender
+{
+    [self roundBumpSlider:sender];
+}
+
+- (void)roundDistanceSlider:(id)sender
 {
     int sliderValue;
-    sliderValue = lroundf(self.radiusSlider.value);
-    [self.radiusSlider setValue:sliderValue animated:YES];
+    sliderValue = lroundf(((UISlider *)sender).value);
+    [(UISlider *)sender setValue:sliderValue animated:YES];
+    [self.radiusLabel setText:[NSString stringWithFormat:@"%i miles", sliderValue]];
+}
+
+- (void)roundBumpSlider:(id)sender
+{
+    int sliderValue;
+    sliderValue = lroundf(((UISlider *)sender).value);
+    [(UISlider *)sender setValue:sliderValue animated:YES];
+    [self.minimumBumpsLabel setText:[NSString stringWithFormat:@"%i bumps", sliderValue]];
 }
 
 - (void)configureSearchBar
@@ -169,6 +186,7 @@ static double delayInSeconds = 0.5;
 }
 
 - (IBAction)filter:(id)sender {
+    self.filterView.hidden ? [((UIButton *)sender) setTitle:@"Apply" forState:UIControlStateNormal] : [((UIButton *)sender) setTitle:@"Filter" forState:UIControlStateNormal];
     [self.filterView setHidden:!self.filterView.hidden];
 }
 
