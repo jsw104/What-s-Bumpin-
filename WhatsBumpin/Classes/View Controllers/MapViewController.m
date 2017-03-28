@@ -216,13 +216,11 @@ static double delayInSeconds = 0.5;
 - (void)unselectPlaceType:(id)sender
 {
     ((UIButton *)sender).alpha = 0.25;
-    [((UIButton *)sender).layer setBorderWidth:0];
 }
 
 - (void)selectPlaceType:(id)sender
 {
     ((UIButton *)sender).alpha = 1.0;
-    [((UIButton *)sender).layer setBorderWidth:1.0];
 }
 
 @end
