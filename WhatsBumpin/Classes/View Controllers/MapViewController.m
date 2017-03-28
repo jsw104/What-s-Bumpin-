@@ -216,6 +216,7 @@ static double delayInSeconds = 0.5;
 
 - (void)applyFilters:(id)sender
 {
+    [self getLocationsForUser];
     [((UIButton *)sender) setTitle:@"Filter" forState:UIControlStateNormal];
     [UIView transitionWithView:self.filterView duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void){
         [self.filterView setHidden:true];
