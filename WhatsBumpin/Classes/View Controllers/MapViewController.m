@@ -185,10 +185,24 @@ static double delayInSeconds = 0.5;
     ((LocationInformationViewController*)segue.destinationViewController).location = self.locationSelected;
 }
 
+- (void)showFilterView:(id)sender
+{
+    [((UIButton *)sender) setTitle:@"Apply" forState:UIControlStateNormal];
+    [UIView transitionWithView:self.filterView duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void){
+        [self.filterView setHidden:false];
+    } completion:nil];
+}
+
+- (void)applyFilters:(id)sender
+{
+    [((UIButton *)sender) setTitle:@"Filter" forState:UIControlStateNormal];
+    [UIView transitionWithView:self.filterView duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void){
+        [self.filterView setHidden:true];
+    } completion:nil];
+}
+
 - (IBAction)filter:(id)sender {
-    
-    self.filterView.hidden ? [((UIButton *)sender) setTitle:@"Apply" forState:UIControlStateNormal] : [((UIButton *)sender) setTitle:@"Filter" forState:UIControlStateNormal];
-    [self.filterView setHidden:!self.filterView.hidden];
+    self.filterView.hidden ? [self showFilterView:sender] : [self applyFilters:sender];
 }
 
 @end
