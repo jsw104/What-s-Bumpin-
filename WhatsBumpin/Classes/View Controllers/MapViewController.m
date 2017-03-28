@@ -17,7 +17,6 @@
 @property Location *locationSelected;
 @property (strong, nonatomic) UISearchController *searchController;
 @property int updatedSearchText;
-@property (strong, nonatomic) UIView *filterView;
 
 @end
 
@@ -49,10 +48,26 @@ static double delayInSeconds = 0.5;
 
 - (void)configureFilterView
 {
-    self.filterView = [[UIView alloc] initWithFrame:CGRectMake(self.searchBarContainerView.frame.origin.x, self.searchBarContainerView.frame.origin.y + self.searchBarContainerView.frame.size.height, self.mapView.frame.size.width, 100)];
-    [self.filterView setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    self.filterView = [[[NSBundle mainBundle]
+                     loadNibNamed:@"FilterView"
+                     owner:self options:nil]
+                    firstObject];
+    [self.filterView setFrame:CGRectMake(self.searchBarContainerView.frame.origin.x, self.searchBarContainerView.frame.origin.y + self.searchBarContainerView.frame.size.height, self.view.frame.size.width, 200)];
+    
     [self.filterView setHidden:true];
     [self.view addSubview:self.filterView];
+}
+
+- (IBAction)sliderValueChanged:(id)sender
+{
+    [self roundSlider];
+}
+
+- (void)roundSlider
+{
+    int sliderValue;
+    sliderValue = lroundf(self.radiusSlider.value);
+    [self.radiusSlider setValue:sliderValue animated:YES];
 }
 
 - (void)configureSearchBar

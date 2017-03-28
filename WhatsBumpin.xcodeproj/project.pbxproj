@@ -12,6 +12,7 @@
 		33D8D8F2F765DE5FA5799025 /* Pods_What_s_Bumpin_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */; };
 		343286D769FD4ABA113B5BBD /* Pods_WhatsBumpinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C05856A88D9A0D4CDA3E8A /* Pods_WhatsBumpinUITests.framework */; };
 		A6CC3446DD5C9D9FE1A738B2 /* Pods_WhatsBumpinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A421222F8D1DC5F1562418 /* Pods_WhatsBumpinTests.framework */; };
+		D0331A311E89D60B004CA5C1 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0331A301E89D60B004CA5C1 /* FilterView.xib */; };
 		D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */; };
 		D0A6CBB81E513F58001F7964 /* What_s_Bumpin_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBB71E513F58001F7964 /* What_s_Bumpin_UITests.m */; };
 		D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */; };
@@ -73,6 +74,7 @@
 		AB83E6147980ADFE363F5921 /* Pods-WhatsBumpinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpinUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpinUITests/Pods-WhatsBumpinUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_s_Bumpin_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF52779BDEAEFF54193BA1A1 /* Pods-What's Bumpin'UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D0331A301E89D60B004CA5C1 /* FilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
 		D0A6CB8C1E513F57001F7964 /* WhatsBumpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsBumpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBA81E513F58001F7964 /* WhatsBumpin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsBumpin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What_s_Bumpin_Tests.m; sourceTree = "<group>"; };
@@ -180,6 +182,14 @@
 				AB83E6147980ADFE363F5921 /* Pods-WhatsBumpinUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D0331A2F1E89D5DC004CA5C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0331A301E89D60B004CA5C1 /* FilterView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D0A6CB831E513F57001F7964 = {
@@ -328,6 +338,7 @@
 		D0E4C4471E6268B2000960B3 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				D0331A2F1E89D5DC004CA5C1 /* Views */,
 				D0E4C4481E6268B2000960B3 /* Global.storyboard */,
 				D0E4C4491E6268B2000960B3 /* Me.storyboard */,
 				D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */,
@@ -451,6 +462,7 @@
 				D0E4C44B1E6268B2000960B3 /* Assets.xcassets in Resources */,
 				D0E4C45E1E6268B2000960B3 /* Global.storyboard in Resources */,
 				D0E4C45F1E6268B2000960B3 /* Me.storyboard in Resources */,
+				D0331A311E89D60B004CA5C1 /* FilterView.xib in Resources */,
 				D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */,
 				D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */,
 				D0E4C45C1E6268B2000960B3 /* Info.plist in Resources */,

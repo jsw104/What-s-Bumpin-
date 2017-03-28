@@ -16,6 +16,11 @@
 @property (strong, nonatomic) IBOutlet GMSMapView *mapView;
 @property (strong, nonatomic) IBOutlet FBShimmeringView *searchBarContainerView;
 - (IBAction)filter:(id)sender;
+@property (strong, nonatomic) IBOutlet UIView *filterView;
+@property (strong, nonatomic) IBOutlet UISlider *radiusSlider;
+@property (strong, nonatomic) IBOutlet UISlider *minimumBumpsSlider;
+@property (strong, nonatomic) IBOutlet UILabel *radiusLabel;
+@property (strong, nonatomic) IBOutlet UILabel *minimumBumpsLabel;
 
 @end
 
