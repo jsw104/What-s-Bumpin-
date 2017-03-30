@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     require_once '../includes/dboperation.php';
 
     $db = new DbOperation();
-    $bumps = $db->get_bumps();
+    $bumps = $db->get_all_bumps();
     if(!empty($bumps)) {
         $response['error'] = false;
         $response = $response + $bumps;

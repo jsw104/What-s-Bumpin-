@@ -2,11 +2,12 @@
 To run the PHP scripts, use this URL:
 52.14.0.153/api/"Script Name"
 Example:
-52.14.0.153/api/get_bumps.php
+52.14.0.153/api/get_all_bumps.php
 
 Some scripts require post data to be passed
 
 Post data needed for retrieving messages: "location_id"
+Post data need for retrieving bumps by day of week: "location_id"
 
 ***What is returned***
 Each script returns a JSON array with the first key being "error"
@@ -30,3 +31,7 @@ Keys for retrieving messages: "location_id" "user_id" "message_field" "time_stam
 Example:
 {"error":false,"1":{"location_id":"23","user_id":1,"message_field":"hello","time_stamp":"2017-03-26 18:09:07"},
 "2":{"location_id":"23","user_id":2,"message_field":"bye","time_stamp":"2017-03-26 18:09:21"}}
+
+1 - 7 correspond to day of the week with 1 being Sundays, 2 being Monday, etc.
+Example:
+{"error":false,"1":0,"2":0,"3":0,"4":0,"5":1,"6":0,"7":0}
