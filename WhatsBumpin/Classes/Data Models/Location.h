@@ -15,8 +15,14 @@
 
 @interface Location : NSObject
 
+typedef NS_ENUM(NSInteger, WBType) {
+    WBDayTime = 1,
+    WBNightLife = 2,
+    WBFood = 4,
+};
+
 //static methods
-+ (void)getLocationsWithRadius: (int)radius minimumBumps: (int)minBumps type: (NSString *)type completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion;
++ (void)getLocationsWithRadius: (int)radiusInMiles minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion;
 
 //instance methods
 - (void)bump;
@@ -27,6 +33,6 @@
 @property (strong, nonatomic) NSURL *website;
 @property (strong, nonatomic) NSArray <NSURL *> *photoURLs;
 @property (strong, nonatomic) UIImage *icon;
-
+@property (nonatomic) WBType type;
 
 @end

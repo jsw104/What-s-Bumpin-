@@ -11,12 +11,16 @@
 @import GooglePlaces;
 #import "Location.h"
 
-@interface MapViewController () <CLLocationManagerDelegate, GMSMapViewDelegate>
+@interface MapViewController () <CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UIGestureRecognizerDelegate>
 
 @property NSMutableArray <Location *>*locations;
 @property Location *locationSelected;
+@property (strong, nonatomic) UISearchController *searchController;
+@property int updatedSearchText;
 
 @end
+
+static double delayInSeconds = 0.5;
 
 @implementation MapViewController
 
@@ -37,7 +41,94 @@
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startMonitoringSignificantLocationChanges];
     [self.locationManager startUpdatingLocation];
+    
+    [self configureSearchBar];
+    [self configureFilterView];
 }
+
+- (void)configureFilterView
+{
+    self.filterView = [[[NSBundle mainBundle]
+                     loadNibNamed:@"FilterView"
+                     owner:self options:nil]
+                    firstObject];
+    [self.filterView setFrame:CGRectMake(self.searchBarContainerView.frame.origin.x, self.searchBarContainerView.frame.origin.y + self.searchBarContainerView.frame.size.height, self.view.frame.size.width, 200)];
+    
+    [self.filterView setHidden:true];
+    [self.view addSubview:self.filterView];
+    
+    [self.radiusLabel setText:[NSString stringWithFormat:@"%i", (int)lroundf(self.radiusSlider.value)]];
+    [self.minimumBumpsLabel setText:[NSString stringWithFormat:@"%i", (int)lroundf(self.minimumBumpsSlider.value)]];
+    [self.foodButton setSelected:true];
+    [self.dayTimeButton setSelected:true];
+    [self.nightLifeButton setSelected:true];
+}
+
+- (IBAction)distanceSliderValueChanged:(id)sender
+{
+    [self roundDistanceSlider:sender];
+}
+
+- (IBAction)bumpsSliderValueChanged:(id)sender
+{
+    [self roundBumpSlider:sender];
+}
+
+- (void)roundDistanceSlider:(id)sender
+{
+    int sliderValue;
+    sliderValue = lroundf(((UISlider *)sender).value);
+    [(UISlider *)sender setValue:sliderValue animated:YES];
+    [self.radiusLabel setText:[NSString stringWithFormat:@"%i", sliderValue]];
+}
+
+- (void)roundBumpSlider:(id)sender
+{
+    int sliderValue;
+    sliderValue = lroundf(((UISlider *)sender).value);
+    [(UISlider *)sender setValue:sliderValue animated:YES];
+    [self.minimumBumpsLabel setText:[NSString stringWithFormat:@"%i", sliderValue]];
+}
+
+- (void)configureSearchBar
+{
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.searchController.searchBar.delegate = self;
+    self.searchController.delegate = self;
+    self.searchController.searchResultsUpdater = self;
+    
+    [self.searchBarContainerView addSubview: self.searchController.searchBar];
+    self.definesPresentationContext = YES;
+    self.searchController.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.searchController.searchBar sizeToFit];
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    // load results from google api
+}
+
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+    if (!self.searchBarContainerView.contentView)
+    {
+        self.searchBarContainerView.contentView = self.searchController.searchBar;
+    }
+
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
+                   {
+                       self.updatedSearchText--;
+                       if (self.updatedSearchText == 0){
+                           // load results from google api
+                       }
+                   });
+    
+    
+}
+
 
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations {
@@ -46,19 +137,37 @@
     NSDate* eventDate = location.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
     if (abs(howRecent) < 15.0) {
-        // Update your marker on your map using location.coordinate by using the GMSCameraUpdate object
         [[User getCurrentUser] setLocation:location.coordinate];
-        [Location getLocationsWithRadius:1000 minimumBumps:0 type:@"bar" completionBlock:^(NSArray<Location *> *locations, NSError *error) {
-            self.locations = [NSMutableArray arrayWithArray:locations];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self addLocationsToMap];
-            });
-            
-        }];
+        [self getLocationsForUser];
         GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:18];
         [self.mapView animateWithCameraUpdate:locationUpdate];
     }
     [manager stopUpdatingLocation];
+}
+
+- (void)getLocationsForUser
+{
+    WBType locationTypes = 0;
+    if (self.dayTimeButton.selected) {
+        locationTypes = locationTypes | WBDayTime;
+    }
+    if (self.nightLifeButton.selected) {
+        locationTypes = locationTypes | WBNightLife;
+    }
+    if (self.foodButton.selected) {
+        locationTypes = locationTypes | WBFood;
+    }
+    if (self.locations) {
+        //remove all markers here as well
+        [self.locations removeAllObjects];
+    }
+    [Location getLocationsWithRadius:self.radiusLabel.text.intValue minimumBumps:self.minimumBumpsLabel.text.intValue type:locationTypes completionBlock:^(NSArray<Location *> *locations, NSError *error) {
+        self.locations = [NSMutableArray arrayWithArray:locations];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self addLocationsToMap];
+        });
+        
+    }];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -95,6 +204,42 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ((LocationInformationViewController*)segue.destinationViewController).location = self.locationSelected;
+}
+
+- (void)showFilterView:(id)sender
+{
+    [((UIButton *)sender) setTitle:@"Apply" forState:UIControlStateNormal];
+    [UIView transitionWithView:self.filterView duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void){
+        [self.filterView setHidden:false];
+    } completion:nil];
+}
+
+- (void)applyFilters:(id)sender
+{
+    [self getLocationsForUser];
+    [((UIButton *)sender) setTitle:@"Filter" forState:UIControlStateNormal];
+    [UIView transitionWithView:self.filterView duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void){
+        [self.filterView setHidden:true];
+    } completion:nil];
+}
+
+- (IBAction)filter:(id)sender {
+    self.filterView.hidden ? [self showFilterView:sender] : [self applyFilters:sender];
+}
+
+- (IBAction)togglePlaceType:(id)sender {
+    ((UIButton *)sender).selected ? [self unselectPlaceType:sender] : [self selectPlaceType:sender];
+    [((UIButton *)sender) setSelected:!((UIButton *)sender).selected];
+}
+
+- (void)unselectPlaceType:(id)sender
+{
+    ((UIButton *)sender).alpha = 0.25;
+}
+
+- (void)selectPlaceType:(id)sender
+{
+    ((UIButton *)sender).alpha = 1.0;
 }
 
 @end
