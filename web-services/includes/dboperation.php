@@ -40,5 +40,20 @@ class DbOperation{
             return false;
         }
     } 
+    
+    public function get_bumps() {
+        $query = "SELECT * FROM bump";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $stmt->bind_result($id, $location_id, $user_id, $time_stamp);
+
+        while($stmt->fetch()) {
+            $bumps[$id]['location_id'] = $location_id;
+            $bumps[$id]['user_id'] = $user_id;
+            $bumps[$id]['time_stamp'] = $time_stamp;
+        }
+        $stmt->close();
+        return $bumps;
+    }
 }
 

@@ -1,0 +1,32 @@
+***Running the scripts***
+To run the PHP scripts, use this URL:
+52.14.0.153/api/"Script Name"
+Example:
+52.14.0.153/api/get_bumps.php
+
+Some scripts require post data to be passed
+
+Post data needed for retrieving messages: "location_id"
+
+***What is returned***
+Each script returns a JSON array with the first key being "error"
+If the value of "error" is "true", then the next key will be "message" which will give a description of what happened
+Note: if a query returns empty, "error" is "true"
+
+If "error" is "false" and the query was to add a tuple, than the "message" will simply say that the tuple was successfully added
+
+If "error" is "false" and the query was to return tuples, than the rest of the keys will be the id of that tuple.
+The values of those keys will be array with information in them
+
+Keys for retrieving bumps: "location_id" "user_id" "time_stamp"
+Example:
+{"error":false,"1":{"location_id":"20","user_id":5,"time_stamp":"2017-03-27 01:06:56"},
+"2":{"location_id":"20","user_id":5,"time_stamp":"2017-03-26 21:09:39"},
+"7":{"location_id":"mitchells","user_id":3,"time_stamp":"2017-03-25 21:25:20"},
+"8":{"location_id":"mitchells","user_id":3,"time_stamp":"2017-03-25 21:25:59"},
+"9":{"location_id":"tink","user_id":1,"time_stamp":"2017-03-29 13:56:20"}}
+
+Keys for retrieving messages: "location_id" "user_id" "message_field" "time_stamp" (Subject to change)
+Example:
+{"error":false,"1":{"location_id":"23","user_id":1,"message_field":"hello","time_stamp":"2017-03-26 18:09:07"},
+"2":{"location_id":"23","user_id":2,"message_field":"bye","time_stamp":"2017-03-26 18:09:21"}}
