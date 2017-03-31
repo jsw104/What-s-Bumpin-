@@ -37,6 +37,7 @@
 		D0E4C45E1E6268B2000960B3 /* Global.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4481E6268B2000960B3 /* Global.storyboard */; };
 		D0E4C45F1E6268B2000960B3 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4491E6268B2000960B3 /* Me.storyboard */; };
 		D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */; };
+		F0EE46871E8EF96F00FD1439 /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE46861E8EF96F00FD1439 /* FBLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,8 @@
 		D6C05856A88D9A0D4CDA3E8A /* Pods_WhatsBumpinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsBumpinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED8673A2BE4EB8CA732237B /* Pods-What's Bumpin'.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'.release.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'.release.xcconfig"; sourceTree = "<group>"; };
 		E378B67D81D9683C27AD596F /* Pods-WhatsBumpinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpinTests/Pods-WhatsBumpinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F0EE46851E8EF96F00FD1439 /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
+		F0EE46861E8EF96F00FD1439 /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +393,8 @@
 				D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */,
 				D0E4C4431E6268B2000960B3 /* WBTabViewController.h */,
 				D0E4C4441E6268B2000960B3 /* WBTabViewController.m */,
+				F0EE46851E8EF96F00FD1439 /* FBLoginViewController.h */,
+				F0EE46861E8EF96F00FD1439 /* FBLoginViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -693,6 +698,7 @@
 				D0E4C4531E6268B2000960B3 /* Bump.m in Sources */,
 				D0E4C4591E6268B2000960B3 /* LocationInformationViewController.m in Sources */,
 				D0E4C44F1E6268B2000960B3 /* Spring.swift in Sources */,
+				F0EE46871E8EF96F00FD1439 /* FBLoginViewController.m in Sources */,
 				D0E4C45D1E6268B2000960B3 /* main.m in Sources */,
 				D0E4C4511E6268B2000960B3 /* SpringButton.swift in Sources */,
 				D0E4C4571E6268B2000960B3 /* User.m in Sources */,
@@ -845,6 +851,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
 				PRODUCT_NAME = WhatsBumpin;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -858,6 +865,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
 				PRODUCT_NAME = WhatsBumpin;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
