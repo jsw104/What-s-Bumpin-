@@ -17,6 +17,7 @@ class DbOperation{
         $stmt->execute();
         $stmt->bind_result($id, $location_id_r, $user_id, $message_field, $time_stamp);
 
+        $messages = [];
         while($stmt->fetch()) {
             $messages[$id]['location_id'] = $location_id_r;
             $messages[$id]['user_id'] = $user_id;
@@ -28,10 +29,9 @@ class DbOperation{
     }
 
     public function insert_bump($location_id, $user_id) {
-        $query = "INSERT INTO bump(location_id, user_id, time_stamp) VALUES(?, ?, ?)";
+        $query = "INSERT INTO bump(location_id, user_id) VALUES(?, ?)";
         $stmt = $this->conn->prepare($query);
-        $time_stamp = date("Y-m-d H:i:s");
-        $stmt->bind_param('iis', $location_id, $user_id, $time_stamp);
+        $stmt->bind_param('ii', $location_id, $user_id);
         $result = $stmt->execute();
         $stmt->close();
         if($result) {
@@ -47,6 +47,7 @@ class DbOperation{
         $stmt->execute();
         $stmt->bind_result($id, $location_id, $user_id, $time_stamp);
 
+        $bumps = [];
         while($stmt->fetch()) {
             $bumps[$id]['location_id'] = $location_id;
             $bumps[$id]['user_id'] = $user_id;
