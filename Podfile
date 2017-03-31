@@ -11,10 +11,13 @@ target 'WhatsBumpin' do
   pod 'pop'
   pod 'ios-charts'
   pod 'Charts'
-
+  
   target 'WhatsBumpinTests' do
     inherit! :search_paths
     # Pods for testing
+    
+    pod 'Expecta', '~> 1.0'
+    
   end
 
   target 'WhatsBumpinUITests' do

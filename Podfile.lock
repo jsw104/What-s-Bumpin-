@@ -2,6 +2,7 @@ PODS:
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
+  - Expecta (1.0.5)
   - GoogleMaps (2.1.1):
     - GoogleMaps/Maps (= 2.1.1)
   - GoogleMaps/Base (2.1.1)
@@ -17,6 +18,7 @@ PODS:
 
 DEPENDENCIES:
   - Charts
+  - Expecta (~> 1.0)
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
@@ -25,12 +27,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlacePicker: 665f39f931f2df32f9dd3fcc45f7e8abf71e535c
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   ios-charts: 9fe9e64632a8480b940e1ac66e73dd18d5358a83
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-PODFILE CHECKSUM: 36cd6cad15f520340427b3c2607c9eab9697b84f
+PODFILE CHECKSUM: 70fe32a0ef1cfc484ae46099550b4bcf6d0b6e54
 
 COCOAPODS: 1.2.0
