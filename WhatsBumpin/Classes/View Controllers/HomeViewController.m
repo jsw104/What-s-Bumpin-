@@ -7,6 +7,9 @@
 //
 
 #import "HomeViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 
 @interface HomeViewController ()
 
@@ -17,6 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [self performSegueWithIdentifier:@"showUserHome" sender:self];
+    }
+    else {
+        [self performSegueWithIdentifier:@"FacebookLogin" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

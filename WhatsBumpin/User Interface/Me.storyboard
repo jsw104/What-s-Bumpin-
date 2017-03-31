@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TZG-Dv-w3V">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TZG-Dv-w3V">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -10,10 +14,50 @@
             <objects>
                 <viewController id="hib-J7-B2s" customClass="HomeViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="qhP-kg-rGB"/>
+                    <connections>
+                        <segue destination="vnG-Sx-1Ra" kind="show" identifier="FacebookLogin" id="ftH-uF-Jf8"/>
+                        <segue destination="Suw-Fl-775" kind="show" identifier="showUserHome" id="6d8-fV-65y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHI-PL-qjs" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="360"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="glT-rW-Sv6">
+            <objects>
+                <viewController id="vnG-Sx-1Ra" customClass="FBLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pD6-zn-qRh"/>
+                        <viewControllerLayoutGuide type="bottom" id="fSa-5v-6iL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5ii-xq-nAN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHg-sH-EzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2546" y="190"/>
+        </scene>
+        <!--User Home View Controller-->
+        <scene sceneID="PVC-Rf-fGX">
+            <objects>
+                <viewController id="Suw-Fl-775" customClass="UserHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fbf-KL-den"/>
+                        <viewControllerLayoutGuide type="bottom" id="U8v-Mo-wWp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iKn-nl-gCZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CXZ-qg-mrD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2545" y="849"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="96w-5T-tHb">
@@ -22,7 +66,7 @@
                     <tabBarItem key="tabBarItem" title="" image="Home" id="iMm-BS-oQA"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aCm-NU-Z8J">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aCm-NU-Z8J">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
