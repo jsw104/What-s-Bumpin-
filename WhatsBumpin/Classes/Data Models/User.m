@@ -42,6 +42,11 @@ static User *currentUser;
     self.coordinates = coordinates;
 }
 
+-(BOOL)isLoggedIn
+{
+    return self.email != NULL;
+}
+
 -(void)saveInBackground
 {
     

@@ -223,6 +223,20 @@ static double delayInSeconds = 0.5;
     } completion:nil];
 }
 
+- (Location *)getClosestLocation
+{
+    int minDistance = 0;
+    return self.locations.firstObject;
+    for(Location *location in self.locations)
+    {
+        
+    }
+}
+
+- (IBAction)bump:(id)sender {
+    [[self getClosestLocation] bump];
+}
+
 - (IBAction)filter:(id)sender {
     self.filterView.hidden ? [self showFilterView:sender] : [self applyFilters:sender];
 }

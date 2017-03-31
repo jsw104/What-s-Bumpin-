@@ -33,6 +33,11 @@ MessageBoard *messageBoard;
     messageBoard = [[MessageBoard alloc] init];
 }
 
+- (double)distanceToLocation: (CLLocationCoordinate2D)location
+{
+    return fabs(location.latitude - self.coordinate.latitude) + fabs(location.longitude - self.coordinate.longitude);
+}
+
 + (void)getLocationsWithRadius: (int)radiusInMiles minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
 {
     if ((types & WBFood) == WBFood) {
@@ -124,6 +129,7 @@ MessageBoard *messageBoard;
         location.coordinate = placeCoord;
         location.icon = [place objectForKey:@"icon"];
         location.photoURLs = [NSArray arrayWithArray:photoURLs];
+        location.googlePlacesID = [place objectForKey:@"place_id"];
         [locations addObject:location];
     }
     return locations;
@@ -146,19 +152,17 @@ MessageBoard *messageBoard;
 
 - (void)bumpPrivate:(User *)user
 {
-    Bump *newBump = [[Bump alloc] initWithUsername:user.email locationWithCoordinate:self.coordinate];
+    //Bump *newBump = [[Bump alloc] initWithUsername:user.userID locationWithID:self.goo
     
     //TODO might want to use different data structure here:
     
     //have to override hashcode and isequal methods on Bump for contains to work correctly
-    if ([bumps containsObject:newBump]) {
-        //check if date is within one day here
-    }
+
 }
 
 - (void)bumpPublic
 {
-    Bump *newBump = [[Bump alloc] initWithUsername:NULL locationWithCoordinate:self.coordinate];
+    //Bump *newBump = [[Bump alloc] initWithUsername:NULL locationWithCoordinate:self.coordinate];
 }
 
 - (void)addBump

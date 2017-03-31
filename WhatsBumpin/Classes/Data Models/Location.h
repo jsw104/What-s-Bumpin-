@@ -27,8 +27,10 @@ typedef NS_ENUM(NSInteger, WBType) {
 //instance methods
 - (void)bump;
 - (int)getBumpCountBetween:(NSDate *)earlierDate and:(NSDate *)laterDate;
+- (double)distanceToLocation: (CLLocationCoordinate2D)location;
 
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *googlePlacesID;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic) NSURL *website;
 @property (strong, nonatomic) NSArray <NSURL *> *photoURLs;

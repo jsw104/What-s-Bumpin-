@@ -19,6 +19,7 @@
 //instance methods
 -(void)setBio;
 -(void)setLocation:(CLLocationCoordinate2D)coordinates;
+-(BOOL)isLoggedIn;
 
 //variables
 @property (nonatomic) int userID;
