@@ -226,7 +226,7 @@ static double delayInSeconds = 0.5;
 - (Location *)getClosestLocation
 {
     int minDistance = 0;
-    
+    return self.locations.firstObject;
     for(Location *location in self.locations)
     {
         
@@ -234,7 +234,7 @@ static double delayInSeconds = 0.5;
 }
 
 - (IBAction)bump:(id)sender {
-    ([[User getCurrentUser] isLoggedIn]) ?
+    [[self getClosestLocation] bump];
 }
 
 - (IBAction)filter:(id)sender {

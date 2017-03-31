@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Location.h"
-#import "Charts-swift.h"
 
 @interface LocationGraphViewController<ChartViewDelegate> : UIViewController
 
