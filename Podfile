@@ -12,7 +12,7 @@ target 'WhatsBumpin' do
   pod 'Shimmer'
 
   target 'WhatsBumpinTests' do
-    inherit! :search_paths
+      #inherit! :search_paths
     pod 'Expecta', '~> 1.0'
     # Pods for testing
   end
