@@ -90,9 +90,9 @@ public class WYMaterialButton: DesignableButton {
         self.configureMaterialPressedView()
         self.configureMaterialBackgroundView()
         self.materialBackgroundView.alpha = 0
-        self.addTarget(self, action: "scaleToSmall", forControlEvents: [.TouchDragEnter, .TouchDown])
-        self.addTarget(self, action: "scaleAnimation", forControlEvents: .TouchUpInside)
-        self.addTarget(self, action: "scaleToDefault", forControlEvents: .TouchDragExit)
+        self.addTarget(self, action: #selector(WYMaterialButton.scaleToSmall), forControlEvents: [.TouchDragEnter, .TouchDown])
+        self.addTarget(self, action: #selector(WYMaterialButton.scaleAnimation), forControlEvents: .TouchUpInside)
+        self.addTarget(self, action: #selector(WYMaterialButton.scaleToDefault), forControlEvents: .TouchDragExit)
     }
     
     func scaleToSmall() {
