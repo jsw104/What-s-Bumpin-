@@ -20,6 +20,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     __block long user_id;
+    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(200, 200, 100, 100)];
+    
+    
+    
     if ([FBSDKAccessToken currentAccessToken]) {
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name"}]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
@@ -28,6 +32,10 @@
                  NSDictionary *resultDict = (NSDictionary *) result;
 
                 user_id = [[resultDict valueForKey:@"id"] longLongValue];
+                 NSString *name = [resultDict valueForKey:@"name"];
+                 [nameLabel setText:name];
+                 [[self view] addSubview:nameLabel];
+
                  NSString *friendPath = [NSString stringWithFormat:@"me/friends"];
                  NSLog(@"friend path %@", friendPath);
 

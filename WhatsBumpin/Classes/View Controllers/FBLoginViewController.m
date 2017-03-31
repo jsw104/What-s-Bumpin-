@@ -26,8 +26,10 @@
     // Optional: Place the button in the center of your view.
     loginButton.center = self.view.center;
     [self.view addSubview:loginButton];
-    
+    if ([FBSDKAccessToken currentAccessToken]) {
 
+        [self dismissViewControllerAnimated:TRUE completion:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
