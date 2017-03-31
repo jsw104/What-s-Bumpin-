@@ -7,15 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B2A68EE97CBE0B30E74BF07 /* Pods_What_s_Bumpin_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F25E83F9814DAE766B91F6C /* Pods_What_s_Bumpin_.framework */; };
-		33CFEEC52835C167E4A6CE68 /* Pods_What_s_Bumpin_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B70C85B7157927B578B7A8 /* Pods_What_s_Bumpin_UITests.framework */; };
-		33D8D8F2F765DE5FA5799025 /* Pods_What_s_Bumpin_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */; };
-		343286D769FD4ABA113B5BBD /* Pods_WhatsBumpinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C05856A88D9A0D4CDA3E8A /* Pods_WhatsBumpinUITests.framework */; };
-		A6CC3446DD5C9D9FE1A738B2 /* Pods_WhatsBumpinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A421222F8D1DC5F1562418 /* Pods_WhatsBumpinTests.framework */; };
 		D0331A311E89D60B004CA5C1 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0331A301E89D60B004CA5C1 /* FilterView.xib */; };
-		D06F47D61E8ED84A00D75A12 /* BumpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D06F47D51E8ED84A00D75A12 /* BumpTests.m */; };
 		D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */; };
-		D0A6CBB81E513F58001F7964 /* What_s_Bumpin_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBB71E513F58001F7964 /* What_s_Bumpin_UITests.m */; };
 		D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */; };
 		D0E4C44B1E6268B2000960B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4211E6268B2000960B3 /* Assets.xcassets */; };
 		D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4221E6268B2000960B3 /* LaunchScreen.storyboard */; };
@@ -39,7 +32,6 @@
 		D0E4C45E1E6268B2000960B3 /* Global.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4481E6268B2000960B3 /* Global.storyboard */; };
 		D0E4C45F1E6268B2000960B3 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4491E6268B2000960B3 /* Me.storyboard */; };
 		D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */; };
-		D2B4AE99AE652ECEF09FA64A /* Pods_WhatsBumpin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A782E94C543F02F6927C66D7 /* Pods_WhatsBumpin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,13 +68,11 @@
 		C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_s_Bumpin_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF52779BDEAEFF54193BA1A1 /* Pods-What's Bumpin'UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D0331A301E89D60B004CA5C1 /* FilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
-		D06F47D51E8ED84A00D75A12 /* BumpTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BumpTests.m; sourceTree = "<group>"; };
 		D0A6CB8C1E513F57001F7964 /* WhatsBumpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsBumpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBA81E513F58001F7964 /* WhatsBumpin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsBumpin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What_s_Bumpin_Tests.m; sourceTree = "<group>"; };
 		D0A6CBAE1E513F58001F7964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0A6CBB31E513F58001F7964 /* WhatsBumpin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsBumpin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0A6CBB71E513F58001F7964 /* What_s_Bumpin_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What_s_Bumpin_UITests.m; sourceTree = "<group>"; };
 		D0A6CBB91E513F58001F7964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0AF02711E80BD3800C54D89 /* LocationGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationGraphViewController.h; sourceTree = "<group>"; };
 		D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationGraphViewController.m; sourceTree = "<group>"; };
@@ -128,8 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B2A68EE97CBE0B30E74BF07 /* Pods_What_s_Bumpin_.framework in Frameworks */,
-				D2B4AE99AE652ECEF09FA64A /* Pods_WhatsBumpin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +125,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33D8D8F2F765DE5FA5799025 /* Pods_What_s_Bumpin_Tests.framework in Frameworks */,
-				A6CC3446DD5C9D9FE1A738B2 /* Pods_WhatsBumpinTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33CFEEC52835C167E4A6CE68 /* Pods_What_s_Bumpin_UITests.framework in Frameworks */,
-				343286D769FD4ABA113B5BBD /* Pods_WhatsBumpinUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +222,6 @@
 		D05644961E8ECC9900305A57 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				D06F47D51E8ED84A00D75A12 /* BumpTests.m */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -285,7 +268,6 @@
 		D0A6CBB61E513F58001F7964 /* What's Bumpin'UITests */ = {
 			isa = PBXGroup;
 			children = (
-				D0A6CBB71E513F58001F7964 /* What_s_Bumpin_UITests.m */,
 				D0A6CBB91E513F58001F7964 /* Info.plist */,
 			);
 			path = "What's Bumpin'UITests";
@@ -712,7 +694,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */,
-				D06F47D61E8ED84A00D75A12 /* BumpTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,7 +701,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A6CBB81E513F58001F7964 /* What_s_Bumpin_UITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
