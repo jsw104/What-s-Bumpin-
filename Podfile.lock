@@ -1,4 +1,5 @@
 PODS:
+  - Expecta (1.0.5)
   - GoogleMaps (2.1.1):
     - GoogleMaps/Maps (= 2.1.1)
   - GoogleMaps/Base (2.1.1)
@@ -13,6 +14,7 @@ PODS:
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
+  - Expecta (~> 1.0)
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
@@ -20,12 +22,13 @@ DEPENDENCIES:
   - Shimmer
 
 SPEC CHECKSUMS:
+  Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlacePicker: 665f39f931f2df32f9dd3fcc45f7e8abf71e535c
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: c460503dae8ce5fe277c8dacecc90b906d0b9c6f
+PODFILE CHECKSUM: 40031e0167ccfb9511b906a513d5fc431f22873a
 
 COCOAPODS: 1.2.0

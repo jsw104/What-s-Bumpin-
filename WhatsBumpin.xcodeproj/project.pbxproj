@@ -192,6 +192,61 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D05644911E8ECC9900305A57 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D05644921E8ECC9900305A57 /* API */,
+				D05644931E8ECC9900305A57 /* App Delegate */,
+				D05644941E8ECC9900305A57 /* Cells */,
+				D05644951E8ECC9900305A57 /* Constants */,
+				D05644961E8ECC9900305A57 /* Data Models */,
+				D05644971E8ECC9900305A57 /* View Controllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D05644921E8ECC9900305A57 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D05644931E8ECC9900305A57 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		D05644941E8ECC9900305A57 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D05644951E8ECC9900305A57 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		D05644961E8ECC9900305A57 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		D05644971E8ECC9900305A57 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		D0A6CB831E513F57001F7964 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +272,7 @@
 		D0A6CBAB1E513F58001F7964 /* What's Bumpin'Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D05644911E8ECC9900305A57 /* Classes */,
 				D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */,
 				D0A6CBAE1E513F58001F7964 /* Info.plist */,
 			);
