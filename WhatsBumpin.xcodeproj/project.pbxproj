@@ -7,20 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B2A68EE97CBE0B30E74BF07 /* Pods_What_s_Bumpin_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F25E83F9814DAE766B91F6C /* Pods_What_s_Bumpin_.framework */; };
-		33CFEEC52835C167E4A6CE68 /* Pods_What_s_Bumpin_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B70C85B7157927B578B7A8 /* Pods_What_s_Bumpin_UITests.framework */; };
-		33D8D8F2F765DE5FA5799025 /* Pods_What_s_Bumpin_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */; };
+		38258C124BE9D973B2933F2D /* Pods_WhatsBumpinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F135398F04792D15EB3BCD3 /* Pods_WhatsBumpinUITests.framework */; };
+		50BFE08E22FB7846EB550EFA /* Pods_WhatsBumpin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBAE2DB02C11E021422B3EC /* Pods_WhatsBumpin.framework */; };
+		5719A4071E8A121000B57A78 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5719A4061E8A121000B57A78 /* Charts.framework */; };
+		8BA76DDA22741B3663F2BACA /* Pods_WhatsBumpinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116C112210F22014AB7093FC /* Pods_WhatsBumpinTests.framework */; };
 		D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */; };
 		D0A6CBB81E513F58001F7964 /* What_s_Bumpin_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBB71E513F58001F7964 /* What_s_Bumpin_UITests.m */; };
 		D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */; };
 		D0E4C44B1E6268B2000960B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4211E6268B2000960B3 /* Assets.xcassets */; };
 		D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4221E6268B2000960B3 /* LaunchScreen.storyboard */; };
 		D0E4C44D1E6268B2000960B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4281E6268B2000960B3 /* AppDelegate.m */; };
-		D0E4C44E1E6268B2000960B3 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C42A1E6268B2000960B3 /* DesignableButton.swift */; };
-		D0E4C44F1E6268B2000960B3 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C42B1E6268B2000960B3 /* Spring.swift */; };
-		D0E4C4501E6268B2000960B3 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C42C1E6268B2000960B3 /* SpringAnimation.swift */; };
-		D0E4C4511E6268B2000960B3 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C42D1E6268B2000960B3 /* SpringButton.swift */; };
-		D0E4C4521E6268B2000960B3 /* WYMaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C42E1E6268B2000960B3 /* WYMaterialButton.swift */; };
 		D0E4C4531E6268B2000960B3 /* Bump.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4331E6268B2000960B3 /* Bump.m */; };
 		D0E4C4541E6268B2000960B3 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4351E6268B2000960B3 /* Location.m */; };
 		D0E4C4551E6268B2000960B3 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4371E6268B2000960B3 /* Message.m */; };
@@ -55,14 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C6573DE8C6992218AA59030 /* Pods-What's Bumpin'Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'Tests/Pods-What's Bumpin'Tests.release.xcconfig"; sourceTree = "<group>"; };
-		2F25E83F9814DAE766B91F6C /* Pods_What_s_Bumpin_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_s_Bumpin_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		48B70C85B7157927B578B7A8 /* Pods_What_s_Bumpin_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_s_Bumpin_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63E947445C9169C5182E2939 /* Pods-What's Bumpin'UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests.release.xcconfig"; sourceTree = "<group>"; };
-		6FA02A785B426B8984E3A2AA /* Pods-What's Bumpin'.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'.debug.xcconfig"; sourceTree = "<group>"; };
-		810ADA41F3B5BCF4A2DF8D92 /* Pods-What's Bumpin'Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'Tests/Pods-What's Bumpin'Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_s_Bumpin_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF52779BDEAEFF54193BA1A1 /* Pods-What's Bumpin'UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		116C112210F22014AB7093FC /* Pods_WhatsBumpinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsBumpinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F135398F04792D15EB3BCD3 /* Pods_WhatsBumpinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsBumpinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4825F8D9569513C2932AC1D6 /* Pods-WhatsBumpin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpin.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpin/Pods-WhatsBumpin.release.xcconfig"; sourceTree = "<group>"; };
+		4F3342C82957591EC410C6EB /* Pods-WhatsBumpinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpinTests/Pods-WhatsBumpinTests.release.xcconfig"; sourceTree = "<group>"; };
+		5719A4061E8A121000B57A78 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Library/Developer/Xcode/DerivedData/WhatsBumpin-fopcgjglpblxkcczmpgvumwtjhuo/Build/Products/Debug-iphoneos/Charts/Charts.framework"; sourceTree = "<group>"; };
+		A9D04C4974115959325F149A /* Pods-WhatsBumpinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpinUITests/Pods-WhatsBumpinUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB6FA722AC3AC068B1ECFA73 /* Pods-WhatsBumpinUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpinUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpinUITests/Pods-WhatsBumpinUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D0A6CB8C1E513F57001F7964 /* WhatsBumpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsBumpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBA81E513F58001F7964 /* WhatsBumpin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsBumpin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What_s_Bumpin_Tests.m; sourceTree = "<group>"; };
@@ -76,11 +71,6 @@
 		D0E4C4231E6268B2000960B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0E4C4271E6268B2000960B3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0E4C4281E6268B2000960B3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D0E4C42A1E6268B2000960B3 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
-		D0E4C42B1E6268B2000960B3 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
-		D0E4C42C1E6268B2000960B3 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
-		D0E4C42D1E6268B2000960B3 /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
-		D0E4C42E1E6268B2000960B3 /* WYMaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYMaterialButton.swift; sourceTree = "<group>"; };
 		D0E4C4321E6268B2000960B3 /* Bump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bump.h; sourceTree = "<group>"; };
 		D0E4C4331E6268B2000960B3 /* Bump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bump.m; sourceTree = "<group>"; };
 		D0E4C4341E6268B2000960B3 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
@@ -104,7 +94,9 @@
 		D0E4C4481E6268B2000960B3 /* Global.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Global.storyboard; sourceTree = "<group>"; };
 		D0E4C4491E6268B2000960B3 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
-		DED8673A2BE4EB8CA732237B /* Pods-What's Bumpin'.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'.release.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'.release.xcconfig"; sourceTree = "<group>"; };
+		E7CEC12DCC1A3A0A76936E1B /* Pods-WhatsBumpin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpin/Pods-WhatsBumpin.debug.xcconfig"; sourceTree = "<group>"; };
+		E9B181A0BC24D606282CB9F5 /* Pods-WhatsBumpinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpinTests/Pods-WhatsBumpinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FEBAE2DB02C11E021422B3EC /* Pods_WhatsBumpin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsBumpin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B2A68EE97CBE0B30E74BF07 /* Pods_What_s_Bumpin_.framework in Frameworks */,
+				5719A4071E8A121000B57A78 /* Charts.framework in Frameworks */,
+				50BFE08E22FB7846EB550EFA /* Pods_WhatsBumpin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33D8D8F2F765DE5FA5799025 /* Pods_What_s_Bumpin_Tests.framework in Frameworks */,
+				8BA76DDA22741B3663F2BACA /* Pods_WhatsBumpinTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33CFEEC52835C167E4A6CE68 /* Pods_What_s_Bumpin_UITests.framework in Frameworks */,
+				38258C124BE9D973B2933F2D /* Pods_WhatsBumpinUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +131,10 @@
 		388849D8E192C50BD62EF100 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2F25E83F9814DAE766B91F6C /* Pods_What_s_Bumpin_.framework */,
-				C63200AC6E1457C63BFB1DA3 /* Pods_What_s_Bumpin_Tests.framework */,
-				48B70C85B7157927B578B7A8 /* Pods_What_s_Bumpin_UITests.framework */,
+				5719A4061E8A121000B57A78 /* Charts.framework */,
+				FEBAE2DB02C11E021422B3EC /* Pods_WhatsBumpin.framework */,
+				116C112210F22014AB7093FC /* Pods_WhatsBumpinTests.framework */,
+				1F135398F04792D15EB3BCD3 /* Pods_WhatsBumpinUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,12 +142,12 @@
 		910D4506C614F3335DC15FF9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6FA02A785B426B8984E3A2AA /* Pods-What's Bumpin'.debug.xcconfig */,
-				DED8673A2BE4EB8CA732237B /* Pods-What's Bumpin'.release.xcconfig */,
-				810ADA41F3B5BCF4A2DF8D92 /* Pods-What's Bumpin'Tests.debug.xcconfig */,
-				0C6573DE8C6992218AA59030 /* Pods-What's Bumpin'Tests.release.xcconfig */,
-				CF52779BDEAEFF54193BA1A1 /* Pods-What's Bumpin'UITests.debug.xcconfig */,
-				63E947445C9169C5182E2939 /* Pods-What's Bumpin'UITests.release.xcconfig */,
+				E7CEC12DCC1A3A0A76936E1B /* Pods-WhatsBumpin.debug.xcconfig */,
+				4825F8D9569513C2932AC1D6 /* Pods-WhatsBumpin.release.xcconfig */,
+				E9B181A0BC24D606282CB9F5 /* Pods-WhatsBumpinTests.debug.xcconfig */,
+				4F3342C82957591EC410C6EB /* Pods-WhatsBumpinTests.release.xcconfig */,
+				A9D04C4974115959325F149A /* Pods-WhatsBumpinUITests.debug.xcconfig */,
+				CB6FA722AC3AC068B1ECFA73 /* Pods-WhatsBumpinUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -244,11 +238,6 @@
 		D0E4C4291E6268B2000960B3 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				D0E4C42A1E6268B2000960B3 /* DesignableButton.swift */,
-				D0E4C42B1E6268B2000960B3 /* Spring.swift */,
-				D0E4C42C1E6268B2000960B3 /* SpringAnimation.swift */,
-				D0E4C42D1E6268B2000960B3 /* SpringButton.swift */,
-				D0E4C42E1E6268B2000960B3 /* WYMaterialButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -387,7 +376,8 @@
 				TargetAttributes = {
 					D0A6CB8B1E513F57001F7964 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = C5ARGCT28E;
+						DevelopmentTeam = JA39XLGBC8;
+						LastSwiftMigration = 0820;
 					};
 					D0A6CBA71E513F58001F7964 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -492,7 +482,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-What's Bumpin'Tests/Pods-What's Bumpin'Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhatsBumpinTests/Pods-WhatsBumpinTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2B32C9F58559BC057EE3FB06 /* [CP] Embed Pods Frameworks */ = {
@@ -507,7 +497,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-What's Bumpin'Tests/Pods-What's Bumpin'Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhatsBumpinTests/Pods-WhatsBumpinTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4976A605915157C58ADC5988 /* [CP] Embed Pods Frameworks */ = {
@@ -522,7 +512,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhatsBumpinUITests/Pods-WhatsBumpinUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		504F4C285AFAA68A08A7B98D /* [CP] Copy Pods Resources */ = {
@@ -537,7 +527,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhatsBumpin/Pods-WhatsBumpin-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9511EBA1BE9904231192F336 /* [CP] Embed Pods Frameworks */ = {
@@ -552,7 +542,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhatsBumpin/Pods-WhatsBumpin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B8686E2A8B19AA89F9DEAA02 /* [CP] Copy Pods Resources */ = {
@@ -567,7 +557,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhatsBumpinUITests/Pods-WhatsBumpinUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D406B8F2D7D89E4C82F8FD9E /* [CP] Check Pods Manifest.lock */ = {
@@ -592,20 +582,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0E4C4521E6268B2000960B3 /* WYMaterialButton.swift in Sources */,
 				D0E4C44D1E6268B2000960B3 /* AppDelegate.m in Sources */,
-				D0E4C44E1E6268B2000960B3 /* DesignableButton.swift in Sources */,
 				D0E4C4531E6268B2000960B3 /* Bump.m in Sources */,
 				D0E4C4591E6268B2000960B3 /* LocationInformationViewController.m in Sources */,
-				D0E4C44F1E6268B2000960B3 /* Spring.swift in Sources */,
 				D0E4C45D1E6268B2000960B3 /* main.m in Sources */,
-				D0E4C4511E6268B2000960B3 /* SpringButton.swift in Sources */,
 				D0E4C4571E6268B2000960B3 /* User.m in Sources */,
 				D0E4C4541E6268B2000960B3 /* Location.m in Sources */,
 				D0E4C4551E6268B2000960B3 /* Message.m in Sources */,
 				D0E4C4561E6268B2000960B3 /* MessageBoard.m in Sources */,
 				D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */,
-				D0E4C4501E6268B2000960B3 /* SpringAnimation.swift in Sources */,
 				D0E4C4581E6268B2000960B3 /* HomeViewController.m in Sources */,
 				D0E4C45B1E6268B2000960B3 /* WBTabViewController.m in Sources */,
 				D0E4C45A1E6268B2000960B3 /* MapViewController.m in Sources */,
@@ -741,33 +726,37 @@
 		};
 		D0A6CBBD1E513F58001F7964 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FA02A785B426B8984E3A2AA /* Pods-What's Bumpin'.debug.xcconfig */;
+			baseConfigurationReference = E7CEC12DCC1A3A0A76936E1B /* Pods-WhatsBumpin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = JA39XLGBC8;
 				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
 				PRODUCT_NAME = WhatsBumpin;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		D0A6CBBE1E513F58001F7964 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DED8673A2BE4EB8CA732237B /* Pods-What's Bumpin'.release.xcconfig */;
+			baseConfigurationReference = 4825F8D9569513C2932AC1D6 /* Pods-WhatsBumpin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = JA39XLGBC8;
 				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
 				PRODUCT_NAME = WhatsBumpin;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		D0A6CBC01E513F58001F7964 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 810ADA41F3B5BCF4A2DF8D92 /* Pods-What's Bumpin'Tests.debug.xcconfig */;
+			baseConfigurationReference = E9B181A0BC24D606282CB9F5 /* Pods-WhatsBumpinTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "What's Bumpin'Tests/Info.plist";
@@ -780,7 +769,7 @@
 		};
 		D0A6CBC11E513F58001F7964 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C6573DE8C6992218AA59030 /* Pods-What's Bumpin'Tests.release.xcconfig */;
+			baseConfigurationReference = 4F3342C82957591EC410C6EB /* Pods-WhatsBumpinTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "What's Bumpin'Tests/Info.plist";
@@ -793,7 +782,7 @@
 		};
 		D0A6CBC31E513F58001F7964 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF52779BDEAEFF54193BA1A1 /* Pods-What's Bumpin'UITests.debug.xcconfig */;
+			baseConfigurationReference = A9D04C4974115959325F149A /* Pods-WhatsBumpinUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "What's Bumpin'UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -805,7 +794,7 @@
 		};
 		D0A6CBC41E513F58001F7964 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63E947445C9169C5182E2939 /* Pods-What's Bumpin'UITests.release.xcconfig */;
+			baseConfigurationReference = CB6FA722AC3AC068B1ECFA73 /* Pods-WhatsBumpinUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "What's Bumpin'UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
