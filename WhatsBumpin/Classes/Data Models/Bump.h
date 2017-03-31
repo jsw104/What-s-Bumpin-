@@ -7,15 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 @import GooglePlaces;
 
 @interface Bump : NSObject
 
--(nullable id)initWithUsername: (nullable NSString *)username locationWithCoordinate:(CLLocationCoordinate2D) coordinate;
+-(nullable id)initWithUsername: (int)user_id locationWithID:(nonnull NSString *) googlePlacesID;
+- (void) bumpWithCompletionBlock:(void (^)(BOOL successful))completion;
 
 //variables
-@property (strong, nonatomic, nullable) NSString *username;
-@property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (nonatomic) int user_id;
+@property (strong, nonatomic, nonnull) NSString *googlePlacesID;
 @property (strong, nonatomic, nonnull) NSDate *date;
 
 @end
