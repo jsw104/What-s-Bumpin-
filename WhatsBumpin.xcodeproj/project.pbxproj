@@ -38,6 +38,9 @@
 		D0E4C45F1E6268B2000960B3 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4491E6268B2000960B3 /* Me.storyboard */; };
 		D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */; };
 		F0EE46871E8EF96F00FD1439 /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE46861E8EF96F00FD1439 /* FBLoginViewController.m */; };
+		F0EE468F1E8F123800FD1439 /* FacebookLoginUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE468B1E8F0EB900FD1439 /* FacebookLoginUITest.m */; };
+		F0EE46921E8F173700FD1439 /* FilterUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE46901E8F172D00FD1439 /* FilterUITest.m */; };
+		F0EE46951E8F185100FD1439 /* BumpUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE46931E8F184600FD1439 /* BumpUITest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +127,9 @@
 		E378B67D81D9683C27AD596F /* Pods-WhatsBumpinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpinTests/Pods-WhatsBumpinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0EE46851E8EF96F00FD1439 /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
 		F0EE46861E8EF96F00FD1439 /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
+		F0EE468B1E8F0EB900FD1439 /* FacebookLoginUITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLoginUITest.m; sourceTree = "<group>"; };
+		F0EE46901E8F172D00FD1439 /* FilterUITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterUITest.m; sourceTree = "<group>"; };
+		F0EE46931E8F184600FD1439 /* BumpUITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BumpUITest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +296,9 @@
 			isa = PBXGroup;
 			children = (
 				D0A6CBB91E513F58001F7964 /* Info.plist */,
+				F0EE468B1E8F0EB900FD1439 /* FacebookLoginUITest.m */,
+				F0EE46901E8F172D00FD1439 /* FilterUITest.m */,
+				F0EE46931E8F184600FD1439 /* BumpUITest.m */,
 			);
 			path = "What's Bumpin'UITests";
 			sourceTree = "<group>";
@@ -494,6 +503,7 @@
 					};
 					D0A6CBB21E513F58001F7964 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = R7LAAHL6K5;
 						TestTargetID = D0A6CB8B1E513F57001F7964;
 					};
 				};
@@ -727,6 +737,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EE468F1E8F123800FD1439 /* FacebookLoginUITest.m in Sources */,
+				F0EE46921E8F173700FD1439 /* FilterUITest.m in Sources */,
+				F0EE46951E8F185100FD1439 /* BumpUITest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,11 +912,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 37C3694478A0B7E201593B91 /* Pods-WhatsBumpinUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = R7LAAHL6K5;
 				INFOPLIST_FILE = "What's Bumpin'UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-UITests";
 				PRODUCT_NAME = WhatsBumpin;
-				TEST_TARGET_NAME = "What's Bumpin'";
+				PROVISIONING_PROFILE = "";
+				TEST_TARGET_NAME = WhatsBumpin;
 			};
 			name = Debug;
 		};
@@ -911,11 +927,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB83E6147980ADFE363F5921 /* Pods-WhatsBumpinUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = R7LAAHL6K5;
 				INFOPLIST_FILE = "What's Bumpin'UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-UITests";
 				PRODUCT_NAME = WhatsBumpin;
-				TEST_TARGET_NAME = "What's Bumpin'";
+				PROVISIONING_PROFILE = "";
+				TEST_TARGET_NAME = WhatsBumpin;
 			};
 			name = Release;
 		};
