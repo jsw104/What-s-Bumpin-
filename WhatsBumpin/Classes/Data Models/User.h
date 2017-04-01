@@ -12,7 +12,7 @@
 @interface User : NSObject
 
 //class methods
-+(void)LoginWithUsername:(NSString *)email password:(NSString *)password completionBlock:(void (^)(User *, NSError *error))completion;
++(void)LoginWithUsername:(NSString *_Nullable)email password:(NSString *_Nullable)password completionBlock:(void (^_Nullable)(User *_Nullable, NSError * _Nullable error))completion;
 +(void)LoginPublic;
 +(nullable User *)getCurrentUser;
 

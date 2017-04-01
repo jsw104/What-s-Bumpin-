@@ -495,7 +495,9 @@
 				TargetAttributes = {
 					D0A6CB8B1E513F57001F7964 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = C5ARGCT28E;
+						DevelopmentTeam = R7LAAHL6K5;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
 					};
 					D0A6CBA71E513F58001F7964 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -504,6 +506,7 @@
 					D0A6CBB21E513F58001F7964 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = R7LAAHL6K5;
+						LastSwiftMigration = 0830;
 						TestTargetID = D0A6CB8B1E513F57001F7964;
 					};
 				};
@@ -860,11 +863,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R7LAAHL6K5;
 				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin";
 				PRODUCT_NAME = WhatsBumpin;
-				SWIFT_VERSION = 2.3;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -874,11 +881,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R7LAAHL6K5;
 				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin";
 				PRODUCT_NAME = WhatsBumpin;
-				SWIFT_VERSION = 2.3;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -919,6 +929,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-UITests";
 				PRODUCT_NAME = WhatsBumpin;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = WhatsBumpin;
 			};
 			name = Debug;
@@ -934,6 +945,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-UITests";
 				PRODUCT_NAME = WhatsBumpin;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = WhatsBumpin;
 			};
 			name = Release;
