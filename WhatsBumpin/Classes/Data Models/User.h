@@ -12,7 +12,7 @@
 @interface User : NSObject
 
 //class methods
-+(void)LoginWithUsername:(NSString *_Nullable)email password:(NSString *_Nullable)password completionBlock:(void (^_Nullable)(User *_Nullable, NSError * _Nullable error))completion;
++(void)loginWithID:(long)facebook_id name:(NSString *_Nullable)name;
 +(void)LoginPublic;
 +(nullable User *)getCurrentUser;
 
@@ -23,8 +23,10 @@
 
 //variables
 @property (nonatomic) int userID;
-@property (strong, nonatomic, nullable) NSString *email;
+@property (nonatomic) long facebookID;
+@property (strong, nonatomic, nullable) NSString *name;
 @property (strong, nonatomic, nullable) NSString *bio;
 @property (nonatomic) CLLocationCoordinate2D coordinates;
+@property (nonatomic) NSMutableArray<User *>* friends;
 
 @end
