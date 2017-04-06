@@ -32,12 +32,14 @@
 		D0E4C4591E6268B2000960B3 /* LocationInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4401E6268B2000960B3 /* LocationInformationViewController.m */; };
 		D0E4C45A1E6268B2000960B3 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4421E6268B2000960B3 /* MapViewController.m */; };
 		D0E4C45B1E6268B2000960B3 /* WBTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4441E6268B2000960B3 /* WBTabViewController.m */; };
-		D0E4C45C1E6268B2000960B3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4451E6268B2000960B3 /* Info.plist */; };
 		D0E4C45D1E6268B2000960B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4461E6268B2000960B3 /* main.m */; };
 		D0E4C45E1E6268B2000960B3 /* Global.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4481E6268B2000960B3 /* Global.storyboard */; };
 		D0E4C45F1E6268B2000960B3 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4491E6268B2000960B3 /* Me.storyboard */; };
 		D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */; };
-		F0EE46871E8EF96F00FD1439 /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE46861E8EF96F00FD1439 /* FBLoginViewController.m */; };
+		F033FD561E95CBC200A9BF80 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F033FD551E95CBC200A9BF80 /* SettingsViewController.m */; };
+		F0EE468F1E8F123800FD1439 /* FacebookLoginUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE468B1E8F0EB900FD1439 /* FacebookLoginUITest.m */; };
+		F0EE46921E8F173700FD1439 /* FilterUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE46901E8F172D00FD1439 /* FilterUITest.m */; };
+		F0EE46951E8F185100FD1439 /* BumpUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE46931E8F184600FD1439 /* BumpUITest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,8 +124,11 @@
 		D6C05856A88D9A0D4CDA3E8A /* Pods_WhatsBumpinUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsBumpinUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED8673A2BE4EB8CA732237B /* Pods-What's Bumpin'.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'.release.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'.release.xcconfig"; sourceTree = "<group>"; };
 		E378B67D81D9683C27AD596F /* Pods-WhatsBumpinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpinTests/Pods-WhatsBumpinTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F0EE46851E8EF96F00FD1439 /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
-		F0EE46861E8EF96F00FD1439 /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
+		F033FD541E95CBC200A9BF80 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		F033FD551E95CBC200A9BF80 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		F0EE468B1E8F0EB900FD1439 /* FacebookLoginUITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLoginUITest.m; sourceTree = "<group>"; };
+		F0EE46901E8F172D00FD1439 /* FilterUITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterUITest.m; sourceTree = "<group>"; };
+		F0EE46931E8F184600FD1439 /* BumpUITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BumpUITest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +295,9 @@
 			isa = PBXGroup;
 			children = (
 				D0A6CBB91E513F58001F7964 /* Info.plist */,
+				F0EE468B1E8F0EB900FD1439 /* FacebookLoginUITest.m */,
+				F0EE46901E8F172D00FD1439 /* FilterUITest.m */,
+				F0EE46931E8F184600FD1439 /* BumpUITest.m */,
 			);
 			path = "What's Bumpin'UITests";
 			sourceTree = "<group>";
@@ -393,8 +401,8 @@
 				D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */,
 				D0E4C4431E6268B2000960B3 /* WBTabViewController.h */,
 				D0E4C4441E6268B2000960B3 /* WBTabViewController.m */,
-				F0EE46851E8EF96F00FD1439 /* FBLoginViewController.h */,
-				F0EE46861E8EF96F00FD1439 /* FBLoginViewController.m */,
+				F033FD541E95CBC200A9BF80 /* SettingsViewController.h */,
+				F033FD551E95CBC200A9BF80 /* SettingsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -481,12 +489,14 @@
 		D0A6CB841E513F57001F7964 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Bump Inc.";
 				TargetAttributes = {
 					D0A6CB8B1E513F57001F7964 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = C5ARGCT28E;
+						DevelopmentTeam = R7LAAHL6K5;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
 					};
 					D0A6CBA71E513F58001F7964 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -494,6 +504,8 @@
 					};
 					D0A6CBB21E513F58001F7964 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = R7LAAHL6K5;
+						LastSwiftMigration = 0830;
 						TestTargetID = D0A6CB8B1E513F57001F7964;
 					};
 				};
@@ -529,7 +541,6 @@
 				D0331A311E89D60B004CA5C1 /* FilterView.xib in Resources */,
 				D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */,
 				D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */,
-				D0E4C45C1E6268B2000960B3 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,11 +709,11 @@
 				D0E4C4531E6268B2000960B3 /* Bump.m in Sources */,
 				D0E4C4591E6268B2000960B3 /* LocationInformationViewController.m in Sources */,
 				D0E4C44F1E6268B2000960B3 /* Spring.swift in Sources */,
-				F0EE46871E8EF96F00FD1439 /* FBLoginViewController.m in Sources */,
 				D0E4C45D1E6268B2000960B3 /* main.m in Sources */,
 				D0E4C4511E6268B2000960B3 /* SpringButton.swift in Sources */,
 				D0E4C4571E6268B2000960B3 /* User.m in Sources */,
 				D0E4C4541E6268B2000960B3 /* Location.m in Sources */,
+				F033FD561E95CBC200A9BF80 /* SettingsViewController.m in Sources */,
 				D0E4C4551E6268B2000960B3 /* Message.m in Sources */,
 				D0E4C4561E6268B2000960B3 /* MessageBoard.m in Sources */,
 				D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */,
@@ -727,6 +738,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EE468F1E8F123800FD1439 /* FacebookLoginUITest.m in Sources */,
+				F0EE46921E8F173700FD1439 /* FilterUITest.m in Sources */,
+				F0EE46951E8F185100FD1439 /* BumpUITest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,8 +785,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -816,8 +832,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -837,6 +855,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -847,11 +866,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R7LAAHL6K5;
 				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin";
 				PRODUCT_NAME = WhatsBumpin;
-				SWIFT_VERSION = 2.3;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -861,11 +884,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = R7LAAHL6K5;
 				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin";
 				PRODUCT_NAME = WhatsBumpin;
-				SWIFT_VERSION = 2.3;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -899,11 +925,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 37C3694478A0B7E201593B91 /* Pods-WhatsBumpinUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = R7LAAHL6K5;
 				INFOPLIST_FILE = "What's Bumpin'UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-UITests";
 				PRODUCT_NAME = WhatsBumpin;
-				TEST_TARGET_NAME = "What's Bumpin'";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WhatsBumpin;
 			};
 			name = Debug;
 		};
@@ -911,11 +941,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB83E6147980ADFE363F5921 /* Pods-WhatsBumpinUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = R7LAAHL6K5;
 				INFOPLIST_FILE = "What's Bumpin'UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-UITests";
 				PRODUCT_NAME = WhatsBumpin;
-				TEST_TARGET_NAME = "What's Bumpin'";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WhatsBumpin;
 			};
 			name = Release;
 		};

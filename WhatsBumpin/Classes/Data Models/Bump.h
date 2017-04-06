@@ -13,7 +13,7 @@
 @interface Bump : NSObject
 
 -(nullable id)initWithUsername: (int)user_id locationWithID:(nonnull NSString *) googlePlacesID;
-- (void) bumpWithCompletionBlock:(void (^)(BOOL successful))completion;
+- (void) bumpWithCompletionBlock:(void (^_Nullable)(BOOL successful))completion;
 
 //variables
 @property (nonatomic) int user_id;
