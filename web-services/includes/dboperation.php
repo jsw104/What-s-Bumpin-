@@ -60,7 +60,7 @@ class DbOperation{
     public function get_bumps_by_day_of_week($location_id) {
         $query = "SELECT DAYOFWEEK(time_stamp) as dayofweek, COUNT(*) as count
                     FROM bump
-                    WHERE time_stamp >= NOW() - INTERVAL 1 DAY AND location_id = ?
+                    WHERE time_stamp >= NOW() - INTERVAL 1 WEEK AND location_id = ?
                     GROUP BY DAYOFWEEK(time_stamp)";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('i', $location_id);
