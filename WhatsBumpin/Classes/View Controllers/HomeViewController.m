@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "User.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
@@ -125,6 +126,7 @@ loginButton:	(FBSDKLoginButton *)loginButton
 didCompleteWithResult:	(FBSDKLoginManagerLoginResult *)result
 error:	(NSError *)error {
     NSLog(@"RESULT %@: ", result);
+
     [self updateHomeView];
 }
 
@@ -133,6 +135,8 @@ error:	(NSError *)error {
     __block long user_id;
 
     if ([FBSDKAccessToken currentAccessToken]) {
+        
+        
 
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, email"}]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
@@ -142,6 +146,9 @@ error:	(NSError *)error {
                  
                  user_id = [[resultDict valueForKey:@"id"] longLongValue];
                  NSString *name = [resultDict valueForKey:@"name"];
+                 
+                 [User loginWithID:user_id name:name];
+                 
                  [nameLabel setText:name];
                  [[self view] addSubview:nameLabel];
                  [label setText:@"Logged into facebook as"];
