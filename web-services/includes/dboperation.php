@@ -75,5 +75,18 @@ class DbOperation{
         $stmt->close();
         return $bumps;
     }
+    
+    public function insert_user($facebook_id, $facebook_name) {
+        $query = "INSERT INTO user(facebook_id, facebook_name) VALUES(?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('is', $facebook_id, $facebook_name);
+        $result = $stmt->execute();
+        $stmt->close();
+        if($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
