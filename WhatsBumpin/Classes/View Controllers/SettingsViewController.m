@@ -1,35 +1,28 @@
 //
-//  FBLoginViewController.m
+//  SettingsViewController.m
 //  WhatsBumpin
 //
-//  Created by Alex Lucas on 3/31/17.
+//  Created by Alex Lucas on 5/4/2017.
 //  Copyright © 2017 Bump Inc. All rights reserved.
 //
 
-#import "FBLoginViewController.h"
+#import "SettingsViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 
-@interface FBLoginViewController ()
+@interface SettingsViewController ()
 
 @end
 
-@implementation FBLoginViewController
+@implementation SettingsViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.readPermissions = @[ @"email", @"user_friends", @"public_profile"];
-    
-
-    // Optional: Place the button in the center of your view.
-    loginButton.center = self.view.center;
-    [self.view addSubview:loginButton];
-    if ([FBSDKAccessToken currentAccessToken]) {
-
-        [self dismissViewControllerAnimated:TRUE completion:nil];
-    }
+    // Do any additional setup after loading the view.
+  
 }
 
 - (void)didReceiveMemoryWarning {
