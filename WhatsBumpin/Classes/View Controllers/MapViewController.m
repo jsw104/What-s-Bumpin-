@@ -54,7 +54,7 @@ static double delayInSeconds = 0.5;
                                                              bundle:nil];
         FBLoginViewController *login = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
         [self presentViewController:login animated:YES completion:nil];
-    }
+    } 
 
 }
 

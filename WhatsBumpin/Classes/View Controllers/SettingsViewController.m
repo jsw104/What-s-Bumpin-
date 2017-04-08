@@ -23,6 +23,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
   
+    //self.tabBarItem.selectedImage = [[UIImage imageNamed:@"Settings_selected.png"]
+                                 //    imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+//    self.tabBarItem.image = [[UIImage imageNamed:@"settings_unselected.png"]
+//                             imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
 }
 
 - (void)didReceiveMemoryWarning {

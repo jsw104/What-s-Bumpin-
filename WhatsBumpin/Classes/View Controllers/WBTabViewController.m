@@ -20,8 +20,12 @@
     [super viewDidLoad];
     UIViewController *global = [UIStoryboard storyboardWithName:@"Global" bundle:nil].instantiateInitialViewController;
     UIViewController *me = [UIStoryboard storyboardWithName:@"Me" bundle:nil].instantiateInitialViewController;
+    UIViewController *settings = [UIStoryboard storyboardWithName:@"Settings" bundle:nil].instantiateInitialViewController;
 
-    NSArray <UIViewController *> *vcArray = [[NSArray alloc] initWithObjects:global, me, nil];
+    NSArray <UIViewController *> *vcArray = [[NSArray alloc] initWithObjects:global, me, settings, nil];
+    
+    [UITabBar appearance].tintColor = [UIColor colorWithRed:0xff/255.0 green:0x2d/255.0 blue:0x55/255.0 alpha:1];
+
     self.viewControllers = vcArray;
     // Do any additional setup after loading the view.
     

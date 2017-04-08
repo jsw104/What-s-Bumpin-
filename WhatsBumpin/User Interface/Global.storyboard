@@ -280,10 +280,12 @@
         <scene sceneID="k7Z-Zu-qhs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lHV-bN-eGn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Earth" id="iw7-Un-0G8"/>
+                    <tabBarItem key="tabBarItem" title="" image="Map" id="iw7-Un-0G8">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o4m-AB-f5f">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="o4m-AB-f5f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -298,6 +300,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Earth" width="30" height="30"/>
+        <image name="Map" width="25" height="25"/>
     </resources>
 </document>

@@ -56,7 +56,9 @@
         <scene sceneID="96w-5T-tHb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TZG-Dv-w3V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Home" id="iMm-BS-oQA"/>
+                    <tabBarItem key="tabBarItem" title="" image="Home" id="iMm-BS-oQA">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aCm-NU-Z8J">
@@ -74,6 +76,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Home" width="30" height="30"/>
+        <image name="Home" width="25" height="25"/>
     </resources>
 </document>
