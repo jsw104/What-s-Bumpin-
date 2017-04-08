@@ -9,9 +9,12 @@
 #import "SettingsViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "FBLoginViewController.h" 
 
 
 @interface SettingsViewController ()
+<FBSDKLoginButtonDelegate>
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *logoutButton;
 
 @end
 
@@ -28,12 +31,25 @@
     
 //    self.tabBarItem.image = [[UIImage imageNamed:@"settings_unselected.png"]
 //                             imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [_logoutButton setDelegate:self];
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"FBLogin"
+                                                         bundle:nil];
+    FBLoginViewController *login = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+    [self presentViewController:login animated:YES completion:nil];
+
+}
+
+- (void) loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
+    
 }
 
 /*

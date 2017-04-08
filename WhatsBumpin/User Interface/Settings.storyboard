@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,13 +21,30 @@
                     <view key="view" contentMode="scaleToFill" id="mRC-JA-88w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="HTl-g6-bbX" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="52" y="526" width="271" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Cw3-tl-7Mb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HTl-g6-bbX" firstAttribute="leading" secondItem="mRC-JA-88w" secondAttribute="leadingMargin" constant="36" id="37w-BX-p55"/>
+                            <constraint firstItem="HTl-g6-bbX" firstAttribute="centerX" secondItem="mRC-JA-88w" secondAttribute="centerX" id="At2-ZN-aIh"/>
+                            <constraint firstItem="9qn-l7-Dbm" firstAttribute="top" secondItem="HTl-g6-bbX" secondAttribute="bottom" constant="43" id="ecP-3z-Ycb"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Settings" id="7iQ-kd-7wd">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="CTL-FP-XaI"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="HTl-g6-bbX" id="Pex-QU-UMn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GbK-S2-fru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -49,7 +49,6 @@ static double delayInSeconds = 0.5;
     [self configureFilterView];
     
     if (! [FBSDKAccessToken currentAccessToken]) {
-        NSLog(@"***************NADA");
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"FBLogin"
                                                              bundle:nil];
         FBLoginViewController *login = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
