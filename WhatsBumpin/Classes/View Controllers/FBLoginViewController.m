@@ -13,6 +13,8 @@
 @interface FBLoginViewController ()
 <FBSDKLoginButtonDelegate>
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @end
 
@@ -24,6 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    [self setLabelSizes];
     [_loginButton setDelegate:self];
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"FBbg.png"] drawInRect:self.view.bounds];
@@ -57,7 +60,29 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (void) setLabelSizes {
+    if ([UIScreen mainScreen].bounds.size.height == 480) {
+        // iPhone 4
+        [_titleLabel setFont:[UIFont fontWithName:_titleLabel.font.fontName size:30]];
+        [_descriptionLabel setFont:[UIFont fontWithName:_descriptionLabel.font.fontName size:12]];
 
+    } else if ([UIScreen mainScreen].bounds.size.height == 568) {
+        // IPhone 5
+        [_titleLabel setFont:[UIFont fontWithName:_titleLabel.font.fontName size:34]];
+        [_descriptionLabel setFont:[UIFont fontWithName:_descriptionLabel.font.fontName size:18]];
+
+    } else if ([UIScreen mainScreen].bounds.size.width == 375) {
+        // iPhone 6
+        [_titleLabel setFont:[UIFont fontWithName:_titleLabel.font.fontName size:38]];
+        [_descriptionLabel setFont:[UIFont fontWithName:_descriptionLabel.font.fontName size:20]];
+
+    } else if ([UIScreen mainScreen].bounds.size.width == 414) {
+        // iPhone 6+
+        [_titleLabel setFont:[UIFont fontWithName:_titleLabel.font.fontName size:42]];
+        [_descriptionLabel setFont:[UIFont fontWithName:_descriptionLabel.font.fontName size:24]];
+
+    }
+}
 
 
 - (void)didReceiveMemoryWarning {
