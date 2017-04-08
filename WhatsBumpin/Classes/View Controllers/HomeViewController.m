@@ -13,7 +13,6 @@
 
 
 @interface HomeViewController ()
-<FBSDKLoginButtonDelegate>
 
 @end
 

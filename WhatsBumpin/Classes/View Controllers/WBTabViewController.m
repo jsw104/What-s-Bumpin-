@@ -7,6 +7,8 @@
 //
 
 #import "WBTabViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface WBTabViewController ()
 
@@ -18,9 +20,12 @@
     [super viewDidLoad];
     UIViewController *global = [UIStoryboard storyboardWithName:@"Global" bundle:nil].instantiateInitialViewController;
     UIViewController *me = [UIStoryboard storyboardWithName:@"Me" bundle:nil].instantiateInitialViewController;
+
     NSArray <UIViewController *> *vcArray = [[NSArray alloc] initWithObjects:global, me, nil];
     self.viewControllers = vcArray;
     // Do any additional setup after loading the view.
+    
+      
 }
 
 - (void)didReceiveMemoryWarning {

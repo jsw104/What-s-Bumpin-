@@ -7,6 +7,9 @@
 //
 
 #import "MapViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "FBLoginViewController.h"
 #import "LocationInformationViewController.h"
 @import GooglePlaces;
 #import "Location.h"
@@ -44,6 +47,15 @@ static double delayInSeconds = 0.5;
     
     [self configureSearchBar];
     [self configureFilterView];
+    
+    if (! [FBSDKAccessToken currentAccessToken]) {
+        NSLog(@"***************NADA");
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"FBLogin"
+                                                             bundle:nil];
+        FBLoginViewController *login = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
+        [self presentViewController:login animated:YES completion:nil];
+    }
+
 }
 
 - (void)configureFilterView
