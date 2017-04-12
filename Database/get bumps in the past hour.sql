@@ -1,0 +1,3 @@
+select *
+from bump
+where time_stamp >= current_timestamp() - interval 1 hour -- can be hour/day/minute/week/etc...
