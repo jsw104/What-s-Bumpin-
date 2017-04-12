@@ -2,6 +2,8 @@
 
 use PHPUnit\Framework\TestCase;
 
+include_once(dirname(__FILE__). "/../includes/dboperation.php");
+
 
 final class DbOperationTest extends TestCase {
     public function testCreateNewConnection() {
