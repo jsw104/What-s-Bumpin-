@@ -11,6 +11,7 @@ target 'WhatsBumpin' do
   pod 'pop'
   pod 'Shimmer'
   pod 'FBSDKLoginKit'
+  pod 'CorePlot'
 
   target 'WhatsBumpinTests' do
       #inherit! :search_paths
