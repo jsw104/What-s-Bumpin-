@@ -70,7 +70,10 @@ static User *currentUser;
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSLog(@"response: %@, err %@", response, error);
+        //NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+        //NSInteger userID = [HTTPResponse statusCode];
     }];
+    
     
     [task resume];
 

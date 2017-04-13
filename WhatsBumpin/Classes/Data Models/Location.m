@@ -143,11 +143,14 @@ MessageBoard *messageBoard;
 - (void)bump
 {
     User *user = [User getCurrentUser];
-    if (user) {
+    NSLog(@"user id in location: %d", user.userID);
+    //TODO: user.userID should not be nil
+    [[Bump alloc] initWithUsername: 1 locationWithID:self.googlePlacesID];
+    /*if (user) {
         [self bumpPrivate:user];
     } else {
         [self bumpPublic];
-    }
+    }*/
 }
 
 - (void)bumpPrivate:(User *)user
