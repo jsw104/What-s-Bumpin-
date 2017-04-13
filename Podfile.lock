@@ -6,20 +6,20 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
   - Expecta (1.0.5)
-  - FBSDKCoreKit (4.20.2):
+  - FBSDKCoreKit (4.21.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.20.2):
+  - FBSDKLoginKit (4.21.0):
     - FBSDKCoreKit
-  - GoogleMaps (2.1.1):
-    - GoogleMaps/Maps (= 2.1.1)
-  - GoogleMaps/Base (2.1.1)
-  - GoogleMaps/Maps (2.1.1):
+  - GoogleMaps (2.2.0):
+    - GoogleMaps/Maps (= 2.2.0)
+  - GoogleMaps/Base (2.2.0)
+  - GoogleMaps/Maps (2.2.0):
     - GoogleMaps/Base
-  - GooglePlacePicker (2.1.1):
-    - GoogleMaps (= 2.1.1)
-    - GooglePlaces (= 2.1.1)
-  - GooglePlaces (2.1.1):
-    - GoogleMaps/Base (= 2.1.1)
+  - GooglePlacePicker (2.2.0):
+    - GoogleMaps (= 2.2.0)
+    - GooglePlaces (= 2.2.0)
+  - GooglePlaces (2.2.0):
+    - GoogleMaps/Base (= 2.2.0)
   - pop (1.0.9)
   - Shimmer (1.0.2)
 
@@ -35,11 +35,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
-  FBSDKCoreKit: 82eac696eb6157da5f4266c3a241f00e9bd72471
-  FBSDKLoginKit: 2211bede07c83391349eacc1fd86cf6d9289ce38
-  GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
-  GooglePlacePicker: 665f39f931f2df32f9dd3fcc45f7e8abf71e535c
-  GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
+  FBSDKCoreKit: 8a372ab194b5c7c26355c1920ef52dbeb44bc222
+  FBSDKLoginKit: a1a5f4b4ac445823a020fbeeaf5f03714a67ff9c
+  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
+  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
