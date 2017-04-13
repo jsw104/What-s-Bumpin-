@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Location.h"
 
-@interface LocationGraphViewController<ChartViewDelegate> : UIViewController
+@interface LocationGraphViewController: UIViewController
 
 @property (strong, nonatomic) Location *location;
 
