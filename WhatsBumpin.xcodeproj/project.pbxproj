@@ -38,6 +38,8 @@
 		D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */; };
 		F00BF6781E996198004A4AD8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00BF6771E996198004A4AD8 /* Settings.storyboard */; };
 		F033FD561E95CBC200A9BF80 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F033FD551E95CBC200A9BF80 /* SettingsViewController.m */; };
+		F0A0FAF71E9FD75B001CD144 /* MessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */; };
+		F0A0FAFA1E9FD962001CD144 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FAF91E9FD962001CD144 /* MessageCell.m */; };
 		F0D4E2411E99398800689D03 /* FBLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D4E2401E99398800689D03 /* FBLogin.storyboard */; };
 		F0D74F851E9935F900C7FC35 /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D74F841E9935F900C7FC35 /* FBLoginViewController.m */; };
 		F0EE468F1E8F123800FD1439 /* FacebookLoginUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE468B1E8F0EB900FD1439 /* FacebookLoginUITest.m */; };
@@ -130,6 +132,10 @@
 		F00BF6771E996198004A4AD8 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		F033FD541E95CBC200A9BF80 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		F033FD551E95CBC200A9BF80 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		F0A0FAF51E9FD75B001CD144 /* MessagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesTableViewController.h; sourceTree = "<group>"; };
+		F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesTableViewController.m; sourceTree = "<group>"; };
+		F0A0FAF81E9FD962001CD144 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCell.h; path = "WhatsBumpin/Classes/View Controllers/MessageCell.h"; sourceTree = SOURCE_ROOT; };
+		F0A0FAF91E9FD962001CD144 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCell.m; path = "WhatsBumpin/Classes/View Controllers/MessageCell.m"; sourceTree = SOURCE_ROOT; };
 		F0D4E2401E99398800689D03 /* FBLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FBLogin.storyboard; sourceTree = "<group>"; };
 		F0D74F831E9935F900C7FC35 /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
 		F0D74F841E9935F900C7FC35 /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
@@ -367,6 +373,8 @@
 		D0E4C42F1E6268B2000960B3 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F0A0FAF81E9FD962001CD144 /* MessageCell.h */,
+				F0A0FAF91E9FD962001CD144 /* MessageCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -412,6 +420,8 @@
 				F033FD551E95CBC200A9BF80 /* SettingsViewController.m */,
 				F0D74F831E9935F900C7FC35 /* FBLoginViewController.h */,
 				F0D74F841E9935F900C7FC35 /* FBLoginViewController.m */,
+				F0A0FAF51E9FD75B001CD144 /* MessagesTableViewController.h */,
+				F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -728,9 +738,11 @@
 				D0E4C4541E6268B2000960B3 /* Location.m in Sources */,
 				F0D74F851E9935F900C7FC35 /* FBLoginViewController.m in Sources */,
 				F033FD561E95CBC200A9BF80 /* SettingsViewController.m in Sources */,
+				F0A0FAFA1E9FD962001CD144 /* MessageCell.m in Sources */,
 				D0E4C4551E6268B2000960B3 /* Message.m in Sources */,
 				D0E4C4561E6268B2000960B3 /* MessageBoard.m in Sources */,
 				D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */,
+				F0A0FAF71E9FD75B001CD144 /* MessagesTableViewController.m in Sources */,
 				D0E4C4501E6268B2000960B3 /* SpringAnimation.swift in Sources */,
 				D0E4C4581E6268B2000960B3 /* HomeViewController.m in Sources */,
 				D0E4C45B1E6268B2000960B3 /* WBTabViewController.m in Sources */,

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "Message.h"
+#import "MessagesTableViewController.h"
 
 @import GooglePlaces;
 @import GoogleMaps;
@@ -17,8 +19,10 @@
 @end
 
 @implementation AppDelegate
+NSMutableArray *_messages;
 
-    
+
+
     //  AppDelegate.m
     
 
@@ -32,6 +36,28 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     [self.window makeKeyAndVisible];
+    
+    
+    _messages = [NSMutableArray arrayWithCapacity:20];
+    
+    Message *message = [[Message alloc] init];
+    message.username = @"Elle Zadina";
+    message.message_text = @"Yes";
+    [_messages addObject:message];
+    
+    message = [[Message alloc] init];
+    message.username = @"Justin Wang";
+    message.message_text = @"No";
+    [_messages addObject:message];
+
+    
+//    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+//    UINavigationController *navigationController = [tabBarController viewControllers][0];
+//    MessagesTableViewController *messagesViewController = [navigationController viewControllers][1].;
+//    messagesViewController.messages = _messages;
+    
+    
+    NSLog(@"ROOT VIEW CONTROLLER %@", self.window.rootViewController);
     return YES;
 }
     

@@ -10,4 +10,10 @@
 
 @implementation MessageBoard
 
+- (void) loadAllMessages {
+    //get user friends
+    //get n messages for each friend
+    //order them chronologically
+}
+
 @end

@@ -6,7 +6,7 @@
 //  Copyright © 2017 Bump Inc. All rights reserved.
 //
 #import "Location.h"
-#import "CorePlot.h"
+//#import "CorePlot.h"
 
 @interface LocationGraphViewController: UIViewController
 
