@@ -16,6 +16,9 @@
 
 @implementation MessagesTableViewController
 
+CGFloat heights[];
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -41,7 +44,7 @@
     
     message = [[Message alloc] init];
     message.username = @"Justin Wang";
-    message.message_text = @"No";
+    message.message_text = @"I would totally recommend this place it is fantastic and wonderful and there's singing on Thursday night";
     [self.messages addObject:message];
 
     
@@ -70,6 +73,7 @@
     Message *message = (self.messages)[indexPath.row];
     cell.nameLabel.text = message.username;
     cell.messageLabel.text = message.message_text;
+    [cell.messageLabel sizeToFit];
     cell.timeLabel.text = @"11:45";
     
 //    cell.locationLabel.text = @"Jolly";
@@ -95,6 +99,8 @@
 
         [cell setBackgroundColor: [self lighterGray]];
     }
+    
+    heights[indexPath.row] = cell.messageLabel.frame.size.height + 60;
 
     return cell;
 }
@@ -183,5 +189,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return heights[indexPath.row];
+}
+
+
+
 
 @end
