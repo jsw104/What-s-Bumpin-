@@ -74,7 +74,7 @@ CGFloat heights[];
     cell.nameLabel.text = message.username;
     cell.messageLabel.text = message.message_text;
     [cell.messageLabel sizeToFit];
-    cell.timeLabel.text = @"11:45";
+    cell.timeLabel.text = @"11:45pm · 12/31/16";
     
 //    cell.locationLabel.text = @"Jolly";
 //    [cell.locationLabel sizeToFit];
@@ -100,7 +100,11 @@ CGFloat heights[];
         [cell setBackgroundColor: [self lighterGray]];
     }
     
-    heights[indexPath.row] = cell.messageLabel.frame.size.height + 60;
+    heights[indexPath.row] = cell.messageLabel.frame.size.height + 66;
+    
+    CGRect newTimeFrame = cell.timeLabel.frame;
+    newTimeFrame.origin.y = cell.messageLabel.frame.origin.y + cell.messageLabel.frame.size.height - 7;
+    cell.timeLabel.frame = newTimeFrame;
 
     return cell;
 }
