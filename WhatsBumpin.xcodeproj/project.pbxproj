@@ -15,7 +15,6 @@
 		D0331A311E89D60B004CA5C1 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0331A301E89D60B004CA5C1 /* FilterView.xib */; };
 		D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */; };
 		D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */; };
-		D0E4C44B1E6268B2000960B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4211E6268B2000960B3 /* Assets.xcassets */; };
 		D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4221E6268B2000960B3 /* LaunchScreen.storyboard */; };
 		D0E4C44D1E6268B2000960B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C4281E6268B2000960B3 /* AppDelegate.m */; };
 		D0E4C44E1E6268B2000960B3 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E4C42A1E6268B2000960B3 /* DesignableButton.swift */; };
@@ -40,6 +39,8 @@
 		F033FD561E95CBC200A9BF80 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F033FD551E95CBC200A9BF80 /* SettingsViewController.m */; };
 		F0A0FAF71E9FD75B001CD144 /* MessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */; };
 		F0A0FAFA1E9FD962001CD144 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FAF91E9FD962001CD144 /* MessageCell.m */; };
+		F0A0FAFE1EA15D1A001CD144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A0FAFD1EA15D1A001CD144 /* Assets.xcassets */; };
+		F0A0FB011EA15F5E001CD144 /* SearchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FB001EA15F5E001CD144 /* SearchTestViewController.m */; };
 		F0D4E2411E99398800689D03 /* FBLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D4E2401E99398800689D03 /* FBLogin.storyboard */; };
 		F0D74F851E9935F900C7FC35 /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D74F841E9935F900C7FC35 /* FBLoginViewController.m */; };
 		F0EE468F1E8F123800FD1439 /* FacebookLoginUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE468B1E8F0EB900FD1439 /* FacebookLoginUITest.m */; };
@@ -94,7 +95,6 @@
 		D0A6CBB91E513F58001F7964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0AF02711E80BD3800C54D89 /* LocationGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationGraphViewController.h; sourceTree = "<group>"; };
 		D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationGraphViewController.m; sourceTree = "<group>"; };
-		D0E4C4211E6268B2000960B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0E4C4231E6268B2000960B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0E4C4271E6268B2000960B3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0E4C4281E6268B2000960B3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -136,6 +136,9 @@
 		F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesTableViewController.m; sourceTree = "<group>"; };
 		F0A0FAF81E9FD962001CD144 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCell.h; path = "WhatsBumpin/Classes/View Controllers/MessageCell.h"; sourceTree = SOURCE_ROOT; };
 		F0A0FAF91E9FD962001CD144 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCell.m; path = "WhatsBumpin/Classes/View Controllers/MessageCell.m"; sourceTree = SOURCE_ROOT; };
+		F0A0FAFD1EA15D1A001CD144 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		F0A0FAFF1EA15F5E001CD144 /* SearchTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTestViewController.h; sourceTree = "<group>"; };
+		F0A0FB001EA15F5E001CD144 /* SearchTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTestViewController.m; sourceTree = "<group>"; };
 		F0D4E2401E99398800689D03 /* FBLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FBLogin.storyboard; sourceTree = "<group>"; };
 		F0D74F831E9935F900C7FC35 /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
 		F0D74F841E9935F900C7FC35 /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
@@ -318,7 +321,7 @@
 		D0E4C4201E6268B2000960B3 /* WhatsBumpin */ = {
 			isa = PBXGroup;
 			children = (
-				D0E4C4211E6268B2000960B3 /* Assets.xcassets */,
+				F0A0FAFD1EA15D1A001CD144 /* Assets.xcassets */,
 				D0E4C4221E6268B2000960B3 /* LaunchScreen.storyboard */,
 				D0E4C4241E6268B2000960B3 /* Classes */,
 				D0E4C4451E6268B2000960B3 /* Info.plist */,
@@ -422,6 +425,8 @@
 				F0D74F841E9935F900C7FC35 /* FBLoginViewController.m */,
 				F0A0FAF51E9FD75B001CD144 /* MessagesTableViewController.h */,
 				F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */,
+				F0A0FAFF1EA15F5E001CD144 /* SearchTestViewController.h */,
+				F0A0FB001EA15F5E001CD144 /* SearchTestViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -557,12 +562,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0D4E2411E99398800689D03 /* FBLogin.storyboard in Resources */,
-				D0E4C44B1E6268B2000960B3 /* Assets.xcassets in Resources */,
 				D0E4C45E1E6268B2000960B3 /* Global.storyboard in Resources */,
 				F00BF6781E996198004A4AD8 /* Settings.storyboard in Resources */,
 				D0E4C45F1E6268B2000960B3 /* Me.storyboard in Resources */,
 				D0331A311E89D60B004CA5C1 /* FilterView.xib in Resources */,
 				D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */,
+				F0A0FAFE1EA15D1A001CD144 /* Assets.xcassets in Resources */,
 				D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,6 +741,7 @@
 				D0E4C4511E6268B2000960B3 /* SpringButton.swift in Sources */,
 				D0E4C4571E6268B2000960B3 /* User.m in Sources */,
 				D0E4C4541E6268B2000960B3 /* Location.m in Sources */,
+				F0A0FB011EA15F5E001CD144 /* SearchTestViewController.m in Sources */,
 				F0D74F851E9935F900C7FC35 /* FBLoginViewController.m in Sources */,
 				F033FD561E95CBC200A9BF80 /* SettingsViewController.m in Sources */,
 				F0A0FAFA1E9FD962001CD144 /* MessageCell.m in Sources */,

@@ -14,7 +14,7 @@
         <!--What's Bumpin'?-->
         <scene sceneID="R5w-mO-ujY">
             <objects>
-                <viewController id="hib-J7-B2s" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController id="hib-J7-B2s" customClass="SearchTestViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DYg-0g-6ML"/>
                         <viewControllerLayoutGuide type="bottom" id="e8i-7b-QWS"/>
@@ -22,13 +22,79 @@
                     <view key="view" contentMode="scaleToFill" id="kS7-hI-t0v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CMi-Ua-WTp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCo-Cf-3Qu">
+                                        <rect key="frame" x="33" y="78" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Day"/>
+                                        <state key="selected" image="Night"/>
+                                        <connections>
+                                            <action selector="filterButtonPressed:" destination="hib-J7-B2s" eventType="touchUpInside" id="SGS-y7-xad"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjd-6d-SK4">
+                                        <rect key="frame" x="199" y="78" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Dance"/>
+                                        <state key="selected" image="Dance Selected"/>
+                                        <connections>
+                                            <action selector="filterButtonPressed:" destination="hib-J7-B2s" eventType="touchUpInside" id="bZ6-4v-Y70"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPl-IM-cMw">
+                                        <rect key="frame" x="116" y="78" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Food"/>
+                                        <state key="selected" image="Food Selected"/>
+                                        <connections>
+                                            <action selector="filterButtonPressed:" destination="hib-J7-B2s" eventType="touchUpInside" id="zr7-p1-mIH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLS-AZ-6ex">
+                                        <rect key="frame" x="282" y="78" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Circle"/>
+                                        <state key="selected" image="Circle Selected"/>
+                                        <connections>
+                                            <action selector="filterButtonPressed:" destination="hib-J7-B2s" eventType="touchUpInside" id="R8N-Zj-u6C"/>
+                                        </connections>
+                                    </button>
+                                    <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aFS-vZ-T7W">
+                                        <rect key="frame" x="0.0" y="23" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.34509804840000002" green="0.33725491169999999" blue="0.8392156959" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="What's Bumpin'?" id="qhP-kg-rGB"/>
+                    <connections>
+                        <outlet property="dayNightButton" destination="dCo-Cf-3Qu" id="uRY-l8-phv"/>
+                        <outlet property="searchDisplayController" destination="b58-Qf-UJO" id="9JC-M5-2Ws"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHI-PL-qjs" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="b58-Qf-UJO">
+                    <connections>
+                        <outlet property="delegate" destination="hib-J7-B2s" id="rNe-Zl-ziE"/>
+                        <outlet property="searchContentsController" destination="hib-J7-B2s" id="yMH-xt-Tyx"/>
+                        <outlet property="searchResultsDataSource" destination="hib-J7-B2s" id="mmU-fQ-rKH"/>
+                        <outlet property="searchResultsDelegate" destination="hib-J7-B2s" id="eRx-CT-n7M"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1560.8" y="359.37031484257875"/>
+            <point key="canvasLocation" x="1490" y="359"/>
         </scene>
         <!--What's Bumpin'?-->
         <scene sceneID="ZQJ-Ls-QbK">
@@ -127,13 +193,13 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aCm-NU-Z8J">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aCm-NU-Z8J">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7JV-ea-6j8" kind="relationship" relationship="rootViewController" id="dEg-5o-xlQ"/>
+                        <segue destination="7JV-ea-6j8" kind="relationship" relationship="rootViewController" id="wrW-1W-5nH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nB-yl-Yta" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,7 +208,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Circle" width="16" height="16"/>
+        <image name="Circle Selected" width="16" height="16"/>
+        <image name="Dance" width="16" height="16"/>
+        <image name="Dance Selected" width="16" height="16"/>
+        <image name="Day" width="16" height="16"/>
+        <image name="Food" width="16" height="16"/>
+        <image name="Food Selected" width="16" height="16"/>
         <image name="Home" width="25" height="25"/>
         <image name="Map" width="25" height="25"/>
+        <image name="Night" width="16" height="16"/>
     </resources>
 </document>
