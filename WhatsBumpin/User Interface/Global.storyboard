@@ -23,12 +23,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OMs-PI-7eu" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMs-PI-7eu" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARo-fX-SQF" customClass="WYMaterialButton" customModule="WhatsBumpin" customModuleProvider="target">
+                                        <rect key="frame" x="152" y="555" width="90" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="KK9-eT-Mjg"/>
+                                            <constraint firstAttribute="width" constant="80" id="Z8B-8I-8Rl"/>
+                                        </constraints>
+                                        <state key="normal" title="Bump">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="materialColor">
+                                                <color key="value" red="0.0" green="0.4784313738" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="materialPressedColor">
+                                                <color key="value" red="0.26059591450000003" green="0.65490837989999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="bump:" destination="8c4-6z-CTW" eventType="touchUpInside" id="snb-A5-HJC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ARo-fX-SQF" firstAttribute="centerX" secondItem="OMs-PI-7eu" secondAttribute="centerX" constant="-103" id="ddG-bg-daP"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WtL-R6-d2k">
-                                <rect key="frame" x="550" y="64" width="50" height="44"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WtL-R6-d2k">
+                                <rect key="frame" x="329" y="64" width="50" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3p-TE-yfO" customClass="WYMaterialButton" customModule="WhatsBumpin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
@@ -57,47 +86,21 @@
                                     <constraint firstItem="j3p-TE-yfO" firstAttribute="top" secondItem="WtL-R6-d2k" secondAttribute="top" id="r7e-hE-0vQ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ys8-4b-2Jz" customClass="FBShimmeringView">
-                                <rect key="frame" x="0.0" y="64" width="550" height="44"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ys8-4b-2Jz" customClass="FBShimmeringView">
+                                <rect key="frame" x="-4" y="64" width="333" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="CbS-Oi-lOI"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARo-fX-SQF" customClass="WYMaterialButton" customModule="WhatsBumpin" customModuleProvider="target">
-                                <rect key="frame" x="260" y="503" width="80" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="KK9-eT-Mjg"/>
-                                    <constraint firstAttribute="width" constant="80" id="Z8B-8I-8Rl"/>
-                                </constraints>
-                                <state key="normal" title="Bump">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="materialColor">
-                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="materialPressedColor">
-                                        <color key="value" red="0.26059591450000003" green="0.65490837989999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="bump:" destination="8c4-6z-CTW" eventType="touchUpInside" id="snb-A5-HJC"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OMs-PI-7eu" firstAttribute="centerY" secondItem="k0w-yr-eAL" secondAttribute="centerY" id="0Ba-Tk-V4h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OMs-PI-7eu" secondAttribute="trailing" id="EDp-mn-VFb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ys8-4b-2Jz" secondAttribute="trailing" constant="-20" id="Gqx-9U-kuW"/>
-                            <constraint firstItem="Ge9-XG-MM7" firstAttribute="top" secondItem="ARo-fX-SQF" secondAttribute="bottom" constant="8" id="Jf1-TE-Hic"/>
                             <constraint firstItem="Ys8-4b-2Jz" firstAttribute="centerX" secondItem="k0w-yr-eAL" secondAttribute="centerX" id="LiA-rd-Xj4"/>
                             <constraint firstItem="Ge9-XG-MM7" firstAttribute="top" secondItem="OMs-PI-7eu" secondAttribute="bottom" id="MBJ-ab-neb"/>
-                            <constraint firstItem="ARo-fX-SQF" firstAttribute="centerX" secondItem="k0w-yr-eAL" secondAttribute="centerX" id="N6D-Cr-D3M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WtL-R6-d2k" secondAttribute="trailing" constant="-20" id="RcE-2K-2iU"/>
                             <constraint firstItem="WtL-R6-d2k" firstAttribute="top" secondItem="Ys8-4b-2Jz" secondAttribute="top" id="Syk-4k-GPX"/>
                             <constraint firstItem="OMs-PI-7eu" firstAttribute="top" secondItem="4FE-b4-LsY" secondAttribute="bottom" id="T61-L4-stS"/>
@@ -140,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UR4-EG-gTz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="-320"/>
+            <point key="canvasLocation" x="1492" y="-321"/>
         </scene>
         <!--Location Information View Controller-->
         <scene sceneID="uGZ-ck-i6f">
@@ -256,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhx-jA-7t0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2274" y="-322"/>
+            <point key="canvasLocation" x="2249" y="-321"/>
         </scene>
         <!--Location Graph View Controller-->
         <scene sceneID="you-Fl-42U">

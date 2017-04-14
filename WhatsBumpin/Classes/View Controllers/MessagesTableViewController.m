@@ -46,6 +46,12 @@ CGFloat heights[];
     message.username = @"Justin Wang";
     message.message_text = @"I would totally recommend this place it is fantastic and wonderful and there's singing on Thursday night";
     [self.messages addObject:message];
+    
+    message = [[Message alloc] init];
+    message.username = @"Jacob Sy";
+    message.message_text = @"";
+    [self.messages addObject:message];
+
 
     
     //messageboard get messages
@@ -64,7 +70,7 @@ CGFloat heights[];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 
 
@@ -100,7 +106,7 @@ CGFloat heights[];
         [cell setBackgroundColor: [self lighterGray]];
     }
     
-    heights[indexPath.row] = cell.messageLabel.frame.size.height + 66;
+    heights[indexPath.row] = cell.messageLabel.frame.size.height + 60;
     
     CGRect newTimeFrame = cell.timeLabel.frame;
     newTimeFrame.origin.y = cell.messageLabel.frame.origin.y + cell.messageLabel.frame.size.height - 7;
