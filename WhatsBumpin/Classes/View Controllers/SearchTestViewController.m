@@ -7,14 +7,18 @@
 //
 
 #import "SearchTestViewController.h"
+#import <GooglePlaces/GooglePlaces.h>
+
 
 @interface SearchTestViewController ()
-<UISearchBarDelegate>
+<GMSAutocompleteViewControllerDelegate>
+
 
 @property (weak, nonatomic) IBOutlet UIButton *dayNightButton;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UIButton *searchButton;
+@property (weak, nonatomic) IBOutlet UIView *buttonView;
+@property (nonatomic, strong) UIVisualEffectView *blurEffectView;
+
 
 @end
 
@@ -24,21 +28,58 @@
     [sender setSelected: !sender.isSelected];
 
 }
-- (IBAction)searchButtonPressed:(UIButton *)sender {
+- (IBAction)fitlerButtonPressed:(UIButton *)sender {
+
+    if (!UIAccessibilityIsReduceTransparencyEnabled()) {
+        // UIView *blurView = [[UIView alloc] initWithFrame:CGRectMake(0, _searchView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+        //  self.view.backgroundColor = [UIColor clearColor];
+        
+        [self.view insertSubview:_blurEffectView atIndex:0];
+    } else {
+        self.view.backgroundColor = [UIColor blackColor];
+    }
+
     [UIView animateWithDuration:0.3 animations: ^{
-        [sender setAlpha:0];
+        [_buttonView setAlpha:0];
     
         [_searchView setFrame:CGRectMake(0, 0, _searchView.frame.size.width, _searchView.frame.size.height)];
-        [_searchBar becomeFirstResponder];
+
+        [_blurEffectView setAlpha:1];
+
+           }];
+    
+
+}
+
+- (void) exitFilterView {
+    [UIView animateWithDuration:0.3 animations: ^{
+        [_buttonView setAlpha:1];
+        
+        [_searchView setFrame:CGRectMake(0, 20 - _searchView.frame.size.height, _searchView.frame.size.width, _searchView.frame.size.height)];
+        
+        [_blurEffectView setAlpha:0];
+
+    } completion:^(BOOL finished) {
+        [_blurEffectView removeFromSuperview];
+
     }];
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [_searchBar setDelegate: self];
-    [_searchBar setBackgroundColor:[UIColor clearColor]];
-    [_searchBar setBarTintColor:[UIColor clearColor]]; //this is what you want
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    _blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    _blurEffectView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    _blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    UIButton *blurbutton = [[UIButton alloc] initWithFrame:_blurEffectView.frame];
+    [blurbutton addTarget:self action:@selector(exitFilterView) forControlEvents: UIControlEventTouchUpInside];
+    [_blurEffectView addSubview:blurbutton];
+    
+ //   [(UIControl *) _blurEffectView addTarget:nil action:@selector(exitFilterView) forControlEvents: UIControlEventTouchUpInside];
+
 
 }
 
@@ -46,20 +87,62 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    CGFloat height = _searchView.frame.size.height;
-    CGFloat width = _searchView.frame.size.width;
-    
-    [UIView animateWithDuration:0.3 animations: ^{
-
-    [_searchView setFrame:CGRectMake(0, 20-height, width, height)];
-    
-    [_searchButton setAlpha:1];
-        [_searchView resignFirstResponder];
-        
-    }];
+- (IBAction)filterViewDragged:(UIView *)sender {
+    NSLog(@"Dragged");
 }
+
+- (IBAction) handlePan: (UIPanGestureRecognizer*) recognizer {
+    if ((recognizer.state == UIGestureRecognizerStateChanged) ||
+        (recognizer.state == UIGestureRecognizerStateEnded))
+    {
+        CGPoint velocity = [recognizer velocityInView:self.view];
+        
+        if (velocity.y < 0)   // panning down
+        {
+            [self exitFilterView];
+           // self.brightness = self.brightness -.02;
+            //     NSLog (@"Decreasing brigntness in pan");
+        }
+           }}
+
+// Present the autocomplete view controller when the button is pressed.
+- (IBAction)onLaunchClicked:(id)sender {
+    GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
+    acController.delegate = self;
+    [self presentViewController:acController animated:YES completion:nil];
+}
+
+// Handle the user's selection.
+- (void)viewController:(GMSAutocompleteViewController *)viewController
+didAutocompleteWithPlace:(GMSPlace *)place {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    // Do something with the selected place.
+    NSLog(@"Place name %@", place.name);
+    NSLog(@"Place address %@", place.formattedAddress);
+    NSLog(@"Place attributions %@", place.attributions.string);
+}
+
+- (void)viewController:(GMSAutocompleteViewController *)viewController
+didFailAutocompleteWithError:(NSError *)error {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    // TODO: handle the error.
+    NSLog(@"Error: %@", [error description]);
+}
+
+// User canceled the operation.
+- (void)wasCancelled:(GMSAutocompleteViewController *)viewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// Turn the network activity indicator on and off again.
+- (void)didRequestAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)didUpdateAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
 
 /*
 #pragma mark - Navigation

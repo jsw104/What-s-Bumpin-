@@ -23,12 +23,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CMi-Ua-WTp">
-                                <rect key="frame" x="0.0" y="-136" width="375" height="156"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vAW-3i-o7g">
+                                <rect key="frame" x="309" y="28" width="50" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWX-1q-o4x">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" image="Search"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="14"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onLaunchClicked:" destination="hib-J7-B2s" eventType="touchUpInside" id="3dR-DE-CFX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YtD-wP-0yn" userLabel="Fitler Button">
+                                        <rect key="frame" x="0.0" y="50" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" image="Filter"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="14"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="fitlerButtonPressed:" destination="hib-J7-B2s" eventType="touchUpInside" id="bng-y6-jx0"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MNN-6S-2HA">
+                                        <rect key="frame" x="0.0" y="49.5" width="50" height="0.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.92135959201388884" green="0.92135959201388884" blue="0.92135959201388884" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.1764705926" blue="0.33333334329999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="14"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CMi-Ua-WTp" customClass="UIControl">
+                                <rect key="frame" x="0.0" y="-88" width="375" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCo-Cf-3Qu">
-                                        <rect key="frame" x="33" y="78" width="60" height="60"/>
+                                        <rect key="frame" x="33" y="28" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Day"/>
                                         <state key="selected" image="Night"/>
@@ -37,7 +76,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjd-6d-SK4">
-                                        <rect key="frame" x="199" y="78" width="60" height="60"/>
+                                        <rect key="frame" x="199" y="28" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Dance"/>
                                         <state key="selected" image="Dance Selected"/>
@@ -46,7 +85,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPl-IM-cMw">
-                                        <rect key="frame" x="116" y="78" width="60" height="60"/>
+                                        <rect key="frame" x="116" y="28" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Food"/>
                                         <state key="selected" image="Food Selected"/>
@@ -55,7 +94,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLS-AZ-6ex">
-                                        <rect key="frame" x="282" y="78" width="60" height="60"/>
+                                        <rect key="frame" x="282" y="28" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="Circle"/>
                                         <state key="selected" image="Circle Selected"/>
@@ -63,35 +102,21 @@
                                             <action selector="filterButtonPressed:" destination="hib-J7-B2s" eventType="touchUpInside" id="R8N-Zj-u6C"/>
                                         </connections>
                                     </button>
-                                    <searchBar opaque="NO" contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aFS-vZ-T7W">
-                                        <rect key="frame" x="0.0" y="23" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YtD-wP-0yn">
-                                <rect key="frame" x="309" y="28" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.1764705926" blue="0.33333334329999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" image="Search"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="14"/>
-                                </userDefinedRuntimeAttributes>
+                                <gestureRecognizers/>
                                 <connections>
-                                    <action selector="searchButtonPressed:" destination="hib-J7-B2s" eventType="touchUpInside" id="03i-OU-VcV"/>
+                                    <action selector="filterViewDragged:" destination="hib-J7-B2s" eventType="touchDragInside" id="N0C-Z5-WRg"/>
+                                    <outletCollection property="gestureRecognizers" destination="SRk-bY-FeQ" appends="YES" id="jIk-e6-mk8"/>
                                 </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.34509804840000002" green="0.33725491169999999" blue="0.8392156959" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="What's Bumpin'?" id="qhP-kg-rGB"/>
                     <connections>
+                        <outlet property="buttonView" destination="vAW-3i-o7g" id="1nL-bQ-qAv"/>
                         <outlet property="dayNightButton" destination="dCo-Cf-3Qu" id="uRY-l8-phv"/>
-                        <outlet property="searchBar" destination="aFS-vZ-T7W" id="te3-8B-9Xg"/>
-                        <outlet property="searchButton" destination="YtD-wP-0yn" id="hFa-AL-vWw"/>
                         <outlet property="searchDisplayController" destination="b58-Qf-UJO" id="9JC-M5-2Ws"/>
                         <outlet property="searchView" destination="CMi-Ua-WTp" id="YBF-nF-SoY"/>
                     </connections>
@@ -105,8 +130,13 @@
                         <outlet property="searchResultsDelegate" destination="hib-J7-B2s" id="eRx-CT-n7M"/>
                     </connections>
                 </searchDisplayController>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="SRk-bY-FeQ">
+                    <connections>
+                        <action selector="handlePan:" destination="hib-J7-B2s" id="Jk0-zt-KkX"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1490" y="359"/>
+            <point key="canvasLocation" x="1508" y="357.57121439280365"/>
         </scene>
         <!--What's Bumpin'?-->
         <scene sceneID="ZQJ-Ls-QbK">
@@ -225,6 +255,7 @@
         <image name="Dance" width="16" height="16"/>
         <image name="Dance Selected" width="16" height="16"/>
         <image name="Day" width="16" height="16"/>
+        <image name="Filter" width="35" height="35"/>
         <image name="Food" width="16" height="16"/>
         <image name="Food Selected" width="16" height="16"/>
         <image name="Home" width="25" height="25"/>
