@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CMi-Ua-WTp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
+                                <rect key="frame" x="0.0" y="-136" width="375" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCo-Cf-3Qu">
@@ -63,25 +63,37 @@
                                             <action selector="filterButtonPressed:" destination="hib-J7-B2s" eventType="touchUpInside" id="R8N-Zj-u6C"/>
                                         </connections>
                                     </button>
-                                    <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aFS-vZ-T7W">
+                                    <searchBar opaque="NO" contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aFS-vZ-T7W">
                                         <rect key="frame" x="0.0" y="23" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <scopeButtonTitles>
-                                            <string>Title</string>
-                                            <string>Title</string>
-                                        </scopeButtonTitles>
                                     </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YtD-wP-0yn">
+                                <rect key="frame" x="309" y="28" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.1764705926" blue="0.33333334329999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" image="Search"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="14"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="hib-J7-B2s" eventType="touchUpInside" id="03i-OU-VcV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.34509804840000002" green="0.33725491169999999" blue="0.8392156959" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="What's Bumpin'?" id="qhP-kg-rGB"/>
                     <connections>
                         <outlet property="dayNightButton" destination="dCo-Cf-3Qu" id="uRY-l8-phv"/>
+                        <outlet property="searchBar" destination="aFS-vZ-T7W" id="te3-8B-9Xg"/>
+                        <outlet property="searchButton" destination="YtD-wP-0yn" id="hFa-AL-vWw"/>
                         <outlet property="searchDisplayController" destination="b58-Qf-UJO" id="9JC-M5-2Ws"/>
+                        <outlet property="searchView" destination="CMi-Ua-WTp" id="YBF-nF-SoY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHI-PL-qjs" sceneMemberID="firstResponder"/>
@@ -187,7 +199,7 @@
         <!--Navigation Controller-->
         <scene sceneID="96w-5T-tHb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TZG-Dv-w3V" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TZG-Dv-w3V" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Home" id="iMm-BS-oQA">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
@@ -199,7 +211,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7JV-ea-6j8" kind="relationship" relationship="rootViewController" id="wrW-1W-5nH"/>
+                        <segue destination="hib-J7-B2s" kind="relationship" relationship="rootViewController" id="vQS-N2-2vn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nB-yl-Yta" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -218,5 +230,6 @@
         <image name="Home" width="25" height="25"/>
         <image name="Map" width="25" height="25"/>
         <image name="Night" width="16" height="16"/>
+        <image name="Search" width="35" height="35"/>
     </resources>
 </document>
