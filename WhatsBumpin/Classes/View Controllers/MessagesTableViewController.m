@@ -9,6 +9,9 @@
 #import "MessagesTableViewController.h"
 #import "Message.h"
 #import "MessageCell.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 
 @interface MessagesTableViewController ()
 
@@ -28,6 +31,7 @@ CGFloat heights[];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [self lighterGray];
     self.refreshControl.tintColor = [UIColor darkGrayColor];
@@ -36,6 +40,18 @@ CGFloat heights[];
                   forControlEvents:UIControlEventValueChanged];
     
     self.messages = [NSMutableArray arrayWithCapacity:2];
+    
+    /////get facebook friends
+    //__block NSMutableArray *array = [[NSMutableArray alloc] init];
+    [self getFacebookFriendsWithCompletion:^(NSMutableArray *response) {
+        NSLog(@"IDs: %@", response);
+    }];
+    
+    
+    ////get messages by friends
+    ////order messages
+    ///
+    
     
     Message *message = [[Message alloc] init];
     message.username = @"Elle Zadina";
@@ -56,6 +72,68 @@ CGFloat heights[];
     
     //messageboard get messages
     //use the message board array to populate data table
+}
+
+
+-(void) getFacebookFriendsWithCompletion: (void(^)(NSMutableArray* response))completion {
+        __block long user_id;
+    
+
+        if ([FBSDKAccessToken currentAccessToken]) {
+            [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name"}]
+             startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                 if (!error) {
+                     NSLog(@"fetched user:%@", result);
+                     NSDictionary *resultDict = (NSDictionary *) result;
+    
+                     user_id = [[resultDict valueForKey:@"id"] longLongValue];
+                     NSString *name = [resultDict valueForKey:@"name"];
+//                     [nameLabel setText:name];
+//                     [[self view] addSubview:nameLabel];
+    
+                     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                         [self.view setNeedsDisplay];
+    
+    
+                     });
+    
+                     NSString *friendPath = [NSString stringWithFormat:@"me/friends"];
+                     NSLog(@"friend path %@", friendPath);
+    
+    
+    
+                     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                                   initWithGraphPath:friendPath
+                                                   parameters:@{@"fields": @"id, name"}
+                                                   HTTPMethod:@"GET"];
+                     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                                           id result,
+                                                           NSError *error) {
+                         // Handle the result
+                         NSMutableArray<NSString *> *idArray = [[NSMutableArray alloc] init];
+                         if(!error){
+                             NSArray * arrData = result[@"data"];
+                             for (NSDictionary * dict in arrData)
+                             {
+                                 NSString * strID = dict[@"id"];
+                                 NSLog(@"STRID:  %@", strID);
+
+                                 [idArray addObject:strID];
+                                 NSLog(@"%@", [idArray objectAtIndex:0]);
+                             }
+
+//                             NSLog(@"FRIENDS:%@", result);
+                         }
+                         
+                         
+                         completion(idArray);
+                        
+                     }];
+                     
+                 }
+             }];
+            
+        }
 }
 
 - (void)didReceiveMemoryWarning {
