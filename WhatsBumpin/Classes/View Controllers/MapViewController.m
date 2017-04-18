@@ -20,6 +20,11 @@
 @property Location *locationSelected;
 @property (strong, nonatomic) UISearchController *searchController;
 @property int updatedSearchText;
+@property (nonatomic, strong) UIVisualEffectView *blurEffectView;
+@property (weak, nonatomic) IBOutlet UIView *searchView;
+@property (weak, nonatomic) IBOutlet UIView *buttonView;
+
+
 
 @end
 
@@ -53,7 +58,17 @@ static double delayInSeconds = 0.5;
                                                              bundle:nil];
         FBLoginViewController *login = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
         [self presentViewController:login animated:YES completion:nil];
-    } 
+    }
+    
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    _blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    _blurEffectView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    _blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    UIButton *blurbutton = [[UIButton alloc] initWithFrame:_blurEffectView.frame];
+    [blurbutton addTarget:self action:@selector(exitFilterView) forControlEvents: UIControlEventTouchUpInside];
+    [_blurEffectView addSubview:blurbutton];
+
 
 }
 
@@ -276,6 +291,45 @@ static double delayInSeconds = 0.5;
     ((UIButton *)sender).alpha = 1.0;
 }
 
+- (IBAction)fitlerButtonPressed:(UIButton *)sender {
+    
+    if (!UIAccessibilityIsReduceTransparencyEnabled()) {
+        // UIView *blurView = [[UIView alloc] initWithFrame:CGRectMake(0, _searchView.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
+        //  self.view.backgroundColor = [UIColor clearColor];
+        
+        [self.view insertSubview:_blurEffectView atIndex:2];
+    } else {
+        self.view.backgroundColor = [UIColor blackColor];
+    }
+    
+    [UIView animateWithDuration:0.3 animations: ^{
+        [_buttonView setAlpha:0];
+        
+        [_searchView setFrame:CGRectMake(0, 0, _searchView.frame.size.width, _searchView.frame.size.height)];
+        
+        [_blurEffectView setAlpha:1];
+        
+    }];
+    
+    
+}
+
+- (void) exitFilterView {
+    [UIView animateWithDuration:0.3 animations: ^{
+        [_buttonView setAlpha:1];
+        
+        [_searchView setFrame:CGRectMake(0, 20 - _searchView.frame.size.height, _searchView.frame.size.width, _searchView.frame.size.height)];
+        
+        [_blurEffectView setAlpha:0];
+        
+    } completion:^(BOOL finished) {
+        [_blurEffectView removeFromSuperview];
+        
+    }];
+    
+}
+
+
 
 //** GMSAutocomplete Delegate Stuff
 
@@ -299,6 +353,7 @@ static double delayInSeconds = 0.5;
     [self presentViewController:acController animated:YES completion:nil];
 }
 
+
 // Handle the user's selection.
 - (void)viewController:(GMSAutocompleteViewController *)viewController
 didAutocompleteWithPlace:(GMSPlace *)place {
@@ -306,6 +361,7 @@ didAutocompleteWithPlace:(GMSPlace *)place {
     // Do something with the selected place.
     NSLog(@"Place name %@", place.name);
     NSLog(@"Place address %@", place.formattedAddress);
+    NSLog(@"Location id? %@", place.placeID);
     NSLog(@"Place attributions %@", place.attributions.string);
 }
 

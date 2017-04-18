@@ -11,6 +11,7 @@
 #import "MessageCell.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "MessageBoard.h"
 
 
 @interface MessagesTableViewController ()
@@ -45,6 +46,9 @@ CGFloat heights[];
     //__block NSMutableArray *array = [[NSMutableArray alloc] init];
     [self getFacebookFriendsWithCompletion:^(NSMutableArray *friendIDs) {
         NSLog(@"IDs: %@", friendIDs);
+        
+        MessageBoard *mb = [[MessageBoard alloc] init];
+        [mb loadMessagesFromFriends:friendIDs];
         
         
         ////get messages by friends

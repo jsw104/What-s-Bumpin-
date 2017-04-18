@@ -9,6 +9,7 @@
 #import "FBLoginViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "User.h"
 
 @interface FBLoginViewController ()
 <FBSDKLoginButtonDelegate>
@@ -103,7 +104,22 @@ error:	(NSError *)error {
     if (result.grantedPermissions) {
         [self dismissViewControllerAnimated:TRUE completion:nil];
         
-        ///SET CURRENT USER
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, email"}]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             if (!error) {
+                 NSLog(@"fetched user:%@", result);
+                 NSDictionary *resultDict = (NSDictionary *) result;
+                 
+                 long user_id = [[resultDict valueForKey:@"id"] longLongValue];
+                 NSString *name = [resultDict valueForKey:@"name"];
+                 
+                 [User loginWithID:user_id name:name];
+                 
+                 NSLog(@"UID: %ld", user_id);
+                 
+             }
+         }];
+        
     }
     
 }

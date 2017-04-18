@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vAW-3i-o7g">
-                                <rect key="frame" x="309" y="28" width="50" height="100"/>
+                                <rect key="frame" x="316" y="28" width="50" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWX-1q-o4x">
@@ -136,7 +136,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1508" y="357.57121439280365"/>
+            <point key="canvasLocation" x="1500" y="358.4707646176912"/>
         </scene>
         <!--What's Bumpin'?-->
         <scene sceneID="ZQJ-Ls-QbK">
@@ -241,7 +241,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7JV-ea-6j8" kind="relationship" relationship="rootViewController" id="QWh-hy-zmX"/>
+                        <segue destination="7JV-ea-6j8" kind="relationship" relationship="rootViewController" id="jHS-30-WeJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nB-yl-Yta" userLabel="First Responder" sceneMemberID="firstResponder"/>

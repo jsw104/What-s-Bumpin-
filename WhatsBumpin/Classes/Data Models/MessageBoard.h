@@ -12,6 +12,6 @@
 @interface MessageBoard : NSObject
 
 //@property (strong, nonatomic) NSMutableArray<Message *> *messages;
--(void)loadAllMessages;
+-(void)loadMessagesFromFriends: (NSMutableArray *)friendIDs;
 
 @end

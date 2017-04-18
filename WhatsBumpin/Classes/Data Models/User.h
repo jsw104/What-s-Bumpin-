@@ -22,7 +22,6 @@
 -(BOOL)isLoggedIn;
 
 //variables
-@property (nonatomic) int userID;
 @property (nonatomic) long facebookID;
 @property (strong, nonatomic, nullable) NSString *name;
 @property (strong, nonatomic, nullable) NSString *bio;

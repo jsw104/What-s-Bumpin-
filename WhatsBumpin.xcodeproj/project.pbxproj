@@ -37,9 +37,9 @@
 		D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */; };
 		F00BF6781E996198004A4AD8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00BF6771E996198004A4AD8 /* Settings.storyboard */; };
 		F033FD561E95CBC200A9BF80 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F033FD551E95CBC200A9BF80 /* SettingsViewController.m */; };
+		F07DB43C1EA6C187009CFA74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F07DB43B1EA6C187009CFA74 /* Assets.xcassets */; };
 		F0A0FAF71E9FD75B001CD144 /* MessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */; };
 		F0A0FAFA1E9FD962001CD144 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FAF91E9FD962001CD144 /* MessageCell.m */; };
-		F0A0FAFE1EA15D1A001CD144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A0FAFD1EA15D1A001CD144 /* Assets.xcassets */; };
 		F0A0FB011EA15F5E001CD144 /* SearchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FB001EA15F5E001CD144 /* SearchTestViewController.m */; };
 		F0D4E2411E99398800689D03 /* FBLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D4E2401E99398800689D03 /* FBLogin.storyboard */; };
 		F0D74F851E9935F900C7FC35 /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D74F841E9935F900C7FC35 /* FBLoginViewController.m */; };
@@ -132,11 +132,11 @@
 		F00BF6771E996198004A4AD8 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		F033FD541E95CBC200A9BF80 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		F033FD551E95CBC200A9BF80 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		F07DB43B1EA6C187009CFA74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0A0FAF51E9FD75B001CD144 /* MessagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesTableViewController.h; sourceTree = "<group>"; };
 		F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesTableViewController.m; sourceTree = "<group>"; };
 		F0A0FAF81E9FD962001CD144 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCell.h; path = "WhatsBumpin/Classes/View Controllers/MessageCell.h"; sourceTree = SOURCE_ROOT; };
 		F0A0FAF91E9FD962001CD144 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCell.m; path = "WhatsBumpin/Classes/View Controllers/MessageCell.m"; sourceTree = SOURCE_ROOT; };
-		F0A0FAFD1EA15D1A001CD144 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		F0A0FAFF1EA15F5E001CD144 /* SearchTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTestViewController.h; sourceTree = "<group>"; };
 		F0A0FB001EA15F5E001CD144 /* SearchTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTestViewController.m; sourceTree = "<group>"; };
 		F0D4E2401E99398800689D03 /* FBLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FBLogin.storyboard; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 		D0E4C4201E6268B2000960B3 /* WhatsBumpin */ = {
 			isa = PBXGroup;
 			children = (
-				F0A0FAFD1EA15D1A001CD144 /* Assets.xcassets */,
+				F07DB43B1EA6C187009CFA74 /* Assets.xcassets */,
 				D0E4C4221E6268B2000960B3 /* LaunchScreen.storyboard */,
 				D0E4C4241E6268B2000960B3 /* Classes */,
 				D0E4C4451E6268B2000960B3 /* Info.plist */,
@@ -567,7 +567,7 @@
 				D0E4C45F1E6268B2000960B3 /* Me.storyboard in Resources */,
 				D0331A311E89D60B004CA5C1 /* FilterView.xib in Resources */,
 				D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */,
-				F0A0FAFE1EA15D1A001CD144 /* Assets.xcassets in Resources */,
+				F07DB43C1EA6C187009CFA74 /* Assets.xcassets in Resources */,
 				D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

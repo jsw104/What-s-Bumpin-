@@ -12,11 +12,11 @@
 
 @interface Bump : NSObject
 
--(nullable id)initWithUsername: (int)user_id locationWithID:(nonnull NSString *) googlePlacesID;
+-(nullable id)initWithUsername: (long)facebook_id locationWithID:(nonnull NSString *) googlePlacesID;
 //- (void) bumpWithCompletionBlock:(void (^_Nullable)(BOOL successful))completion;
 
 //variables
-@property (nonatomic) int user_id;
+@property (nonatomic) long facebook_id;
 @property (strong, nonatomic, nonnull) NSString *googlePlacesID;
 @property (strong, nonatomic, nonnull) NSDate *date;
 
