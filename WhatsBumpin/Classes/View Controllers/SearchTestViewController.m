@@ -19,10 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIView *buttonView;
 @property (nonatomic, strong) UIVisualEffectView *blurEffectView;
 
-
 @end
 
 @implementation SearchTestViewController
+
+
 
 - (IBAction)filterButtonPressed:(UIButton *)sender {
     [sender setSelected: !sender.isSelected];
@@ -81,6 +82,7 @@
  //   [(UIControl *) _blurEffectView addTarget:nil action:@selector(exitFilterView) forControlEvents: UIControlEventTouchUpInside];
 
 
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,6 +111,14 @@
 - (IBAction)onLaunchClicked:(id)sender {
     GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
     acController.delegate = self;
+    GMSAutocompleteFilter *filter = [[GMSAutocompleteFilter alloc] init];
+    [filter setType:kGMSPlacesAutocompleteTypeFilterEstablishment];
+    
+    
+    
+    [acController setAutocompleteFilter:filter];
+    
+ //   acController setAutocompleteBounds:<#(GMSCoordinateBounds * _Nullable)#>
     [self presentViewController:acController animated:YES completion:nil];
 }
 

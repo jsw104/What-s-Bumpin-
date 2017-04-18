@@ -14,7 +14,7 @@
 @import GooglePlaces;
 #import "Location.h"
 
-@interface MapViewController () <CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UIGestureRecognizerDelegate>
+@interface MapViewController () <CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UIGestureRecognizerDelegate, GMSAutocompleteViewControllerDelegate>
 
 @property NSMutableArray <Location *>*locations;
 @property Location *locationSelected;
@@ -56,6 +56,15 @@ static double delayInSeconds = 0.5;
     } 
 
 }
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"Longitude: %@", [NSString stringWithFormat: @"%f", newLocation.coordinate.longitude]); // string value
+//    StrCurrentLatitude=[NSString stringWithFormat: @"%f", newLocation.coordinate.latitude];
+//    appDeleg.newlocation=newLocation;
+    [self.locationManager stopUpdatingLocation]; // string Value
+}
+
 
 - (void)configureFilterView
 {
@@ -266,5 +275,60 @@ static double delayInSeconds = 0.5;
 {
     ((UIButton *)sender).alpha = 1.0;
 }
+
+
+//** GMSAutocomplete Delegate Stuff
+
+- (IBAction)onLaunchClicked:(id)sender {
+    GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
+    acController.delegate = self;
+    GMSAutocompleteFilter *filter = [[GMSAutocompleteFilter alloc] init];
+    [filter setType:kGMSPlacesAutocompleteTypeFilterEstablishment];
+    
+    GMSVisibleRegion visibleRegion = self.mapView.projection.visibleRegion;
+
+    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:visibleRegion.farLeft
+                    coordinate:visibleRegion.nearRight];
+
+    
+    
+    [acController setAutocompleteFilter:filter];
+    
+    [acController setAutocompleteBounds:bounds];
+    
+    [self presentViewController:acController animated:YES completion:nil];
+}
+
+// Handle the user's selection.
+- (void)viewController:(GMSAutocompleteViewController *)viewController
+didAutocompleteWithPlace:(GMSPlace *)place {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    // Do something with the selected place.
+    NSLog(@"Place name %@", place.name);
+    NSLog(@"Place address %@", place.formattedAddress);
+    NSLog(@"Place attributions %@", place.attributions.string);
+}
+
+- (void)viewController:(GMSAutocompleteViewController *)viewController
+didFailAutocompleteWithError:(NSError *)error {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    // TODO: handle the error.
+    NSLog(@"Error: %@", [error description]);
+}
+
+// User canceled the operation.
+- (void)wasCancelled:(GMSAutocompleteViewController *)viewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+// Turn the network activity indicator on and off again.
+- (void)didRequestAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)didUpdateAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
 
 @end
