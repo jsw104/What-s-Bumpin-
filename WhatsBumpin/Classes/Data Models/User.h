@@ -27,6 +27,6 @@
 @property (strong, nonatomic, nullable) NSString *name;
 @property (strong, nonatomic, nullable) NSString *bio;
 @property (nonatomic) CLLocationCoordinate2D coordinates;
-@property (nonatomic) NSMutableArray<User *>* friends;
+@property (nonatomic, nullable) NSMutableArray<User *>* friends;
 
 @end

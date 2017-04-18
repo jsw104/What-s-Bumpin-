@@ -43,14 +43,18 @@ CGFloat heights[];
     
     /////get facebook friends
     //__block NSMutableArray *array = [[NSMutableArray alloc] init];
-    [self getFacebookFriendsWithCompletion:^(NSMutableArray *response) {
-        NSLog(@"IDs: %@", response);
+    [self getFacebookFriendsWithCompletion:^(NSMutableArray *friendIDs) {
+        NSLog(@"IDs: %@", friendIDs);
+        
+        
+        ////get messages by friends
+        ////order messages
+        ////display messages
+        
+
     }];
     
     
-    ////get messages by friends
-    ////order messages
-    ///
     
     
     Message *message = [[Message alloc] init];
@@ -76,20 +80,15 @@ CGFloat heights[];
 
 
 -(void) getFacebookFriendsWithCompletion: (void(^)(NSMutableArray* response))completion {
-        __block long user_id;
-    
-
         if ([FBSDKAccessToken currentAccessToken]) {
             [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name"}]
              startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                 long user_id;
                  if (!error) {
                      NSLog(@"fetched user:%@", result);
                      NSDictionary *resultDict = (NSDictionary *) result;
     
                      user_id = [[resultDict valueForKey:@"id"] longLongValue];
-                     NSString *name = [resultDict valueForKey:@"name"];
-//                     [nameLabel setText:name];
-//                     [[self view] addSubview:nameLabel];
     
                      dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                          [self.view setNeedsDisplay];
@@ -122,7 +121,6 @@ CGFloat heights[];
                                  NSLog(@"%@", [idArray objectAtIndex:0]);
                              }
 
-//                             NSLog(@"FRIENDS:%@", result);
                          }
                          
                          

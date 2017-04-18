@@ -102,6 +102,8 @@ error:	(NSError *)error {
     
     if (result.grantedPermissions) {
         [self dismissViewControllerAnimated:TRUE completion:nil];
+        
+        ///SET CURRENT USER
     }
     
 }

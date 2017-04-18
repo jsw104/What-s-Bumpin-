@@ -32,8 +32,12 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="We won't post anything to Facebook!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ks5-V9-vFf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We won't post anything to Facebook!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ks5-V9-vFf">
                                 <rect key="frame" x="46" y="626" width="283" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="283" id="fkw-e2-tQq"/>
+                                    <constraint firstAttribute="height" constant="21" id="uya-gT-YIq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.49759615384615385" green="0.49519230769230771" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +49,7 @@
                                     <constraint firstAttribute="height" constant="49" id="cPA-SM-EEE"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect with friends to discover Bumpin’ locations near you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4U-fR-4PQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect with friends to discover Bumpin’ locations near you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4U-fR-4PQ">
                                 <rect key="frame" x="36" y="254" width="302" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="z4U-fR-4PQ" secondAttribute="height" multiplier="151:53" constant="25.641509433962256" id="Qwu-Vq-bzw"/>
