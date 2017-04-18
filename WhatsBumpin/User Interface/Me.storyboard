@@ -229,13 +229,13 @@
         <!--Navigation Controller-->
         <scene sceneID="96w-5T-tHb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="TZG-Dv-w3V" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TZG-Dv-w3V" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Home" id="iMm-BS-oQA">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aCm-NU-Z8J">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aCm-NU-Z8J">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
