@@ -87,7 +87,6 @@ bool night = false;
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"Longitude: %@", [NSString stringWithFormat: @"%f", newLocation.coordinate.longitude]); // string value
 //    StrCurrentLatitude=[NSString stringWithFormat: @"%f", newLocation.coordinate.latitude];
 //    appDeleg.newlocation=newLocation;
     [self.locationManager stopUpdatingLocation]; // string Value
@@ -249,9 +248,7 @@ bool night = false;
         //remove all markers here as well
         [self.locations removeAllObjects];
     }
-    NSLog(@"RADIUS: %@", self.radiusLabel.text);
     [Location getLocationsWithRadius:self.radiusLabel.text.intValue minimumBumps:self.minimumBumpsLabel.text.intValue type:locationTypes completionBlock:^(NSArray<Location *> *locations, NSError *error) {
-        NSLog(@"Locations %@", locations);
         self.locations = [NSMutableArray arrayWithArray:locations];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self addLocationsToMap];
@@ -267,10 +264,8 @@ bool night = false;
 
 - (void)addLocationsToMap
 {
-    NSLog(@"Locations: %@", self.locations);
 
     for(Location *location in self.locations) {
-        NSLog(@"Adding");
 
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = location.coordinate;
