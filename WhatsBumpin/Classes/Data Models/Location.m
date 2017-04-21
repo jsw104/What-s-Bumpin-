@@ -136,10 +136,13 @@ MessageBoard *messageBoard;
         // 5 - Create a new annotation.
         Location *location = [[Location alloc] init];
         location.name = [place objectForKey:@"name"];
-        location.locationDescription = [place objectForKey:@"address_components"];
+//        location.locationDescription = [place objectForKey:@"address_components"];
+//        location.website = [place objectForKey:@"formatted_address"];
+//        location.phoneNumber = [place objectForKey:@"formatted_phone_number"];
+        location.address = vicinity;
+        location.openNow = [[[place objectForKey:@"opening_hours"] objectForKey:@"open_now"] integerValue] == 1;
         
-        
-
+        NSLog(@"%@ open? %hhu", location.name, location.openNow);
         location.coordinate = placeCoord;
         location.icon = [place objectForKey:@"icon"];
         location.photoURLs = [NSArray arrayWithArray:photoURLs];

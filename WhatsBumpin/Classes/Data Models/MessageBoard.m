@@ -34,4 +34,26 @@
 
 }
 
+-(void)loadMessagesForLocation: (NSString *) locationID {
+    
+    NSLog(@"Location ID: %@",locationID);
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_messages.php"]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *post = [[NSString alloc] initWithFormat:@"location_id=%@&submit=", locationID]; ///change string to post string
+    [request setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"data %@", dataString);
+    }];
+    
+    [task resume];
+    
+    
+}
+
+
 @end

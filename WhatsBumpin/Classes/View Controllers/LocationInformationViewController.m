@@ -8,6 +8,7 @@
 
 #import "LocationInformationViewController.h"
 #import "LocationGraphViewController.h"
+#import "LocationMessageViewController.h"
 
 @interface LocationInformationViewController ()
 
@@ -27,19 +28,26 @@
     [_messageButton setImage:image forState:UIControlStateNormal];
     _messageButton.tintColor = [UIColor colorWithRed:0xff/255.0 green:0x2d/255.0 blue:0x55/255.0 alpha:1];
 
+    NSLog(@"%@", _location.googlePlacesID);
 
 }
 
 - (void)configureViewContent
 {
     self.title = self.location.name;
-    [self.locationNameLabel sizeToFit];
-    CGRect newFrame = self.locationNameLabel.frame;
-    newFrame.size.height = newFrame.size.height + 80;
-    [self.locationNameLabel setFrame:newFrame];
-    self.locationURLLabel.text = [NSString stringWithFormat:@"website: %@", [self.location.website absoluteString]];
     
-    self.locationBioLabel.text = self.location.locationDescription;
+
+    self.locationAddressLabel.text = self.location.address;
+    if(self.location.openNow){
+        self.locationOpenLabel.text = @"OPEN";
+        [self.locationOpenLabel setTextColor:[UIColor colorWithRed:0 green:0x80/255.0 blue:0 alpha:1]];
+    }
+    else {
+        self.locationOpenLabel.text = @"CLOSED";
+        [self.locationOpenLabel setTextColor: [UIColor colorWithRed:0xC0/255.0 green:0x21/255.0 blue:0x3B/255.0 alpha:1] ];
+    }
+    
+    [self.bumpLabel setText:[NSString stringWithFormat:@"%d", [self.location getBumpCountBetween:[NSDate distantPast] and:[NSDate distantFuture]]]];
     
     NSURL *googleRequestURL=self.location.photoURLs.firstObject;
     dispatch_async(kBgQueue, ^{
@@ -59,6 +67,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"LocationGraph"]) {
         ((LocationGraphViewController *)[segue destinationViewController]).location = self.location;
+    }
+    if ([[segue identifier] isEqualToString:@"LocationMessages"]) {
+        ((LocationMessageViewController *)[segue destinationViewController]).location = self.location;
     }
 }
 

@@ -297,6 +297,7 @@ bool night = false;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ((LocationInformationViewController*)segue.destinationViewController).location = self.locationSelected;
+    
 }
 
 - (void)showFilterView:(id)sender
