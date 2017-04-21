@@ -19,6 +19,7 @@
 -(void)loadView{
     [super loadView];
     
+    
     [self setTitle:[NSString stringWithFormat: @"%@ Data", self.location.name]];
 }
 

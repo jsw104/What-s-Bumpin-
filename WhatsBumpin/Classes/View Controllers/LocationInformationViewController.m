@@ -19,13 +19,27 @@
     [super viewDidLoad];
     [self configureViewContent];
     // Do any additional setup after loading the view.
+    
+    [self.navigationController.navigationBar setHidden:false];
+    
+    _messageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *image = [[UIImage imageNamed:@"Message"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [_messageButton setImage:image forState:UIControlStateNormal];
+    _messageButton.tintColor = [UIColor colorWithRed:0xff/255.0 green:0x2d/255.0 blue:0x55/255.0 alpha:1];
+
+
 }
 
 - (void)configureViewContent
 {
     self.title = self.location.name;
+    [self.locationNameLabel sizeToFit];
+    CGRect newFrame = self.locationNameLabel.frame;
+    newFrame.size.height = newFrame.size.height + 80;
+    [self.locationNameLabel setFrame:newFrame];
     self.locationURLLabel.text = [NSString stringWithFormat:@"website: %@", [self.location.website absoluteString]];
-    self.locationBioLabel.text = @"this is a description of the location";
+    
+    self.locationBioLabel.text = self.location.locationDescription;
     
     NSURL *googleRequestURL=self.location.photoURLs.firstObject;
     dispatch_async(kBgQueue, ^{

@@ -15,5 +15,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *locationImageView;
 @property (strong, nonatomic) IBOutlet UILabel *locationURLLabel;
 @property (strong, nonatomic) IBOutlet UILabel *locationBioLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationNameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *graphButton;
+@property (weak, nonatomic) IBOutlet UIButton *messageButton;
 
 @end

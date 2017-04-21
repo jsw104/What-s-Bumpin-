@@ -40,14 +40,19 @@ MessageBoard *messageBoard;
 
 + (void)getLocationsWithRadius: (int)radiusInMiles minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
 {
+    NSLog(@"LAT: %f", [User getCurrentUser].coordinates.latitude);
     if ((types & WBFood) == WBFood) {
         [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBFood], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
     if ((types & WBDayTime) == WBDayTime) {
+        NSLog(@"day");
+
         [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBDayTime], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
     
     if ((types & WBNightLife) == WBNightLife) {
+        NSLog(@"night");
+
         [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBNightLife], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
 }
@@ -79,6 +84,11 @@ MessageBoard *messageBoard;
     {
         return @"restaurant";
     }
+    else if (type == WBCafe)
+    {
+        return @"cafe";
+    }
+
     return NULL;
 }
 
@@ -126,6 +136,10 @@ MessageBoard *messageBoard;
         // 5 - Create a new annotation.
         Location *location = [[Location alloc] init];
         location.name = [place objectForKey:@"name"];
+        location.locationDescription = [place objectForKey:@"address_components"];
+        
+        
+
         location.coordinate = placeCoord;
         location.icon = [place objectForKey:@"icon"];
         location.photoURLs = [NSArray arrayWithArray:photoURLs];

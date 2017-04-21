@@ -18,6 +18,7 @@
 typedef NS_ENUM(NSInteger, WBType) {
     WBDayTime = 1,
     WBNightLife = 2,
+    WBCafe = 3,
     WBFood = 4,
 };
 
@@ -30,6 +31,8 @@ typedef NS_ENUM(NSInteger, WBType) {
 - (double)distanceToLocation: (CLLocationCoordinate2D)location;
 
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *locationDescription;
+
 @property (strong, nonatomic) NSString *googlePlacesID;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic) NSURL *website;

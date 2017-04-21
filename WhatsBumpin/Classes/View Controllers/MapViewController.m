@@ -31,12 +31,24 @@
 static double delayInSeconds = 0.5;
 
 @implementation MapViewController
+int dayNightState = 0;
+bool food = false;
+bool coffee = false;
+bool bumpFilter = false;
+bool day = false;
+bool night = false;
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setHidden:TRUE];
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [User LoginPublic];
-
+    
+    
     self.mapView.delegate = self;
     self.mapView.myLocationEnabled = YES;
     
@@ -50,8 +62,9 @@ static double delayInSeconds = 0.5;
     [self.locationManager startMonitoringSignificantLocationChanges];
     [self.locationManager startUpdatingLocation];
     
-    [self configureSearchBar];
     [self configureFilterView];
+    
+    
     
     if (! [FBSDKAccessToken currentAccessToken]) {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"FBLogin"
@@ -60,7 +73,7 @@ static double delayInSeconds = 0.5;
         [self presentViewController:login animated:YES completion:nil];
     }
     
-    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     _blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     _blurEffectView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     _blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -140,9 +153,44 @@ static double delayInSeconds = 0.5;
     self.searchController.hidesNavigationBarDuringPresentation = NO;
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    // load results from google api
+- (IBAction)dayNightButtonPressed:(UIButton *)sender {
+    if(sender.isSelected == YES && dayNightState == 1){
+        [sender setImage:[UIImage imageNamed:@"Night"] forState:UIControlStateSelected];
+        day = false;
+        night = true;
+        
+    }
+    else if(sender.isSelected == YES && dayNightState == 2){
+        [sender setSelected:NO];
+        day = false;
+        night = false;
+    }
+    
+    else {
+        [sender setImage:[UIImage imageNamed:@"Day"] forState:UIControlStateSelected];
+
+        [sender setSelected:YES];
+        night = false;
+        day = true;
+    }
+    dayNightState = (dayNightState + 1) %3;
+    
+}
+
+- (IBAction)foodButtonPressed:(UIButton *)sender {
+    [sender setSelected:!sender.isSelected];
+    food = !food;
+}
+
+- (IBAction)coffeeButtonPressed:(UIButton *)sender {
+    [sender setSelected:!sender.isSelected];
+    coffee = !coffee;
+}
+
+- (IBAction)bumpButtonPressed:(UIButton *)sender {
+    [sender setSelected:!sender.isSelected];
+    bumpFilter = !bumpFilter;
+
 }
 
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController
@@ -171,8 +219,10 @@ static double delayInSeconds = 0.5;
     CLLocation* location = [locations lastObject];
     NSDate* eventDate = location.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (abs(howRecent) < 15.0) {
+    if (fabs(howRecent) < 15.0) {
+
         [[User getCurrentUser] setLocation:location.coordinate];
+        
         [self getLocationsForUser];
         GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:18];
         [self.mapView animateWithCameraUpdate:locationUpdate];
@@ -183,20 +233,25 @@ static double delayInSeconds = 0.5;
 - (void)getLocationsForUser
 {
     WBType locationTypes = 0;
-    if (self.dayTimeButton.selected) {
+    if (day) { //if daytime
         locationTypes = locationTypes | WBDayTime;
     }
-    if (self.nightLifeButton.selected) {
+    if (night) { //if nighttime
         locationTypes = locationTypes | WBNightLife;
     }
-    if (self.foodButton.selected) {
+    if (food) {
         locationTypes = locationTypes | WBFood;
+    }
+    if (coffee) {
+        locationTypes = locationTypes | WBCafe;
     }
     if (self.locations) {
         //remove all markers here as well
         [self.locations removeAllObjects];
     }
+    NSLog(@"RADIUS: %@", self.radiusLabel.text);
     [Location getLocationsWithRadius:self.radiusLabel.text.intValue minimumBumps:self.minimumBumpsLabel.text.intValue type:locationTypes completionBlock:^(NSArray<Location *> *locations, NSError *error) {
+        NSLog(@"Locations %@", locations);
         self.locations = [NSMutableArray arrayWithArray:locations];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self addLocationsToMap];
@@ -212,8 +267,11 @@ static double delayInSeconds = 0.5;
 
 - (void)addLocationsToMap
 {
-    for(Location *location in self.locations)
-    {
+    NSLog(@"Locations: %@", self.locations);
+
+    for(Location *location in self.locations) {
+        NSLog(@"Adding");
+
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = location.coordinate;
         marker.title = location.name;
@@ -258,8 +316,7 @@ static double delayInSeconds = 0.5;
     } completion:nil];
 }
 
-- (Location *)getClosestLocation
-{
+- (Location *)getClosestLocation {
     int minDistance = 0;
     return self.locations.firstObject;
     for(Location *location in self.locations)
@@ -270,10 +327,6 @@ static double delayInSeconds = 0.5;
 
 - (IBAction)bump:(id)sender {
     [[self getClosestLocation] bump];
-}
-
-- (IBAction)filter:(id)sender {
-    self.filterView.hidden ? [self showFilterView:sender] : [self applyFilters:sender];
 }
 
 - (IBAction)togglePlaceType:(id)sender {
@@ -303,8 +356,7 @@ static double delayInSeconds = 0.5;
     }
     
     [UIView animateWithDuration:0.3 animations: ^{
-        [_buttonView setAlpha:0];
-        
+        [_buttonView setAlpha:0];        
         [_searchView setFrame:CGRectMake(0, 0, _searchView.frame.size.width, _searchView.frame.size.height)];
         
         [_blurEffectView setAlpha:1];
@@ -326,7 +378,7 @@ static double delayInSeconds = 0.5;
         [_blurEffectView removeFromSuperview];
         
     }];
-    
+    [self getLocationsForUser];
 }
 
 
@@ -351,6 +403,7 @@ static double delayInSeconds = 0.5;
     [acController setAutocompleteBounds:bounds];
     
     [self presentViewController:acController animated:YES completion:nil];
+    
 }
 
 
