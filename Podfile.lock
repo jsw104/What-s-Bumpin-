@@ -5,10 +5,11 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - CorePlot (2.2)
   - Expecta (1.0.5)
-  - FBSDKCoreKit (4.21.0):
+  - FBSDKCoreKit (4.22.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.21.0):
+  - FBSDKLoginKit (4.22.0):
     - FBSDKCoreKit
   - GoogleMaps (2.2.0):
     - GoogleMaps/Maps (= 2.2.0)
@@ -24,6 +25,7 @@ PODS:
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
+  - CorePlot
   - Expecta (~> 1.0)
   - FBSDKLoginKit
   - GoogleMaps
@@ -34,15 +36,16 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
   Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
-  FBSDKCoreKit: 8a372ab194b5c7c26355c1920ef52dbeb44bc222
-  FBSDKLoginKit: a1a5f4b4ac445823a020fbeeaf5f03714a67ff9c
+  FBSDKCoreKit: c693bad19feb225469eeff14452ba364522ee48b
+  FBSDKLoginKit: 1fa529fc622d7b32ebeaffbecd377180833c6d30
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 
-PODFILE CHECKSUM: 65b4c9650c2e1e1b6b9914dbe0ab0fc10cc1b800
+PODFILE CHECKSUM: ba62ea50290606ff6b1667234907e5c0b1691d4e
 
 COCOAPODS: 1.2.0
