@@ -55,8 +55,7 @@ bool night = false;
     self.mapView.delegate = self;
     self.mapView.myLocationEnabled = YES;
     
-    [self.mapView setMinZoom:1 maxZoom:15];
-    
+  //  [self.mapView setMinZoom:1 maxZoom:15];
     
     //setup location manager
     self.locationManager = [[CLLocationManager alloc] init];
@@ -88,15 +87,16 @@ bool night = false;
     [blurbutton addTarget:self action:@selector(exitFilterView) forControlEvents: UIControlEventTouchUpInside];
     [_blurEffectView addSubview:blurbutton];
     
-    NSLog(@"RAD: %f", [self getMapRadius]);
 
-    
+
 
 }
 
 -(void)mapView:(GMSMapView *)mapView didChangeCameraPosition:(GMSCameraPosition*)position {
     float zoom = mapView.camera.zoom;
     // handle you zoom related logic
+    
+    NSLog(@"Zoom: %f", zoom);
     
     [self getLocationsForUser];
 }
@@ -107,6 +107,8 @@ bool night = false;
 //    StrCurrentLatitude=[NSString stringWithFormat: @"%f", newLocation.coordinate.latitude];
 //    appDeleg.newlocation=newLocation;
     [self.locationManager stopUpdatingLocation]; // string Value
+    [self.mapView animateToZoom:15];
+
 }
 
 
@@ -244,6 +246,8 @@ bool night = false;
         [self.mapView animateWithCameraUpdate:locationUpdate];
     }
     [manager stopUpdatingLocation];
+    [self.mapView animateToZoom:15];
+
 }
 
 - (void)getLocationsForUser
@@ -251,7 +255,6 @@ bool night = false;
     [_mapView clear];
 
     WBType locationTypes = 0;
-    NSLog(@"LT: %ld", (long)locationTypes);
 
     if (day) { //if daytime
         locationTypes = locationTypes | WBDayTime;
@@ -462,14 +465,12 @@ didFailAutocompleteWithError:(NSError *)error {
 
 - (CLLocationCoordinate2D) getCenterCoordinate {
     CGPoint center = self.mapView.center;
-    NSLog(@"C: %@", NSStringFromCGPoint(center));
     CLLocationCoordinate2D centerCoord = [self.mapView.projection coordinateForPoint:center];
     return centerCoord;
 }
 
 - (CLLocationCoordinate2D) getOriginCoordinate {
     CGPoint origin = CGPointMake(0, 0);
-    NSLog(@"O: %@", NSStringFromCGPoint(origin));
 
     CLLocationCoordinate2D originCoord = [self.mapView.projection coordinateForPoint:origin];
     return originCoord;
