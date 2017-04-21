@@ -49,8 +49,14 @@ bool night = false;
     [User LoginPublic];
     
     
+    
+
+    
     self.mapView.delegate = self;
     self.mapView.myLocationEnabled = YES;
+    
+    [self.mapView setMinZoom:1 maxZoom:15];
+    
     
     //setup location manager
     self.locationManager = [[CLLocationManager alloc] init];
@@ -81,9 +87,20 @@ bool night = false;
     UIButton *blurbutton = [[UIButton alloc] initWithFrame:_blurEffectView.frame];
     [blurbutton addTarget:self action:@selector(exitFilterView) forControlEvents: UIControlEventTouchUpInside];
     [_blurEffectView addSubview:blurbutton];
+    
+    NSLog(@"RAD: %f", [self getMapRadius]);
 
+    
 
 }
+
+-(void)mapView:(GMSMapView *)mapView didChangeCameraPosition:(GMSCameraPosition*)position {
+    float zoom = mapView.camera.zoom;
+    // handle you zoom related logic
+    
+    [self getLocationsForUser];
+}
+
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
@@ -231,7 +248,11 @@ bool night = false;
 
 - (void)getLocationsForUser
 {
+    [_mapView clear];
+
     WBType locationTypes = 0;
+    NSLog(@"LT: %ld", (long)locationTypes);
+
     if (day) { //if daytime
         locationTypes = locationTypes | WBDayTime;
     }
@@ -248,7 +269,7 @@ bool night = false;
         //remove all markers here as well
         [self.locations removeAllObjects];
     }
-    [Location getLocationsWithRadius:self.radiusLabel.text.intValue minimumBumps:self.minimumBumpsLabel.text.intValue type:locationTypes completionBlock:^(NSArray<Location *> *locations, NSError *error) {
+    [Location getLocationsWithRadius:[self getMapRadius] minimumBumps:self.minimumBumpsLabel.text.intValue type:locationTypes completionBlock:^(NSArray<Location *> *locations, NSError *error) {
         self.locations = [NSMutableArray arrayWithArray:locations];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self addLocationsToMap];
@@ -276,6 +297,7 @@ bool night = false;
         marker.map = self.mapView;
     }
 }
+
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
     self.locationSelected = marker.userData;
@@ -435,5 +457,33 @@ didFailAutocompleteWithError:(NSError *)error {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
+
+/////calculate radius stuff
+
+- (CLLocationCoordinate2D) getCenterCoordinate {
+    CGPoint center = self.mapView.center;
+    NSLog(@"C: %@", NSStringFromCGPoint(center));
+    CLLocationCoordinate2D centerCoord = [self.mapView.projection coordinateForPoint:center];
+    return centerCoord;
+}
+
+- (CLLocationCoordinate2D) getOriginCoordinate {
+    CGPoint origin = CGPointMake(0, 0);
+    NSLog(@"O: %@", NSStringFromCGPoint(origin));
+
+    CLLocationCoordinate2D originCoord = [self.mapView.projection coordinateForPoint:origin];
+    return originCoord;
+}
+
+- (CLLocationDistance) getMapRadius {
+    CLLocationCoordinate2D center = [self getCenterCoordinate];
+    CLLocationCoordinate2D origin = [self getOriginCoordinate];
+    CLLocation *centerLoc = [[CLLocation alloc] initWithLatitude:center.latitude longitude:center.longitude];
+    CLLocation *originLoc = [[CLLocation alloc] initWithLatitude:origin.latitude longitude:origin.longitude];
+    
+    CLLocationDistance radius = [centerLoc distanceFromLocation:originLoc];
+    
+    return radius;
+}
 
 @end

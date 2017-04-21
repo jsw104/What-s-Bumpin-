@@ -38,20 +38,30 @@ MessageBoard *messageBoard;
     return fabs(location.latitude - self.coordinate.latitude) + fabs(location.longitude - self.coordinate.longitude);
 }
 
-+ (void)getLocationsWithRadius: (int)radiusInMiles minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
++ (void)getLocationsWithRadius: (int)radius minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
 {
     if ((types & WBFood) == WBFood) {
-        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBFood], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBFood], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
     if ((types & WBDayTime) == WBDayTime) {
 
-        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBDayTime], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBDayTime], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
     
     if ((types & WBNightLife) == WBNightLife) {
 
-        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBNightLife], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBNightLife], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
+    
+    if ((types & WBCafe) == WBCafe) {
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBCafe], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+    }
+    
+//    if (types == 0) {
+//        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], @"['restaurant', 'cafe', 'night_club']", @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+//
+//    }
+
 }
 
 + (void) createAndExecuteURL: (NSURL *)googleRequestURL completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
