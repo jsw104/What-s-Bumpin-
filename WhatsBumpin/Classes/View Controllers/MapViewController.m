@@ -262,21 +262,16 @@ bool night = false;
 
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations {
+    [manager stopUpdatingLocation];
     // If it's a relatively recent event, turn off updates to save power.
     CLLocation* location = [locations lastObject];
     NSDate* eventDate = location.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
     if (fabs(howRecent) < 15.0) {
-
         [[User getCurrentUser] setLocation:location.coordinate];
-        
-        [self getLocationsForUser];
-        GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:18];
+        GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:15];
         [self.mapView animateWithCameraUpdate:locationUpdate];
     }
-    [manager stopUpdatingLocation];
-    [self.mapView animateToZoom:15];
-
 }
 
 - (void)getLocationsForUser
