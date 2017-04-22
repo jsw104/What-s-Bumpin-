@@ -55,11 +55,7 @@ bool night = false;
     [super viewDidLoad];
     
     [User LoginPublic];
-    
-    
-    
 
-    
     self.mapView.delegate = self;
     self.mapView.myLocationEnabled = YES;
     

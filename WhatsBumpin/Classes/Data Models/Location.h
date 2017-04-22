@@ -18,8 +18,8 @@
 typedef NS_ENUM(NSInteger, WBType) {
     WBDayTime = 1,
     WBNightLife = 2,
-    WBCafe = 3,
-    WBFood = 4,
+    WBCafe = 4,
+    WBFood = 8,
 };
 
 //static methods
