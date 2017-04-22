@@ -29,7 +29,7 @@ CGFloat heights[];
     _placesClient = [[GMSPlacesClient alloc] init];
     
     [GMSPlacesClient provideAPIKey:@"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -50,107 +50,77 @@ CGFloat heights[];
     [self.refreshControl beginRefreshing];
     //__block NSMutableArray *array = [[NSMutableArray alloc] init];
     [self getFacebookFriendsWithCompletion:^(NSMutableArray *friendIDs) {
-        NSLog(@"IDs: %@", friendIDs);
         
         MessageBoard *mb = [[MessageBoard alloc] init];
         [mb loadMessagesFromFriends:friendIDs withCompletion:^(NSMutableArray * messages){
-            NSLog(@"Regurned");
             self.messages = messages;
-            NSLog(@"Messages %lu", (unsigned long)self.messages.count);
             dispatch_async(dispatch_get_main_queue(), ^{
-
-            [self.tableView reloadData];
-            [self.tableView setNeedsDisplay];
+                
+                [self.tableView reloadData];
+                [self.tableView setNeedsDisplay];
                 [self.refreshControl endRefreshing];
             });
         }];
         
         
-        ////get messages by friends
-        ////order messages
-        ////display messages
-        
-
     }];
     
-    
-    
-    
-//    Message *message = [[Message alloc] init];
-//    message.username = @"Elle Zadina";
-//    message.message_text = @"I would totally recommend this place it is fantastic and wonderful and there's singing on Thursday night and it's super close and the food is good";
-//    [self.messages addObject:message];
-//    
-//    message = [[Message alloc] init];
-//    message.username = @"Justin Wang";
-//    message.message_text = @"I would totally recommend this place it is fantastic and wonderful and there's singing on Thursday night";
-//    [self.messages addObject:message];
-//    
-//    message = [[Message alloc] init];
-//    message.username = @"Jacob Sy";
-//    message.message_text = @"";
-//    [self.messages addObject:message];
-
-
-    
-    //messageboard get messages
-    //use the message board array to populate data table
 }
 
 
 -(void) getFacebookFriendsWithCompletion: (void(^)(NSMutableArray* response))completion {
-        if ([FBSDKAccessToken currentAccessToken]) {
-            [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name"}]
-             startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-                 long user_id;
-                 if (!error) {
-                     NSLog(@"fetched user:%@", result);
-                     NSDictionary *resultDict = (NSDictionary *) result;
-    
-                     user_id = [[resultDict valueForKey:@"id"] longLongValue];
-    
-                     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                         [self.view setNeedsDisplay];
-    
-    
-                     });
-    
-                     NSString *friendPath = [NSString stringWithFormat:@"me/friends"];
-                     NSLog(@"friend path %@", friendPath);
-    
-    
-    
-                     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
-                                                   initWithGraphPath:friendPath
-                                                   parameters:@{@"fields": @"id, name"}
-                                                   HTTPMethod:@"GET"];
-                     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
-                                                           id result,
-                                                           NSError *error) {
-                         // Handle the result
-                         NSMutableArray<NSString *> *idArray = [[NSMutableArray alloc] init];
-                         if(!error){
-                             NSArray * arrData = result[@"data"];
-                             for (NSDictionary * dict in arrData)
-                             {
-                                 NSString * strID = dict[@"id"];
-                                 NSLog(@"STRID:  %@", strID);
-
-                                 [idArray addObject:strID];
-                                 NSLog(@"%@", [idArray objectAtIndex:0]);
-                             }
-
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name"}]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             long user_id;
+             if (!error) {
+                 NSLog(@"fetched user:%@", result);
+                 NSDictionary *resultDict = (NSDictionary *) result;
+                 
+                 user_id = [[resultDict valueForKey:@"id"] longLongValue];
+                 
+                 dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                     [self.view setNeedsDisplay];
+                     
+                     
+                 });
+                 
+                 NSString *friendPath = [NSString stringWithFormat:@"me/friends"];
+                 NSLog(@"friend path %@", friendPath);
+                 
+                 
+                 
+                 FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                               initWithGraphPath:friendPath
+                                               parameters:@{@"fields": @"id, name"}
+                                               HTTPMethod:@"GET"];
+                 [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                                       id result,
+                                                       NSError *error) {
+                     // Handle the result
+                     NSMutableArray<NSString *> *idArray = [[NSMutableArray alloc] init];
+                     if(!error){
+                         NSArray * arrData = result[@"data"];
+                         for (NSDictionary * dict in arrData)
+                         {
+                             NSString * strID = dict[@"id"];
+                             NSLog(@"STRID:  %@", strID);
+                             
+                             [idArray addObject:strID];
+                             NSLog(@"%@", [idArray objectAtIndex:0]);
                          }
                          
-                         
-                         completion(idArray);
-                        
-                     }];
+                     }
                      
-                 }
-             }];
-            
-        }
+                     
+                     completion(idArray);
+                     
+                 }];
+                 
+             }
+         }];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -169,7 +139,7 @@ CGFloat heights[];
 }
 
 -(void) getLocationNameFromID: (NSString *)locationID withCompletion: (void(^)(NSString* response))completion{
-   
+    
     
     [_placesClient lookUpPlaceID:locationID callback:^(GMSPlace *place, NSError *error) {
         if (error != nil) {
@@ -187,7 +157,7 @@ CGFloat heights[];
             NSLog(@"No place details for %@", locationID);
         }
     }];
-
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -198,8 +168,8 @@ CGFloat heights[];
     [cell.messageLabel sizeToFit];
     cell.timeLabel.text = message.date;
     
-//    cell.locationLabel.text = @"Jolly";
-//    [cell.locationLabel sizeToFit];
+    //    cell.locationLabel.text = @"Jolly";
+    //    [cell.locationLabel sizeToFit];
     
     
     cell.locationIcon.image = [cell.locationIcon.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -219,7 +189,7 @@ CGFloat heights[];
     }];
     
     if ([indexPath row] %2 == 0) {
-
+        
         [cell setBackgroundColor: [self darkerGray]];
     }
     else {
@@ -231,7 +201,7 @@ CGFloat heights[];
     CGRect newTimeFrame = cell.timeLabel.frame;
     newTimeFrame.origin.y = cell.messageLabel.frame.origin.y + cell.messageLabel.frame.size.height - 7;
     cell.timeLabel.frame = newTimeFrame;
-
+    
     return cell;
 }
 
@@ -243,7 +213,7 @@ CGFloat heights[];
     CGFloat oldW = label.frame.size.width;
     
     [label setText: text];
-   
+    
     [label sizeToFit];
     CGFloat width = label.frame.size.width;
     CGFloat height = label.frame.size.height;
@@ -269,7 +239,7 @@ CGFloat heights[];
 
 - (UIColor *)lighterGray {
     return [UIColor colorWithRed:0xEA/255.0 green:0xEA/255.0 blue:0xEA/255.0 alpha:0.45];
-
+    
 }
 - (UIColor *)darkerGray {
     return [UIColor colorWithRed:0xEB/255.0 green:0xEB/255.0 blue:0xEB/255.0 alpha:1];
@@ -277,48 +247,48 @@ CGFloat heights[];
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 
 
