@@ -101,6 +101,11 @@ bool night = false;
     [self getLocationsForUser];
 }
 
+-(BOOL) mapView:(GMSMapView *)mapView didTapMarker:(nonnull GMSMarker *)marker {
+    [mapView setSelectedMarker:marker];
+    return YES;
+}
+
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {

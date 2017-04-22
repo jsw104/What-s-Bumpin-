@@ -10,7 +10,9 @@
 
 @implementation MessageBoard
 
-
+//TODO  Change script name
+//      Change post string
+//
 -(void)loadMessagesFromFriends: (NSMutableArray *)friendIDs {
     NSString *postString = @"";
     for (NSString * fID in friendIDs) {
