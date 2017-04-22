@@ -28,8 +28,6 @@ NSMutableArray *yVals;
 -(void)loadView{
     [super loadView];
     
-    [self setTitle:[NSString stringWithFormat: @"%@ Data", self.location.name]];
-    
     //create view
     graphView = [[UIView alloc] initWithFrame:CGRectMake(15, self.navigationController.navigationBar.frame.size.height + 15, self.view.bounds.size.width - 30, 300)];
     graphView.layer.cornerRadius = 15;
@@ -47,6 +45,7 @@ NSMutableArray *yVals;
     CGFloat titleWidth = [self widthOfString:titleString withFont:nil];
     UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, graphView.bounds.size.width, 20)];
     title.text = titleString;
+    title.numberOfLines = 0;
     title.textColor = [UIColor colorWithRed:14/255.0 green:201/255.0 blue:39/255.0 alpha:1];
     title.textAlignment = NSTextAlignmentCenter;
     [graphView addSubview:title];
@@ -56,6 +55,8 @@ NSMutableArray *yVals;
     
     //set yVals
     yVals = [NSMutableArray arrayWithObjects:[NSNumber numberWithInt:20],[NSNumber numberWithInt:15],[NSNumber numberWithInt:3],[NSNumber numberWithInt:7],[NSNumber numberWithInt:16],[NSNumber numberWithInt:12],[NSNumber numberWithInt:9], nil];
+    //load data
+    //[self loadBumpsPerDay];
     
     //add x-axis labels
     [self addXAxisLabels:7 withLabels:xVals];
@@ -213,7 +214,7 @@ NSMutableArray *yVals;
 
 -(void)loadBumpsPerDay {
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_bumps_by_day_of_week.php"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_bumps_by_location_and_day_of_week.php"]];
     [request setHTTPMethod:@"POST"];
     
     NSString *post = [[NSString alloc] initWithFormat:@"location_id=%@&submit=", @"ChIJM5WTlIT7MIgRZXbXABw3OQw"]; ///change string to location_id; hardcoded for Jolly
@@ -221,9 +222,19 @@ NSMutableArray *yVals;
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"data: %@", dataString);
         
-        NSLog(@"data %@", dataString);
+        NSArray *components = [dataString componentsSeparatedByString:@","];
+        NSString *monday = [components[1] substringFromIndex:[components[1] length] -1];
+        NSString *tuesday = [components[2] substringFromIndex:[components[2] length] -1];
+        NSString *wednesday = [components[3] substringFromIndex:[components[3] length] -1];
+        NSString *thursday = [components[4] substringFromIndex:[components[4] length] -1];
+        NSString *friday = [components[5] substringFromIndex:[components[5] length] -1];
+        NSString *saturday = [components[6] substringFromIndex:[components[6] length] -1];
+        NSString *sunday = [components[7] substringFromIndex:[components[7] length] -1];
+        yVals = [NSMutableArray arrayWithObjects:[NSNumber numberWithInt:[monday intValue]], [NSNumber numberWithInt:[tuesday intValue]], [NSNumber numberWithInt:[wednesday intValue]], [NSNumber numberWithInt:[thursday intValue]], [NSNumber numberWithInt:[friday intValue]], [NSNumber numberWithInt:[saturday intValue]], [NSNumber numberWithInt:[sunday intValue]], nil];
     }];
+    
     
     [task resume];
 }
