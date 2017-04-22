@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Message.h"
+@class Message;
 
 @interface MessageBoard : NSObject
 
-//@property (strong, nonatomic) NSMutableArray<Message *> *messages;
--(void)loadMessagesFromFriends: (NSMutableArray *)friendIDs;
+@property (strong, nonatomic) NSMutableArray<Message *> *messages;
+
+-(void)loadMessagesFromFriends: (NSMutableArray *)friendIDs withCompletion:(void(^)(NSMutableArray* response))completion;
 -(void)loadMessagesForLocation: (NSString *) locationID;
 @end
