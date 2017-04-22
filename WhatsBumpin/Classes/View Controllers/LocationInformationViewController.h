@@ -13,7 +13,11 @@
 
 @property (strong, nonatomic) Location *location;
 @property (strong, nonatomic) IBOutlet UIImageView *locationImageView;
-@property (strong, nonatomic) IBOutlet UILabel *locationURLLabel;
-@property (strong, nonatomic) IBOutlet UILabel *locationBioLabel;
+@property (weak, nonatomic) IBOutlet UIButton *graphButton;
+@property (weak, nonatomic) IBOutlet UIButton *messageButton;
+@property (weak, nonatomic) IBOutlet UILabel *locationAddressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationOpenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bumpLabel;
+
 
 @end

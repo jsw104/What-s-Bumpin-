@@ -136,7 +136,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1500" y="358.4707646176912"/>
+            <point key="canvasLocation" x="1478" y="359"/>
         </scene>
         <!--What's Bumpin'?-->
         <scene sceneID="ZQJ-Ls-QbK">
@@ -224,7 +224,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoN-KF-nDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2221.5999999999999" y="358.4707646176912"/>
+            <point key="canvasLocation" x="2214" y="359"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="96w-5T-tHb">
