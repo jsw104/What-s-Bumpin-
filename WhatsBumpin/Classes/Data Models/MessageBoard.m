@@ -17,17 +17,20 @@
     NSString *postString = @"";
     for (NSString * fID in friendIDs) {
         postString = [postString stringByAppendingString:fID];
+        postString = [postString stringByAppendingString:@"|"];
     }
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_messages.php"]];
+    NSLog(@"postString: %@", postString);
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_messages_by_friends.php"]];
     [request setHTTPMethod:@"POST"];
     
-    NSString *post = [[NSString alloc] initWithFormat:@"location_id=%@&submit=", @"ChIJM5WTlIT7MIgRZXbXABw3OQw"]; ///change string to post string 
+    NSString *post = [[NSString alloc] initWithFormat:@"friends_facebook_ids=%@&submit=", postString]; ///change string to post string
     [request setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        
+        NSLog(@"response %@", response);
         NSLog(@"data %@", dataString);
     }];
 

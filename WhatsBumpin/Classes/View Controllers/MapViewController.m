@@ -23,6 +23,7 @@
 @property (nonatomic, strong) UIVisualEffectView *blurEffectView;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (weak, nonatomic) IBOutlet UIView *buttonView;
+@property (weak, nonatomic) IBOutlet UILabel *bumpFilterLabel;
 
 
 
@@ -41,6 +42,13 @@ bool night = false;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:TRUE];
+    NSLog(@"BLH %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"]);
+    if([[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"] != nil){
+        [self.bumpFilterLabel setText:[[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"]];
+    }
+    else {
+        [self.bumpFilterLabel setText:@"10"];
+    }
 
 }
 - (void)viewDidLoad {
@@ -68,6 +76,7 @@ bool night = false;
     [self.locationManager startUpdatingLocation];
     
     [self configureFilterView];
+    
     
     
     
@@ -211,7 +220,17 @@ bool night = false;
 }
 
 - (IBAction)bumpButtonPressed:(UIButton *)sender {
-    [sender setSelected:!sender.isSelected];
+    if(bumpFilter){
+        [sender setSelected:!sender.isSelected];
+
+        [_bumpFilterLabel setTextColor:[UIColor colorWithRed:0x44/255.0 green:0x44/255.0 blue:0x44/255.0 alpha:1]];
+    }
+    else {
+        [sender setSelected:!sender.isSelected];
+
+        [_bumpFilterLabel setTextColor:[UIColor colorWithRed:0xff/255.0 green:0x2d/255.0 blue:0x55/255.0 alpha:1]];
+
+    }
     bumpFilter = !bumpFilter;
 
 }

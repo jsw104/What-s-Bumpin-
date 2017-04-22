@@ -129,6 +129,13 @@
                                             <action selector="bumpButtonPressed:" destination="8c4-6z-CTW" eventType="touchUpInside" id="9Og-Xp-2Ey"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QU-c3-jq4">
+                                        <rect key="frame" x="291" y="48" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -148,6 +155,7 @@
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="bumpFilterLabel" destination="6QU-c3-jq4" id="HLY-Pg-2em"/>
                         <outlet property="buttonView" destination="HCU-J6-q93" id="bHa-hL-5Pk"/>
                         <outlet property="mapView" destination="OMs-PI-7eu" id="5vZ-Jj-mJi"/>
                         <outlet property="searchView" destination="R5W-VD-1r4" id="DJE-fg-fxQ"/>
@@ -155,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UR4-EG-gTz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-321.58920539730138"/>
+            <point key="canvasLocation" x="1482.4000000000001" y="-370.16491754122939"/>
         </scene>
         <!--Location Information View Controller-->
         <scene sceneID="uGZ-ck-i6f">

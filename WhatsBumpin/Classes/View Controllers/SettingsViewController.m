@@ -15,6 +15,8 @@
 @interface SettingsViewController ()
 <FBSDKLoginButtonDelegate>
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *logoutButton;
+@property (weak, nonatomic) IBOutlet UISlider *minBumpSlider;
+@property (weak, nonatomic) IBOutlet UILabel *minBumpLabel;
 
 @end
 
@@ -32,8 +34,32 @@
 //    self.tabBarItem.image = [[UIImage imageNamed:@"settings_unselected.png"]
 //                             imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [_logoutButton setDelegate:self];
+    if([[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"] != nil){
+        NSString *bumps = [[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"];
+        [self.minBumpLabel setText:bumps];
+        [self.minBumpSlider setValue:bumps.integerValue];
+        
+    }
+    else {
+        [self.minBumpLabel setText:@"10"];
+    }
+    
 
 }
+- (IBAction)sliderValueChanged:(UISlider *)sender {
+    [self roundBumpSlider:sender];
+}
+
+- (void)roundBumpSlider:(UISlider *)sender
+{
+    int sliderValue;
+    sliderValue = sender.value;
+    [(UISlider *)sender setValue:sliderValue animated:YES];
+    [self.minBumpLabel setText:[NSString stringWithFormat:@"%i", sliderValue]];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%i", sliderValue] forKey:@"minBump"];
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
