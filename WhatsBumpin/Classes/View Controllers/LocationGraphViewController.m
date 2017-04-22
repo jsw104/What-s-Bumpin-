@@ -54,7 +54,7 @@ NSMutableArray *yVals;
     xVals = [NSArray arrayWithObjects:@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", @"Sun", nil];
     
     //set yVals
-    yVals = [NSMutableArray arrayWithObjects:[NSNumber numberWithInt:20],[NSNumber numberWithInt:15],[NSNumber numberWithInt:3],[NSNumber numberWithInt:7],[NSNumber numberWithInt:16],[NSNumber numberWithInt:12],[NSNumber numberWithInt:9], nil];
+    yVals = [NSMutableArray arrayWithObjects:[NSNumber numberWithInt:40],[NSNumber numberWithInt:15],[NSNumber numberWithInt:3],[NSNumber numberWithInt:7],[NSNumber numberWithInt:16],[NSNumber numberWithInt:12],[NSNumber numberWithInt:9], nil];
     //load data
     //[self loadBumpsPerDay];
     
@@ -89,6 +89,21 @@ NSMutableArray *yVals;
     yAxisLayer.fillColor = [[UIColor clearColor] CGColor];
     [graphView.layer addSublayer:yAxisLayer];
     
+    //add Recommended for you!
+    UIView *recommendation = [[UIView alloc] initWithFrame:CGRectMake(15, 375, self.view.bounds.size.width - 30, 75)];
+    recommendation.layer.borderColor = [UIColor colorWithRed:251/255.0 green:10/255.0 blue:95/255.0 alpha:1].CGColor;
+    recommendation.layer.borderWidth = 3.0f;
+    recommendation.layer.cornerRadius = 15;
+    recommendation.layer.masksToBounds = YES;
+    [self.view addSubview:recommendation];
+    UITextView *rec = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, recommendation.bounds.size.width, recommendation.bounds.size.height)];
+    rec.font = [UIFont systemFontOfSize:18];
+    rec.text = [NSString stringWithFormat:@"Recommended For You:\nGo to %@ on %@!", _location.name, @"Monday"];
+    //rec.textAlignment = NSTextAlignmentCenter;
+    rec.textColor = [UIColor blueColor];
+    //rec.lineBreakMode = NSLineBreakByWordWrapping;
+    //rec.numberOfLines = 0;
+    [recommendation addSubview:rec];
 }
 
 - (void)addXAxisLabels:(int)numLabels withLabels: (NSArray *)labels{
@@ -142,7 +157,7 @@ NSMutableArray *yVals;
     int upperBound = 20;
     bool foundUpperBound = false;
     while(!foundUpperBound){
-        if(maxValue <= 20){
+        if(maxValue <= upperBound){
             foundUpperBound = true;
         }else{
             upperBound += 20;
@@ -188,10 +203,10 @@ NSMutableArray *yVals;
     int upperBound = [self findUpperBound:maxValue];
     double bumpHeight = (graphView.bounds.size.height - 80)/upperBound;
     CGFloat barWidth = (graphView.bounds.size.width - 60) / numBars;
-    int x = 30;
-    int y = graphView.bounds.size.height - 30;
-    int height = bumpHeight;
-    int width = barWidth;
+    double x = 30;
+    double y = graphView.bounds.size.height - 30;
+    double height = bumpHeight;
+    double width = barWidth;
     for(int i = 0; i < numBars; i++){
         UIView *barView = [[UIView alloc] initWithFrame:CGRectMake(x + 5, y, width - 5, -(height * [[barVals objectAtIndex:i] integerValue]))];
         barView.backgroundColor = [UIColor colorWithRed:251/255.0 green:10/255.0 blue:95/255.0 alpha:1];
