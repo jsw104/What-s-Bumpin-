@@ -19,6 +19,7 @@
 UIView *graphView;
 NSArray *xVals;
 NSMutableArray *yVals;
+UIActivityIndicatorView *activity;
 
 -(void)viewDidLoad{
     [super viewDidLoad];
@@ -29,7 +30,7 @@ NSMutableArray *yVals;
     [super loadView];
     
     //create view
-    graphView = [[UIView alloc] initWithFrame:CGRectMake(15, self.navigationController.navigationBar.frame.size.height + 15, self.view.bounds.size.width - 30, 300)];
+    graphView = [[UIView alloc] initWithFrame:CGRectMake(15, self.navigationController.navigationBar.frame.size.height + 30, self.view.bounds.size.width - 30, 300)];
     graphView.layer.cornerRadius = 15;
     graphView.layer.masksToBounds = YES;
     
@@ -40,6 +41,11 @@ NSMutableArray *yVals;
     //add graphView to view
     [self.view addSubview:graphView];
     
+    //create activity
+    //activity = [[UIActivityIndicatorView alloc] initWithFrame:graphView.bounds];
+    //[activity setBackgroundColor:[UIColor clearColor]];
+    //[activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    
     //add title
     NSString *titleString = [NSString stringWithFormat:@"Bumps Per Day At %@",self.location.name];
     CGFloat titleWidth = [self widthOfString:titleString withFont:nil];
@@ -49,19 +55,24 @@ NSMutableArray *yVals;
     title.textColor = [UIColor colorWithRed:14/255.0 green:201/255.0 blue:39/255.0 alpha:1];
     title.textAlignment = NSTextAlignmentCenter;
     [graphView addSubview:title];
+    /*NSString *titleString = [NSString stringWithFormat:@"Bumps Per Day At %@",self.location.name];
+    UITextView *title = [[UITextView alloc] initWithFrame:CGRectMake(0, 15, graphView.bounds.size.width, 20)];
+    title.text = titleString;
+    title.textColor = [UIColor colorWithRed:14/255.0 green:201/255.0 blue:39/255.0 alpha:1];
+    title.textAlignment = NSTextAlignmentCenter;
+    [graphView addSubview:title];*/
     
     //set xVals
-    xVals = [NSArray arrayWithObjects:@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", @"Sun", nil];
+    xVals = [NSArray arrayWithObjects:@"Sun",@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", nil];
     
     //set yVals
     //yVals = [NSMutableArray arrayWithObjects:[NSNumber numberWithInt:40],[NSNumber numberWithInt:15],[NSNumber numberWithInt:3],[NSNumber numberWithInt:7],[NSNumber numberWithInt:16],[NSNumber numberWithInt:12],[NSNumber numberWithInt:9], nil];
     //load data
     [self loadBumpsPerDayWithCompletion:^(NSMutableArray *yVals) {
-        //draw bars
-        [self drawBars:7 withValues:yVals];
         //add y-axis labels
         [self addYAxisLabels:4 withLabels:yVals];
-        [self.view setNeedsDisplay];
+        //draw bars
+        [self drawBars:7 withValues:yVals];
     }];
     
     //add x-axis labels
@@ -89,7 +100,7 @@ NSMutableArray *yVals;
     yAxisLayer.fillColor = [[UIColor clearColor] CGColor];
     [graphView.layer addSublayer:yAxisLayer];
     
-    //add Recommended for you!
+    /*//add Recommended for you!
     UIView *recommendation = [[UIView alloc] initWithFrame:CGRectMake(15, 375, self.view.bounds.size.width - 30, 75)];
     recommendation.layer.borderColor = [UIColor colorWithRed:251/255.0 green:10/255.0 blue:95/255.0 alpha:1].CGColor;
     recommendation.layer.borderWidth = 3.0f;
@@ -103,7 +114,11 @@ NSMutableArray *yVals;
     rec.textColor = [UIColor blueColor];
     //rec.lineBreakMode = NSLineBreakByWordWrapping;
     //rec.numberOfLines = 0;
-    [recommendation addSubview:rec];
+    [recommendation addSubview:rec];*/
+    //create activity indicator while graph loads
+    
+    //[graphView addSubview:activity];
+    //[activity startAnimating];
 }
 
 - (void)addXAxisLabels:(int)numLabels withLabels: (NSArray *)labels{
@@ -210,6 +225,8 @@ NSMutableArray *yVals;
     for(int i = 0; i < numBars; i++){
         UIView *barView = [[UIView alloc] initWithFrame:CGRectMake(x + 5, y, width - 5, -(height * [[barVals objectAtIndex:i] integerValue]))];
         barView.backgroundColor = [UIColor colorWithRed:251/255.0 green:10/255.0 blue:95/255.0 alpha:1];
+        barView.layer.cornerRadius = 5;
+        barView.layer.masksToBounds = YES;
         UILabel *barLabel = [[UILabel alloc] initWithFrame:barView.bounds];
         barLabel.text = [NSString stringWithFormat:@"%ld",(long)[[barVals objectAtIndex:i] integerValue]];
         barLabel.textColor = [UIColor blueColor];
@@ -218,6 +235,7 @@ NSMutableArray *yVals;
         [graphView addSubview:barView];
         x += barWidth;
     }
+    //[activity stopAnimating];
     
 }
 
