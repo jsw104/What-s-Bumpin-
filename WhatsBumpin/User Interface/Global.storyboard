@@ -204,7 +204,7 @@
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-jg-OKB" userLabel="contentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="383" height="700"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="650"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fxq-2p-qOi">
                                                 <rect key="frame" x="0.0" y="0.0" width="383" height="383"/>
@@ -240,14 +240,14 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUu-Aa-eNh">
-                                                <rect key="frame" x="226" y="592" width="100" height="100"/>
+                                                <rect key="frame" x="226" y="542" width="100" height="100"/>
                                                 <state key="normal" image="Message"/>
                                                 <connections>
                                                     <segue destination="k48-nI-qd3" kind="show" id="gRa-LC-EWh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUs-QG-7Wx">
-                                                <rect key="frame" x="57" y="592" width="100" height="100"/>
+                                                <rect key="frame" x="57" y="542" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="B2V-3g-odY"/>
                                                     <constraint firstAttribute="width" constant="100" id="Vbw-hv-rbQ"/>
@@ -307,7 +307,7 @@
                                             <constraint firstItem="JUu-Aa-eNh" firstAttribute="centerY" secondItem="ZUs-QG-7Wx" secondAttribute="centerY" id="pxw-r9-DtT"/>
                                             <constraint firstItem="PgD-xe-tfJ" firstAttribute="top" secondItem="HeE-Ct-Pg4" secondAttribute="bottom" constant="8" id="qjz-AU-7DO"/>
                                             <constraint firstItem="JUu-Aa-eNh" firstAttribute="height" secondItem="ZUs-QG-7Wx" secondAttribute="height" id="qun-Mm-08H"/>
-                                            <constraint firstAttribute="height" constant="700" id="tG5-7j-c16"/>
+                                            <constraint firstAttribute="height" constant="650" id="tG5-7j-c16"/>
                                             <constraint firstItem="ZUs-QG-7Wx" firstAttribute="leading" secondItem="KRs-Rd-X28" secondAttribute="leading" id="tcu-H4-Dns"/>
                                         </constraints>
                                     </view>
