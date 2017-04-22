@@ -15,7 +15,7 @@
 
 
 @interface MessagesTableViewController ()
-
+@property (strong) GMSPlacesClient *placesClient;
 @end
 
 @implementation MessagesTableViewController
@@ -26,6 +26,10 @@ CGFloat heights[];
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _placesClient = [[GMSPlacesClient alloc] init];
+    
+    [GMSPlacesClient provideAPIKey:@"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -43,13 +47,22 @@ CGFloat heights[];
     self.messages = [NSMutableArray arrayWithCapacity:2];
     
     /////get facebook friends
+    [self.refreshControl beginRefreshing];
     //__block NSMutableArray *array = [[NSMutableArray alloc] init];
     [self getFacebookFriendsWithCompletion:^(NSMutableArray *friendIDs) {
         NSLog(@"IDs: %@", friendIDs);
         
         MessageBoard *mb = [[MessageBoard alloc] init];
         [mb loadMessagesFromFriends:friendIDs withCompletion:^(NSMutableArray * messages){
+            NSLog(@"Regurned");
             self.messages = messages;
+            NSLog(@"Messages %lu", (unsigned long)self.messages.count);
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+            [self.tableView reloadData];
+            [self.tableView setNeedsDisplay];
+                [self.refreshControl endRefreshing];
+            });
         }];
         
         
@@ -155,6 +168,27 @@ CGFloat heights[];
     return self.messages.count;
 }
 
+-(void) getLocationNameFromID: (NSString *)locationID withCompletion: (void(^)(NSString* response))completion{
+   
+    
+    [_placesClient lookUpPlaceID:locationID callback:^(GMSPlace *place, NSError *error) {
+        if (error != nil) {
+            NSLog(@"Place Details error %@", [error localizedDescription]);
+            return;
+        }
+        
+        if (place != nil) {
+            NSLog(@"Place name %@", place.name);
+            NSLog(@"Place address %@", place.formattedAddress);
+            NSLog(@"Place placeID %@", place.placeID);
+            NSLog(@"Place attributions %@", place.attributions);
+            completion( place.name);
+        } else {
+            NSLog(@"No place details for %@", locationID);
+        }
+    }];
+
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell" forIndexPath:indexPath];
@@ -176,15 +210,19 @@ CGFloat heights[];
         [cell.locationIcon setTintColor:[UIColor colorWithRed:0x4c/255.0 green:0xd9/255.0 blue:0x64/255.0 alpha:1]];
     }
     
+    [self getLocationNameFromID:message.locationID withCompletion:^(NSString *name) {
+        NSLog(@"NAME %@", name);
+        [self setLocationLabel:cell.locationLabel withText:name adjustIcon:cell.locationIcon];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [cell setNeedsDisplay];
+        });
+    }];
     
     if ([indexPath row] %2 == 0) {
-        [self setLocationLabel:cell.locationLabel withText:@"The Jolly Scholar" adjustIcon:cell.locationIcon];
 
         [cell setBackgroundColor: [self darkerGray]];
     }
     else {
-        [self setLocationLabel:cell.locationLabel withText:@"Jolly" adjustIcon:cell.locationIcon];
-
         [cell setBackgroundColor: [self lighterGray]];
     }
     

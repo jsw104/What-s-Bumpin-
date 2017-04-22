@@ -14,6 +14,11 @@
 //TODO  Change script name
 //      Change post string
 //
+
+- (instancetype)init {
+    _messages = [[NSMutableArray alloc] init];
+    return self;
+}
 -(void)loadMessagesFromFriends: (NSMutableArray *)friendIDs withCompletion:(void(^)(NSMutableArray* response))completion {
     NSString *postString = @"";
     for (NSString * fID in friendIDs) {
@@ -38,14 +43,27 @@
                               options:kNilOptions
                               error:&error];
         
-        if([json objectForKey:@"error"] == false){
-            int messageCount = (int)[json objectForKey:@"messageCount"];
+        NSLog(@"%@", [json objectForKey:@"error"]);
+//        if(![json objectForKey:@"error"]){
+//            NSLog(@"no error");
+        NSLog(@"%@", NSStringFromClass([[json objectForKey:@"message_count"] class]));
+            int messageCount = [(NSNumber *)[json objectForKey:@"message_count"] intValue];
+        NSLog(@"MC %d", messageCount);
             for (int i = 0; i < messageCount; i++) {
+                
+                NSLog(@"asdf");
                 Message *m = [self parseIntoMessage: [json objectForKey:[NSString stringWithFormat:@"%d", i]]];
+                NSLog(@"%@", m);
+                
                 [self.messages addObject:m];
+                NSLog(@"Count %lu", (unsigned long)self.messages.count);
+
             }
+        NSLog(@"Count %lu", (unsigned long)self.messages.count);
             completion(self.messages);
-        }
+        //}
+        
+        
 
         NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSLog(@"response %@", response);
@@ -62,7 +80,7 @@
     newMessage.name = [data valueForKey:@"facebook_name"];
     newMessage.message_text = [data valueForKey:@"message_field"];
     newMessage.date = [data valueForKey:@"time_stamp"];
-    //newMessage.locationID = [data valueForKey:@"location_id"];
+    newMessage.locationID = [data valueForKey:@"location_id"];
     
     return newMessage;
 }
