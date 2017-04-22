@@ -34,8 +34,8 @@ static double delayInSeconds = 0.5;
 
 @implementation MapViewController
 int dayNightState = 0;
-bool food = false;
-bool coffee = false;
+bool food = true;
+bool coffee = true;
 bool bumpFilter = false;
 bool day = false;
 bool night = false;
@@ -71,12 +71,7 @@ bool night = false;
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startMonitoringSignificantLocationChanges];
     [self.locationManager startUpdatingLocation];
-    
-    [self configureFilterView];
-    
-    
-    
-    
+
     if (! [FBSDKAccessToken currentAccessToken]) {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"FBLogin"
                                                              bundle:nil];
@@ -128,51 +123,6 @@ bool night = false;
     [self.locationManager stopUpdatingLocation]; // string Value
     [self.mapView animateToZoom:15];
 
-}
-
-
-- (void)configureFilterView
-{
-    self.filterView = [[[NSBundle mainBundle]
-                     loadNibNamed:@"FilterView"
-                     owner:self options:nil]
-                    firstObject];
-    [self.filterView setFrame:CGRectMake(self.searchBarContainerView.frame.origin.x, self.searchBarContainerView.frame.origin.y + self.searchBarContainerView.frame.size.height, self.view.frame.size.width, 200)];
-    
-    [self.filterView setHidden:true];
-    [self.view addSubview:self.filterView];
-    
-    [self.radiusLabel setText:[NSString stringWithFormat:@"%i", (int)lroundf(self.radiusSlider.value)]];
-    [self.minimumBumpsLabel setText:[NSString stringWithFormat:@"%i", (int)lroundf(self.minimumBumpsSlider.value)]];
-    [self.foodButton setSelected:true];
-    [self.dayTimeButton setSelected:true];
-    [self.nightLifeButton setSelected:true];
-}
-
-- (IBAction)distanceSliderValueChanged:(id)sender
-{
-    [self roundDistanceSlider:sender];
-}
-
-- (IBAction)bumpsSliderValueChanged:(id)sender
-{
-    [self roundBumpSlider:sender];
-}
-
-- (void)roundDistanceSlider:(id)sender
-{
-    int sliderValue;
-    sliderValue = lroundf(((UISlider *)sender).value);
-    [(UISlider *)sender setValue:sliderValue animated:YES];
-    [self.radiusLabel setText:[NSString stringWithFormat:@"%i", sliderValue]];
-}
-
-- (void)roundBumpSlider:(id)sender
-{
-    int sliderValue;
-    sliderValue = lroundf(((UISlider *)sender).value);
-    [(UISlider *)sender setValue:sliderValue animated:YES];
-    [self.minimumBumpsLabel setText:[NSString stringWithFormat:@"%i", sliderValue]];
 }
 
 - (void)configureSearchBar
