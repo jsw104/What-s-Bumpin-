@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (weak, nonatomic) IBOutlet UIView *buttonView;
 @property (weak, nonatomic) IBOutlet UILabel *bumpFilterLabel;
+@property (strong, nonatomic) NSTimer *timer;
 
 
 
@@ -102,8 +103,16 @@ bool night = false;
     // handle you zoom related logic
     
     NSLog(@"Zoom: %f", zoom);
+    if(self.timer)
+    {
+        [self.timer invalidate];
+    }
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                     target:self
+                                   selector:@selector(getLocationsForUser)
+                                   userInfo:nil
+                                    repeats:NO];
     
-    [self getLocationsForUser];
 }
 
 -(BOOL) mapView:(GMSMapView *)mapView didTapMarker:(nonnull GMSMarker *)marker {
