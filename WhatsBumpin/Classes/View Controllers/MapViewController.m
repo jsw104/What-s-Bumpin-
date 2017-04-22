@@ -411,6 +411,16 @@ didAutocompleteWithPlace:(GMSPlace *)place {
     NSLog(@"Place address %@", place.formattedAddress);
     NSLog(@"Location id? %@", place.placeID);
     NSLog(@"Place attributions %@", place.attributions.string);
+    
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = place.coordinate;
+    marker.title = place.name;
+    //[marker setUserData:location];
+    marker.snippet = [NSString stringWithFormat:@"%d bumps", 0];
+    marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:100/255.0 blue:0 alpha:1]];
+    marker.map = self.mapView;
+    [self.mapView setSelectedMarker:marker];
+
 }
 
 - (void)viewController:(GMSAutocompleteViewController *)viewController
