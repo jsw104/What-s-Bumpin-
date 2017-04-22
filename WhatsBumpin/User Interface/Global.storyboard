@@ -28,9 +28,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARo-fX-SQF" customClass="WYMaterialButton" customModule="WhatsBumpin" customModuleProvider="target">
-                                <rect key="frame" x="142" y="561" width="90" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARo-fX-SQF" customClass="WYMaterialButton" customModule="WhatsBumpin" customModuleProvider="target">
+                                <rect key="frame" x="137" y="556" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="87Q-74-H6I"/>
+                                    <constraint firstAttribute="width" constant="100" id="k3i-pw-sFl"/>
+                                </constraints>
                                 <state key="normal" title="Bump">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -157,6 +160,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HCU-J6-q93" firstAttribute="top" secondItem="4FE-b4-LsY" secondAttribute="bottom" constant="8" id="Ok4-eK-KNC"/>
+                            <constraint firstItem="Ge9-XG-MM7" firstAttribute="top" secondItem="ARo-fX-SQF" secondAttribute="bottom" constant="12" id="SpE-HC-WRu"/>
+                            <constraint firstItem="ARo-fX-SQF" firstAttribute="centerX" secondItem="k0w-yr-eAL" secondAttribute="centerX" id="XWO-K2-H6p"/>
                             <constraint firstItem="HCU-J6-q93" firstAttribute="trailing" secondItem="k0w-yr-eAL" secondAttribute="trailingMargin" id="a34-8x-3B8"/>
                         </constraints>
                     </view>
