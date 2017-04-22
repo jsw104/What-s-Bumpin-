@@ -49,25 +49,14 @@
                                     <action selector="bump:" destination="8c4-6z-CTW" eventType="touchUpInside" id="snb-A5-HJC"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCU-J6-q93">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HCU-J6-q93">
                                 <rect key="frame" x="309" y="28" width="50" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDT-K5-SV8">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <size key="titleShadowOffset" width="2" height="2"/>
-                                        <state key="normal" image="Search"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="14"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="onLaunchClicked:" destination="8c4-6z-CTW" eventType="touchUpInside" id="2EW-sI-4Sq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txa-r5-Ssm" userLabel="Fitler Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txa-r5-Ssm" userLabel="Fitler Button">
                                         <rect key="frame" x="0.0" y="50" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="JBu-va-aFB"/>
+                                        </constraints>
                                         <size key="titleShadowOffset" width="2" height="2"/>
                                         <state key="normal" image="Filter"/>
                                         <userDefinedRuntimeAttributes>
@@ -82,8 +71,32 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.92135959199999995" green="0.92135959199999995" blue="0.92135959199999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDT-K5-SV8">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="6Kd-lj-Ghf"/>
+                                        </constraints>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" image="Search"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="14"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onLaunchClicked:" destination="8c4-6z-CTW" eventType="touchUpInside" id="2EW-sI-4Sq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.1764705926" blue="0.33333334329999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="cDT-K5-SV8" firstAttribute="leading" secondItem="HCU-J6-q93" secondAttribute="leading" id="4NR-xs-XMV"/>
+                                    <constraint firstAttribute="width" constant="50" id="I2G-nn-Krz"/>
+                                    <constraint firstAttribute="trailing" secondItem="cDT-K5-SV8" secondAttribute="trailing" id="U8h-Ih-Ybp"/>
+                                    <constraint firstItem="Txa-r5-Ssm" firstAttribute="leading" secondItem="HCU-J6-q93" secondAttribute="leading" id="V0K-8X-ohc"/>
+                                    <constraint firstAttribute="height" constant="100" id="Yk2-So-Ejk"/>
+                                    <constraint firstAttribute="bottom" secondItem="Txa-r5-Ssm" secondAttribute="bottom" id="bgP-go-hRs"/>
+                                    <constraint firstAttribute="trailing" secondItem="Txa-r5-Ssm" secondAttribute="trailing" id="diZ-kR-GF6"/>
+                                    <constraint firstItem="cDT-K5-SV8" firstAttribute="top" secondItem="HCU-J6-q93" secondAttribute="top" id="tGO-av-WVb"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="14"/>
                                 </userDefinedRuntimeAttributes>
@@ -142,6 +155,10 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HCU-J6-q93" firstAttribute="top" secondItem="4FE-b4-LsY" secondAttribute="bottom" constant="8" id="Ok4-eK-KNC"/>
+                            <constraint firstItem="HCU-J6-q93" firstAttribute="trailing" secondItem="k0w-yr-eAL" secondAttribute="trailingMargin" id="a34-8x-3B8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7pp-K9-jT7">
                         <nil key="title"/>
