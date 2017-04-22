@@ -48,7 +48,9 @@ CGFloat heights[];
         NSLog(@"IDs: %@", friendIDs);
         
         MessageBoard *mb = [[MessageBoard alloc] init];
-        [mb loadMessagesFromFriends:friendIDs];
+        [mb loadMessagesFromFriends:friendIDs withCompletion:^(NSMutableArray * messages){
+            self.messages = messages;
+        }];
         
         
         ////get messages by friends
@@ -61,20 +63,20 @@ CGFloat heights[];
     
     
     
-    Message *message = [[Message alloc] init];
-    message.username = @"Elle Zadina";
-    message.message_text = @"I would totally recommend this place it is fantastic and wonderful and there's singing on Thursday night and it's super close and the food is good";
-    [self.messages addObject:message];
-    
-    message = [[Message alloc] init];
-    message.username = @"Justin Wang";
-    message.message_text = @"I would totally recommend this place it is fantastic and wonderful and there's singing on Thursday night";
-    [self.messages addObject:message];
-    
-    message = [[Message alloc] init];
-    message.username = @"Jacob Sy";
-    message.message_text = @"";
-    [self.messages addObject:message];
+//    Message *message = [[Message alloc] init];
+//    message.username = @"Elle Zadina";
+//    message.message_text = @"I would totally recommend this place it is fantastic and wonderful and there's singing on Thursday night and it's super close and the food is good";
+//    [self.messages addObject:message];
+//    
+//    message = [[Message alloc] init];
+//    message.username = @"Justin Wang";
+//    message.message_text = @"I would totally recommend this place it is fantastic and wonderful and there's singing on Thursday night";
+//    [self.messages addObject:message];
+//    
+//    message = [[Message alloc] init];
+//    message.username = @"Jacob Sy";
+//    message.message_text = @"";
+//    [self.messages addObject:message];
 
 
     
@@ -150,17 +152,17 @@ CGFloat heights[];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.messages.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell" forIndexPath:indexPath];
     Message *message = (self.messages)[indexPath.row];
-    cell.nameLabel.text = message.username;
+    cell.nameLabel.text = message.name;
     cell.messageLabel.text = message.message_text;
     [cell.messageLabel sizeToFit];
-    cell.timeLabel.text = @"11:45pm · 12/31/16";
+    cell.timeLabel.text = message.date;
     
 //    cell.locationLabel.text = @"Jolly";
 //    [cell.locationLabel sizeToFit];
