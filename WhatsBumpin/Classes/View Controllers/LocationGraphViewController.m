@@ -54,18 +54,18 @@ NSMutableArray *yVals;
     xVals = [NSArray arrayWithObjects:@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", @"Sun", nil];
     
     //set yVals
-    yVals = [NSMutableArray arrayWithObjects:[NSNumber numberWithInt:40],[NSNumber numberWithInt:15],[NSNumber numberWithInt:3],[NSNumber numberWithInt:7],[NSNumber numberWithInt:16],[NSNumber numberWithInt:12],[NSNumber numberWithInt:9], nil];
+    //yVals = [NSMutableArray arrayWithObjects:[NSNumber numberWithInt:40],[NSNumber numberWithInt:15],[NSNumber numberWithInt:3],[NSNumber numberWithInt:7],[NSNumber numberWithInt:16],[NSNumber numberWithInt:12],[NSNumber numberWithInt:9], nil];
     //load data
-    //[self loadBumpsPerDay];
+    [self loadBumpsPerDayWithCompletion:^(NSMutableArray *yVals) {
+        //draw bars
+        [self drawBars:7 withValues:yVals];
+        //add y-axis labels
+        [self addYAxisLabels:4 withLabels:yVals];
+        [self.view setNeedsDisplay];
+    }];
     
     //add x-axis labels
     [self addXAxisLabels:7 withLabels:xVals];
-    
-    //add y-axis labels
-    [self addYAxisLabels:4 withLabels:yVals];
-    
-    //draw bars
-    [self drawBars:7 withValues:yVals];
     
     //draw x-axis
     UIBezierPath *xAxis = [UIBezierPath bezierPath];
@@ -227,7 +227,7 @@ NSMutableArray *yVals;
 }
 
 
--(void)loadBumpsPerDay {
+-(void)loadBumpsPerDayWithCompletion: (void(^)(NSMutableArray* response))completion {
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_bumps_by_location_and_day_of_week.php"]];
     [request setHTTPMethod:@"POST"];
@@ -248,6 +248,7 @@ NSMutableArray *yVals;
         NSString *saturday = [components[6] substringFromIndex:[components[6] length] -1];
         NSString *sunday = [components[7] substringFromIndex:[components[7] length] -1];
         yVals = [NSMutableArray arrayWithObjects:[NSNumber numberWithInt:[monday intValue]], [NSNumber numberWithInt:[tuesday intValue]], [NSNumber numberWithInt:[wednesday intValue]], [NSNumber numberWithInt:[thursday intValue]], [NSNumber numberWithInt:[friday intValue]], [NSNumber numberWithInt:[saturday intValue]], [NSNumber numberWithInt:[sunday intValue]], nil];
+        completion(yVals);
     }];
     
     
