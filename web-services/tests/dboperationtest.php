@@ -11,65 +11,100 @@ final class DbOperationTest extends TestCase {
         $this->assertInstanceOf(DbOperation::class, $db);
     }
     
-    public function testInsertABump() {
+    public function testInsertABumpWithValidUser() {
         $db = new DbOperation();
-        $this->assertTrue($db->insert_bump(998, 1));
+        $this->assertTrue($db->insert_bump('test_location_1001', 1001));
     }
     
-    public function testInsertABumpAtSamePlaceDifferentPerson() {
+    public function testInsertingABumpBacktoBack() {
         $db = new DbOperation();
-        $this->assertTrue($db->insert_bump(998, 2));
-        $this->assertTrue($db->insert_bump(998, 3));
-    }
-    
-    public function testInsertTwoBumpsAtSamePlaceSamePersonInARow() {
-        $db = new DbOperation();
-        $db->insert_bump(998, 4);
-        $this->assertFalse($db->insert_bump(998, 4));
-    }
-    
-    public function testInsertTwoBumpsAtSamePlaceSamePersonAfter59Seconds() {
-        $db = new DbOperation();
-        $db->insert_bump(998, 5);
-        sleep(59);
-        $this->assertFalse($db->insert_bump(998, 5));
-    }
-    
-    public function testInsertTwoBumpsAtSamePlaceSamePersonAfter61Seconds() {
-        $db = new DbOperation();
-        $db->insert_bump(998, 6);
-        sleep(61);
-        $this->assertTrue($db->insert_bump(998, 6));
+        $this->assertTrue($db->insert_bump('test_location_1005', 1002));
+        $this->assertFalse($db->insert_bump('test_location_1005', 1002));
     }
     
     public function testInsertABumpWithInvalidUser() {
         $db = new DbOperation();
-        $this->assertFalse($db->insert_bump(998, 7));
+        $this->assertFalse($db->insert_bump('test_location_1001', 1999));
     }
     
-    public function testGetAllBumps(){
+    public function testGetBumpCountFromOneLocation() {
         $db = new DbOperation();
-        $this->assertNotEmpty($db->get_all_bumps());
+        $testArray = array(
+            "test_location_1002" => 2
+        );
+        $this->assertEquals($testArray, $db->get_bump_count_by_locations('test_location_1002|'));
     }
     
-    public function testNoMessagesAtLocation() {
+    public function testGetBumpCountFromTwoLocations() {
         $db = new DbOperation();
-        $this->assertEmpty($db->get_messages(999));
+        $testArray = array(
+            "test_location_1002" => 2,
+            "test_location_1003" => 1
+        );
+        $this->assertEquals($testArray, $db->get_bump_count_by_locations('test_location_1002|test_location_1003|'));
     }
     
-    public function testGetOneMessageAtLocation() {
+    public function testGetBumpCountFromLocationWithNoBumps() {
         $db = new DbOperation();
-        $this->assertCount(1, $db->get_messages(24));
+        $this->assertEmpty($db->get_bump_count_by_locations('test_location_1004|'));
     }
     
-    public function testGetTwoMessagesAtLocation() {
+    public function testGetMessagesFromLocation() {
         $db = new DbOperation();
-        $this->assertCount(2, $db->get_messages(23));
+        $testArray = $db->get_messages_by_location('test_location_1001');
+        $this->assertEquals("Test message", $testArray[0]['message_field']);
+    }
+    
+    public function testInsertMessage() {
+        $db = new DbOperation();
+        $this->assertTrue($db->insert_message('test_location_1002', 1002, 'Test message'));
+    }
+    
+    public function testInsertTwoMessagesBackToBack() {
+        $db = new DbOperation();
+        $this->assertTrue($db->insert_message('test_location_1004', 1004, 'Test message'));
+        $this->assertFalse($db->insert_message('test_location_1004', 1004, 'Test message'));
+    }
+    
+    public function testGetMessagesBySomeFriends() {
+        $db = new DbOperation();
+        $testArray = $db->get_messages_by_friends('1001|1003|');
+        $this->assertEquals(4, $testArray['message_count']);
+    }
+    
+    public function testGetNoMessagesByFriends() {
+        $db = new DbOperation();
+        $testArray = $db->get_messages_by_friends('1005|');
+        $this->assertEquals(0, $testArray['message_count']);
+    }
+    
+    public function testGetBumpsByDayOfWeekAtPlaceWithBumpOnSunday() {
+        $db = new DbOperation();
+        $bumps_by_day_of_week = $db->get_bumps_by_location_and_day_of_week('test_location_1003');
+        $this->assertEquals(1, $bumps_by_day_of_week[1]);
+        $this->assertEquals(0, $bumps_by_day_of_week[2]);
+        $this->assertEquals(0, $bumps_by_day_of_week[3]);
+        $this->assertEquals(0, $bumps_by_day_of_week[4]);
+        $this->assertEquals(0, $bumps_by_day_of_week[5]);
+        $this->assertEquals(0, $bumps_by_day_of_week[6]);
+        $this->assertEquals(0, $bumps_by_day_of_week[7]);
+    }
+    
+    public function testGetBumpsByDayOfWeekAtPlaceWithTwoBumpOnSaturday() {
+        $db = new DbOperation();
+        $bumps_by_day_of_week = $db->get_bumps_by_location_and_day_of_week('test_location_1002');
+        $this->assertEquals(0, $bumps_by_day_of_week[1]);
+        $this->assertEquals(0, $bumps_by_day_of_week[2]);
+        $this->assertEquals(0, $bumps_by_day_of_week[3]);
+        $this->assertEquals(0, $bumps_by_day_of_week[4]);
+        $this->assertEquals(0, $bumps_by_day_of_week[5]);
+        $this->assertEquals(0, $bumps_by_day_of_week[6]);
+        $this->assertEquals(2, $bumps_by_day_of_week[7]);
     }
     
     public function testGetBumpsByDayOfWeekAtPlaceWithNoBumps() {
         $db = new DbOperation();
-        $bumps_by_day_of_week = $db->get_bumps_by_day_of_week(996);
+        $bumps_by_day_of_week = $db->get_bumps_by_location_and_day_of_week('test_location_1004');
         $this->assertEquals(0, $bumps_by_day_of_week[1]);
         $this->assertEquals(0, $bumps_by_day_of_week[2]);
         $this->assertEquals(0, $bumps_by_day_of_week[3]);
@@ -79,16 +114,15 @@ final class DbOperationTest extends TestCase {
         $this->assertEquals(0, $bumps_by_day_of_week[7]);
     }
     
-    public function testGetBumpsByDayOfWeek0OnThursday() {
+    public function testInsertAUser() {
         $db = new DbOperation();
-        $bumps_by_day_of_week = $db->get_bumps_by_day_of_week(22);
-        $this->assertEquals(0, $bumps_by_day_of_week[5]);
+        $this->assertTrue($db->insert_user(1005, 'test person 5'));
+        $db->remove_user(1005);
     }
     
-    public function testGetBumpsByDayOfWeek1OnFriday() {
+    public function testInsertAnExistingUser() {
         $db = new DbOperation();
-        $bumps_by_day_of_week = $db->get_bumps_by_day_of_week(22);
-        $this->assertEquals(1, $bumps_by_day_of_week[6]);
+        $this->assertFalse($db->insert_user(1001, 'test person 1'));
     }
 }
 
