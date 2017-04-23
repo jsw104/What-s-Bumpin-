@@ -154,12 +154,64 @@ MessageBoard *messageBoard;
 
 - (int)getBumpCountBetween:(NSDate *)earlierDate and:(NSDate *)laterDate
 {
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_bump_count_by_locations.php"]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *post = [[NSString alloc] initWithFormat:@"location_ids=%@|&submit=", self.googlePlacesID];
+    [request setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:data
+                              
+                              options:kNilOptions
+                              error:&error];
+        
+        int bumpCount = [(NSNumber *)[json objectForKey:self.googlePlacesID] intValue];
+
+        NSLog(@"location id %@", self.googlePlacesID);
+        NSLog(@"name %@", self.name);
+        NSLog(@"json %@", json);
+    }];
+    
+    [task resume];
+
     return 0;
 }
+- (void)getBumpCountWithCompletion:(void(^)(int response))completion {
+
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_bump_count_by_locations.php"]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *post = [[NSString alloc] initWithFormat:@"location_ids=%@|&submit=", self.googlePlacesID];
+    [request setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:data
+                              
+                              options:kNilOptions
+                              error:&error];
+        
+        int bumpCount = [(NSNumber *)[json objectForKey:self.googlePlacesID] intValue];
+        
+        completion(bumpCount);
+        NSLog(@"location id %@", self.googlePlacesID);
+        NSLog(@"name %@", self.name);
+        NSLog(@"json %@", json);
+    }];
+    
+    [task resume];
+    
+}
+
 
 - (void)bump
 {
     User *user = [User getCurrentUser];
+    NSLog(@"user %ld", user.facebookID);
     Bump *bump = [[Bump alloc] initWithUsername: user.facebookID locationWithID:self.googlePlacesID];
     [bump saveInBackgroundWithCompletionBlock:^(NSError *error) {
         if(error)

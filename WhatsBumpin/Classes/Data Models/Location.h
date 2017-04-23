@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, WBType) {
 //instance methods
 - (void)bump;
 - (int)getBumpCountBetween:(NSDate *)earlierDate and:(NSDate *)laterDate;
+- (void)getBumpCountWithCompletion:(void(^)(int response))completion;
 - (double)distanceToLocation: (CLLocationCoordinate2D)location;
 
 @property (strong, nonatomic) NSString *name;

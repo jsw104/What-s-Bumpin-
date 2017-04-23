@@ -32,7 +32,13 @@
     [request setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSLog(@"response: %@, err %@", response, error);
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:data
+                              
+                              options:kNilOptions
+                              error:&error];
+
+        NSLog(@"json %@", json);
         completion(error);
     }];
     

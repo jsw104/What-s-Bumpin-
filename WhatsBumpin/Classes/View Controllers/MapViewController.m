@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIView *buttonView;
 @property (weak, nonatomic) IBOutlet UILabel *bumpFilterLabel;
 @property (strong, nonatomic) NSTimer *timer;
-
+@property NSInteger bumpCount;
 
 
 @end
@@ -269,7 +269,14 @@ bool night = false;
         marker.position = location.coordinate;
         marker.title = location.name;
         [marker setUserData:location];
-        marker.snippet = [NSString stringWithFormat:@"%d bumps", [location getBumpCountBetween:[NSDate distantPast] and:[NSDate distantFuture]]];
+        [location getBumpCountWithCompletion:^(int bumpCount) {
+            NSLog(@"bumpeddd %d",bumpCount);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.bumpCount = bumpCount;
+
+                marker.snippet = [NSString stringWithFormat:@"%d bumps", bumpCount];
+            });
+        }];
         marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:100/255.0 blue:0 alpha:1]];
         marker.map = self.mapView;
     }
@@ -291,7 +298,8 @@ bool night = false;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ((LocationInformationViewController*)segue.destinationViewController).location = self.locationSelected;
-    
+    NSLog(@"bc: %ld", _bumpCount);
+    [((LocationInformationViewController*)segue.destinationViewController).bumpLabel setText:[NSString stringWithFormat:@"%ld", (long)self.bumpCount]];
 }
 
 - (void)showFilterView:(id)sender
@@ -421,11 +429,23 @@ didAutocompleteWithPlace:(GMSPlace *)place {
     NSLog(@"Location id? %@", place.placeID);
     NSLog(@"Place attributions %@", place.attributions.string);
     
+    Location *location = [[Location alloc] init];
+    location.name = place.name;
+    location.googlePlacesID = place.placeID;
+    location.address = place.formattedAddress;
+    location.coordinate = place.coordinate;
+    
+
+    
     GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = place.coordinate;
-    marker.title = place.name;
-    //[marker setUserData:location];
-    marker.snippet = [NSString stringWithFormat:@"%d bumps", 0];
+    marker.position = location.coordinate;
+    marker.title = location.name;
+    [marker setUserData:location];
+   [location getBumpCountWithCompletion:^(int bumpCount) {
+       NSLog(@"bumpeddd %d",bumpCount);
+        marker.snippet = [NSString stringWithFormat:@"%d", bumpCount];
+    }];
+
     marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:100/255.0 blue:0 alpha:1]];
     marker.map = self.mapView;
     [self.mapView setSelectedMarker:marker];
