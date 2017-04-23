@@ -11,7 +11,25 @@ final class DbOperationTest extends TestCase {
         $this->assertInstanceOf(DbOperation::class, $db);
     }
     
-    public function testInsertABump() {
+    public function testInsertABumpWithValidUser() {
+        $db = new DbOperation();
+        $this->assertTrue($db->insert_bump('test_location_1001', 1001));
+    }
+    
+    public function testInsertABumpWithInvalidUser() {
+        $db = new DbOperation();
+        $this->assertFalse($db->insert_bump('test_location_1001', 1999));
+    }
+    
+    public function testGetBumpCountFromOneValidLocation() {
+        $db = new DbOperation();
+        $testArray = array(
+            "test_location_1002" => 2
+        );
+        $this->assertEquals($testArray, $db->get_bump_count_by_locations('test_location_1002|'));
+    }
+    
+    /*public function testInsertABump() {
         $db = new DbOperation();
         $this->assertTrue($db->insert_bump(998, 1));
     }
@@ -89,6 +107,6 @@ final class DbOperationTest extends TestCase {
         $db = new DbOperation();
         $bumps_by_day_of_week = $db->get_bumps_by_day_of_week(22);
         $this->assertEquals(1, $bumps_by_day_of_week[6]);
-    }
+    }*/
 }
 

@@ -19,10 +19,9 @@ class DbOperation{
         }
         $query = "SELECT message_id, location_id, facebook_name, message_field, time_stamp
                   FROM message NATURAL JOIN user
-                  WHERE facebook_id = ?
+                  WHERE facebook_id = " . $friends_facebook_ids_string . "
                   ORDER BY time_stamp DESC";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('s', $friends_facebook_ids_string);
         $stmt->execute();
         $stmt->bind_result($message_id, $location_id, $facebook_name, $message_field, $time_stamp);
         
@@ -94,34 +93,32 @@ class DbOperation{
     public function get_bump_count_by_locations($location_ids) {
         if(empty($location_ids)) return false;
         $location_ids_array = explode('|', $location_ids);
-        $location_ids_string = $location_ids_array[0];
+        $location_ids_string = "'" . $location_ids_array[0] . "'";
         for($i = 1; $i < count($location_ids_array); $i++) {
-            $location_ids_string .= ' OR location_id = ' . $location_ids_array[$i];
+            $location_ids_string .= " OR location_id = '" . $location_ids_array[$i] ."'";
         }
-        $query = "SELECT location_id, COUNT(*) as bumpcount
+        $query = "SELECT location_id, COUNT(*) as bump_count
                   FROM bump
-                  WHERE time_stamp >= NOW() - INTERVAL 1 DAY AND (location_id = ? )
+                  WHERE time_stamp >= NOW() - INTERVAL 1 DAY AND (location_id = " . $location_ids_string . " )
                   GROUP BY location_id";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('s', $location_ids_string);
         $stmt->execute();
         $stmt->bind_result($location_id, $bump_count);
-
         $bumps = [];
         while($stmt->fetch()) {
-            $bumps[$location_id]['bump_count'] = $bump_count;
+            $bumps[$location_id] = $bump_count;
         }
         $stmt->close();
         return $bumps;
     }
     
     public function get_bumps_by_location_and_day_of_week($location_id) {
-        $query = "SELECT DAYOFWEEK(time_stamp) as dayofweek, COUNT(*) as count
+        $query = "SELECT DAYOFWEEK(time_stamp) as day_of_week, COUNT(*) as count
                   FROM bump
                   WHERE time_stamp >= NOW() - INTERVAL 1 WEEK AND location_id = ?
                   GROUP BY DAYOFWEEK(time_stamp)";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param('i', $location_id);
+        $stmt->bind_param('s', $location_id);
         $stmt->execute();
         $stmt->bind_result($day_of_week, $count);
         
