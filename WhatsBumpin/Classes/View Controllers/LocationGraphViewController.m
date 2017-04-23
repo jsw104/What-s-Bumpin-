@@ -21,13 +21,9 @@ NSArray *xVals;
 NSMutableArray *yVals;
 UIActivityIndicatorView *activity;
 
+
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
-}
-
--(void)loadView{
-    [super loadView];
     
     //create view
     graphView = [[UIView alloc] initWithFrame:CGRectMake(15, self.navigationController.navigationBar.frame.size.height + 30, self.view.bounds.size.width - 30, 300)];
@@ -42,54 +38,60 @@ UIActivityIndicatorView *activity;
     [self.view addSubview:graphView];
     
     //create activity
-    //activity = [[UIActivityIndicatorView alloc] initWithFrame:graphView.bounds];
-    //[activity setBackgroundColor:[UIColor clearColor]];
-    //[activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    activity = [[UIActivityIndicatorView alloc] initWithFrame:graphView.bounds];
+    [activity setBackgroundColor:[UIColor clearColor]];
+    [activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    [graphView addSubview:activity];
+    [activity setHidesWhenStopped:true];
+    [activity startAnimating];
     
-    //add title
-    NSString *titleString = [NSString stringWithFormat:@"Bumps Per Day At %@",self.location.name];
-    CGFloat titleWidth = [self widthOfString:titleString withFont:nil];
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, graphView.bounds.size.width, 20)];
-    title.text = titleString;
-    title.numberOfLines = 0;
-    title.textColor = [UIColor colorWithRed:14/255.0 green:201/255.0 blue:39/255.0 alpha:1];
-    title.textAlignment = NSTextAlignmentCenter;
-    [graphView addSubview:title];
-    /*NSString *titleString = [NSString stringWithFormat:@"Bumps Per Day At %@",self.location.name];
-    UITextView *title = [[UITextView alloc] initWithFrame:CGRectMake(0, 15, graphView.bounds.size.width, 20)];
-    title.text = titleString;
-    title.textColor = [UIColor colorWithRed:14/255.0 green:201/255.0 blue:39/255.0 alpha:1];
-    title.textAlignment = NSTextAlignmentCenter;
-    [graphView addSubview:title];*/
     
-    //set xVals
-    xVals = [NSArray arrayWithObjects:@"Sun",@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", nil];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // code here
+    
+
+    //load data
+    [self loadBumpsPerDayWithCompletion:^(NSMutableArray *yVals) {
+        
+        //add title
+        NSString *titleString = [NSString stringWithFormat:@"Bumps Per Day At %@",self.location.name];
+        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, graphView.bounds.size.width, 20)];
+        title.text = titleString;
+        title.numberOfLines = 0;
+        title.textColor = [UIColor colorWithRed:14/255.0 green:201/255.0 blue:39/255.0 alpha:1];
+        title.textAlignment = NSTextAlignmentCenter;
+        [graphView addSubview:title];
+        
+        //add y-axis labels
+        [self addYAxisLabels:4 withLabels:yVals];
+        
+        //draw bars
+        [self drawBars:7 withValues:yVals];
+        
+        //set xVals
+        xVals = [NSArray arrayWithObjects:@"Sun",@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", nil];
+        
+        //add x-axis labels
+        [self addXAxisLabels:7 withLabels:xVals];
+        
+        //draw x-axis
+        [self drawXAxis];
+        
+        //draw y-axis
+        [self drawYAxisWithTitle:title];
+        
+        [activity stopAnimating];
+        
+        }];
+        });
     
     //set yVals
     //yVals = [NSMutableArray arrayWithObjects:[NSNumber numberWithInt:40],[NSNumber numberWithInt:15],[NSNumber numberWithInt:3],[NSNumber numberWithInt:7],[NSNumber numberWithInt:16],[NSNumber numberWithInt:12],[NSNumber numberWithInt:9], nil];
-    //load data
-    [self loadBumpsPerDayWithCompletion:^(NSMutableArray *yVals) {
-        //add y-axis labels
-        [self addYAxisLabels:4 withLabels:yVals];
-        //draw bars
-        [self drawBars:7 withValues:yVals];
-    }];
     
-    //add x-axis labels
-    [self addXAxisLabels:7 withLabels:xVals];
-    
-    //draw x-axis
-    UIBezierPath *xAxis = [UIBezierPath bezierPath];
-    [xAxis moveToPoint: CGPointMake(30, graphView.bounds.size.height - 30)];
-    [xAxis addLineToPoint: CGPointMake(graphView.bounds.size.width - 30, graphView.bounds.size.height - 30)];
-    CAShapeLayer *xAxisLayer = [CAShapeLayer layer];
-    xAxisLayer.path = [xAxis CGPath];
-    xAxisLayer.strokeColor = [[UIColor blueColor] CGColor];
-    xAxisLayer.lineWidth = 3.0;
-    xAxisLayer.fillColor = [[UIColor clearColor] CGColor];
-    [graphView.layer addSublayer:xAxisLayer];
-    
-    //draw y-axis
+}
+
+- (void)drawYAxisWithTitle:(UILabel *)title {
     UIBezierPath *yAxis = [UIBezierPath bezierPath];
     [yAxis moveToPoint: CGPointMake(30, graphView.bounds.size.height - 30)];
     [yAxis addLineToPoint: CGPointMake(30, 30 + title.bounds.size.height)];
@@ -99,36 +101,21 @@ UIActivityIndicatorView *activity;
     yAxisLayer.lineWidth = 3.0;
     yAxisLayer.fillColor = [[UIColor clearColor] CGColor];
     [graphView.layer addSublayer:yAxisLayer];
-    
-    /*//add Recommended for you!
-    UIView *recommendation = [[UIView alloc] initWithFrame:CGRectMake(15, 375, self.view.bounds.size.width - 30, 75)];
-    recommendation.layer.borderColor = [UIColor colorWithRed:251/255.0 green:10/255.0 blue:95/255.0 alpha:1].CGColor;
-    recommendation.layer.borderWidth = 3.0f;
-    recommendation.layer.cornerRadius = 15;
-    recommendation.layer.masksToBounds = YES;
-    [self.view addSubview:recommendation];
-    UITextView *rec = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, recommendation.bounds.size.width, recommendation.bounds.size.height)];
-    rec.font = [UIFont systemFontOfSize:18];
-    rec.text = [NSString stringWithFormat:@"Recommended For You:\nGo to %@ on %@!", _location.name, @"Monday"];
-    //rec.textAlignment = NSTextAlignmentCenter;
-    rec.textColor = [UIColor blueColor];
-    //rec.lineBreakMode = NSLineBreakByWordWrapping;
-    //rec.numberOfLines = 0;
-    [recommendation addSubview:rec];*/
-    //create activity indicator while graph loads
-    
-    //[graphView addSubview:activity];
-    //[activity startAnimating];
+}
+
+- (void)drawXAxis {
+    UIBezierPath *xAxis = [UIBezierPath bezierPath];
+    [xAxis moveToPoint: CGPointMake(30, graphView.bounds.size.height - 30)];
+    [xAxis addLineToPoint: CGPointMake(graphView.bounds.size.width - 30, graphView.bounds.size.height - 30)];
+    CAShapeLayer *xAxisLayer = [CAShapeLayer layer];
+    xAxisLayer.path = [xAxis CGPath];
+    xAxisLayer.strokeColor = [[UIColor blueColor] CGColor];
+    xAxisLayer.lineWidth = 3.0;
+    xAxisLayer.fillColor = [[UIColor clearColor] CGColor];
+    [graphView.layer addSublayer:xAxisLayer];
 }
 
 - (void)addXAxisLabels:(int)numLabels withLabels: (NSArray *)labels{
-    
-    //find center of each label
-    /*NSMutableArray *labelCenters;
-    CGFloat increment = axis.bounds.size.width / (numLabels + 1);
-    for (int i = 0; i < numLabels; i++){
-        [labelCenters addObject:[NSNumber numberWithFloat:(i + 1) * increment]];
-    }*/
     CGFloat increment = (graphView.bounds.size.width - 60) / numLabels;
     int x = 30;
     int y = graphView.bounds.size.height - 20;
@@ -162,7 +149,7 @@ UIActivityIndicatorView *activity;
     int maxValue = 0;
     for (int i = 0; i < [array count]; i++){
         if ([[array objectAtIndex:i] integerValue] > maxValue){
-            maxValue = [[array objectAtIndex:i] integerValue];
+            maxValue = [[array objectAtIndex:i] intValue];
         }
     }
     return maxValue;
@@ -235,7 +222,6 @@ UIActivityIndicatorView *activity;
         [graphView addSubview:barView];
         x += barWidth;
     }
-    //[activity stopAnimating];
     
 }
 
