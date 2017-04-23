@@ -243,7 +243,7 @@
                                                 <rect key="frame" x="226" y="542" width="100" height="100"/>
                                                 <state key="normal" image="Message"/>
                                                 <connections>
-                                                    <segue destination="k48-nI-qd3" kind="show" id="gRa-LC-EWh"/>
+                                                    <segue destination="k48-nI-qd3" kind="show" identifier="LocationMessages" id="gRa-LC-EWh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUs-QG-7Wx">

@@ -69,6 +69,7 @@
         ((LocationGraphViewController *)[segue destinationViewController]).location = self.location;
     }
     if ([[segue identifier] isEqualToString:@"LocationMessages"]) {
+        NSLog(@"salloc: %@", self.location);
         ((LocationMessageViewController *)[segue destinationViewController]).location = self.location;
     }
 }

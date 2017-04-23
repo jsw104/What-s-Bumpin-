@@ -25,7 +25,7 @@
     
     self.heights = [[NSMutableArray alloc] init];
     self.messages = [[NSMutableArray alloc] init];
-    NSLog(@"blah1");
+    NSLog(@"Location: %@", self.location);
 
     
     MessageBoard *mb = [[MessageBoard alloc] init];
