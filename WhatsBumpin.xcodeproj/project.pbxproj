@@ -36,6 +36,7 @@
 		D0E4C45F1E6268B2000960B3 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4491E6268B2000960B3 /* Me.storyboard */; };
 		D0E4C4601E6268B2000960B3 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C44A1E6268B2000960B3 /* Tabs.storyboard */; };
 		F00BF6781E996198004A4AD8 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00BF6771E996198004A4AD8 /* Settings.storyboard */; };
+		F03305441EAA4A7900A59FD6 /* LocationMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F03305431EAA4A7900A59FD6 /* LocationMessageViewController.m */; };
 		F033FD561E95CBC200A9BF80 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F033FD551E95CBC200A9BF80 /* SettingsViewController.m */; };
 		F07DB43C1EA6C187009CFA74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F07DB43B1EA6C187009CFA74 /* Assets.xcassets */; };
 		F0A0FAF71E9FD75B001CD144 /* MessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */; };
@@ -130,6 +131,8 @@
 		DED8673A2BE4EB8CA732237B /* Pods-What's Bumpin'.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'.release.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'.release.xcconfig"; sourceTree = "<group>"; };
 		E378B67D81D9683C27AD596F /* Pods-WhatsBumpinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpinTests/Pods-WhatsBumpinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F00BF6771E996198004A4AD8 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		F03305421EAA4A7900A59FD6 /* LocationMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationMessageViewController.h; sourceTree = "<group>"; };
+		F03305431EAA4A7900A59FD6 /* LocationMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationMessageViewController.m; sourceTree = "<group>"; };
 		F033FD541E95CBC200A9BF80 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		F033FD551E95CBC200A9BF80 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		F07DB43B1EA6C187009CFA74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -409,6 +412,8 @@
 		D0E4C43C1E6268B2000960B3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F03305421EAA4A7900A59FD6 /* LocationMessageViewController.h */,
+				F03305431EAA4A7900A59FD6 /* LocationMessageViewController.m */,
 				D0E4C43D1E6268B2000960B3 /* HomeViewController.h */,
 				D0E4C43E1E6268B2000960B3 /* HomeViewController.m */,
 				D0E4C43F1E6268B2000960B3 /* LocationInformationViewController.h */,
@@ -520,7 +525,7 @@
 				TargetAttributes = {
 					D0A6CB8B1E513F57001F7964 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = R7LAAHL6K5;
+						DevelopmentTeam = C5ARGCT28E;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -737,6 +742,7 @@
 				D0E4C4531E6268B2000960B3 /* Bump.m in Sources */,
 				D0E4C4591E6268B2000960B3 /* LocationInformationViewController.m in Sources */,
 				D0E4C44F1E6268B2000960B3 /* Spring.swift in Sources */,
+				F03305441EAA4A7900A59FD6 /* LocationMessageViewController.m in Sources */,
 				D0E4C45D1E6268B2000960B3 /* main.m in Sources */,
 				D0E4C4511E6268B2000960B3 /* SpringButton.swift in Sources */,
 				D0E4C4571E6268B2000960B3 /* User.m in Sources */,
@@ -899,7 +905,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R7LAAHL6K5;
+				DEVELOPMENT_TEAM = C5ARGCT28E;
 				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
@@ -917,7 +923,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R7LAAHL6K5;
+				DEVELOPMENT_TEAM = C5ARGCT28E;
 				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";

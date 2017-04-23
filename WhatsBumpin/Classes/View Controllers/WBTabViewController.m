@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     UIViewController *global = [UIStoryboard storyboardWithName:@"Global" bundle:nil].instantiateInitialViewController;
     UIViewController *me = [UIStoryboard storyboardWithName:@"Me" bundle:nil].instantiateInitialViewController;
     UIViewController *settings = [UIStoryboard storyboardWithName:@"Settings" bundle:nil].instantiateInitialViewController;

@@ -23,6 +23,8 @@
 @property (nonatomic, strong) UIVisualEffectView *blurEffectView;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (weak, nonatomic) IBOutlet UIView *buttonView;
+@property (weak, nonatomic) IBOutlet UILabel *bumpFilterLabel;
+@property (strong, nonatomic) NSTimer *timer;
 
 
 
@@ -31,7 +33,25 @@
 static double delayInSeconds = 0.5;
 
 @implementation MapViewController
+int dayNightState = 0;
+bool food = true;
+bool coffee = true;
+bool bumpFilter = false;
+bool day = false;
+bool night = false;
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setHidden:TRUE];
+    NSLog(@"BLH %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"]);
+    if([[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"] != nil){
+        [self.bumpFilterLabel setText:[[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"]];
+    }
+    else {
+        [self.bumpFilterLabel setText:@"10"];
+    }
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -39,6 +59,8 @@ static double delayInSeconds = 0.5;
 
     self.mapView.delegate = self;
     self.mapView.myLocationEnabled = YES;
+    
+  //  [self.mapView setMinZoom:1 maxZoom:15];
     
     //setup location manager
     self.locationManager = [[CLLocationManager alloc] init];
@@ -49,10 +71,7 @@ static double delayInSeconds = 0.5;
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startMonitoringSignificantLocationChanges];
     [self.locationManager startUpdatingLocation];
-    
-    [self configureSearchBar];
-    [self configureFilterView];
-    
+
     if (! [FBSDKAccessToken currentAccessToken]) {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"FBLogin"
                                                              bundle:nil];
@@ -60,7 +79,7 @@ static double delayInSeconds = 0.5;
         [self presentViewController:login animated:YES completion:nil];
     }
     
-    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     _blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     _blurEffectView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     _blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -68,61 +87,42 @@ static double delayInSeconds = 0.5;
     UIButton *blurbutton = [[UIButton alloc] initWithFrame:_blurEffectView.frame];
     [blurbutton addTarget:self action:@selector(exitFilterView) forControlEvents: UIControlEventTouchUpInside];
     [_blurEffectView addSubview:blurbutton];
+    
+
 
 
 }
+
+-(void)mapView:(GMSMapView *)mapView didChangeCameraPosition:(GMSCameraPosition*)position {
+    float zoom = mapView.camera.zoom;
+    // handle you zoom related logic
+    
+    NSLog(@"Zoom: %f", zoom);
+    if(self.timer)
+    {
+        [self.timer invalidate];
+    }
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                     target:self
+                                   selector:@selector(getLocationsForUser)
+                                   userInfo:nil
+                                    repeats:NO];
+    
+}
+
+-(BOOL) mapView:(GMSMapView *)mapView didTapMarker:(nonnull GMSMarker *)marker {
+    [mapView setSelectedMarker:marker];
+    return YES;
+}
+
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"Longitude: %@", [NSString stringWithFormat: @"%f", newLocation.coordinate.longitude]); // string value
 //    StrCurrentLatitude=[NSString stringWithFormat: @"%f", newLocation.coordinate.latitude];
 //    appDeleg.newlocation=newLocation;
     [self.locationManager stopUpdatingLocation]; // string Value
-}
+    [self.mapView animateToZoom:15];
 
-
-- (void)configureFilterView
-{
-    self.filterView = [[[NSBundle mainBundle]
-                     loadNibNamed:@"FilterView"
-                     owner:self options:nil]
-                    firstObject];
-    [self.filterView setFrame:CGRectMake(self.searchBarContainerView.frame.origin.x, self.searchBarContainerView.frame.origin.y + self.searchBarContainerView.frame.size.height, self.view.frame.size.width, 200)];
-    
-    [self.filterView setHidden:true];
-    [self.view addSubview:self.filterView];
-    
-    [self.radiusLabel setText:[NSString stringWithFormat:@"%i", (int)lroundf(self.radiusSlider.value)]];
-    [self.minimumBumpsLabel setText:[NSString stringWithFormat:@"%i", (int)lroundf(self.minimumBumpsSlider.value)]];
-    [self.foodButton setSelected:true];
-    [self.dayTimeButton setSelected:true];
-    [self.nightLifeButton setSelected:true];
-}
-
-- (IBAction)distanceSliderValueChanged:(id)sender
-{
-    [self roundDistanceSlider:sender];
-}
-
-- (IBAction)bumpsSliderValueChanged:(id)sender
-{
-    [self roundBumpSlider:sender];
-}
-
-- (void)roundDistanceSlider:(id)sender
-{
-    int sliderValue;
-    sliderValue = lroundf(((UISlider *)sender).value);
-    [(UISlider *)sender setValue:sliderValue animated:YES];
-    [self.radiusLabel setText:[NSString stringWithFormat:@"%i", sliderValue]];
-}
-
-- (void)roundBumpSlider:(id)sender
-{
-    int sliderValue;
-    sliderValue = lroundf(((UISlider *)sender).value);
-    [(UISlider *)sender setValue:sliderValue animated:YES];
-    [self.minimumBumpsLabel setText:[NSString stringWithFormat:@"%i", sliderValue]];
 }
 
 - (void)configureSearchBar
@@ -140,9 +140,54 @@ static double delayInSeconds = 0.5;
     self.searchController.hidesNavigationBarDuringPresentation = NO;
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    // load results from google api
+- (IBAction)dayNightButtonPressed:(UIButton *)sender {
+    if(sender.isSelected == YES && dayNightState == 1){
+        [sender setImage:[UIImage imageNamed:@"Night"] forState:UIControlStateSelected];
+        day = false;
+        night = true;
+        
+    }
+    else if(sender.isSelected == YES && dayNightState == 2){
+        [sender setSelected:NO];
+        day = false;
+        night = false;
+    }
+    
+    else {
+        [sender setImage:[UIImage imageNamed:@"Day"] forState:UIControlStateSelected];
+
+        [sender setSelected:YES];
+        night = false;
+        day = true;
+    }
+    dayNightState = (dayNightState + 1) %3;
+    
+}
+
+- (IBAction)foodButtonPressed:(UIButton *)sender {
+    [sender setSelected:!sender.isSelected];
+    food = !food;
+}
+
+- (IBAction)coffeeButtonPressed:(UIButton *)sender {
+    [sender setSelected:!sender.isSelected];
+    coffee = !coffee;
+}
+
+- (IBAction)bumpButtonPressed:(UIButton *)sender {
+    if(bumpFilter){
+        [sender setSelected:!sender.isSelected];
+
+        [_bumpFilterLabel setTextColor:[UIColor colorWithRed:0x44/255.0 green:0x44/255.0 blue:0x44/255.0 alpha:1]];
+    }
+    else {
+        [sender setSelected:!sender.isSelected];
+
+        [_bumpFilterLabel setTextColor:[UIColor colorWithRed:0xff/255.0 green:0x2d/255.0 blue:0x55/255.0 alpha:1]];
+
+    }
+    bumpFilter = !bumpFilter;
+
 }
 
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController
@@ -167,36 +212,41 @@ static double delayInSeconds = 0.5;
 
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations {
+    [manager stopUpdatingLocation];
     // If it's a relatively recent event, turn off updates to save power.
     CLLocation* location = [locations lastObject];
     NSDate* eventDate = location.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (abs(howRecent) < 15.0) {
+    if (fabs(howRecent) < 15.0) {
         [[User getCurrentUser] setLocation:location.coordinate];
-        [self getLocationsForUser];
-        GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:18];
+        GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:15];
         [self.mapView animateWithCameraUpdate:locationUpdate];
     }
-    [manager stopUpdatingLocation];
 }
 
 - (void)getLocationsForUser
 {
+    [_mapView clear];
+
     WBType locationTypes = 0;
-    if (self.dayTimeButton.selected) {
+
+    if (day) { //if daytime
         locationTypes = locationTypes | WBDayTime;
     }
-    if (self.nightLifeButton.selected) {
+    if (night) { //if nighttime
         locationTypes = locationTypes | WBNightLife;
     }
-    if (self.foodButton.selected) {
+    if (food) {
         locationTypes = locationTypes | WBFood;
+    }
+    if (coffee) {
+        locationTypes = locationTypes | WBCafe;
     }
     if (self.locations) {
         //remove all markers here as well
         [self.locations removeAllObjects];
     }
-    [Location getLocationsWithRadius:self.radiusLabel.text.intValue minimumBumps:self.minimumBumpsLabel.text.intValue type:locationTypes completionBlock:^(NSArray<Location *> *locations, NSError *error) {
+    [Location getLocationsWithRadius:[self getMapRadius] minimumBumps:self.minimumBumpsLabel.text.intValue type:locationTypes completionBlock:^(NSArray<Location *> *locations, NSError *error) {
         self.locations = [NSMutableArray arrayWithArray:locations];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self addLocationsToMap];
@@ -212,8 +262,9 @@ static double delayInSeconds = 0.5;
 
 - (void)addLocationsToMap
 {
-    for(Location *location in self.locations)
-    {
+
+    for(Location *location in self.locations) {
+
         GMSMarker *marker = [[GMSMarker alloc] init];
         marker.position = location.coordinate;
         marker.title = location.name;
@@ -223,6 +274,7 @@ static double delayInSeconds = 0.5;
         marker.map = self.mapView;
     }
 }
+
 
 - (void)mapView:(GMSMapView *)mapView didTapInfoWindowOfMarker:(GMSMarker *)marker {
     self.locationSelected = marker.userData;
@@ -239,6 +291,7 @@ static double delayInSeconds = 0.5;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ((LocationInformationViewController*)segue.destinationViewController).location = self.locationSelected;
+    
 }
 
 - (void)showFilterView:(id)sender
@@ -258,22 +311,26 @@ static double delayInSeconds = 0.5;
     } completion:nil];
 }
 
-- (Location *)getClosestLocation
-{
+- (Location *)getClosestLocation {
+    Location *closestLocation = self.locations.firstObject;
     int minDistance = 0;
-    return self.locations.firstObject;
+    int dist;
+    CLLocationCoordinate2D userLocation = [User getCurrentUser].coordinates;
+    minDistance = [closestLocation distanceToLocation:userLocation];
     for(Location *location in self.locations)
     {
-        
+        dist = [location distanceToLocation:userLocation];
+        if(dist < minDistance)
+        {
+            minDistance = dist;
+            closestLocation = location;
+        }
     }
+    return closestLocation;
 }
 
 - (IBAction)bump:(id)sender {
     [[self getClosestLocation] bump];
-}
-
-- (IBAction)filter:(id)sender {
-    self.filterView.hidden ? [self showFilterView:sender] : [self applyFilters:sender];
 }
 
 - (IBAction)togglePlaceType:(id)sender {
@@ -303,8 +360,7 @@ static double delayInSeconds = 0.5;
     }
     
     [UIView animateWithDuration:0.3 animations: ^{
-        [_buttonView setAlpha:0];
-        
+        [_buttonView setAlpha:0];        
         [_searchView setFrame:CGRectMake(0, 0, _searchView.frame.size.width, _searchView.frame.size.height)];
         
         [_blurEffectView setAlpha:1];
@@ -326,7 +382,7 @@ static double delayInSeconds = 0.5;
         [_blurEffectView removeFromSuperview];
         
     }];
-    
+    [self getLocationsForUser];
 }
 
 
@@ -351,6 +407,7 @@ static double delayInSeconds = 0.5;
     [acController setAutocompleteBounds:bounds];
     
     [self presentViewController:acController animated:YES completion:nil];
+    
 }
 
 
@@ -363,6 +420,16 @@ didAutocompleteWithPlace:(GMSPlace *)place {
     NSLog(@"Place address %@", place.formattedAddress);
     NSLog(@"Location id? %@", place.placeID);
     NSLog(@"Place attributions %@", place.attributions.string);
+    
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = place.coordinate;
+    marker.title = place.name;
+    //[marker setUserData:location];
+    marker.snippet = [NSString stringWithFormat:@"%d bumps", 0];
+    marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:100/255.0 blue:0 alpha:1]];
+    marker.map = self.mapView;
+    [self.mapView setSelectedMarker:marker];
+
 }
 
 - (void)viewController:(GMSAutocompleteViewController *)viewController
@@ -386,5 +453,31 @@ didFailAutocompleteWithError:(NSError *)error {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
+
+/////calculate radius stuff
+
+- (CLLocationCoordinate2D) getCenterCoordinate {
+    CGPoint center = self.mapView.center;
+    CLLocationCoordinate2D centerCoord = [self.mapView.projection coordinateForPoint:center];
+    return centerCoord;
+}
+
+- (CLLocationCoordinate2D) getOriginCoordinate {
+    CGPoint origin = CGPointMake(0, 0);
+
+    CLLocationCoordinate2D originCoord = [self.mapView.projection coordinateForPoint:origin];
+    return originCoord;
+}
+
+- (CLLocationDistance) getMapRadius {
+    CLLocationCoordinate2D center = [self getCenterCoordinate];
+    CLLocationCoordinate2D origin = [self getOriginCoordinate];
+    CLLocation *centerLoc = [[CLLocation alloc] initWithLatitude:center.latitude longitude:center.longitude];
+    CLLocation *originLoc = [[CLLocation alloc] initWithLatitude:origin.latitude longitude:origin.longitude];
+    
+    CLLocationDistance radius = [centerLoc distanceFromLocation:originLoc];
+    
+    return radius;
+}
 
 @end

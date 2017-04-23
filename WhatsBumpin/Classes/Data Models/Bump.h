@@ -13,6 +13,7 @@
 @interface Bump : NSObject
 
 -(nullable id)initWithUsername: (long)facebook_id locationWithID:(nonnull NSString *) googlePlacesID;
+-(void)saveInBackgroundWithCompletionBlock:(void (^)(NSError *error))completion;
 //- (void) bumpWithCompletionBlock:(void (^_Nullable)(BOOL successful))completion;
 
 //variables

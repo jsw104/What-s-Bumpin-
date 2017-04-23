@@ -21,9 +21,6 @@
 @property (strong, nonatomic) IBOutlet UISlider *minimumBumpsSlider;
 @property (strong, nonatomic) IBOutlet UILabel *radiusLabel;
 @property (strong, nonatomic) IBOutlet UILabel *minimumBumpsLabel;
-@property (strong, nonatomic) IBOutlet UIButton *dayTimeButton;
-@property (strong, nonatomic) IBOutlet UIButton *nightLifeButton;
-@property (strong, nonatomic) IBOutlet UIButton *foodButton;
 
 @end
 

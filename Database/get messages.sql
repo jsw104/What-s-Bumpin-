@@ -1,3 +1,3 @@
 SELECT * 
-FROM messages
-where places_id = "jolly"
+FROM message
+where location_id = "jolly"

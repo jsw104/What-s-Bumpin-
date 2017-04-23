@@ -40,16 +40,6 @@ NSMutableArray *_messages;
     
     _messages = [NSMutableArray arrayWithCapacity:20];
     
-    Message *message = [[Message alloc] init];
-    message.username = @"Elle Zadina";
-    message.message_text = @"Yes";
-    [_messages addObject:message];
-    
-    message = [[Message alloc] init];
-    message.username = @"Justin Wang";
-    message.message_text = @"No";
-    [_messages addObject:message];
-
     
 //    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
 //    UINavigationController *navigationController = [tabBarController viewControllers][0];
@@ -60,7 +50,7 @@ NSMutableArray *_messages;
     NSLog(@"ROOT VIEW CONTROLLER %@", self.window.rootViewController);
     return YES;
 }
-    
+
     
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {

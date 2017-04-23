@@ -38,17 +38,23 @@ MessageBoard *messageBoard;
     return fabs(location.latitude - self.coordinate.latitude) + fabs(location.longitude - self.coordinate.longitude);
 }
 
-+ (void)getLocationsWithRadius: (int)radiusInMiles minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
++ (void)getLocationsWithRadius: (int)radius minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
 {
     if ((types & WBFood) == WBFood) {
-        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBFood], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBFood], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
     if ((types & WBDayTime) == WBDayTime) {
-        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBDayTime], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBDayTime], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
     
     if ((types & WBNightLife) == WBNightLife) {
-        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", [self milesToMeters:radiusInMiles]], [Location WBTypeToString:WBNightLife], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBNightLife], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+    }
+    
+    if ((types & WBCafe) == WBCafe) {
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBCafe], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
 }
 
@@ -79,6 +85,11 @@ MessageBoard *messageBoard;
     {
         return @"restaurant";
     }
+    else if (type == WBCafe)
+    {
+        return @"cafe";
+    }
+
     return NULL;
 }
 
@@ -126,6 +137,12 @@ MessageBoard *messageBoard;
         // 5 - Create a new annotation.
         Location *location = [[Location alloc] init];
         location.name = [place objectForKey:@"name"];
+//        location.locationDescription = [place objectForKey:@"address_components"];
+//        location.website = [place objectForKey:@"formatted_address"];
+//        location.phoneNumber = [place objectForKey:@"formatted_phone_number"];
+        location.address = vicinity;
+        location.openNow = [[[place objectForKey:@"opening_hours"] objectForKey:@"open_now"] integerValue] == 1;
+        
         location.coordinate = placeCoord;
         location.icon = [place objectForKey:@"icon"];
         location.photoURLs = [NSArray arrayWithArray:photoURLs];
@@ -143,33 +160,17 @@ MessageBoard *messageBoard;
 - (void)bump
 {
     User *user = [User getCurrentUser];
-    [[Bump alloc] initWithUsername: user.facebookID locationWithID:self.googlePlacesID];
-    
-    /*if (user) {
-        [self bumpPrivate:user];
-    } else {
-        [self bumpPublic];
-    }*/
-}
-
-- (void)bumpPrivate:(User *)user
-{
-    //Bump *newBump = [[Bump alloc] initWithUsername:user.userID locationWithID:self.goo
-    
-    //TODO might want to use different data structure here:
-    
-    //have to override hashcode and isequal methods on Bump for contains to work correctly
-
-}
-
-- (void)bumpPublic
-{
-    //Bump *newBump = [[Bump alloc] initWithUsername:NULL locationWithCoordinate:self.coordinate];
-}
-
-- (void)addBump
-{
-    
+    Bump *bump = [[Bump alloc] initWithUsername: user.facebookID locationWithID:self.googlePlacesID];
+    [bump saveInBackgroundWithCompletionBlock:^(NSError *error) {
+        if(error)
+        {
+            //display error message
+        }
+        else
+        {
+            //display confirmation message
+        }
+    }];
 }
 
 @end
