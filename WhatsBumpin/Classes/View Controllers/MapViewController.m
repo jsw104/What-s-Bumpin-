@@ -312,12 +312,21 @@ bool night = false;
 }
 
 - (Location *)getClosestLocation {
+    Location *closestLocation = self.locations.firstObject;
     int minDistance = 0;
-    return self.locations.firstObject;
+    int dist;
+    CLLocationCoordinate2D userLocation = [User getCurrentUser].coordinates;
+    minDistance = [closestLocation distanceToLocation:userLocation];
     for(Location *location in self.locations)
     {
-        
+        dist = [location distanceToLocation:userLocation];
+        if(dist < minDistance)
+        {
+            minDistance = dist;
+            closestLocation = location;
+        }
     }
+    return closestLocation;
 }
 
 - (IBAction)bump:(id)sender {
