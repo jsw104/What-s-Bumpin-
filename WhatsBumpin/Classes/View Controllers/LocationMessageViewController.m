@@ -31,6 +31,8 @@
     MessageBoard *mb = [[MessageBoard alloc] init];
     [mb loadMessagesForLocation:self.location.googlePlacesID withCompletion:^(NSMutableArray * messages){
         self.messages = messages;
+        
+        NSLog(@"messages :%@", messages);
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"blah");
 
@@ -118,8 +120,12 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"height %f  at index %ld", [self.heights objectAtIndex:indexPath.row].doubleValue, (long)indexPath.row);
-    return [self.heights objectAtIndex:indexPath.row].doubleValue;
+    if (self.heights.count > indexPath.row) {
+        return [self.heights objectAtIndex:indexPath.row].doubleValue;
+    }
+    else {
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
 }
 
 

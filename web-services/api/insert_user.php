@@ -21,11 +21,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $result = $db->insert_user($facebook_id, $facebook_name);
     if($result) {
         $response['error'] = false;
-        $response['message'] = 'User successfully added';
-        
+        $response['message'] = 'Adding user was successful';    
     } else { 
         $response['error'] = true;
-        $response['message'] = 'User was unsuccessful';       
+        $response['message'] = 'Adding user was unsuccessful';       
     }
 } else {
     $response['error'] = true;

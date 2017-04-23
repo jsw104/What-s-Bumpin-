@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     require_once '../includes/dboperation.php';
 
     $db = new DbOperation();
-    $messages = $db->get_messages($location_id);
+    $messages = $db->get_messages_by_location($location_id);
     if(!empty($messages)) {
         $response['error'] = false;
         $response = $response + $messages;
