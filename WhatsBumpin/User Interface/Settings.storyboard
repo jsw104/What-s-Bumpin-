@@ -45,41 +45,60 @@
                                     <constraint firstAttribute="height" constant="49" id="Cw3-tl-7Mb"/>
                                 </constraints>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pLa-YO-Xxh">
-                                <rect key="frame" x="32" y="269" width="275" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pLa-YO-Xxh">
+                                <rect key="frame" x="50" y="220" width="275" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="271" id="unv-Ah-rly"/>
+                                </constraints>
                                 <connections>
                                     <action selector="sliderValueChanged:" destination="V1u-ka-4Ig" eventType="valueChanged" id="1AM-iX-UmR"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Min Bump Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEE-RU-iFu">
-                                <rect key="frame" x="34" y="240" width="126" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBx-CT-iX7">
-                                <rect key="frame" x="313" y="274" width="36" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ad-YX-aor">
-                                <rect key="frame" x="0.0" y="124" width="375" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="About"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ad-YX-aor">
+                                <rect key="frame" x="52" y="500" width="271" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9NH-XC-qoJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Learn More About What's Bumpin'?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="kdC-3R-Hz2" kind="show" id="FFY-a3-iKl"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Filter out locations that have a bump score less than:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uqp-yO-MWz">
+                                <rect key="frame" x="52" y="86" width="271" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="271" id="RsG-Mh-8m0"/>
+                                    <constraint firstAttribute="height" constant="70" id="a7u-bc-48W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBx-CT-iX7">
+                                <rect key="frame" x="166" y="164" width="43" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HTl-g6-bbX" firstAttribute="leading" secondItem="mRC-JA-88w" secondAttribute="leadingMargin" constant="36" id="37w-BX-p55"/>
+                            <constraint firstItem="DBx-CT-iX7" firstAttribute="centerX" secondItem="mRC-JA-88w" secondAttribute="centerX" id="3TH-NC-QCq"/>
+                            <constraint firstItem="pLa-YO-Xxh" firstAttribute="leading" secondItem="mRC-JA-88w" secondAttribute="leadingMargin" constant="36" id="80L-9D-NLh"/>
                             <constraint firstItem="HTl-g6-bbX" firstAttribute="centerX" secondItem="mRC-JA-88w" secondAttribute="centerX" id="At2-ZN-aIh"/>
+                            <constraint firstItem="1Ad-YX-aor" firstAttribute="leading" secondItem="mRC-JA-88w" secondAttribute="leadingMargin" constant="36" id="IWB-wo-Nu6"/>
+                            <constraint firstItem="uqp-yO-MWz" firstAttribute="top" secondItem="edW-Fo-zr1" secondAttribute="bottom" constant="22" id="Nds-3n-e22"/>
+                            <constraint firstItem="uqp-yO-MWz" firstAttribute="leading" secondItem="mRC-JA-88w" secondAttribute="leadingMargin" constant="36" id="bQ1-t3-FrD"/>
+                            <constraint firstItem="DBx-CT-iX7" firstAttribute="top" secondItem="uqp-yO-MWz" secondAttribute="bottom" constant="8" id="cFI-5c-5wf"/>
+                            <constraint firstItem="1Ad-YX-aor" firstAttribute="centerX" secondItem="mRC-JA-88w" secondAttribute="centerX" id="eZ3-ef-Cdq"/>
                             <constraint firstItem="9qn-l7-Dbm" firstAttribute="top" secondItem="HTl-g6-bbX" secondAttribute="bottom" constant="43" id="ecP-3z-Ycb"/>
+                            <constraint firstItem="pLa-YO-Xxh" firstAttribute="top" secondItem="DBx-CT-iX7" secondAttribute="bottom" constant="8" id="mCY-gx-aaV"/>
+                            <constraint firstItem="1Ad-YX-aor" firstAttribute="top" secondItem="pLa-YO-Xxh" secondAttribute="bottom" constant="250" id="vmh-gg-4AZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Settings" id="7iQ-kd-7wd">
