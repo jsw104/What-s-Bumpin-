@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9Rn-Mp-6DG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9Rn-Mp-6DG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,6 @@
         <!--Settings-->
         <scene sceneID="wEJ-lg-jzc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GbK-S2-fru" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="V1u-ka-4Ig" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="edW-Fo-zr1"/>
@@ -94,13 +93,14 @@
                         <outlet property="minBumpSlider" destination="pLa-YO-Xxh" id="MjI-2F-zGu"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GbK-S2-fru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="533.60000000000002" y="111.99400299850076"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="Y92-od-e5N">
             <objects>
-                <viewController id="kdC-3R-Hz2" sceneMemberID="viewController">
+                <viewController id="kdC-3R-Hz2" customClass="AboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9ja-0W-5TZ"/>
                         <viewControllerLayoutGuide type="bottom" id="2tr-Be-J47"/>
@@ -108,12 +108,102 @@
                     <view key="view" contentMode="scaleToFill" id="fqH-aj-UG9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Bumpin'?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ujo-9q-x3G">
+                                <rect key="frame" x="66" y="89" width="243" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="iDq-9f-WZp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lbT-4k-wf4">
+                                <rect key="frame" x="16" y="164" width="343" height="134"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="134" id="xjf-H1-ddi"/>
+                                </constraints>
+                                <string key="text">In an effort to maximize time with friends, the What’s Bumpin’? app allows individuals to promote or bump their current location in order to let their friends know where to meet them and ensure a crowded, sociable atmosphere with the click of a button.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vision:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPz-zF-3C4">
+                                <rect key="frame" x="16" y="147" width="343" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Vkr-Jr-7jr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WO5-jR-kKn">
+                                <rect key="frame" x="16" y="306" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="VDz-n9-5an"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Features:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xr-Bq-lT1">
+                                <rect key="frame" x="16" y="407" width="343" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="ieo-pM-35d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4g5-AL-gIK">
+                                <rect key="frame" x="16" y="426" width="343" height="131"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="131" id="ccd-O1-5k9"/>
+                                </constraints>
+                                <string key="text">Facebook login, real-time map, friends mesage board, location message board, bump your location, search specific location, filter search, location detail page, graph of bumps per day of week at location, settings, logout</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="We aim to minimize planning time, prevent individuals from being distracted by texts, and ensure a worthwhile social excursion." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1No-xd-nSd">
+                                <rect key="frame" x="16" y="326" width="343" height="73"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="ZTO-s3-yHg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WO5-jR-kKn" secondAttribute="trailing" constant="16" id="3vt-E4-zNk"/>
+                            <constraint firstAttribute="trailing" secondItem="1No-xd-nSd" secondAttribute="trailing" constant="16" id="5RD-Rp-W0d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ujo-9q-x3G" secondAttribute="trailing" constant="50" id="6U8-Nj-FvJ"/>
+                            <constraint firstItem="6Xr-Bq-lT1" firstAttribute="top" secondItem="1No-xd-nSd" secondAttribute="bottom" constant="8" id="BlO-a8-OmM"/>
+                            <constraint firstAttribute="trailing" secondItem="4g5-AL-gIK" secondAttribute="trailing" constant="16" id="Dp1-c7-5Ir"/>
+                            <constraint firstAttribute="trailing" secondItem="lbT-4k-wf4" secondAttribute="trailing" constant="16" id="Ehe-vT-tAS"/>
+                            <constraint firstAttribute="trailing" secondItem="vPz-zF-3C4" secondAttribute="trailing" constant="16" id="Gx6-nb-imt"/>
+                            <constraint firstItem="4g5-AL-gIK" firstAttribute="top" secondItem="1No-xd-nSd" secondAttribute="bottom" constant="27" id="JFa-UR-Tpr"/>
+                            <constraint firstItem="6Xr-Bq-lT1" firstAttribute="leading" secondItem="fqH-aj-UG9" secondAttribute="leading" constant="16" id="P5H-eL-UYF"/>
+                            <constraint firstItem="vPz-zF-3C4" firstAttribute="top" secondItem="Ujo-9q-x3G" secondAttribute="bottom" constant="25" id="PVw-gZ-vPo"/>
+                            <constraint firstItem="1No-xd-nSd" firstAttribute="top" secondItem="lbT-4k-wf4" secondAttribute="bottom" constant="28" id="RS8-q8-Nwa"/>
+                            <constraint firstItem="Ujo-9q-x3G" firstAttribute="top" secondItem="9ja-0W-5TZ" secondAttribute="bottom" constant="25" id="THx-nt-mRE"/>
+                            <constraint firstItem="lbT-4k-wf4" firstAttribute="top" secondItem="Ujo-9q-x3G" secondAttribute="bottom" constant="42" id="WoK-46-ZWi"/>
+                            <constraint firstItem="4g5-AL-gIK" firstAttribute="leading" secondItem="fqH-aj-UG9" secondAttribute="leading" constant="16" id="Zoa-J4-oXa"/>
+                            <constraint firstItem="WO5-jR-kKn" firstAttribute="top" secondItem="lbT-4k-wf4" secondAttribute="bottom" constant="8" id="d5g-d2-Uv6"/>
+                            <constraint firstItem="lbT-4k-wf4" firstAttribute="leading" secondItem="fqH-aj-UG9" secondAttribute="leading" constant="16" id="fRg-QA-NLi"/>
+                            <constraint firstItem="1No-xd-nSd" firstAttribute="leading" secondItem="fqH-aj-UG9" secondAttribute="leading" constant="16" id="gEU-qy-vcg"/>
+                            <constraint firstAttribute="trailing" secondItem="6Xr-Bq-lT1" secondAttribute="trailing" constant="16" id="igy-mS-oF5"/>
+                            <constraint firstItem="vPz-zF-3C4" firstAttribute="leading" secondItem="fqH-aj-UG9" secondAttribute="leading" constant="16" id="we9-74-mAx"/>
+                            <constraint firstItem="WO5-jR-kKn" firstAttribute="leading" secondItem="fqH-aj-UG9" secondAttribute="leading" constant="16" id="whk-8v-WbA"/>
+                            <constraint firstItem="Ujo-9q-x3G" firstAttribute="leading" secondItem="fqH-aj-UG9" secondAttribute="leadingMargin" constant="50" id="xeM-LA-OIK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="398-Ls-dte" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393" y="92"/>
+            <point key="canvasLocation" x="1392.8" y="91.304347826086968"/>
         </scene>
     </scenes>
     <resources>
