@@ -44,7 +44,7 @@ CGFloat heights[];
                             action:@selector(getNewestMessages)
                   forControlEvents:UIControlEventValueChanged];
     
-    self.messages = [NSMutableArray arrayWithCapacity:2];
+    //self.messages = [NSMutableArray arrayWithCapacity:2];
     
     /////get facebook friends
     [self.refreshControl beginRefreshing];

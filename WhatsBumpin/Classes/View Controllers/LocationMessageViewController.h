@@ -11,5 +11,7 @@
 
 @interface LocationMessageViewController : UITableViewController
 @property (strong, nonatomic) Location *location;
+@property (nonatomic, strong) NSMutableArray *messages;
+
 
 @end

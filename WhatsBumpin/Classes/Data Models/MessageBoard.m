@@ -27,7 +27,7 @@
     }
     
     NSLog(@"postString: %@", postString);
-    postString = @"1|2";
+    postString = @"1|2"; //hard coded to get info from DB
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_messages_by_friends.php"]];
     [request setHTTPMethod:@"POST"];
@@ -43,12 +43,9 @@
                               options:kNilOptions
                               error:&error];
         
-        NSLog(@"%@", [json objectForKey:@"error"]);
 //        if(![json objectForKey:@"error"]){
 //            NSLog(@"no error");
-        NSLog(@"%@", NSStringFromClass([[json objectForKey:@"message_count"] class]));
             int messageCount = [(NSNumber *)[json objectForKey:@"message_count"] intValue];
-        NSLog(@"MC %d", messageCount);
             for (int i = 0; i < messageCount; i++) {
                 
                 NSLog(@"asdf");
@@ -85,19 +82,43 @@
     return newMessage;
 }
 
--(void)loadMessagesForLocation: (NSString *) locationID {
+-(void)loadMessagesForLocation: (NSString *) locationID withCompletion:(void(^)(NSMutableArray* response))completion{
     
     NSLog(@"Location ID: %@",locationID);
+
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_messages.php"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_messages_by_location.php"]];
     [request setHTTPMethod:@"POST"];
     
-    NSString *post = [[NSString alloc] initWithFormat:@"location_id=%@&submit=", locationID]; ///change string to post string
+    NSString *post = [[NSString alloc] initWithFormat:@"location_id=%@&submit=", @"test_location_1002"]; ///change string to post string
     [request setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:data
+                              
+                              options:kNilOptions
+                              error:&error];
         
+        int messageCount = [(NSNumber *)[json objectForKey:@"message_count"] intValue];
+        for (int i = 0; i < messageCount; i++) {
+            
+            NSLog(@"asdf");
+            Message *m = [self parseIntoMessage: [json objectForKey:[NSString stringWithFormat:@"%d", i]]];
+            NSLog(@"%@", m);
+            
+            [self.messages addObject:m];
+            NSLog(@"Count %lu", (unsigned long)self.messages.count);
+            
+        }
+        NSLog(@"Count %lu", (unsigned long)self.messages.count);
+        completion(self.messages);
+        
+        
+        
+        
+        NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"response %@", response);
         NSLog(@"data %@", dataString);
     }];
     
