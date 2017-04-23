@@ -7,6 +7,7 @@
 //
 
 #import "LocationMessageViewController.h"
+#import "PostMessageViewController.h"
 #import "MessageBoard.h"
 #import "MessageCell.h"
 #import "Message.h"
@@ -136,6 +137,12 @@
 - (UIColor *)darkerGray {
     return [UIColor colorWithRed:0xEB/255.0 green:0xEB/255.0 blue:0xEB/255.0 alpha:1];
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"postMessageSegue"]) {
+        ((PostMessageViewController *)[segue destinationViewController]).location = self.location;
+    }
 }
 
 /*
