@@ -14,7 +14,7 @@ class DbOperation{
         if(empty($friends_facebook_ids)) return false;
         $friends_facebook_ids_array = explode('|', $friends_facebook_ids);
         $friends_facebook_ids_string = $friends_facebook_ids_array[0];
-        for($i = 1; $i < count($friends_facebook_ids_array); $i++) {
+        for($i = 1; $i < count($friends_facebook_ids_array) - 1; $i++) {
             $friends_facebook_ids_string .= ' OR facebook_id = ' . $friends_facebook_ids_array[$i];
         }
         $query = "SELECT message_id, location_id, facebook_name, message_field, time_stamp
@@ -22,6 +22,7 @@ class DbOperation{
                   WHERE facebook_id = " . $friends_facebook_ids_string . "
                   ORDER BY time_stamp DESC";
         $stmt = $this->conn->prepare($query);
+        //$stmt->bind_param('s', $friends_facebook_ids_string);
         $stmt->execute();
         $stmt->bind_result($message_id, $location_id, $facebook_name, $message_field, $time_stamp);
         
@@ -94,7 +95,7 @@ class DbOperation{
         if(empty($location_ids)) return false;
         $location_ids_array = explode('|', $location_ids);
         $location_ids_string = "'" . $location_ids_array[0] . "'";
-        for($i = 1; $i < count($location_ids_array); $i++) {
+        for($i = 1; $i < count($location_ids_array) - 1; $i++) {
             $location_ids_string .= " OR location_id = '" . $location_ids_array[$i] ."'";
         }
         $query = "SELECT location_id, COUNT(*) as bump_count
@@ -143,6 +144,15 @@ class DbOperation{
         } else {
             return false;
         }
+    }
+    
+    public function remove_user($facebook_id) {
+        $query = "DELETE FROM user
+                  WHERE facebook_id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('i', $facebook_id);
+        $result = $stmt->execute();
+        $stmt->close();
     }
 }
 
