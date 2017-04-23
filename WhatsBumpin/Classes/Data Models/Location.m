@@ -160,33 +160,17 @@ MessageBoard *messageBoard;
 - (void)bump
 {
     User *user = [User getCurrentUser];
-    [[Bump alloc] initWithUsername: user.facebookID locationWithID:self.googlePlacesID];
-    
-    /*if (user) {
-        [self bumpPrivate:user];
-    } else {
-        [self bumpPublic];
-    }*/
-}
-
-- (void)bumpPrivate:(User *)user
-{
-    //Bump *newBump = [[Bump alloc] initWithUsername:user.userID locationWithID:self.goo
-    
-    //TODO might want to use different data structure here:
-    
-    //have to override hashcode and isequal methods on Bump for contains to work correctly
-
-}
-
-- (void)bumpPublic
-{
-    //Bump *newBump = [[Bump alloc] initWithUsername:NULL locationWithCoordinate:self.coordinate];
-}
-
-- (void)addBump
-{
-    
+    Bump *bump = [[Bump alloc] initWithUsername: user.facebookID locationWithID:self.googlePlacesID];
+    [bump saveInBackgroundWithCompletionBlock:^(NSError *error) {
+        if(error)
+        {
+            //display error message
+        }
+        else
+        {
+            //display confirmation message
+        }
+    }];
 }
 
 @end
