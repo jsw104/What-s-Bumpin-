@@ -14,5 +14,5 @@
 @property (strong, nonatomic) NSMutableArray<Message *> *messages;
 
 -(void)loadMessagesFromFriends: (NSMutableArray *)friendIDs withCompletion:(void(^)(NSMutableArray* response))completion;
--(void)loadMessagesForLocation: (NSString *) locationID;
+-(void)loadMessagesForLocation: (NSString *) locationID withCompletion:(void(^)(NSMutableArray* response))completion;
 @end

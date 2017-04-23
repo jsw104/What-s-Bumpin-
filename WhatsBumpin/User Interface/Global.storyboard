@@ -343,10 +343,10 @@
             </objects>
             <point key="canvasLocation" x="2248.8000000000002" y="-321.58920539730138"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Location Message View Controller-->
         <scene sceneID="hYb-UI-96L">
             <objects>
-                <tableViewController id="k48-nI-qd3" sceneMemberID="viewController">
+                <tableViewController id="k48-nI-qd3" customClass="LocationMessageViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cAf-8M-jZo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
