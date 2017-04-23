@@ -14,7 +14,7 @@
         <scene sceneID="f5h-dZ-cub">
             <objects>
                 <navigationController id="9Rn-Mp-6DG" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zP3-AE-DhS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zP3-AE-DhS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -55,7 +55,7 @@
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ad-YX-aor">
-                                <rect key="frame" x="52" y="500" width="271" height="30"/>
+                                <rect key="frame" x="52" y="499" width="271" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9NH-XC-qoJ"/>
@@ -84,13 +84,29 @@
                                 <color key="textColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ev4-cd-IsO">
+                                <rect key="frame" x="52" y="449" width="271" height="29"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="271" id="SuY-Tg-mq4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Asset Credits">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zum-cW-A7R" kind="show" id="HDf-ki-V0r"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1Ad-YX-aor" firstAttribute="top" secondItem="ev4-cd-IsO" secondAttribute="bottom" constant="21" id="2VQ-D6-cBe"/>
                             <constraint firstItem="HTl-g6-bbX" firstAttribute="leading" secondItem="mRC-JA-88w" secondAttribute="leadingMargin" constant="36" id="37w-BX-p55"/>
                             <constraint firstItem="DBx-CT-iX7" firstAttribute="centerX" secondItem="mRC-JA-88w" secondAttribute="centerX" id="3TH-NC-QCq"/>
                             <constraint firstItem="pLa-YO-Xxh" firstAttribute="leading" secondItem="mRC-JA-88w" secondAttribute="leadingMargin" constant="36" id="80L-9D-NLh"/>
                             <constraint firstItem="HTl-g6-bbX" firstAttribute="centerX" secondItem="mRC-JA-88w" secondAttribute="centerX" id="At2-ZN-aIh"/>
+                            <constraint firstItem="ev4-cd-IsO" firstAttribute="top" secondItem="pLa-YO-Xxh" secondAttribute="bottom" constant="199" id="Fe3-wz-hYX"/>
                             <constraint firstItem="1Ad-YX-aor" firstAttribute="leading" secondItem="mRC-JA-88w" secondAttribute="leadingMargin" constant="36" id="IWB-wo-Nu6"/>
                             <constraint firstItem="uqp-yO-MWz" firstAttribute="top" secondItem="edW-Fo-zr1" secondAttribute="bottom" constant="22" id="Nds-3n-e22"/>
                             <constraint firstItem="uqp-yO-MWz" firstAttribute="leading" secondItem="mRC-JA-88w" secondAttribute="leadingMargin" constant="36" id="bQ1-t3-FrD"/>
@@ -98,7 +114,7 @@
                             <constraint firstItem="1Ad-YX-aor" firstAttribute="centerX" secondItem="mRC-JA-88w" secondAttribute="centerX" id="eZ3-ef-Cdq"/>
                             <constraint firstItem="9qn-l7-Dbm" firstAttribute="top" secondItem="HTl-g6-bbX" secondAttribute="bottom" constant="43" id="ecP-3z-Ycb"/>
                             <constraint firstItem="pLa-YO-Xxh" firstAttribute="top" secondItem="DBx-CT-iX7" secondAttribute="bottom" constant="8" id="mCY-gx-aaV"/>
-                            <constraint firstItem="1Ad-YX-aor" firstAttribute="top" secondItem="pLa-YO-Xxh" secondAttribute="bottom" constant="250" id="vmh-gg-4AZ"/>
+                            <constraint firstItem="ev4-cd-IsO" firstAttribute="leading" secondItem="mRC-JA-88w" secondAttribute="leadingMargin" constant="36" id="pTY-oT-f69"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Settings" id="7iQ-kd-7wd">
@@ -223,6 +239,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="398-Ls-dte" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1392.8" y="91.304347826086968"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5z6-7T-2Th">
+            <objects>
+                <viewController id="zum-cW-A7R" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c6d-bH-RJc"/>
+                        <viewControllerLayoutGuide type="bottom" id="frq-ZM-LmV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AoB-bB-UPo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What's Bumpin'? would like to credit and thank the following sources:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Aj-qZ-aPi">
+                                <rect key="frame" x="16" y="64" width="343" height="134"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="134" id="ejM-Od-bYi"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ANq-76-lWU">
+                                <rect key="frame" x="16" y="206" width="343" height="204"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Circle Icon by http://www.flaticon.com/authors/google, Disco Ball Icon by http://www.flaticon.com/authors/freepik, Cutlery Icon by http://www.flaticon.com/authors/freepik, Day and Night Icon by http://www.flaticon.com/authors/freepik, Search Icon by http://www.flaticon.com/authors/madebyoliver, Settings Icon by http://www.flaticon.com/authors/gregor-cresnar, Home Icon by http://www.flaticon.com/authors/freepik, Map Icon by http://www.flaticon.com/authors/simpleicon</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Aj-qZ-aPi" firstAttribute="top" secondItem="c6d-bH-RJc" secondAttribute="bottom" id="02I-bW-YEH"/>
+                            <constraint firstItem="8Aj-qZ-aPi" firstAttribute="leading" secondItem="AoB-bB-UPo" secondAttribute="leadingMargin" id="BoK-IO-cdK"/>
+                            <constraint firstItem="8Aj-qZ-aPi" firstAttribute="trailing" secondItem="AoB-bB-UPo" secondAttribute="trailingMargin" id="r1p-cf-ef0"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kHx-6o-amX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1394.4000000000001" y="748.87556221889065"/>
         </scene>
     </scenes>
     <resources>
