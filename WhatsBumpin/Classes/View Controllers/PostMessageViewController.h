@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Location.h"
 
 @interface PostMessageViewController : UIViewController
+
+@property (strong, nonatomic) Location *location;
 
 @end
