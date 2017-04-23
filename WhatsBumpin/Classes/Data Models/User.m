@@ -10,6 +10,7 @@
 
 @implementation User
 
+
 static User *currentUser;
 
 +(User *)getCurrentUser
@@ -42,7 +43,8 @@ static User *currentUser;
 
 -(void)setLocation:(CLLocationCoordinate2D)coordinates
 {
-    self.coordinates = coordinates;
+    self.coordinates = CLLocationCoordinate2DMake(41.502, -81.607);
+
 }
 
 -(BOOL)isLoggedIn

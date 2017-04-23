@@ -226,6 +226,8 @@ bool night = false;
 
 - (void)getLocationsForUser
 {
+    
+    [self.locationManager startUpdatingLocation];
     [_mapView clear];
 
     WBType locationTypes = 0;
@@ -338,7 +340,19 @@ bool night = false;
 }
 
 - (IBAction)bump:(id)sender {
-    [[self getClosestLocation] bump];
+    [[self getClosestLocation] bumpWithCompletion:^(BOOL response) {
+        if(response){
+            NSLog(@"response");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self getLocationsForUser];
+            });
+
+            
+        }
+        else {
+            NSLog(@"error?");
+        }
+    }];
 }
 
 - (IBAction)togglePlaceType:(id)sender {

@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, WBType) {
 + (void)getLocationsWithRadius: (int)radiusInMiles minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion;
 
 //instance methods
-- (void)bump;
+- (void)bumpWithCompletion:(void(^)(BOOL response))completion;
 - (int)getBumpCountBetween:(NSDate *)earlierDate and:(NSDate *)laterDate;
 - (void)getBumpCountWithCompletion:(void(^)(int response))completion;
 - (double)distanceToLocation: (CLLocationCoordinate2D)location;
