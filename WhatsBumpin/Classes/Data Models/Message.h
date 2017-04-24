@@ -15,7 +15,7 @@
 
 -(nullable id)initWithUserID: (long)facebook_id locationID:(NSString *_Nullable) googlePlacesID andMessage: (NSString *_Nullable)message;
 
--(void)saveInBackgroundWithCompletionBlock:(void (^_Nullable)(NSError * _Nullable error))completion;
+-(void)saveInBackgroundWithCompletionBlock:(void (^_Nullable)(BOOL success))completion;
 
 @property (nonatomic) long facebook_id;
 @property (strong, nonatomic, nonnull) NSString *googlePlacesID;

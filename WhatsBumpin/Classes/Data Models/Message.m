@@ -23,7 +23,7 @@
     return self;
 }
 
--(void)saveInBackgroundWithCompletionBlock:(void (^)(NSError *error))completion
+-(void)saveInBackgroundWithCompletionBlock:(void (^)(BOOL success))completion
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/insert_message.php"]];
     [request setHTTPMethod:@"POST"];
@@ -38,9 +38,9 @@
                               
                               options:kNilOptions
                               error:&error];
-        
         NSLog(@"json %@", json);
-        completion(error);
+        bool success = [[json objectForKey:@"error"] intValue] == 0;
+        completion(success);
     }];
     
     [task resume];

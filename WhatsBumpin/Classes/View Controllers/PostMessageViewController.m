@@ -9,6 +9,7 @@
 #import "PostMessageViewController.h"
 #import "Location.h"
 #import "Message.h"
+#import <TSMessages/TSMessageView.h>
 
 @interface PostMessageViewController()
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
@@ -22,7 +23,14 @@
 - (IBAction)postMessageClicked:(id)sender {
     long fb_id = [User getCurrentUser].facebookID;
     Message *newMessage =[[Message alloc] initWithUserID: fb_id locationID: _location.googlePlacesID andMessage: _messageText.text];
-    [newMessage saveInBackgroundWithCompletionBlock:^(NSError* error){
+    [newMessage saveInBackgroundWithCompletionBlock:^(BOOL success){
+        dispatch_async(dispatch_get_main_queue(), ^{
+        if(success){
+            [self sendLocalBumpNotification:[NSString stringWithFormat:@"You have successfully bumped %@", _location.name] successful:YES];
+        }else{
+            [self sendLocalBumpNotification:[NSString stringWithFormat:@"Bump to %@ was unsuccessful", _location.name] successful:NO];
+        }
+            });
     }];
 }
 
@@ -62,6 +70,17 @@ shouldChangeTextInRange:(NSRange)range
         [textView resignFirstResponder];
     }
     return YES;
+}
+
+- (void) sendLocalBumpNotification: (NSString *) message successful:(bool)success{
+    if(success)
+    {
+        [TSMessage showNotificationInViewController:self title:@"Bump Successful!" subtitle:message type:TSMessageNotificationTypeSuccess];
+    }
+    else{
+        [TSMessage showNotificationInViewController:self title:@"Bump Failed!" subtitle:message type:TSMessageNotificationTypeError];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
