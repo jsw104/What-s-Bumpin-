@@ -276,10 +276,11 @@ bool night = false;
                 self.bumpCount = bumpCount;
 
                 marker.snippet = [NSString stringWithFormat:@"%d bumps", bumpCount];
+                marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:bumpCount*10/255.0 blue:0 alpha:1]];
+                marker.map = self.mapView;
+
             });
         }];
-        marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:100/255.0 blue:0 alpha:1]];
-        marker.map = self.mapView;
     }
 }
 

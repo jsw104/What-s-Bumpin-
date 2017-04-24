@@ -16,16 +16,25 @@
 
 @interface MessagesTableViewController ()
 @property (strong) GMSPlacesClient *placesClient;
+@property NSMutableArray<NSNumber *> *heights;
+
 @end
 
 @implementation MessagesTableViewController
 
-CGFloat heights[];
+//CGFloat heights[];
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.heights = [[NSMutableArray alloc] init];
+
     _placesClient = [[GMSPlacesClient alloc] init];
     
     [GMSPlacesClient provideAPIKey:@"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"];
@@ -195,7 +204,7 @@ CGFloat heights[];
         [cell setBackgroundColor: [self lighterGray]];
     }
     
-    heights[indexPath.row] = cell.messageLabel.frame.size.height + 60;
+    [self.heights insertObject:[NSNumber numberWithDouble: cell.messageLabel.frame.size.height + 70] atIndex:indexPath.row];
     
     CGRect newTimeFrame = cell.timeLabel.frame;
     newTimeFrame.origin.y = cell.messageLabel.frame.origin.y + cell.messageLabel.frame.size.height - 7;
@@ -292,7 +301,12 @@ CGFloat heights[];
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return heights[indexPath.row];
+    if (self.heights.count > indexPath.row) {
+        return [self.heights objectAtIndex:indexPath.row].doubleValue;
+    }
+    else {
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
 }
 
 

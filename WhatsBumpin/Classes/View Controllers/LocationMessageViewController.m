@@ -40,7 +40,7 @@
             
             [self.tableView reloadData];
             [self.tableView setNeedsDisplay];
-            //[self.refreshControl endRefreshing];
+            [self.refreshControl endRefreshing];
         });
     }];
 
@@ -107,9 +107,8 @@
     else {
         [cell setBackgroundColor: [self lighterGray]];
     }
-    NSLog(@"numberr %@", [NSNumber numberWithDouble: cell.messageLabel.frame.size.height + 60]);
 
-    [self.heights insertObject:[NSNumber numberWithDouble: cell.messageLabel.frame.size.height + 60] atIndex:indexPath.row];
+    [self.heights insertObject:[NSNumber numberWithDouble: cell.messageLabel.frame.size.height + 70] atIndex:indexPath.row];
     NSLog(@"is the height %@", [self.heights objectAtIndex:indexPath.row]);
     
     CGRect newTimeFrame = cell.timeLabel.frame;
