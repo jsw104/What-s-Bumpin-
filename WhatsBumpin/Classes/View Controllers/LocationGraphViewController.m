@@ -44,48 +44,41 @@ UIActivityIndicatorView *activity;
     [graphView addSubview:activity];
     [activity setHidesWhenStopped:true];
     [activity startAnimating];
-    
-    
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        // code here
-    
-
     //load data
     [self loadBumpsPerDayWithCompletion:^(NSMutableArray *yVals) {
-        
-        //add title
-        NSString *titleString = [NSString stringWithFormat:@"Bumps Per Day At %@",self.location.name];
-        UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, graphView.bounds.size.width, 20)];
-        title.text = titleString;
-        title.numberOfLines = 0;
-        title.textColor = [UIColor colorWithRed:14/255.0 green:201/255.0 blue:39/255.0 alpha:1];
-        title.textAlignment = NSTextAlignmentCenter;
-        [graphView addSubview:title];
-        
-        //add y-axis labels
-        [self addYAxisLabels:4 withLabels:yVals];
-        
-        //draw bars
-        [self drawBars:7 withValues:yVals];
-        
-        //set xVals
-        xVals = [NSArray arrayWithObjects:@"Sun",@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", nil];
-        
-        //add x-axis labels
-        [self addXAxisLabels:7 withLabels:xVals];
-        
-        //draw x-axis
-        [self drawXAxis];
-        
-        //draw y-axis
-        [self drawYAxisWithTitle:title];
-        
-        [activity stopAnimating];
-        
-        }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *titleString = [NSString stringWithFormat:@"Bumps Per Day At %@",self.location.name];
+            UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, graphView.bounds.size.width, 20)];
+            title.text = titleString;
+            title.numberOfLines = 0;
+            title.textColor = [UIColor colorWithRed:14/255.0 green:201/255.0 blue:39/255.0 alpha:1];
+            title.textAlignment = NSTextAlignmentCenter;
+            [graphView addSubview:title];
+            
+            //add y-axis labels
+            [self addYAxisLabels:4 withLabels:yVals];
+            
+            //draw bars
+            [self drawBars:7 withValues:yVals];
+            
+            //set xVals
+            xVals = [NSArray arrayWithObjects:@"Sun",@"Mon", @"Tue", @"Wed", @"Thu", @"Fri", @"Sat", nil];
+            
+            //add x-axis labels
+            [self addXAxisLabels:7 withLabels:xVals];
+            
+            //draw x-axis
+            [self drawXAxis];
+            
+            //draw y-axis
+            [self drawYAxisWithTitle:title];
+            
+            [activity stopAnimating];
         });
-    
+        //add title
+        
+        
+    }];
     //set yVals
     //yVals = [NSMutableArray arrayWithObjects:[NSNumber numberWithInt:40],[NSNumber numberWithInt:15],[NSNumber numberWithInt:3],[NSNumber numberWithInt:7],[NSNumber numberWithInt:16],[NSNumber numberWithInt:12],[NSNumber numberWithInt:9], nil];
     
