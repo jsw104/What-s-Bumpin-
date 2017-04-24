@@ -13,6 +13,7 @@
 		D03211131E8EE82C0045A0A7 /* BumpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03211121E8EE82C0045A0A7 /* BumpTests.m */; };
 		D03211151E8EF0720045A0A7 /* LocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03211141E8EF0720045A0A7 /* LocationTests.m */; };
 		D0331A311E89D60B004CA5C1 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0331A301E89D60B004CA5C1 /* FilterView.xib */; };
+		D0667BD11EAE8E49006DD16E /* PostMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0667BD01EAE8E49006DD16E /* PostMessageViewController.m */; };
 		D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */; };
 		D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */; };
 		D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4221E6268B2000960B3 /* LaunchScreen.storyboard */; };
@@ -87,6 +88,8 @@
 		D03211121E8EE82C0045A0A7 /* BumpTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BumpTests.m; sourceTree = "<group>"; };
 		D03211141E8EF0720045A0A7 /* LocationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTests.m; sourceTree = "<group>"; };
 		D0331A301E89D60B004CA5C1 /* FilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		D0667BCF1EAE8E49006DD16E /* PostMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostMessageViewController.h; sourceTree = "<group>"; };
+		D0667BD01EAE8E49006DD16E /* PostMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostMessageViewController.m; sourceTree = "<group>"; };
 		D0A6CB8C1E513F57001F7964 /* WhatsBumpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsBumpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBA81E513F58001F7964 /* WhatsBumpin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsBumpin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What_s_Bumpin_Tests.m; sourceTree = "<group>"; };
@@ -409,6 +412,8 @@
 		D0E4C43C1E6268B2000960B3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D0667BCF1EAE8E49006DD16E /* PostMessageViewController.h */,
+				D0667BD01EAE8E49006DD16E /* PostMessageViewController.m */,
 				F03305421EAA4A7900A59FD6 /* LocationMessageViewController.h */,
 				F03305431EAA4A7900A59FD6 /* LocationMessageViewController.m */,
 				D0E4C43D1E6268B2000960B3 /* HomeViewController.h */,
@@ -520,7 +525,7 @@
 				TargetAttributes = {
 					D0A6CB8B1E513F57001F7964 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = R7LAAHL6K5;
+						DevelopmentTeam = C5ARGCT28E;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -601,7 +606,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		1C4036EF19CFA7259004372B /* [CP] Check Pods Manifest.lock */ = {
@@ -616,7 +621,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		254CC028C4737EEFD8374DD9 /* [CP] Copy Pods Resources */ = {
@@ -721,7 +726,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -746,6 +751,7 @@
 				F033FD561E95CBC200A9BF80 /* SettingsViewController.m in Sources */,
 				F0A0FAFA1E9FD962001CD144 /* MessageCell.m in Sources */,
 				D0E4C4551E6268B2000960B3 /* Message.m in Sources */,
+				D0667BD11EAE8E49006DD16E /* PostMessageViewController.m in Sources */,
 				D0E4C4561E6268B2000960B3 /* MessageBoard.m in Sources */,
 				D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */,
 				F0A0FAF71E9FD75B001CD144 /* MessagesTableViewController.m in Sources */,
@@ -899,7 +905,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R7LAAHL6K5;
+				DEVELOPMENT_TEAM = C5ARGCT28E;
 				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
@@ -917,7 +923,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R7LAAHL6K5;
+				DEVELOPMENT_TEAM = C5ARGCT28E;
 				INFOPLIST_FILE = WhatsBumpin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Bump.What-s-Bumpin-";
