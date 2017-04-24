@@ -12,6 +12,7 @@ target 'WhatsBumpin' do
   pod 'Shimmer'
   pod 'FBSDKLoginKit'
   pod 'CorePlot'
+  pod 'TSMessages', :git => 'https://github.com/KrauseFx/TSMessages.git'
 
   target 'WhatsBumpinTests' do
       #inherit! :search_paths

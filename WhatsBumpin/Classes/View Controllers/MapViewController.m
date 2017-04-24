@@ -13,6 +13,7 @@
 #import "LocationInformationViewController.h"
 @import GooglePlaces;
 #import "Location.h"
+#import <TSMessages/TSMessageView.h>
 
 @interface MapViewController () <CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UIGestureRecognizerDelegate, GMSAutocompleteViewControllerDelegate>
 
@@ -338,19 +339,29 @@ bool night = false;
 }
 
 - (IBAction)bump:(id)sender {
-    [[self getClosestLocation] bumpWithCompletion:^(BOOL response) {
-        if(response){
-            NSLog(@"response");
-            dispatch_async(dispatch_get_main_queue(), ^{
+    Location *location =[self getClosestLocation];
+    [location bumpWithCompletion:^(BOOL success) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(success){
                 [self getLocationsForUser];
-            });
-
-            
-        }
-        else {
-            NSLog(@"error?");
-        }
+                [self sendLocalBumpNotification:[NSString stringWithFormat:@"You have successfully bumped %@", location.name] successful:YES];
+            }
+            else {
+                [self sendLocalBumpNotification:[NSString stringWithFormat:@"Bump to %@ was unsuccessful", location.name] successful:NO];
+            }
+        });
     }];
+}
+
+- (void) sendLocalBumpNotification: (NSString *) message successful:(bool)success{
+    if(success)
+    {
+        [TSMessage showNotificationInViewController:self title:@"Bump Successful!" subtitle:message type:TSMessageNotificationTypeSuccess];
+    }
+    else{
+        [TSMessage showNotificationInViewController:self title:@"Bump Failed!" subtitle:message type:TSMessageNotificationTypeError];
+    }
+
 }
 
 - (IBAction)togglePlaceType:(id)sender {

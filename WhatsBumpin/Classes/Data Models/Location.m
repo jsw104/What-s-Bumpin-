@@ -201,19 +201,13 @@ MessageBoard *messageBoard;
 }
 
 
-- (void)bumpWithCompletion:(void(^)(BOOL response))completion
+- (void)bumpWithCompletion:(void(^)(BOOL success))completion
 {
     User *user = [User getCurrentUser];
     NSLog(@"user %ld", user.facebookID);
     Bump *bump = [[Bump alloc] initWithUsername: user.facebookID locationWithID:self.googlePlacesID];
-    [bump saveInBackgroundWithCompletionBlock:^(NSError *error) {
-        if(error)
-        {
-            completion(FALSE);
-        }
-        else
-        {completion(TRUE);//display confirmation message
-        }
+    [bump saveInBackgroundWithCompletionBlock:^(bool success) {
+        completion(success);
     }];
 }
 
