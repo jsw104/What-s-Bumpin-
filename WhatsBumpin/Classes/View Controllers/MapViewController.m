@@ -43,7 +43,6 @@ bool night = false;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:TRUE];
-    NSLog(@"BLH %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"]);
     if([[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"] != nil){
         [self.bumpFilterLabel setText:[[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"]];
     }
@@ -272,7 +271,6 @@ bool night = false;
         marker.title = location.name;
         [marker setUserData:location];
         [location getBumpCountWithCompletion:^(int bumpCount) {
-            NSLog(@"bumpeddd %d",bumpCount);
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.bumpCount = bumpCount;
 
@@ -456,7 +454,6 @@ didAutocompleteWithPlace:(GMSPlace *)place {
     marker.title = location.name;
     [marker setUserData:location];
    [location getBumpCountWithCompletion:^(int bumpCount) {
-       NSLog(@"bumpeddd %d",bumpCount);
         marker.snippet = [NSString stringWithFormat:@"%d", bumpCount];
     }];
 

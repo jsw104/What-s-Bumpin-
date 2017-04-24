@@ -50,8 +50,11 @@
     
     NSLog(@"lid: %@", self.location.googlePlacesID);
     [self.location getBumpCountWithCompletion:^(int bumpCount) {
-        [self.bumpLabel setText:[NSString stringWithFormat:@"%d", bumpCount]];
+        dispatch_async(dispatch_get_main_queue(), ^{
 
+        [self.bumpLabel setText:[NSString stringWithFormat:@"%d", bumpCount]];
+            [self.bumpLabel setNeedsDisplay];
+        });
     }];
     
     NSURL *googleRequestURL=self.location.photoURLs.firstObject;

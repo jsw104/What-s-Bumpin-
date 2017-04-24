@@ -29,6 +29,8 @@
 
     [self setLabelSizes];
     [_loginButton setDelegate:self];
+    self.loginButton.readPermissions = @[ @"email", @"user_friends", @"public_profile"];
+
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"FBbg.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();

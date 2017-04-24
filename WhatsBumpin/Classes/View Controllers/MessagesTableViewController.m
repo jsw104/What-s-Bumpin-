@@ -107,7 +107,6 @@ CGFloat heights[];
                              NSLog(@"STRID:  %@", strID);
                              
                              [idArray addObject:strID];
-                             NSLog(@"%@", [idArray objectAtIndex:0]);
                          }
                          
                      }

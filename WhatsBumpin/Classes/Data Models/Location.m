@@ -40,7 +40,6 @@ MessageBoard *messageBoard;
 
 + (void)getLocationsWithRadius: (int)radius minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
 {
-    NSLog(@"lo: %f", [User getCurrentUser].coordinates.longitude);
     if ((types & WBFood) == WBFood) {
         [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", 41.502, -81.607, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBFood], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
