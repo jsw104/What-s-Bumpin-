@@ -26,6 +26,7 @@
         postString = [postString stringByAppendingString:@"|"];
     }
     
+    postString = [postString substringToIndex:postString.length-1];
     NSLog(@"postString: %@", postString);
    // postString = @"1|2"; //hard coded to get info from DB
     
