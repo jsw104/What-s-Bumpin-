@@ -23,6 +23,9 @@ static User *currentUser;
     //make call to DB to login. if successful, return user and null error, otherwise return null user and error code
     //set current user
     currentUser = [[User alloc] init];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[NSNumber numberWithLong:facebook_id] forKey:@"fbID"];
+    [defaults setObject:name forKey:@"name"];
     currentUser.facebookID = facebook_id;
     currentUser.name = name;
     //currentUser.friends = friends;
@@ -54,9 +57,11 @@ static User *currentUser;
    // return self.email != NULL;
 }
 
--(void)saveInBackground
+-(void)logout
 {
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"fbID"];
+    [defaults removeObjectForKey:@"name"];
 }
 
 -(void) postFacebookUser {

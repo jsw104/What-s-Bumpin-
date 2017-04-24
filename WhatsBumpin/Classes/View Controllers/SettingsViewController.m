@@ -10,6 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "FBLoginViewController.h" 
+#import "User.h"
 
 
 @interface SettingsViewController ()
@@ -67,6 +68,7 @@
 }
 
 - (void) loginButtonDidLogOut:(FBSDKLoginButton *)loginButton {
+    [[User getCurrentUser] logout];
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"FBLogin"
                                                          bundle:nil];
     FBLoginViewController *login = [storyboard instantiateViewControllerWithIdentifier:@"loginViewController"];
