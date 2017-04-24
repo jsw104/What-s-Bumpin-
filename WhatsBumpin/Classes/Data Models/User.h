@@ -20,6 +20,7 @@
 -(void)setBio;
 -(void)setLocation:(CLLocationCoordinate2D)coordinates;
 -(BOOL)isLoggedIn;
+-(void)logout;
 
 //variables
 @property (nonatomic) long facebookID;
