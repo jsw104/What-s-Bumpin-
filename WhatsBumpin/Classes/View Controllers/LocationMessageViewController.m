@@ -11,6 +11,7 @@
 #import "MessageBoard.h"
 #import "MessageCell.h"
 #import "Message.h"
+#import <TSMessages/TSMessageView.h>
 
 @interface LocationMessageViewController ()
 @property MessageBoard *messageBoard;
@@ -55,6 +56,18 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
    
+    
+}
+
+
+- (void) sendLocalBumpNotification: (NSString *) message successful:(bool)success{
+    if(success)
+    {
+        [TSMessage showNotificationInViewController:self title:@"Post Successful!" subtitle:message type:TSMessageNotificationTypeSuccess];
+    }
+    else{
+        [TSMessage showNotificationInViewController:self title:@"Post Failed!" subtitle:message type:TSMessageNotificationTypeError];
+    }
     
 }
 

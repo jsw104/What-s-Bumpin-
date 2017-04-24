@@ -10,6 +10,7 @@
 #import "Location.h"
 #import "Message.h"
 #import <TSMessages/TSMessageView.h>
+#import "LocationMessageViewController.h"
 
 @interface PostMessageViewController()
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
@@ -26,9 +27,10 @@
     [newMessage saveInBackgroundWithCompletionBlock:^(BOOL success){
         dispatch_async(dispatch_get_main_queue(), ^{
         if(success){
-            [self sendLocalBumpNotification:[NSString stringWithFormat:@"You have successfully bumped %@", _location.name] successful:YES];
+            [(LocationMessageViewController *)[[[self navigationController] viewControllers] objectAtIndex:([self.navigationController.viewControllers indexOfObject:self] - 1)]  sendLocalBumpNotification:[NSString stringWithFormat:@"You have successfully posted at %@", _location.name] successful:YES];
+            [self.navigationController popViewControllerAnimated:true];
         }else{
-            [self sendLocalBumpNotification:[NSString stringWithFormat:@"Bump to %@ was unsuccessful", _location.name] successful:NO];
+            [self sendLocalBumpNotification:[NSString stringWithFormat:@"Post to %@ was unsuccessful", _location.name] successful:NO];
         }
             });
     }];
@@ -75,10 +77,10 @@ shouldChangeTextInRange:(NSRange)range
 - (void) sendLocalBumpNotification: (NSString *) message successful:(bool)success{
     if(success)
     {
-        [TSMessage showNotificationInViewController:self title:@"Bump Successful!" subtitle:message type:TSMessageNotificationTypeSuccess];
+        [TSMessage showNotificationInViewController:self title:@"Post Successful!" subtitle:message type:TSMessageNotificationTypeSuccess];
     }
     else{
-        [TSMessage showNotificationInViewController:self title:@"Bump Failed!" subtitle:message type:TSMessageNotificationTypeError];
+        [TSMessage showNotificationInViewController:self title:@"Post Failed!" subtitle:message type:TSMessageNotificationTypeError];
     }
     
 }
