@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Location.h"
 
-@interface PostMessageViewController : UIViewController
+@interface PostMessageViewController : UIViewController<UITextViewDelegate>
 
 @property (strong, nonatomic) Location *location;
 
