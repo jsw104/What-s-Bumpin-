@@ -277,8 +277,17 @@ bool night = false;
 
                 marker.snippet = [NSString stringWithFormat:@"%d bumps", bumpCount];
                 marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:bumpCount*10/255.0 blue:0 alpha:1]];
-                marker.map = self.mapView;
-
+                if(bumpFilter)
+                {
+                    if([[[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"] intValue] <= bumpCount)
+                    {
+                        marker.map = self.mapView;
+                    }
+                }
+                else
+                {
+                    marker.map = self.mapView;
+                }
             });
         }];
     }
