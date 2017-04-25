@@ -102,7 +102,7 @@ bool night = false;
     {
         [self.timer invalidate];
     }
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.2
                                      target:self
                                    selector:@selector(getLocationsForUser)
                                    userInfo:nil
@@ -227,7 +227,7 @@ bool night = false;
 - (void)getLocationsForUser
 {
     
-    [self.locationManager startUpdatingLocation];
+    //[self.locationManager startUpdatingLocation];
     [_mapView clear];
 
     WBType locationTypes = 0;
