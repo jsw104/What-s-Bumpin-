@@ -19,6 +19,7 @@
     _messages = [[NSMutableArray alloc] init];
     return self;
 }
+
 -(void)loadMessagesFromFriends: (NSMutableArray *)friendIDs withCompletion:(void(^)(NSMutableArray* response))completion {
     NSString *postString = @"";
     for (NSString * fID in friendIDs) {

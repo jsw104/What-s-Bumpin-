@@ -1,54 +1,46 @@
 //
-//  LocationTests.m
+//  MessageBoardTests.m
 //  WhatsBumpin
 //
-//  Created by Justin Wang on 3/31/17.
+//  Created by Elle Zadina on 4/27/17.
 //  Copyright © 2017 Bump Inc. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import "Location.h"
-#import <Expecta/Expecta.h>
-#import <Foundation/Foundation.h>
-#import <MapKit/MapKit.h>
+#import "User.h"
 #import <Expecta/Expecta.h>
 @import GooglePlaces;
+#import "MessageBoard.h"
 
-@interface LocationTests : XCTestCase
+
+
+@interface MessageBoardTests : XCTestCase
 
 @end
 
-@implementation LocationTests
-Location *location;
+@implementation MessageBoardTests
+MessageBoard *messageBoard;
 
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    messageBoard = [[MessageBoard alloc] init];
     [User loginWithID:1355547881173475 name:@"Alex Lucas"];
-    location = [[Location alloc] init];
-    location.googlePlacesID = @"ChIJNwaBOon7MIgRwyDK9r7VCnE";
+    [User getCurrentUser].friends = [[NSMutableArray alloc]initWithObjects:[NSNumber numberWithLong:1465572083455463], [NSNumber numberWithLong:1299006730155247], nil];
+    
 }
 
-- (void)testBumpWithCompletion{
-    [location bumpWithCompletion:^(BOOL success){
-        expect(success).to.equal(true);
+/*-(void)testLoadMessagesFromFriends{
+    [messageBoard loadMessagesFromFriends:[[NSMutableArray alloc]initWithObjects:[NSNumber numberWithLong:1465572083455463], [NSNumber numberWithLong:1299006730155247], nil] withCompletion:^(NSMutableArray* response){
+        //request is made without error thrown
+        expect(true).to.equal(true);
     }];
-}
+}*/
 
--(void)testGetBumpCountWithCompletion{
-    [location getBumpCountWithCompletion:^(int response){
+-(void)testLoadMessagesForLocation{
+    [messageBoard loadMessagesForLocation:@"ChIJNwaBOon7MIgRwyDK9r7VCnE" withCompletion:^(NSMutableArray* response){
         expect(response).notTo.equal(NULL);
     }];
-}
-
--(void)testDistanceToLocation{
-    double distance = [location distanceToLocation:CLLocationCoordinate2DMake(41.5043, 81.6084)];
-    expect(distance).to.equal(123.1127);
-}
-
--(void)testGetBumpCountBetweenDates{
-   int bumps =  [location getBumpCountBetween:[[NSDate alloc] init] and:[[NSDate alloc]init]];
-    expect(bumps).to.equal(0);
 }
 
 - (void)tearDown {
