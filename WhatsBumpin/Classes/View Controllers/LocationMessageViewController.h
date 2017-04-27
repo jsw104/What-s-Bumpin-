@@ -11,5 +11,8 @@
 
 @interface LocationMessageViewController : UITableViewController
 @property (strong, nonatomic) Location *location;
+@property (nonatomic, strong) NSMutableArray *messages;
+
+- (void) sendLocalBumpNotification: (NSString *) message successful:(bool)success;
 
 @end

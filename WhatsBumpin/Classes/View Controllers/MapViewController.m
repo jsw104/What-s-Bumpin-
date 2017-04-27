@@ -13,6 +13,7 @@
 #import "LocationInformationViewController.h"
 @import GooglePlaces;
 #import "Location.h"
+#import <TSMessages/TSMessageView.h>
 
 @interface MapViewController () <CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UIGestureRecognizerDelegate, GMSAutocompleteViewControllerDelegate>
 
@@ -24,7 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (weak, nonatomic) IBOutlet UIView *buttonView;
 @property (weak, nonatomic) IBOutlet UILabel *bumpFilterLabel;
-
+@property (strong, nonatomic) NSTimer *timer;
+@property NSInteger bumpCount;
 
 
 @end
@@ -33,8 +35,8 @@ static double delayInSeconds = 0.5;
 
 @implementation MapViewController
 int dayNightState = 0;
-bool food = false;
-bool coffee = false;
+bool food = true;
+bool coffee = true;
 bool bumpFilter = false;
 bool day = false;
 bool night = false;
@@ -42,7 +44,6 @@ bool night = false;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setHidden:TRUE];
-    NSLog(@"BLH %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"]);
     if([[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"] != nil){
         [self.bumpFilterLabel setText:[[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"]];
     }
@@ -55,11 +56,7 @@ bool night = false;
     [super viewDidLoad];
     
     [User LoginPublic];
-    
-    
-    
 
-    
     self.mapView.delegate = self;
     self.mapView.myLocationEnabled = YES;
     
@@ -74,12 +71,7 @@ bool night = false;
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startMonitoringSignificantLocationChanges];
     [self.locationManager startUpdatingLocation];
-    
-    [self configureFilterView];
-    
-    
-    
-    
+
     if (! [FBSDKAccessToken currentAccessToken]) {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"FBLogin"
                                                              bundle:nil];
@@ -106,8 +98,16 @@ bool night = false;
     // handle you zoom related logic
     
     NSLog(@"Zoom: %f", zoom);
+    if(self.timer)
+    {
+        [self.timer invalidate];
+    }
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.2
+                                     target:self
+                                   selector:@selector(getLocationsForUser)
+                                   userInfo:nil
+                                    repeats:NO];
     
-    [self getLocationsForUser];
 }
 
 -(BOOL) mapView:(GMSMapView *)mapView didTapMarker:(nonnull GMSMarker *)marker {
@@ -123,51 +123,6 @@ bool night = false;
     [self.locationManager stopUpdatingLocation]; // string Value
     [self.mapView animateToZoom:15];
 
-}
-
-
-- (void)configureFilterView
-{
-    self.filterView = [[[NSBundle mainBundle]
-                     loadNibNamed:@"FilterView"
-                     owner:self options:nil]
-                    firstObject];
-    [self.filterView setFrame:CGRectMake(self.searchBarContainerView.frame.origin.x, self.searchBarContainerView.frame.origin.y + self.searchBarContainerView.frame.size.height, self.view.frame.size.width, 200)];
-    
-    [self.filterView setHidden:true];
-    [self.view addSubview:self.filterView];
-    
-    [self.radiusLabel setText:[NSString stringWithFormat:@"%i", (int)lroundf(self.radiusSlider.value)]];
-    [self.minimumBumpsLabel setText:[NSString stringWithFormat:@"%i", (int)lroundf(self.minimumBumpsSlider.value)]];
-    [self.foodButton setSelected:true];
-    [self.dayTimeButton setSelected:true];
-    [self.nightLifeButton setSelected:true];
-}
-
-- (IBAction)distanceSliderValueChanged:(id)sender
-{
-    [self roundDistanceSlider:sender];
-}
-
-- (IBAction)bumpsSliderValueChanged:(id)sender
-{
-    [self roundBumpSlider:sender];
-}
-
-- (void)roundDistanceSlider:(id)sender
-{
-    int sliderValue;
-    sliderValue = lroundf(((UISlider *)sender).value);
-    [(UISlider *)sender setValue:sliderValue animated:YES];
-    [self.radiusLabel setText:[NSString stringWithFormat:@"%i", sliderValue]];
-}
-
-- (void)roundBumpSlider:(id)sender
-{
-    int sliderValue;
-    sliderValue = lroundf(((UISlider *)sender).value);
-    [(UISlider *)sender setValue:sliderValue animated:YES];
-    [self.minimumBumpsLabel setText:[NSString stringWithFormat:@"%i", sliderValue]];
 }
 
 - (void)configureSearchBar
@@ -257,25 +212,22 @@ bool night = false;
 
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations {
+    [manager stopUpdatingLocation];
     // If it's a relatively recent event, turn off updates to save power.
     CLLocation* location = [locations lastObject];
     NSDate* eventDate = location.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
     if (fabs(howRecent) < 15.0) {
-
         [[User getCurrentUser] setLocation:location.coordinate];
-        
-        [self getLocationsForUser];
-        GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:18];
+        GMSCameraUpdate *locationUpdate = [GMSCameraUpdate setTarget:location.coordinate zoom:15];
         [self.mapView animateWithCameraUpdate:locationUpdate];
     }
-    [manager stopUpdatingLocation];
-    [self.mapView animateToZoom:15];
-
 }
 
 - (void)getLocationsForUser
 {
+    
+    //[self.locationManager startUpdatingLocation];
     [_mapView clear];
 
     WBType locationTypes = 0;
@@ -319,9 +271,25 @@ bool night = false;
         marker.position = location.coordinate;
         marker.title = location.name;
         [marker setUserData:location];
-        marker.snippet = [NSString stringWithFormat:@"%d bumps", [location getBumpCountBetween:[NSDate distantPast] and:[NSDate distantFuture]]];
-        marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:100/255.0 blue:0 alpha:1]];
-        marker.map = self.mapView;
+        [location getBumpCountWithCompletion:^(int bumpCount) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.bumpCount = bumpCount;
+
+                marker.snippet = [NSString stringWithFormat:@"%d bumps", bumpCount];
+                marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:bumpCount*10/255.0 blue:0 alpha:1]];
+                if(bumpFilter)
+                {
+                    if([[[NSUserDefaults standardUserDefaults] valueForKey:@"minBump"] intValue] <= bumpCount)
+                    {
+                        marker.map = self.mapView;
+                    }
+                }
+                else
+                {
+                    marker.map = self.mapView;
+                }
+            });
+        }];
     }
 }
 
@@ -341,7 +309,8 @@ bool night = false;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ((LocationInformationViewController*)segue.destinationViewController).location = self.locationSelected;
-    
+    NSLog(@"bc: %ld", _bumpCount);
+    [((LocationInformationViewController*)segue.destinationViewController).bumpLabel setText:[NSString stringWithFormat:@"%ld", (long)self.bumpCount]];
 }
 
 - (void)showFilterView:(id)sender
@@ -362,16 +331,47 @@ bool night = false;
 }
 
 - (Location *)getClosestLocation {
+    Location *closestLocation = self.locations.firstObject;
     int minDistance = 0;
-    return self.locations.firstObject;
+    int dist;
+    CLLocationCoordinate2D userLocation = [User getCurrentUser].coordinates;
+    minDistance = [closestLocation distanceToLocation:userLocation];
     for(Location *location in self.locations)
     {
-        
+        dist = [location distanceToLocation:userLocation];
+        if(dist < minDistance)
+        {
+            minDistance = dist;
+            closestLocation = location;
+        }
     }
+    return closestLocation;
 }
 
 - (IBAction)bump:(id)sender {
-    [[self getClosestLocation] bump];
+    Location *location =[self getClosestLocation];
+    [location bumpWithCompletion:^(BOOL success) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if(success){
+                [self getLocationsForUser];
+                [self sendLocalBumpNotification:[NSString stringWithFormat:@"You have successfully bumped %@", location.name] successful:YES];
+            }
+            else {
+                [self sendLocalBumpNotification:[NSString stringWithFormat:@"Bump to %@ was unsuccessful", location.name] successful:NO];
+            }
+        });
+    }];
+}
+
+- (void) sendLocalBumpNotification: (NSString *) message successful:(bool)success{
+    if(success)
+    {
+        [TSMessage showNotificationInViewController:self title:@"Bump Successful!" subtitle:message type:TSMessageNotificationTypeSuccess];
+    }
+    else{
+        [TSMessage showNotificationInViewController:self title:@"Bump Failed!" subtitle:message type:TSMessageNotificationTypeError];
+    }
+
 }
 
 - (IBAction)togglePlaceType:(id)sender {
@@ -461,6 +461,27 @@ didAutocompleteWithPlace:(GMSPlace *)place {
     NSLog(@"Place address %@", place.formattedAddress);
     NSLog(@"Location id? %@", place.placeID);
     NSLog(@"Place attributions %@", place.attributions.string);
+    
+    Location *location = [[Location alloc] init];
+    location.name = place.name;
+    location.googlePlacesID = place.placeID;
+    location.address = place.formattedAddress;
+    location.coordinate = place.coordinate;
+    
+
+    
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = location.coordinate;
+    marker.title = location.name;
+    [marker setUserData:location];
+   [location getBumpCountWithCompletion:^(int bumpCount) {
+        marker.snippet = [NSString stringWithFormat:@"%d", bumpCount];
+    }];
+
+    marker.icon = [GMSMarker markerImageWithColor:[UIColor colorWithRed:0 green:100/255.0 blue:0 alpha:1]];
+    marker.map = self.mapView;
+    [self.mapView setSelectedMarker:marker];
+
 }
 
 - (void)viewController:(GMSAutocompleteViewController *)viewController

@@ -18,16 +18,17 @@
 typedef NS_ENUM(NSInteger, WBType) {
     WBDayTime = 1,
     WBNightLife = 2,
-    WBCafe = 3,
-    WBFood = 4,
+    WBCafe = 4,
+    WBFood = 8,
 };
 
 //static methods
 + (void)getLocationsWithRadius: (int)radiusInMiles minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion;
 
 //instance methods
-- (void)bump;
+- (void)bumpWithCompletion:(void(^)(BOOL success))completion;
 - (int)getBumpCountBetween:(NSDate *)earlierDate and:(NSDate *)laterDate;
+- (void)getBumpCountWithCompletion:(void(^)(int response))completion;
 - (double)distanceToLocation: (CLLocationCoordinate2D)location;
 
 @property (strong, nonatomic) NSString *name;

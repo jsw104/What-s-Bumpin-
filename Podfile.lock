@@ -21,8 +21,11 @@ PODS:
     - GooglePlaces (= 2.2.0)
   - GooglePlaces (2.2.0):
     - GoogleMaps/Base (= 2.2.0)
+  - HexColors (2.3.0)
   - pop (1.0.9)
   - Shimmer (1.0.2)
+  - TSMessages (0.9.13):
+    - HexColors (~> 2.3.0)
 
 DEPENDENCIES:
   - CorePlot
@@ -33,6 +36,16 @@ DEPENDENCIES:
   - GooglePlaces
   - pop
   - Shimmer
+  - TSMessages (from `https://github.com/KrauseFx/TSMessages.git`)
+
+EXTERNAL SOURCES:
+  TSMessages:
+    :git: https://github.com/KrauseFx/TSMessages.git
+
+CHECKOUT OPTIONS:
+  TSMessages:
+    :commit: dd843df9a04a756210b2ed51caf1f2b9aafee508
+    :git: https://github.com/KrauseFx/TSMessages.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -43,9 +56,11 @@ SPEC CHECKSUMS:
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GooglePlacePicker: 345b1aabd42c9d6d9bf2369c1bae1234d903e764
   GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
+  HexColors: 6ad3947c3447a055a3aa8efa859def096351fe5f
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  TSMessages: eb3cf27b6900684a21bad4fe9ea426e287b8c839
 
-PODFILE CHECKSUM: ba62ea50290606ff6b1667234907e5c0b1691d4e
+PODFILE CHECKSUM: cd99895c9a6886a1bccab723e9bea9ae151e9af7
 
 COCOAPODS: 1.2.0

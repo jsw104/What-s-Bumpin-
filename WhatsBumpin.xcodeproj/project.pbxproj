@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57F6C04A1EB18DE20031D5ED /* MessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F6C0491EB18DE20031D5ED /* MessageTests.m */; };
+		57F6C04C1EB199D70031D5ED /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F6C04B1EB199D70031D5ED /* UserTests.m */; };
+		57F6C04E1EB1A9060031D5ED /* MessageBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F6C04D1EB1A9060031D5ED /* MessageBoardTests.m */; };
 		71F084669FDE6A136BF123EB /* Pods_WhatsBumpinUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C05856A88D9A0D4CDA3E8A /* Pods_WhatsBumpinUITests.framework */; };
 		8BEDB2560DC62E345C34C613 /* Pods_WhatsBumpin_WhatsBumpinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC92E5DC7474120AFCCF241C /* Pods_WhatsBumpin_WhatsBumpinTests.framework */; };
 		A976C351E451980799BCB0FA /* Pods_WhatsBumpin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A782E94C543F02F6927C66D7 /* Pods_WhatsBumpin.framework */; };
 		D03211131E8EE82C0045A0A7 /* BumpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03211121E8EE82C0045A0A7 /* BumpTests.m */; };
 		D03211151E8EF0720045A0A7 /* LocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03211141E8EF0720045A0A7 /* LocationTests.m */; };
 		D0331A311E89D60B004CA5C1 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0331A301E89D60B004CA5C1 /* FilterView.xib */; };
+		D0667BD11EAE8E49006DD16E /* PostMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0667BD01EAE8E49006DD16E /* PostMessageViewController.m */; };
 		D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */; };
 		D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AF02721E80BD3800C54D89 /* LocationGraphViewController.m */; };
 		D0E4C44C1E6268B2000960B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E4C4221E6268B2000960B3 /* LaunchScreen.storyboard */; };
@@ -41,7 +45,6 @@
 		F07DB43C1EA6C187009CFA74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F07DB43B1EA6C187009CFA74 /* Assets.xcassets */; };
 		F0A0FAF71E9FD75B001CD144 /* MessagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */; };
 		F0A0FAFA1E9FD962001CD144 /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FAF91E9FD962001CD144 /* MessageCell.m */; };
-		F0A0FB011EA15F5E001CD144 /* SearchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A0FB001EA15F5E001CD144 /* SearchTestViewController.m */; };
 		F0D4E2411E99398800689D03 /* FBLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D4E2401E99398800689D03 /* FBLogin.storyboard */; };
 		F0D74F851E9935F900C7FC35 /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D74F841E9935F900C7FC35 /* FBLoginViewController.m */; };
 		F0EE468F1E8F123800FD1439 /* FacebookLoginUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EE468B1E8F0EB900FD1439 /* FacebookLoginUITest.m */; };
@@ -74,6 +77,9 @@
 		32A421222F8D1DC5F1562418 /* Pods_WhatsBumpinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsBumpinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C3694478A0B7E201593B91 /* Pods-WhatsBumpinUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpinUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpinUITests/Pods-WhatsBumpinUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		48B70C85B7157927B578B7A8 /* Pods_What_s_Bumpin_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_What_s_Bumpin_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57F6C0491EB18DE20031D5ED /* MessageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTests.m; sourceTree = "<group>"; };
+		57F6C04B1EB199D70031D5ED /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
+		57F6C04D1EB1A9060031D5ED /* MessageBoardTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageBoardTests.m; sourceTree = "<group>"; };
 		63E947445C9169C5182E2939 /* Pods-What's Bumpin'UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'UITests/Pods-What's Bumpin'UITests.release.xcconfig"; sourceTree = "<group>"; };
 		6FA02A785B426B8984E3A2AA /* Pods-What's Bumpin'.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What's Bumpin'.debug.xcconfig"; path = "Pods/Target Support Files/Pods-What's Bumpin'/Pods-What's Bumpin'.debug.xcconfig"; sourceTree = "<group>"; };
 		7CDCA892B400891CFF45C34A /* Pods-WhatsBumpin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsBumpin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatsBumpin/Pods-WhatsBumpin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 		D03211121E8EE82C0045A0A7 /* BumpTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BumpTests.m; sourceTree = "<group>"; };
 		D03211141E8EF0720045A0A7 /* LocationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTests.m; sourceTree = "<group>"; };
 		D0331A301E89D60B004CA5C1 /* FilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		D0667BCF1EAE8E49006DD16E /* PostMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostMessageViewController.h; sourceTree = "<group>"; };
+		D0667BD01EAE8E49006DD16E /* PostMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostMessageViewController.m; sourceTree = "<group>"; };
 		D0A6CB8C1E513F57001F7964 /* WhatsBumpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsBumpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBA81E513F58001F7964 /* WhatsBumpin.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsBumpin.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A6CBAC1E513F58001F7964 /* What_s_Bumpin_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = What_s_Bumpin_Tests.m; sourceTree = "<group>"; };
@@ -140,8 +148,6 @@
 		F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesTableViewController.m; sourceTree = "<group>"; };
 		F0A0FAF81E9FD962001CD144 /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCell.h; path = "WhatsBumpin/Classes/View Controllers/MessageCell.h"; sourceTree = SOURCE_ROOT; };
 		F0A0FAF91E9FD962001CD144 /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCell.m; path = "WhatsBumpin/Classes/View Controllers/MessageCell.m"; sourceTree = SOURCE_ROOT; };
-		F0A0FAFF1EA15F5E001CD144 /* SearchTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTestViewController.h; sourceTree = "<group>"; };
-		F0A0FB001EA15F5E001CD144 /* SearchTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTestViewController.m; sourceTree = "<group>"; };
 		F0D4E2401E99398800689D03 /* FBLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FBLogin.storyboard; sourceTree = "<group>"; };
 		F0D74F831E9935F900C7FC35 /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
 		F0D74F841E9935F900C7FC35 /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
@@ -267,6 +273,9 @@
 			children = (
 				D03211121E8EE82C0045A0A7 /* BumpTests.m */,
 				D03211141E8EF0720045A0A7 /* LocationTests.m */,
+				57F6C0491EB18DE20031D5ED /* MessageTests.m */,
+				57F6C04B1EB199D70031D5ED /* UserTests.m */,
+				57F6C04D1EB1A9060031D5ED /* MessageBoardTests.m */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -412,6 +421,8 @@
 		D0E4C43C1E6268B2000960B3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D0667BCF1EAE8E49006DD16E /* PostMessageViewController.h */,
+				D0667BD01EAE8E49006DD16E /* PostMessageViewController.m */,
 				F03305421EAA4A7900A59FD6 /* LocationMessageViewController.h */,
 				F03305431EAA4A7900A59FD6 /* LocationMessageViewController.m */,
 				D0E4C43D1E6268B2000960B3 /* HomeViewController.h */,
@@ -430,8 +441,6 @@
 				F0D74F841E9935F900C7FC35 /* FBLoginViewController.m */,
 				F0A0FAF51E9FD75B001CD144 /* MessagesTableViewController.h */,
 				F0A0FAF61E9FD75B001CD144 /* MessagesTableViewController.m */,
-				F0A0FAFF1EA15F5E001CD144 /* SearchTestViewController.h */,
-				F0A0FB001EA15F5E001CD144 /* SearchTestViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -747,11 +756,11 @@
 				D0E4C4511E6268B2000960B3 /* SpringButton.swift in Sources */,
 				D0E4C4571E6268B2000960B3 /* User.m in Sources */,
 				D0E4C4541E6268B2000960B3 /* Location.m in Sources */,
-				F0A0FB011EA15F5E001CD144 /* SearchTestViewController.m in Sources */,
 				F0D74F851E9935F900C7FC35 /* FBLoginViewController.m in Sources */,
 				F033FD561E95CBC200A9BF80 /* SettingsViewController.m in Sources */,
 				F0A0FAFA1E9FD962001CD144 /* MessageCell.m in Sources */,
 				D0E4C4551E6268B2000960B3 /* Message.m in Sources */,
+				D0667BD11EAE8E49006DD16E /* PostMessageViewController.m in Sources */,
 				D0E4C4561E6268B2000960B3 /* MessageBoard.m in Sources */,
 				D0AF02731E80BD3800C54D89 /* LocationGraphViewController.m in Sources */,
 				F0A0FAF71E9FD75B001CD144 /* MessagesTableViewController.m in Sources */,
@@ -766,7 +775,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F6C04E1EB1A9060031D5ED /* MessageBoardTests.m in Sources */,
+				57F6C04C1EB199D70031D5ED /* UserTests.m in Sources */,
 				D0A6CBAD1E513F58001F7964 /* What_s_Bumpin_Tests.m in Sources */,
+				57F6C04A1EB18DE20031D5ED /* MessageTests.m in Sources */,
 				D03211151E8EF0720045A0A7 /* LocationTests.m in Sources */,
 				D03211131E8EE82C0045A0A7 /* BumpTests.m in Sources */,
 			);

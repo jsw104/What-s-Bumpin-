@@ -41,27 +41,21 @@ MessageBoard *messageBoard;
 + (void)getLocationsWithRadius: (int)radius minimumBumps: (int)minBumps type: (WBType)types completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
 {
     if ((types & WBFood) == WBFood) {
-        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBFood], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", 41.502, -81.607, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBFood], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
     if ((types & WBDayTime) == WBDayTime) {
 
-        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBDayTime], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", 41.502, -81.607, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBDayTime], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
     
     if ((types & WBNightLife) == WBNightLife) {
 
-        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBNightLife], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", 41.502, -81.607, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBNightLife], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
     
     if ((types & WBCafe) == WBCafe) {
-        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBCafe], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
+        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", 41.502, -81.607, [NSString stringWithFormat:@"%i", radius], [Location WBTypeToString:WBCafe], @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
     }
-    
-//    if (types == 0) {
-//        [Location createAndExecuteURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", [User getCurrentUser].coordinates.latitude, [User getCurrentUser].coordinates.longitude, [NSString stringWithFormat:@"%i", radius], @"['restaurant', 'cafe', 'night_club']", @"AIzaSyAXtLf-_lGIafvi3Nqrc4m24I0ehPp5ekU"]] completionBlock:completion];
-//
-//    }
-
 }
 
 + (void) createAndExecuteURL: (NSURL *)googleRequestURL completionBlock:(void (^)(NSArray <Location *> *locations, NSError *error))completion
@@ -160,39 +154,61 @@ MessageBoard *messageBoard;
 
 - (int)getBumpCountBetween:(NSDate *)earlierDate and:(NSDate *)laterDate
 {
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_bump_count_by_locations.php"]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *post = [[NSString alloc] initWithFormat:@"location_ids=%@|&submit=", self.googlePlacesID];
+    [request setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:data
+                              
+                              options:kNilOptions
+                              error:&error];
+        
+        int bumpCount = [(NSNumber *)[json objectForKey:self.googlePlacesID] intValue];
+    }];
+    
+    [task resume];
+
     return 0;
 }
+- (void)getBumpCountWithCompletion:(void(^)(int response))completion {
 
-- (void)bump
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/get_bump_count_by_locations.php"]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *post = [[NSString alloc] initWithFormat:@"location_ids=%@|&submit=", self.googlePlacesID];
+    [request setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:data
+                              
+                              options:kNilOptions
+                              error:&error];
+        
+        int bumpCount = [(NSNumber *)[json objectForKey:self.googlePlacesID] intValue];
+        
+        completion(bumpCount);
+    }];
+    
+    [task resume];
+    
+}
+
+
+- (void)bumpWithCompletion:(void(^)(BOOL success))completion
 {
     User *user = [User getCurrentUser];
-    [[Bump alloc] initWithUsername: user.facebookID locationWithID:self.googlePlacesID];
-    
-    /*if (user) {
-        [self bumpPrivate:user];
-    } else {
-        [self bumpPublic];
-    }*/
-}
-
-- (void)bumpPrivate:(User *)user
-{
-    //Bump *newBump = [[Bump alloc] initWithUsername:user.userID locationWithID:self.goo
-    
-    //TODO might want to use different data structure here:
-    
-    //have to override hashcode and isequal methods on Bump for contains to work correctly
-
-}
-
-- (void)bumpPublic
-{
-    //Bump *newBump = [[Bump alloc] initWithUsername:NULL locationWithCoordinate:self.coordinate];
-}
-
-- (void)addBump
-{
-    
+    NSLog(@"user %ld", user.facebookID);
+    Bump *bump = [[Bump alloc] initWithUsername: user.facebookID locationWithID:self.googlePlacesID];
+    [bump saveInBackgroundWithCompletionBlock:^(bool success) {
+        completion(success);
+    }];
 }
 
 @end

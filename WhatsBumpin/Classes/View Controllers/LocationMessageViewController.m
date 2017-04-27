@@ -7,20 +7,44 @@
 //
 
 #import "LocationMessageViewController.h"
+#import "PostMessageViewController.h"
 #import "MessageBoard.h"
+#import "MessageCell.h"
+#import "Message.h"
+#import <TSMessages/TSMessageView.h>
 
 @interface LocationMessageViewController ()
 @property MessageBoard *messageBoard;
+@property NSMutableArray<NSNumber *> *heights;
 
 @end
 
 @implementation LocationMessageViewController
 
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    _messageBoard = [[MessageBoard alloc] init];
-    [_messageBoard loadMessagesForLocation:_location.googlePlacesID];
+    self.heights = [[NSMutableArray alloc] init];
+    self.messages = [[NSMutableArray alloc] init];
+    NSLog(@"Location: %@", self.location);
+
+    
+    MessageBoard *mb = [[MessageBoard alloc] init];
+    [mb loadMessagesForLocation:self.location.googlePlacesID withCompletion:^(NSMutableArray * messages){
+        self.messages = messages;
+        
+        NSLog(@"messages :%@", messages);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"blah");
+
+            
+            [self.tableView reloadData];
+            [self.tableView setNeedsDisplay];
+            [self.refreshControl endRefreshing];
+        });
+    }];
+
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +54,21 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+   
+    
+}
+
+
+- (void) sendLocalBumpNotification: (NSString *) message successful:(bool)success{
+    if(success)
+    {
+        [TSMessage showNotificationInViewController:self title:@"Post Successful!" subtitle:message type:TSMessageNotificationTypeSuccess];
+    }
+    else{
+        [TSMessage showNotificationInViewController:self title:@"Post Failed!" subtitle:message type:TSMessageNotificationTypeError];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,14 +79,82 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
 
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return self.messages.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"IN cellf or row at index path");
+    MessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageCell" forIndexPath:indexPath];
+    Message *message = (self.messages)[indexPath.row];
+    cell.nameLabel.text = message.name;
+    cell.messageLabel.text = message.message_text;
+    [cell.messageLabel sizeToFit];
+    cell.timeLabel.text = message.date;
+    
+    //    cell.locationLabel.text = @"Jolly";
+    //    [cell.locationLabel sizeToFit];
+    
+    
+    cell.locationIcon.image = [cell.locationIcon.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    Boolean bumped = TRUE;
+    if(bumped){
+        
+        [cell.locationIcon setTintColor:[UIColor colorWithRed:0x4c/255.0 green:0xd9/255.0 blue:0x64/255.0 alpha:1]];
+    }
+    
+    
+    [cell.locationLabel setText: self.location.name];
+    
+    if ([indexPath row] %2 == 0) {
+        
+        [cell setBackgroundColor: [self darkerGray]];
+    }
+    else {
+        [cell setBackgroundColor: [self lighterGray]];
+    }
+
+    [self.heights insertObject:[NSNumber numberWithDouble: cell.messageLabel.frame.size.height + 70] atIndex:indexPath.row];
+    NSLog(@"is the height %@", [self.heights objectAtIndex:indexPath.row]);
+    
+    CGRect newTimeFrame = cell.timeLabel.frame;
+    newTimeFrame.origin.y = cell.messageLabel.frame.origin.y + cell.messageLabel.frame.size.height - 7;
+    cell.timeLabel.frame = newTimeFrame;
+    
+    return cell;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.heights.count > indexPath.row) {
+        return [self.heights objectAtIndex:indexPath.row].doubleValue;
+    }
+    else {
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+}
+
+
+- (UIColor *)lighterGray {
+    return [UIColor colorWithRed:0xEA/255.0 green:0xEA/255.0 blue:0xEA/255.0 alpha:0.45];
+    
+}
+- (UIColor *)darkerGray {
+    return [UIColor colorWithRed:0xEB/255.0 green:0xEB/255.0 blue:0xEB/255.0 alpha:1];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"postMessageSegue"]) {
+        ((PostMessageViewController *)[segue destinationViewController]).location = self.location;
+    }
 }
 
 /*

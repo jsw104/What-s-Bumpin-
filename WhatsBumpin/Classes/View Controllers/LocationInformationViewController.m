@@ -47,7 +47,15 @@
         [self.locationOpenLabel setTextColor: [UIColor colorWithRed:0xC0/255.0 green:0x21/255.0 blue:0x3B/255.0 alpha:1] ];
     }
     
-    [self.bumpLabel setText:[NSString stringWithFormat:@"%d", [self.location getBumpCountBetween:[NSDate distantPast] and:[NSDate distantFuture]]]];
+    
+    NSLog(@"lid: %@", self.location.googlePlacesID);
+    [self.location getBumpCountWithCompletion:^(int bumpCount) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+        [self.bumpLabel setText:[NSString stringWithFormat:@"%d", bumpCount]];
+            [self.bumpLabel setNeedsDisplay];
+        });
+    }];
     
     NSURL *googleRequestURL=self.location.photoURLs.firstObject;
     dispatch_async(kBgQueue, ^{
@@ -69,6 +77,7 @@
         ((LocationGraphViewController *)[segue destinationViewController]).location = self.location;
     }
     if ([[segue identifier] isEqualToString:@"LocationMessages"]) {
+        NSLog(@"salloc: %@", self.location);
         ((LocationMessageViewController *)[segue destinationViewController]).location = self.location;
     }
 }

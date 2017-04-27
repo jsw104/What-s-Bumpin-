@@ -19,28 +19,11 @@
         self.googlePlacesID = googlePlacesID;
         self.date = [NSDate date];
     }
-    [self postBump];
     return self;
 }
 
-/*- (void) bumpWithCompletionBlock:(void (^)(BOOL successful))completion
+-(void)saveInBackgroundWithCompletionBlock:(void (^)(bool success))completion
 {
-    NSString *post = [NSString stringWithFormat:@"facebook_id=%d&location_id=%@",self.facebook_id,self.googlePlacesID];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"52.14.0.153/api/insert_bump.php"]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    dispatch_async(kBgQueue, ^{
-        NSData* data = [NSData dataWithContentsOfURL: [request URL]];
-        NSLog(@"hi");
-    });
-}*/
-
--(void) postBump {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.14.0.153/api/insert_bump.php"]];
     [request setHTTPMethod:@"POST"];
     NSLog(@"facebook_id: %ld", self.facebook_id);
@@ -49,13 +32,16 @@
     [request setHTTPBody:[post dataUsingEncoding:NSUTF8StringEncoding]];
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest: request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSLog(@"response: %@, err %@", response, error);
+        NSDictionary* json = [NSJSONSerialization
+                              JSONObjectWithData:data
+                              
+                              options:kNilOptions
+                              error:&error];
+        bool success = [[json objectForKey:@"error"] intValue] == 0;
+        completion(success);
     }];
     
     [task resume];
 }
-
-
-
 
 @end

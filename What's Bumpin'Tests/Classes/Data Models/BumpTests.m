@@ -32,16 +32,22 @@ Bump *bump;
 - (void)testBumpUserIdValue {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        expect(bump.user_id).to.equal(1);
+        expect(bump.facebook_id).to.equal(1);
 }
 
 - (void)testBumpGooglePlacesIdValue {
         expect(bump.googlePlacesID).to.equal(@"Jolly");
 }
 
-- (void)testBumpDateValue{
-        expect(bump.date).to.beInstanceOf([NSDate class]);
+-(void)testPostBump{
+    [bump saveInBackgroundWithCompletionBlock:^(BOOL success){
+        expect(success).to.equal(true);
+    }];
 }
+
+/*- (void)testBumpDateValue{
+        expect(bump.date).to.equal([NSDate class]);
+}*/
 
 
 @end
